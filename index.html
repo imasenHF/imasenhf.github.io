@@ -3,21 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="IMASEN / Haifeng Wu — a lightweight research homepage for magnetic resonance and open projects.">
-    <meta name="theme-color" content="#f5f7f8">
+    <meta name="description" content="IMASEN / Haifeng Wu — research notes, magnetic resonance, scientific instrumentation, and computational projects.">
+    <meta name="theme-color" content="#f6f6f3">
+
+    <link rel="canonical" href="https://plastocyanin.org/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="IMASEN / Haifeng Wu">
+    <meta property="og:description" content="Research notes, magnetic resonance, scientific instrumentation, and computational projects.">
+    <meta property="og:url" content="https://plastocyanin.org/">
+
     <title>IMASEN / Haifeng Wu</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/imasen_phi_logo/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
+
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="wordmark" href="index.html" aria-label="IMASEN home">
-          <span class="wordmark-mark" aria-hidden="true">I</span>
+        <a class="wordmark" href="/" aria-label="IMASEN home">
+          <img
+            class="wordmark-logo"
+            src="assets/images/imasen_phi_logo/imasen-phi-64.png"
+            alt=""
+            width="36"
+            height="36"
+          >
           <span>IMASEN</span>
         </a>
+
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#research">Research</a>
           <a href="#projects">Projects</a>
@@ -29,82 +44,154 @@
     <main id="main-content">
       <section class="hero container" aria-labelledby="page-title">
         <div class="hero-copy">
-          <p class="eyebrow">Independent research homepage</p>
-          <h1 id="page-title">Haifeng Wu<span class="muted"> / IMASEN</span></h1>
-          <p class="hero-lede">Exploring magnetic resonance, scientific instrumentation, and small tools that make technical work easier to inspect and share.</p>
+          <p class="eyebrow">Haifeng Wu · IMASEN</p>
+          <h1 id="page-title">Research notes,<br>instruments, and code.</h1>
+          <p class="hero-lede">
+            A personal space for work in magnetic resonance, spectroscopy,
+            scientific instrumentation, and computational methods.
+          </p>
+
           <div class="hero-actions" aria-label="Main links">
-            <a class="button button-primary" href="https://mr.plastocyanin.org" target="_blank" rel="noopener noreferrer">Magnetic Resonance <span aria-hidden="true">↗</span></a>
-            <a class="button button-secondary" href="https://github.com/imasenhf" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a class="button button-primary" href="https://mr.plastocyanin.org">
+              Explore Magnetic Resonance
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="button button-quiet"
+              href="https://github.com/imasenhf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
-        <div class="hero-note" aria-label="Current focus">
-          <span class="hero-note-label">Current focus</span>
-          <p>Magnetic resonance<br>and open technical projects</p>
-          <span class="hero-note-rule" aria-hidden="true"></span>
-          <p class="hero-note-small">plastocyanin.org</p>
+
+        <div class="hero-mark" aria-hidden="true">
+          <img
+            src="assets/images/imasen_phi_logo/imasen-phi.svg"
+            alt=""
+            width="360"
+            height="360"
+          >
         </div>
       </section>
 
-      <section id="research" class="section section-feature container" aria-labelledby="research-title">
-        <div class="section-heading">
-          <p class="section-index">01 / Research</p>
-          <h2 id="research-title">Magnetic Resonance</h2>
+      <section id="research" class="section container" aria-labelledby="research-title">
+        <div class="section-meta">
+          <p class="section-index">01</p>
+          <p class="section-label">Research</p>
         </div>
-        <div class="feature-card">
-          <div>
-            <p class="card-kicker">Primary portal</p>
-            <p class="feature-title">A working space for NMR, EPR, and related methods.</p>
+
+        <div class="research-grid">
+          <div class="section-heading">
+            <h2 id="research-title">Magnetic Resonance</h2>
+            <p class="section-lede">
+              A long-term knowledge space for NMR, EPR, experimental methods,
+              simulation, and selected technical studies.
+            </p>
+            <a class="text-link" href="https://mr.plastocyanin.org">
+              Enter mr.plastocyanin.org
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <a class="text-link" href="https://mr.plastocyanin.org" target="_blank" rel="noopener noreferrer">Open the portal <span aria-hidden="true">↗</span></a>
+
+          <div class="topic-list" aria-label="Magnetic resonance topics">
+            <span>NMR</span>
+            <span>EPR</span>
+            <span>Experiments</span>
+            <span>Simulation</span>
+            <span>SpinFront</span>
+          </div>
         </div>
       </section>
 
       <section id="projects" class="section container" aria-labelledby="projects-title">
-        <div class="section-heading section-heading-row">
-          <div>
-            <p class="section-index">02 / Projects</p>
-            <h2 id="projects-title">Small, focused tools</h2>
-          </div>
-          <p class="section-intro">A space for experiments, simulations, and other work in progress.</p>
+        <div class="section-meta">
+          <p class="section-index">02</p>
+          <p class="section-label">Projects</p>
         </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-card-top">
-              <span class="project-number">01</span>
-              <span class="status">In preparation</span>
+
+        <div class="section-heading compact-heading">
+          <h2 id="projects-title">Selected work</h2>
+          <p class="section-lede">
+            Independent projects are kept separate when their content, data, or
+            source code needs its own lifecycle.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-row">
+            <div class="project-number">01</div>
+            <div class="project-main">
+              <h3>NMR Experiments</h3>
+              <p>Experiment notes, protocols, pulse sequences, and practical reference material.</p>
             </div>
-            <h3>NMR Experiments</h3>
-            <p>Notes, protocols, and practical material for learning and working with NMR experiments.</p>
+            <div class="project-status">In preparation</div>
           </article>
-          <article class="project-card">
-            <div class="project-card-top">
-              <span class="project-number">02</span>
-              <span class="status">In preparation</span>
+
+          <article class="project-row">
+            <div class="project-number">02</div>
+            <div class="project-main">
+              <h3>Magnetic Resonance Simulation</h3>
+              <p>A separate codebase for reusable spin-system models and numerical simulation.</p>
             </div>
-            <h3>Magnetic Resonance Simulation</h3>
-            <p>Runnable examples for understanding spin dynamics, spectra, and instrument behaviour.</p>
+            <div class="project-status">In development</div>
           </article>
-          <article class="project-card project-card-open">
-            <div class="project-card-top">
-              <span class="project-number">03</span>
-              <span class="status">Open slot</span>
+
+          <article class="project-row project-row-open">
+            <div class="project-number">03</div>
+            <div class="project-main">
+              <h3>Future projects</h3>
+              <p>Reserved for work beyond magnetic resonance as the site grows.</p>
             </div>
-            <h3>More to come</h3>
-            <p>The site is intentionally open to projects beyond magnetic resonance.</p>
+            <div class="project-status">Open</div>
           </article>
         </div>
       </section>
 
       <section id="about" class="section section-about container" aria-labelledby="about-title">
-        <div class="section-heading">
-          <p class="section-index">03 / About</p>
-          <h2 id="about-title">A quiet place for ongoing work</h2>
+        <div class="section-meta">
+          <p class="section-index">03</p>
+          <p class="section-label">About</p>
         </div>
+
         <div class="about-grid">
-          <p class="about-lede">I am Haifeng Wu, working across magnetic resonance research, technical documentation, and reproducible computational projects.</p>
+          <div class="about-identity">
+            <img
+              class="avatar"
+              src="https://avatars.githubusercontent.com/u/150271891?v=4"
+              alt="Haifeng Wu"
+              width="112"
+              height="112"
+              loading="lazy"
+            >
+            <div>
+              <h2 id="about-title">Haifeng Wu</h2>
+              <p class="about-name">IMASEN</p>
+            </div>
+          </div>
+
           <div class="about-copy">
-            <p>This homepage is a compact index rather than a résumé. It will grow as projects become ready to share.</p>
-            <a class="text-link" href="https://github.com/imasenhf" target="_blank" rel="noopener noreferrer">See the code on GitHub <span aria-hidden="true">↗</span></a>
+            <p class="about-lede">
+              I work across magnetic resonance, scientific instrumentation,
+              technical writing, and reproducible computational methods.
+            </p>
+            <p>
+              This homepage is intentionally compact. It acts as an index for
+              projects that are mature enough to share while leaving room for
+              work outside magnetic resonance.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/imasenhf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub profile
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </section>
@@ -113,8 +200,13 @@
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>© <span id="current-year">2026</span> Haifeng Wu</p>
-        <a href="index.html">plastocyanin.org</a>
+        <p>plastocyanin.org</p>
       </div>
     </footer>
+
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
   </body>
 </html>
