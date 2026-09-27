@@ -11,12 +11,12 @@ Personal research homepage for Haifeng Wu (IMASEN), published as a static GitHub
 │   ├── css/
 │   │   └── style.css
 │   └── images/
-├── favicon.svg
+├── favicon.ico
 ├── CNAME
 └── README.md
 ```
 
-The site uses semantic HTML and a standalone CSS file. It has no build step and no external front-end dependencies. Local resources use relative paths so the site can be served from the repository root or a project subpath.
+The site uses semantic HTML and a standalone CSS file. It has no build step and no external front-end dependencies. Local resources use relative paths so the site can be served from the repository root or a project subpath. The browser favicon uses the supplied IMASEN Phi logo.
 
 ## Local preview
 
