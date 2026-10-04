@@ -11,4 +11,4 @@
 @media(max-width:850px){.origin{gap:28px;grid-template-columns:44% 1fr}}
 @media(max-width:620px){.origin{grid-template-columns:1fr;gap:32px}.structure{width:100%;max-width:460px}}
 
-.project-group{margin:0 0 56px}.project-group>h2{font-size:24px;font-weight:500;margin:0 0 18px}.hero-lede{max-width:100%}.hero-lede-break{display:block}@media(max-width:640px){.hero-lede-break{display:none}.project-group{margin-bottom:36px}}
+.project-group{margin:0 0 56px}.project-group>h2{font-size:24px;font-weight:500;margin:0 0 18px}.hero-lede{max-width:100%}@media(max-width:640px){.project-group{margin-bottom:36px}}
