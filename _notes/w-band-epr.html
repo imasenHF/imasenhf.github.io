@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: note
 title: "W 波段 EPR 的物理基础、主要应用主线与代表性案例"
 summary: "从频率与自旋哈密顿量出发，整理 W 波段的应用机制、案例与仪器需求。"
 nav: notes
@@ -8,6 +8,7 @@ tags: ["EPR", "W-band"]
 featured: true
 order: 1
 published_at: null
+updated_at: null
 math: true
 report_css: /assets/css/reports/w-band-epr.css
 ---
@@ -24,9 +25,9 @@ mermaid.initialize({
 </script>
 
 <div class="layout">
-<aside><h2>目录</h2><nav id="toc"></nav></aside>
-<main>
-<h1 id="w-波段-epr-的物理基础-主要应用主线与代表性案例">W 波段 EPR 的物理基础、主要应用主线与代表性案例</h1>
+
+<div class="report-body">
+
 <h2 id="摘要">摘要</h2>
 <p>W 波段电子顺磁共振通常工作在约 <span class="math-inline">\(94\!-\!95\ \mathrm{GHz}\)</span> 。对于 <span class="math-inline">\(g\approx2\)</span> 的电子自旋，其共振磁场约为 <span class="math-inline">\(3.35\!-\!3.39\ \mathrm{T}\)</span> 。与 X 波段和 Q 波段相比，W 波段最重要的差异并不是“频率更高”这一表面参数，而是外磁场增加后，电子 Zeeman 相互作用与 <span class="math-inline">\(g\)</span> 各向异性、hyperfine、zero-field splitting（ZFS）、交换、电子—电子偶极耦合以及分子运动之间的相对能标发生系统变化。</p>
 <p>这一本质决定了 W 波段的主要科研价值可以归纳为五条主线：</p>
@@ -1050,20 +1051,9 @@ g\frac{\Delta\nu_{\rm exc}}{\nu}.\]</div>
 <div class="footer">
 © 2026 wuhaifeng@ustc.edu.cn. All rights reserved. 本报告版权归作者所有，未经许可不得复制、转载或用于商业用途。
 </div>
-</main>
 </div>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toc = document.getElementById('toc');
-  document.querySelectorAll('main h2, main h3, main h4').forEach(h => {
-    const a = document.createElement('a');
-    a.href = '#' + h.id;
-    a.textContent = h.textContent;
-    a.className = h.tagName === 'H4' ? 'lv4' : (h.tagName === 'H3' ? 'lv3' : 'lv2');
-    toc.appendChild(a);
-  });
-});
-</script>
+</div>
+
 
 {% endraw %}
 </div>
