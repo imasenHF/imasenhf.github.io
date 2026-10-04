@@ -55,3 +55,5 @@
 #note-content .reasoning-flow span{white-space:nowrap}
 @media(max-width:640px){.note-page .experiment-heading{padding-top:24px}.note-brand-line{grid-template-columns:36px minmax(0,1fr)}.note-brand-icon{width:36px;height:36px}}
 @media print{.note-page .experiment-heading{padding-top:.6cm}}
+
+.sidebar .chapter-group summary>a.active,.sidebar .chapter-leaf-row>a.active{font-weight:400}
