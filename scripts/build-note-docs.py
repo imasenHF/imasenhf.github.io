@@ -94,7 +94,7 @@ for page in pages:
   version=hashlib.sha256((R/'assets/jtd'/asset).read_bytes()).hexdigest()[:10]
   pagehtml=re.sub(re.escape(asset)+r'\?v=[^"]+',asset+'?v='+version,pagehtml)
  if slug=='index':
-  meta=re.sub(r'(?m)^layout:.*$', 'layout: null',frontmatter)
+  meta=re.sub(r'(?m)^layout:.*$', 'layout: false',frontmatter)
   meta=re.sub(r'(?m)^title:.*$', 'title: '+json.dumps(DOC_TITLE,ensure_ascii=False),meta)
   (R/'_notes'/f'{NOTE}.html').write_text('---\n'+meta.strip()+'\n---\n{% raw %}\n'+pagehtml+'\n{% endraw %}\n')
  else:(O/(slug+'.html')).write_text(pagehtml)
