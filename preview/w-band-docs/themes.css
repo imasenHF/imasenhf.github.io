@@ -8,3 +8,5 @@ body{color:var(--ink);background:var(--paper)}.side-bar{background:var(--sidebar
 
 /* Default palette uses the published plastocyanin homepage tokens. */
 :root[data-theme="mist"]{--ink:#203139;--muted:#68747a;--paper:#fdfdfb;--sidebar-bg:#f1f3f1;--topbar-bg:#f6f6f3;--rule:#d9dedb;--accent:#355c7d;--accent-soft:#e6edf0;--gold:#b68c37}
+
+.nav-list .nav-list-link.active,.nav-list .nav-list-expander{color:var(--accent)}.main-content .label{background:var(--accent-soft);color:var(--accent)}.main-content hr{background:var(--rule)}

@@ -34,7 +34,7 @@ def navitem(slug,title,children=[]):
  button='<button class="nav-list-expander btn-reset" aria-label="展开 '+html.escape(title,quote=True)+'" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-arrow-right"/></svg></button>' if children else ''
  return '<li class="nav-list-item">'+button+'<a class="nav-list-link" href="'+BASE+slug+'.html">'+html.escape(title)+'</a>'+('<ul class="nav-list">'+''.join(navitem(*c) for c in children)+'</ul>' if children else '')+'</li>'
 nav='<ul class="nav-list">'+navitem('index','文档首页')+''.join(navitem(*g) for g in groups)+'</ul>'
-math=r'''<script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>'''.replace('\\\\','\\')
+math=r'''<script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>'''
 settings='''<details class="doc-theme"><summary aria-label="主题设置" title="主题设置"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" stroke="currentColor" fill="none"/></svg></summary><div class="theme-options">'''+''.join('<button data-theme="'+k+'" aria-label="'+n+'" title="'+n+'"></button>' for k,n in [('sage','鼠尾草绿'),('mist','雾蓝'),('sand','暖砂'),('mauve','灰紫'),('gray','浅灰')])+'</div></details>'
 index={}
 for page in pages:
