@@ -45,7 +45,7 @@ for page in pages:
  toc=[]
  for level,attrs,t in re.findall(r'<h([23])([^>]*)>(.*?)</h\1>',body,re.S):
   ident=re.search(r'id="([^"]+)"',attrs)
-  if ident:toc.append('<li class="toc-level-'+level+'"><a href="#'+html.escape(ident[1],quote=True)+'">'+html.escape(plain(t))+'</a></li>')
+  if ident:toc.append('<li class="toc-level-'+level+'"><a href="#'+html.escape(ident[1],quote=True)+'">'+html.escape(html.unescape(re.sub('<[^>]+>','',t)).strip())+'</a></li>')
  pos=body.index('</h1>')+5
  if toc:body=body[:pos]+'<details class="page-toc" open><summary>本页目录</summary><ul>'+''.join(toc)+'</ul></details>'+body[pos:]
  body=re.sub(r'(<h[123] id="([^"]+)"[^>]*>)(.*?)(</h[123]>)',lambda m:m[1]+'<a class="anchor-heading" href="#'+html.escape(m[2],quote=True)+'" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>'+m[3]+m[4],body,flags=re.S)
