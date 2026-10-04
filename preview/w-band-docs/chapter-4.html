@@ -1,0 +1,62 @@
+<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>领域映射 · W 波段 EPR</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="/preview/w-band-docs/themes.css"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="/preview/w-band-docs/zh-search.js"></script><script defer src="/preview/w-band-docs/just-the-docs.js"></script><script defer src="/preview/w-band-docs/theme.js"></script><script>window.MathJax={tex:{inlineMath:[['\(','\)'],['$','$']],displayMath:[['\[','\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></head><body><svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="svg-arrow-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-doc" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM8 11h8M8 15h8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="svg-link" viewBox="0 0 16 16"><path d="m6 10 4-4M5 7 3 9a2 2 0 0 0 3 3l2-2M8 6l2-2a2 2 0 0 1 3 3l-2 2" stroke="currentColor" fill="none"/></symbol></svg><a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><a class="brand-home" href="/" aria-label="返回主页"><img src="/assets/images/imasen_phi_logo/favicon.ico" width="36" height="36" alt=""></a><a href="/preview/w-band-docs/index.html" class="site-title lh-tight">W 波段 EPR</a><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航"><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/index.html">文档首页</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/chapter-1.html">理论基础</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="展开 应用主线" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-arrow-right"/></svg></button><a class="nav-list-link" href="/preview/w-band-docs/chapter-2.html">应用主线</a><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/application-1.html">利用高场增强 g-tensor 各向异性对应的共振场分离提高电子结构分辨能力</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/application-2.html">高自旋体系、ZFS 与高场能级结构</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/application-3.html">Orientation-selective EPR：局域配位、电子—核耦合与电子—电子几何结构</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/application-4.html">Spin labeling、局域环境与快速分子动力学</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/application-5.html">高极化、低温脉冲与量子自旋动力学</a></li></ul></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/chapter-3.html">应用地图</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/chapter-4.html">领域映射</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/chapter-5.html">适用性判断</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/chapter-6.html">仪器需求</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/chapter-7.html">案例索引</a></li><li class="nav-list-item"><a class="nav-list-link" href="/preview/w-band-docs/chapter-8.html">结论</a></li></ul></nav><div class="site-footer"><a href="/notes/">返回 Notes</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 W 波段 EPR 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 W 波段 EPR 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div><details class="doc-theme"><summary aria-label="主题设置" title="主题设置"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" stroke="currentColor" fill="none"/></svg></summary><div class="theme-options"><button data-theme="sage" aria-label="鼠尾草绿" title="鼠尾草绿"></button><button data-theme="mist" aria-label="雾蓝" title="雾蓝"></button><button data-theme="sand" aria-label="暖砂" title="暖砂"></button><button data-theme="mauve" aria-label="灰紫" title="灰紫"></button><button data-theme="gray" aria-label="浅灰" title="浅灰"></button></div></details></div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="/preview/w-band-docs/index.html">W 波段 EPR</a></li><li class="breadcrumb-nav-list-item"><span>领域映射</span></li></ol></nav><div class="main-content" id="main-content"><main><h1>领域映射</h1><p class="doc-subtitle">领域映射：同一科研领域可能对应不同 W-band 物理机制</p>
+<table>
+<thead>
+<tr>
+<th>科研领域</th>
+<th>常见样品</th>
+<th>主要 W-band 机制</th>
+<th>典型实验</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光化学 / 光合作用</td>
+<td>semiquinone、flavin、radical pair</td>
+<td><span class="math-inline">\(g\)</span> resolution、orientation selection、dipolar geometry</td>
+<td>CW、TR-EPR、ENDOR、dipolar EPR</td>
+</tr>
+<tr>
+<td>金属蛋白</td>
+<td>Cu(II)、Cu <span class="math-inline">\(_A\)</span> 、Mn/Gd-tagged proteins</td>
+<td><span class="math-inline">\(g/A\)</span> tensor、orientation-selected hyperfine、high-spin central transition</td>
+<td>CW、ESE、ENDOR/HYSCORE、DEER/RIDME</td>
+</tr>
+<tr>
+<td>Spin labeling 生物物理</td>
+<td>nitroxide-labelled protein、IDP、RNA、membrane</td>
+<td><span class="math-inline">\(g/A\)</span> dynamic modulation、local polarity、fast motion</td>
+<td>multifrequency CW、2D-ELDOR</td>
+</tr>
+<tr>
+<td>催化与表面科学</td>
+<td>transition-metal centers、surface radicals、oxide defects</td>
+<td><span class="math-inline">\(g\)</span> resolution、metal <span class="math-inline">\(g/A/D\)</span> 、surface defect discrimination</td>
+<td>CW、ENDOR、UHV-EPR、photo-EPR</td>
+</tr>
+<tr>
+<td>分子磁性</td>
+<td>high-spin clusters、SMM</td>
+<td>Zeeman/ZFS 比值、magnetic anisotropy</td>
+<td>CW、single-crystal EPR、pulse</td>
+</tr>
+<tr>
+<td>分子量子信息</td>
+<td>molecular qubits、coupled spin units</td>
+<td>high-field eigenstates、 <span class="math-inline">\(\Delta gB_0\)</span> addressability、polarization、coherence</td>
+<td>pulse EPR、Rabi、ENDOR、ELDOR</td>
+</tr>
+<tr>
+<td>固态量子与半导体</td>
+<td>SiC defects、donor spins、2DEG</td>
+<td><span class="math-inline">\(g\)</span> separation、polarization、coherence、spin-dependent transport</td>
+<td>pulse EPR、photo-EPR、EDMR</td>
+</tr>
+<tr>
+<td>稀土与高自旋标签</td>
+<td>Yb、Gd、Mn</td>
+<td>central transition、high-field states、polarization</td>
+<td>CW、ENDOR、DEER/RIDME、relaxation</td>
+</tr>
+</tbody>
+</table>
+<hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000">© 2026 Hyphoon <a href="mailto:wuhaifeng@ustc.edu.cn">wuhaifeng@ustc.edu.cn</a>. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。</p><p class="text-small text-grey-dk-000">This site uses <a href="https://just-the-docs.com/">Just the Docs</a>, a documentation theme for Jekyll.</p></footer></main></div></div></div><div class="search-overlay"></div><script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});</script></body></html>
