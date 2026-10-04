@@ -1,0 +1,1614 @@
+<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><link rel="icon" href="https://plastocyanin.org/assets/images/imasen_phi_logo/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1"><title>W 波段 EPR 的物理基础、主要应用主线与代表性案例 · plastocyanin</title><meta name="description" content="从频率与自旋哈密顿量出发，整理 W 波段的应用机制、案例与仪器需求。"><meta name="robots" content="noindex"><link rel="canonical" href="https://plastocyanin.org/notes/w-band-epr/"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><style>:root{color-scheme:light;--ink:#171815;--muted:#66685f;--paper:#fffefb;--canvas:#e9ebe6;--panel:rgba(249,250,246,.94);--rule:#d2d5cc;--accent:#1d5a50;--accent-soft:#dce9e5;--page-w:960px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 15% 0%,rgba(255,255,255,.84),transparent 34rem),var(--canvas);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif}button{font:inherit;color:inherit;cursor:pointer}.topbar{position:sticky;top:0;z-index:40;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;padding:14px 22px;background:var(--panel);border-bottom:1px solid rgba(86,91,82,.22);backdrop-filter:blur(16px)}.brand{min-width:0}.brand h1{margin:0;overflow:hidden;font-size:17px;font-weight:680;letter-spacing:.01em;text-overflow:ellipsis;white-space:nowrap}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.toolbar button,.language-switcher button,.mobile-nav-button{min-height:36px;padding:7px 12px;border:1px solid var(--rule);border-radius:9px;background:#fff}.toolbar button:hover,.toolbar button:focus-visible,.language-switcher button:hover,.language-switcher button:focus-visible{border-color:var(--accent);outline:none}.toolbar button[aria-pressed=true],.language-switcher button[aria-pressed=true]{border-color:var(--accent);background:var(--accent);color:#fff}.language-switcher{display:flex;gap:4px}.mobile-nav-button{display:none}.layout{display:grid;grid-template-columns:270px minmax(0,1fr);align-items:start}.sidebar{position:sticky;top:73px;height:calc(100vh - 73px);padding:24px 18px 30px;overflow:auto;border-right:1px solid rgba(86,91,82,.18);background:rgba(244,246,241,.72)}.sidebar-label{margin:0 8px 11px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.sidebar ol{display:grid;gap:4px;margin:0;padding:0;list-style:none}.sidebar a{display:grid;grid-template-columns:35px 1fr;gap:8px;align-items:baseline;padding:8px 9px;border-radius:8px;color:#454840;font-size:12px;line-height:1.3;text-decoration:none}.sidebar a span:first-child{color:#85887f;font-variant-numeric:tabular-nums}.sidebar a:hover,.sidebar a:focus-visible,.sidebar a.active{background:var(--accent-soft);color:#123e37;outline:none}.range-card{margin:22px 8px 0;padding:14px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}.range-card p{margin:0 0 8px;font-size:12px;font-weight:700}.range-card table{width:100%;border-collapse:collapse;font-size:11px;line-height:1.35}.range-card th{width:38px;text-align:left;vertical-align:top;color:var(--accent)}.range-card td{padding-bottom:7px;color:var(--muted)}.sample-note{margin:16px 8px 0;color:var(--muted);font-size:11px;line-height:1.55}main{min-width:0;padding:34px max(28px,calc((100vw - 270px - var(--page-w))/2)) 80px}.intro-card,.experiment{width:min(100%,var(--page-w));margin:0 auto 30px;background:var(--paper);box-shadow:0 16px 42px rgba(38,43,36,.13),0 2px 8px rgba(38,43,36,.08)}.intro-card{padding:30px 42px}.intro-card .eyebrow{margin:0 0 7px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.intro-card h2{margin:0 0 12px;font:700 26px/1.15 Georgia,"Times New Roman",serif}.intro-card p{max-width:70ch;margin:0;color:#50534a;font:15px/1.6 Georgia,"Times New Roman",serif}.experiment{overflow:hidden}.experiment-heading{padding:32px 42px 25px;background:linear-gradient(135deg,#f7faf7,#eef4f0);border-bottom:1px solid var(--rule)}.experiment-label{margin:0 0 8px;color:var(--accent);font:700 15px/1.2 Inter,"Segoe UI",sans-serif;letter-spacing:.04em}.experiment-title{margin:0 0 12px;font:700 31px/1.12 Georgia,"Times New Roman",serif}.range-line{margin:0;color:var(--muted);font-size:12px}.page-block{position:relative;padding:34px 42px 42px;border-bottom:1px solid #dfe2da;scroll-margin-top:92px}.page-block:last-child{border-bottom:0}.page-marker{display:flex;justify-content:flex-end;margin:-18px 0 14px;color:#74776f;font-size:10px;letter-spacing:.03em}.bilingual-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}.content-pane{min-width:0;color:#111;font:14px/1.55 Georgia,"Times New Roman",serif}.content-pane h3{margin:0 0 11px;font-size:19px;line-height:1.2}.content-pane p{margin:0 0 12px;text-align:justify;hyphens:auto}.content-pane strong{font-weight:700}.content-pane sup,.content-pane sub{line-height:0}.references{margin:0 0 14px;padding:0;list-style:none;counter-reset:reference}.references li{position:relative;margin:0 0 5px;padding-left:28px}.references li::before{position:absolute;left:0;content:"[" counter(reference) "]";counter-increment:reference}.figure{margin:14px auto 18px;text-align:center}.figure img{display:block;max-width:100%;max-height:520px;margin:0 auto;object-fit:contain}.figure.pulse{min-height:150px}.figure.pulse-wide{min-height:235px}.figure.equation img{max-height:200px}.figure.equation.short img{max-height:100px}.figure.spectrum img{max-height:450px}.figure.phase-result img{max-height:450px}.figure.worksheet img{max-height:520px}.content-zh{font-family:"Noto Serif SC","Songti SC","SimSun",serif}.content-zh:empty{display:none}.reference-scan{display:none;width:100%;height:auto}.show-original .page-block{padding:0;background:#fff}.show-original .page-marker,.show-original .bilingual-grid{display:none}.show-original .reference-scan{display:block}.show-original .experiment-heading{display:none}body[data-language=en] .content-zh{display:none}body[data-language=zh] .content-en{display:none}body[data-language=zh] .bilingual-grid{display:block}body[data-language=bilingual] .content-en,body[data-language=bilingual] .content-zh{display:block}body[data-language=bilingual] .content-zh{border-left:1px solid var(--rule);padding-left:28px}.show-original .experiment{box-shadow:0 16px 42px rgba(38,43,36,.13)}
+body[data-language=en] .bilingual-grid{display:block}
+@media(max-width:1040px){.layout{grid-template-columns:1fr}.sidebar{position:fixed;top:69px;left:0;z-index:35;width:min(86vw,320px);height:calc(100vh - 69px);transform:translateX(-102%);background:#f7f8f4;box-shadow:14px 0 34px rgba(30,35,29,.18);transition:transform 180ms ease}.nav-open .sidebar{transform:translateX(0)}.mobile-nav-button{display:inline-flex;align-items:center}main{padding:28px 20px 72px}.experiment-title{font-size:28px}}
+@media(max-width:640px){.topbar{grid-template-columns:1fr;gap:10px;padding:12px 14px}.brand p{display:none}.toolbar{justify-content:space-between}.toolbar button,.language-switcher button{flex:1;padding-inline:7px;font-size:12px}.sidebar{top:103px;height:calc(100vh - 103px)}main{padding:18px 8px 60px}.intro-card,.experiment{width:100%;margin-bottom:18px}.intro-card{padding:24px 20px}.intro-card h2{font-size:22px}.experiment-heading{padding:25px 20px 20px}.experiment-title{font-size:25px}.page-block{padding:24px 20px 30px}.page-marker{justify-content:flex-start;margin:-8px 0 16px}.bilingual-grid{display:block}body[data-language=bilingual] .content-zh{margin-top:24px;padding:24px 0 0;border-top:1px solid var(--rule);border-left:0}.content-pane{font-size:15px;line-height:1.65}.figure img{max-height:none}.show-original .page-block{padding:0}.show-original .reference-scan{width:100%}}
+@media print{.topbar,.sidebar,.range-card,.sample-note,.intro-card,.experiment-heading{display:none!important}body{background:#fff}.layout,main{display:block;padding:0}.experiment{width:100%;margin:0;box-shadow:none}.page-block{break-after:page;page-break-after:always;padding:24pt 30pt}.page-block:last-child{break-after:auto}.content-pane{font-size:9pt}.show-original .page-block{padding:0}.show-original .reference-scan{display:block}}
+
+/* Quiet source-page markers and reusable observation-grid figures. */
+.page-block{border-bottom:0}
+.page-marker{position:absolute;right:42px;bottom:12px;display:inline-block;margin:0;padding:2px 6px;border:1px solid #dfe2da;border-radius:999px;background:rgba(255,254,251,.92);color:#85887f;font-size:9px;letter-spacing:.02em;line-height:1.2}
+.figure figcaption{margin-top:5px;color:var(--muted);font:10px/1.3 Inter,"Segoe UI",sans-serif}
+.content-zh .mapped-figure{margin-top:22px;border-top:1px dashed #dfe2da;padding-top:10px}
+.content-zh .mapped-figure figcaption{font-family:"Noto Serif SC","Songti SC","SimSun",serif}
+@media(max-width:640px){.page-marker{right:20px;bottom:8px;margin:0}.content-zh .mapped-figure{margin-top:20px}}
+
+/* Original-page comparison uses the same two-column relationship as the
+   bilingual view: reconstructed English on the left, the source scan on the
+   right. The scan remains a sibling of .bilingual-grid, so the page block
+   itself owns the two-column grid. */
+body.show-original .page-block{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(260px,.82fr);
+  gap:28px;
+  padding:34px 42px 42px;
+  background:var(--paper);
+}
+body.show-original .page-marker{
+  position:absolute;
+  display:inline-block;
+  right:42px;
+  bottom:12px;
+  width:auto;
+  padding:2px 6px;
+  border-radius:999px;
+  text-align:right;
+  white-space:nowrap;
+  font-size:9px;
+}
+body.show-original .bilingual-grid{
+  display:block;
+  grid-column:1;
+  grid-row:1;
+  min-width:0;
+}
+body.show-original .content-en{display:block}
+body.show-original .content-zh{display:none}
+body.show-original .reference-scan{
+  position:static;
+  display:block;
+  grid-column:2;
+  grid-row:1;
+  align-self:start;
+  width:100%;
+  height:auto;
+  max-height:none;
+  object-fit:contain;
+  border-left:1px solid var(--rule);
+  padding-left:20px;
+}
+
+.equation-text{font-family:Georgia,"Times New Roman",serif;text-align:left}
+.equation-text .formula{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;padding:8px 18px;font-size:17px}
+.equation-text .fraction{display:inline-grid;grid-template-rows:auto auto;margin-left:5px;vertical-align:middle;text-align:center;line-height:1.05}
+.equation-text .fraction>span:first-child{border-bottom:1px solid currentColor;padding:0 8px 2px}
+.equation-text .fraction>span:last-child{padding-top:2px}
+
+@media(max-width:900px){
+  body.show-original .page-block{
+    display:block;
+    padding:34px 20px 42px;
+  }
+  body.show-original .reference-scan{
+    margin-top:26px;
+    border-top:1px solid var(--rule);
+    border-left:0;
+    padding:24px 0 0;
+    width:100%;
+  }
+  body.show-original .page-marker{
+    right:20px;
+    bottom:10px;
+  }
+}
+
+/* Keep the experiment identity visible in source-page comparison mode. */
+body.show-original .experiment-heading{display:block}
+
+/* Compact, low-emphasis view controls. Visible labels are replaced by
+   line icons while aria-label/title retain accessible names. */
+.toolbar{gap:5px}
+.toolbar .view-icon,.language-switcher .view-icon{
+  display:inline-grid;
+  place-items:center;
+  width:34px;
+  min-width:34px;
+  height:34px;
+  min-height:34px;
+  padding:0;
+  border:1px solid transparent;
+  border-radius:8px;
+  background:transparent;
+  color:#6f756e;
+  touch-action:manipulation;
+  user-select:none;
+}
+.toolbar .view-icon svg,.language-switcher .view-icon svg{
+  width:19px;
+  height:19px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.45;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  pointer-events:none;
+}
+.toolbar .view-icon svg *,.language-switcher .view-icon svg *{pointer-events:none}
+.toolbar .view-icon:hover,.toolbar .view-icon:focus-visible,
+.language-switcher .view-icon:hover,.language-switcher .view-icon:focus-visible{
+  border-color:#c9cec6;
+  background:rgba(255,255,255,.72);
+  color:var(--accent);
+}
+.toolbar .view-icon[aria-pressed=true],.language-switcher .view-icon[aria-pressed=true]{
+  border-color:#c7d8d2;
+  background:var(--accent-soft);
+  color:var(--accent);
+  box-shadow:none;
+}
+@media(max-width:640px){
+  .toolbar{justify-content:flex-end}
+  .toolbar .view-icon,.language-switcher .view-icon{flex:0 0 34px;padding:0}
+}
+
+/* On narrow screens the experiment index remains available from a quiet
+   edge handle, leaving the top bar exclusively for the three view modes. */
+.mobile-nav-button{
+  position:fixed;
+  left:0;
+  top:84px;
+  z-index:39;
+  width:28px;
+  min-width:28px;
+  height:42px;
+  min-height:42px;
+  padding:0;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(86,91,82,.2);
+  border-left:0;
+  border-radius:0 9px 9px 0;
+  background:rgba(249,250,246,.88);
+  color:#747a73;
+  box-shadow:0 3px 10px rgba(38,43,36,.08);
+  backdrop-filter:blur(10px);
+}
+.mobile-nav-button svg{
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.5;
+  stroke-linecap:round;
+}
+.mobile-nav-button:hover,.mobile-nav-button:focus-visible{
+  color:var(--accent);
+  border-color:#c7d8d2;
+  background:rgba(255,255,255,.96);
+  outline:none;
+}
+@media(min-width:1041px){.mobile-nav-button{display:none}}
+@media(max-width:640px){.mobile-nav-button{top:103px}}
+@media print{.mobile-nav-button{display:none!important}}
+
+/* Experiment-project navigation and library index. */
+.brand a{color:inherit;text-decoration:none}
+.sidebar .sidebar-home-link{display:block;margin:0 8px 19px;padding:9px 10px;border:1px solid var(--rule);border-radius:8px;color:var(--accent);font-size:12px;font-weight:650;text-decoration:none}
+.sidebar-home-link:hover,.sidebar-home-link:focus-visible{border-color:var(--accent);background:var(--accent-soft);outline:none}
+.sidebar-tree{display:grid;gap:7px}
+.chapter-group{border:1px solid transparent;border-radius:9px}
+.chapter-group[open]{padding-bottom:6px;border-color:rgba(86,91,82,.14);background:rgba(255,255,255,.46)}
+.chapter-group.active-chapter{border-color:#c7d8d2;background:rgba(255,255,255,.68)}
+.chapter-group summary{position:relative;display:grid;grid-template-columns:auto 1fr;gap:7px;align-items:baseline;padding:9px 25px 9px 10px;border-radius:8px;color:#303a35;cursor:pointer;list-style:none}
+.chapter-group summary::-webkit-details-marker{display:none}
+.chapter-group summary::after{position:absolute;right:10px;top:10px;content:"›";color:var(--muted);font-size:17px;line-height:1;transform:rotate(0deg);transition:transform 150ms ease}
+.chapter-group[open] summary::after{transform:rotate(90deg)}
+.chapter-group summary:hover,.chapter-group summary:focus-visible{background:var(--accent-soft);outline:none}
+.chapter-group summary>span{color:var(--accent);font-size:12px;font-weight:720;white-space:nowrap}
+.chapter-group summary>small{overflow:hidden;color:var(--muted);font-size:10px;line-height:1.35;text-overflow:ellipsis;white-space:nowrap}
+.chapter-group ol{gap:2px;margin:0 7px 0 12px;padding-left:7px;border-left:1px solid rgba(86,91,82,.18)}
+.chapter-group .active{font-weight:650;box-shadow:inset 3px 0 0 var(--accent)}
+.library-page{min-height:100vh}
+.library-topbar{grid-template-columns:minmax(0,1fr) auto}
+.library-home{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:48px 0 80px}
+.library-intro{padding:40px 44px;border:1px solid rgba(86,91,82,.15);border-radius:18px;background:var(--paper);box-shadow:0 16px 42px rgba(38,43,36,.1)}
+.library-intro .eyebrow{margin:0 0 8px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.14em}
+.library-intro h2{margin:0 0 14px;font:700 32px/1.15 Georgia,"Times New Roman",serif}
+.library-intro>p:not(.eyebrow){max-width:72ch;margin:0;color:#50534a;font-size:14px;line-height:1.7}
+.search-box{display:block;margin-top:28px}
+.search-box span{display:block;margin:0 0 8px;color:var(--muted);font-size:12px;font-weight:700}
+.search-box input{width:100%;height:46px;padding:0 14px;border:1px solid var(--rule);border-radius:10px;background:#fff;color:var(--ink);font:14px/1.4 Inter,"Segoe UI",sans-serif}
+.search-box input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);outline:none}
+.search-status{min-height:20px;margin-top:10px;color:var(--muted);font-size:12px}
+.search-results{display:grid;gap:8px;margin:5px 0 0;padding:0;list-style:none}
+.search-results a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 18px;padding:12px 14px;border:1px solid var(--rule);border-radius:9px;color:inherit;text-decoration:none}
+.search-results a:hover,.search-results a:focus-visible{border-color:var(--accent);background:#f6faf8;outline:none}
+.search-results strong{font-size:13px}
+.search-results span{color:var(--muted);font-size:11px}
+.search-results p{grid-column:1/-1;margin:2px 0 0;color:#55594f;font:12px/1.5 Georgia,"Times New Roman",serif}
+.experiment-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+.experiment-card{display:flex;min-height:170px;flex-direction:column;padding:25px 27px;border:1px solid rgba(86,91,82,.16);border-radius:14px;background:var(--paper);color:inherit;text-decoration:none;box-shadow:0 8px 24px rgba(38,43,36,.06)}
+.experiment-card:hover,.experiment-card:focus-visible{border-color:#b5c9c2;box-shadow:0 12px 30px rgba(38,43,36,.1);outline:none}
+.experiment-card .card-number{margin-bottom:13px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.04em}
+.experiment-card strong{font:700 21px/1.25 Georgia,"Times New Roman",serif}
+.experiment-card>span:not(.card-number){margin-top:9px;color:var(--muted);font-size:12px}
+.experiment-card small{margin-top:auto;padding-top:18px;color:#7a7d75;font-size:11px}
+@media(max-width:720px){.library-home{width:min(100% - 20px,1120px);padding:18px 0 50px}.library-intro{padding:27px 22px}.library-intro h2{font-size:25px}.experiment-cards{grid-template-columns:1fr}.search-results a{grid-template-columns:1fr}.search-results p{grid-column:1}}
+
+/* Responsive reading scale, roomier desktop layout, and display themes. */
+:root{
+  --sidebar-w:340px;
+  --page-w:1180px;
+  --reader-font:15px;
+  --reader-heading:20px;
+  --reader-title:34px;
+  --sidebar-font:13px;
+  --sidebar-small:11px;
+  --paper-pad:44px;
+  --canvas-glow:rgba(255,255,255,.84);
+  --topbar-bg:rgba(248,250,246,.95);
+  --sidebar-bg:rgba(241,246,241,.82);
+  --heading-start:#f7faf7;
+  --heading-end:#edf4ef;
+  --nested-bg:rgba(250,253,250,.58);
+  --nav-text:#454b46;
+  --nav-active-text:#174d44;
+  --chrome-icon:#68736d;
+}
+:root[data-theme="mist"]{--ink:#192126;--muted:#626b70;--paper:#fdfefe;--canvas:#e8edef;--panel:rgba(247,250,251,.94);--rule:#cbd4d7;--accent:#506c78;--accent-soft:#dfe9ed;--canvas-glow:rgba(255,255,255,.8);--topbar-bg:rgba(245,249,250,.95);--sidebar-bg:rgba(238,244,247,.84);--heading-start:#f7fafb;--heading-end:#eaf2f5;--nested-bg:rgba(248,252,253,.62);--nav-text:#46545b;--nav-active-text:#405b67;--chrome-icon:#687a82}
+:root[data-theme="sand"]{--ink:#211f1a;--muted:#706b61;--paper:#fffefa;--canvas:#eeece5;--panel:rgba(250,249,244,.94);--rule:#d8d2c5;--accent:#796846;--accent-soft:#eee7d8;--canvas-glow:rgba(255,253,247,.78);--topbar-bg:rgba(250,248,241,.96);--sidebar-bg:rgba(246,243,234,.86);--heading-start:#fcfaf4;--heading-end:#f3eddf;--nested-bg:rgba(255,252,245,.65);--nav-text:#554f43;--nav-active-text:#6f5d3a;--chrome-icon:#7a705e}
+:root[data-theme="mauve"]{--ink:#211e22;--muted:#6d676f;--paper:#fffdfd;--canvas:#ece9ed;--panel:rgba(250,248,250,.94);--rule:#d6cfd8;--accent:#6d5d70;--accent-soft:#ebe3ec;--canvas-glow:rgba(255,252,255,.78);--topbar-bg:rgba(250,247,250,.96);--sidebar-bg:rgba(245,241,246,.86);--heading-start:#fbf8fb;--heading-end:#f1eaf2;--nested-bg:rgba(253,249,253,.65);--nav-text:#514b53;--nav-active-text:#625465;--chrome-icon:#756b78}
+:root[data-theme="gray"]{--ink:#202223;--muted:#696d70;--paper:#fff;--canvas:#eceeef;--panel:rgba(249,250,250,.95);--rule:#d2d5d7;--accent:#5e6a70;--accent-soft:#e4e8ea;--canvas-glow:rgba(255,255,255,.82);--topbar-bg:rgba(249,250,250,.96);--sidebar-bg:rgba(243,245,246,.88);--heading-start:#fafbfb;--heading-end:#eef1f2;--nested-bg:rgba(250,251,252,.68);--nav-text:#4a4f52;--nav-active-text:#535e63;--chrome-icon:#6b7377}
+
+body{background:radial-gradient(circle at 15% 0%,var(--canvas-glow),transparent 34rem),var(--canvas)}
+.topbar{background:var(--topbar-bg);border-bottom-color:color-mix(in srgb,var(--rule) 78%,transparent)}
+.sidebar{background:var(--sidebar-bg);border-right-color:color-mix(in srgb,var(--rule) 78%,transparent)}
+.sidebar{overflow-y:auto;scrollbar-gutter:stable}
+@supports not (scrollbar-gutter:stable){.sidebar{overflow-y:scroll}}
+.sidebar a{color:var(--nav-text)}
+.sidebar a span:first-child{color:color-mix(in srgb,var(--muted) 82%,var(--nav-text))}
+.sidebar a:hover,.sidebar a:focus-visible{background:color-mix(in srgb,var(--accent-soft) 78%,transparent);color:var(--accent);outline:none}
+.experiment-heading{background:linear-gradient(135deg,var(--heading-start),var(--heading-end))}
+.toolbar .view-icon,.language-switcher .view-icon{color:var(--chrome-icon)}
+
+@media(min-width:1041px){
+  .layout{grid-template-columns:var(--sidebar-w) minmax(0,1fr)}
+  .sidebar{padding:26px 22px 32px}
+  main{padding:34px max(24px,calc((100vw - var(--sidebar-w) - var(--page-w))/2)) 80px}
+}
+.sidebar-label{font-size:var(--sidebar-small)}
+.sidebar a{grid-template-columns:42px minmax(0,1fr);gap:10px;padding:9px 10px;font-size:var(--sidebar-font);line-height:1.38}
+.sidebar .sidebar-home-link{font-size:var(--sidebar-font)}
+.sample-note{font-size:var(--sidebar-small)}
+.experiment-title{font-size:var(--reader-title)}
+.experiment-title-zh{
+  margin:-4px 0 13px;
+  color:var(--muted);
+  font:500 14px/1.45 "Noto Serif SC","Songti SC","SimSun",serif;
+  letter-spacing:.02em;
+}
+.content-pane{font-size:var(--reader-font);line-height:1.6}
+.content-pane h3{font-size:var(--reader-heading)}
+.experiment-heading{padding:calc(var(--paper-pad) * .73) var(--paper-pad) calc(var(--paper-pad) * .57)}
+.page-block{padding:calc(var(--paper-pad) * .77) var(--paper-pad) var(--paper-pad)}
+.page-marker{right:var(--paper-pad)}
+body.show-original .page-block{padding:calc(var(--paper-pad) * .77) var(--paper-pad) var(--paper-pad)}
+body.show-original .page-marker{right:var(--paper-pad)}
+
+/* Chapter hierarchy without rails or a separate active-chapter surface. */
+.sidebar-tree{gap:5px}
+.sidebar-section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 8px 8px}
+.sidebar-section-heading .sidebar-label{margin:0}
+.sidebar-tree-actions{display:flex;gap:3px}
+.sidebar-tree-actions button{
+  display:grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  padding:0;
+  border:1px solid transparent;
+  border-radius:7px;
+  background:transparent;
+  color:var(--muted);
+}
+.sidebar-tree-actions button:hover,.sidebar-tree-actions button:focus-visible{border-color:var(--rule);background:var(--accent-soft);color:var(--accent);outline:none}
+.sidebar-tree-actions svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.sidebar-tree-actions button svg{transition:transform 160ms ease}
+.sidebar-tree-actions button[data-state="collapse"] svg{transform:rotate(180deg)}
+.chapter-group,.chapter-group[open],.chapter-group.active-chapter{
+  padding-bottom:0;
+  border-color:transparent;
+  background:transparent;
+}
+.chapter-group summary{padding:10px 28px 10px 10px}
+.chapter-group summary>span{font-size:var(--sidebar-font)}
+.chapter-group summary>small{font-size:var(--sidebar-small)}
+.chapter-group[open] summary{background:transparent}
+.chapter-group[open] summary:hover,.chapter-group[open] summary:focus-visible{background:var(--accent-soft)}
+.chapter-group ol{
+  gap:3px;
+  margin:2px 0 7px 16px;
+  padding:5px;
+  border-left:0;
+  border-radius:10px;
+  background:var(--nested-bg);
+}
+.sidebar .chapter-group a.active{
+  border:1px solid color-mix(in srgb,var(--accent) 24%,transparent);
+  background:var(--accent-soft);
+  color:var(--nav-active-text);
+  font-weight:680;
+  box-shadow:none;
+}
+.sidebar .chapter-group a.active:hover,.sidebar .chapter-group a.active:focus-visible{background:var(--accent-soft);color:var(--nav-active-text)}
+.sidebar .chapter-group a.active span,.sidebar .chapter-group a.active span:first-child{color:var(--nav-active-text)}
+
+/* Compact popover for automatic/manual scaling and low-saturation themes. */
+.display-control{position:relative}
+.display-panel[hidden]{display:none}
+.display-panel{
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+  z-index:60;
+  width:292px;
+  padding:16px;
+  border:1px solid var(--rule);
+  border-radius:13px;
+  background:color-mix(in srgb,var(--paper) 96%,transparent);
+  color:var(--ink);
+  box-shadow:0 18px 45px rgba(35,40,35,.17);
+  backdrop-filter:blur(18px);
+}
+.display-panel-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:15px}
+.display-panel-heading strong{font-size:13px}
+.display-panel-heading span{color:var(--muted);font-size:10px}
+.display-setting-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:11px;color:var(--muted);font-size:12px}
+.zoom-controls{display:grid;grid-template-columns:34px 88px 34px;align-items:center;border:1px solid var(--rule);border-radius:9px;overflow:hidden;background:var(--paper)}
+.toolbar .zoom-controls button{min-height:32px;padding:0;border:0;border-radius:0;background:transparent;color:var(--accent);font-size:18px}
+.toolbar .zoom-controls button:hover,.toolbar .zoom-controls button:focus-visible{background:var(--accent-soft);outline:none}
+.zoom-controls output{text-align:center;color:var(--ink);font-size:11px;font-variant-numeric:tabular-nums}
+.toolbar .auto-scale-button{width:100%;min-height:34px;margin-top:10px;padding:7px 10px;border:1px solid var(--rule);border-radius:9px;background:transparent;color:var(--muted);font-size:11px}
+.toolbar .auto-scale-button[aria-pressed="true"]{border-color:color-mix(in srgb,var(--accent) 34%,var(--rule));background:var(--accent-soft);color:var(--accent)}
+.theme-options{display:flex;gap:8px}
+.toolbar .theme-options button{position:relative;width:27px;min-width:27px;height:27px;min-height:27px;padding:0;border:1px solid rgba(40,45,40,.15);border-radius:50%;box-shadow:inset 0 0 0 4px rgba(255,255,255,.62)}
+.toolbar .theme-options button[data-theme="sage"]{background:#6f9389}
+.toolbar .theme-options button[data-theme="mist"]{background:#7f9aa5}
+.toolbar .theme-options button[data-theme="sand"]{background:#a58f68}
+.toolbar .theme-options button[data-theme="mauve"]{background:#948198}
+.toolbar .theme-options button[data-theme="gray"]{background:#92999d}
+.toolbar .theme-options button[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:2px}
+
+@media(max-width:1040px){
+  .content-pane{font-size:max(15px,var(--reader-font))}
+  .experiment-title{font-size:min(30px,var(--reader-title))}
+}
+@media(max-width:640px){
+  .display-panel{position:fixed;top:96px;right:10px;left:10px;width:auto}
+  .experiment-heading{padding:25px 20px 20px}
+  .page-block,body.show-original .page-block{padding:24px 20px 30px}
+  .page-marker,body.show-original .page-marker{right:20px}
+}
+
+
+
+ .report-document {
+  --bg:#fff; --text:#1f2933; --heading:#102a43; --muted:#5f6b76;
+  --border:#d9e0e6; --soft:#f6f8fa; --link:#1756a9;
+} .report-document * { box-sizing:border-box; } .report-document { scroll-behavior:smooth; } .report-document {
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;
+  line-height:1.78;
+} .report-document .layout {
+  display:grid; grid-template-columns:290px minmax(0,1fr);
+  max-width:1540px; margin:0 auto;
+} .report-document aside {
+  position:sticky; top:0; height:100vh; overflow:auto;
+  padding:28px 22px; border-right:1px solid var(--border); background:#fbfcfd;
+} .report-document aside h2 { margin:0 0 16px; font-size:16px; border:0; color:var(--heading); } .report-document #toc a {
+  display:block; text-decoration:none; color:#425466;
+  padding:4px 0; font-size:13px; line-height:1.45;
+} .report-document #toc .lv3 { padding-left:14px; font-size:12.5px; } .report-document #toc .lv4 { padding-left:28px; font-size:12px; } .report-document main { min-width:0; max-width:1160px; padding:48px 58px 90px; } .report-document h1,.report-document h2,.report-document h3,.report-document h4 { color:var(--heading); line-height:1.35; } .report-document h1 {
+  font-size:30px; margin:0 0 34px; padding-bottom:18px;
+  border-bottom:2px solid var(--heading);
+} .report-document h2 {
+  font-size:23px; margin-top:52px; padding-bottom:8px;
+  border-bottom:1px solid var(--border);
+} .report-document h3 { font-size:19px; margin-top:36px; } .report-document h4 { font-size:16px; margin-top:26px; } .report-document p { margin:.9em 0; } .report-document strong { color:#172b4d; } .report-document a { color:var(--link); text-decoration:none; } .report-document a:hover { text-decoration:underline; } .report-document table {
+  width:100%; border-collapse:collapse; margin:22px 0 30px;
+  font-size:13.3px; line-height:1.55;
+} .report-document th,.report-document td {
+  border:1px solid var(--border); padding:9px 10px; vertical-align:top;
+} .report-document th { background:var(--soft); color:var(--heading); font-weight:650; } .report-document tr:nth-child(even) td { background:#fcfdfe; } .report-document .math-display {
+  overflow-x:auto; overflow-y:hidden; margin:1.15em 0; padding:.15em 0;
+} .report-document .math-inline { white-space:nowrap; } .report-document .mermaid {
+  width:100%; max-width:1080px; margin:30px auto;
+  padding:16px; overflow:auto; border:1px solid var(--border);
+  border-radius:8px; background:#fff;
+} .report-document .mermaid svg {
+  width:100% !important; height:auto !important; max-width:1040px !important;
+  display:block; margin:0 auto;
+} .report-document .footer {
+  margin-top:64px; padding-top:18px; border-top:1px solid var(--border);
+  color:var(--muted); font-size:12px;
+}
+@media (max-width:1050px) {
+  .report-document .layout { display:block; } .report-document aside { display:none; } .report-document main { max-width:none; padding:28px 20px 60px; } .report-document h1 { font-size:25px; } .report-document table { display:block; overflow-x:auto; }
+}
+@media print {
+  .report-document aside { display:none; } .report-document .layout { display:block; } .report-document main { max-width:none; padding:0; }
+}
+
+.report-document{--bg:#f6f6f3;--text:#26333a;--heading:#193d53;--border:#d9ddd9;--link:#355c7d;font-family:inherit}.report-document .layout{max-width:1300px}.report-document aside{top:16px;background:transparent}.report-document main{padding:35px 40px 80px}.report-document h1{font-size:30px}.report-document table{display:block;overflow:auto}.report-document pre{overflow:auto}@media(max-width:760px){.report-document .layout{display:block!important}.report-document aside{display:none!important}.report-document main{padding:24px!important}.report-document h1{font-size:24px}}
+
+/* Notes adaptations; the reader baseline retains NMR_EXP geometry and themes. */
+.brand h2{margin:0;overflow:hidden;font-size:17px;font-weight:680;letter-spacing:.01em;text-overflow:ellipsis;white-space:nowrap}
+.sidebar-tools{display:flex;gap:8px;margin:0 8px 8px;align-items:center}.sidebar .home-button{display:grid;place-items:center;flex:0 0 36px;height:36px;padding:0;border:1px solid var(--rule);border-radius:8px;color:var(--accent);background:var(--paper)}.home-button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+#reader-search{width:100%;min-width:0;height:36px;border:1px solid var(--rule);border-radius:8px;padding:0 10px;background:var(--paper);color:var(--ink);font:var(--sidebar-font) Inter,"Segoe UI",sans-serif}#reader-search:focus{outline:2px solid var(--accent-soft);border-color:var(--accent)}
+.search-navigation{display:flex;align-items:center;justify-content:flex-end;gap:5px;margin:0 8px 18px;font-size:11px;color:var(--muted)}.search-navigation output{margin-right:auto}.search-navigation button{border:1px solid var(--rule);border-radius:5px;background:transparent;padding:2px 7px}
+.chapter-group summary>a{display:block;padding:0;font-size:var(--sidebar-small);line-height:1.35;color:var(--muted)}.chapter-group summary>a:hover{background:transparent}.chapter-group summary>a.active{color:var(--accent)}
+.note-summary{margin:0 0 14px;color:var(--muted);font:500 14px/1.6 "Noto Serif SC","Songti SC",serif}.note-dates{display:flex;gap:18px;color:var(--muted);font-size:11px}.note-dates:empty{display:none}.note-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.note-tags a{padding:3px 8px;border:1px solid var(--rule);border-radius:999px;color:var(--accent);text-decoration:none;font-size:11px}
+.note-paper{overflow:visible}.note-paper.paginated-shell{background:transparent;box-shadow:none;margin:0}.note-page{position:relative;overflow:hidden;margin:0 0 30px;background:var(--paper);box-shadow:0 16px 42px rgba(38,43,36,.13),0 2px 8px rgba(38,43,36,.08);scroll-margin-top:92px}.note-page .page-block{padding-bottom:calc(var(--paper-pad) + 12px)}
+#note-content{color:var(--ink);font:var(--reader-font)/1.6 Georgia,"Times New Roman","Noto Serif SC","Songti SC",SimSun,serif}#note-content h2{font-size:calc(var(--reader-heading) * 1.15);margin:0 0 20px;color:var(--ink);border:0}#note-content h3{font-size:var(--reader-heading);margin:30px 0 12px}#note-content h4{font-size:calc(var(--reader-font) * 1.07);margin:24px 0 10px}#note-content p{margin:0 0 14px}#note-content a{color:var(--accent)}#note-content h2,#note-content h3{scroll-margin-top:92px}.heading-anchor{margin-left:8px;opacity:0;font:12px Inter,sans-serif;text-decoration:none}h2:hover .heading-anchor,h3:hover .heading-anchor,.heading-anchor:focus{opacity:.7}
+#note-content .report-document{background:transparent;color:inherit;font:inherit;--border:var(--rule);--heading:var(--ink);--text:var(--ink);--link:var(--accent);--soft:var(--accent-soft)}#note-content .report-document .layout{display:block;max-width:none;margin:0}#note-content .report-body{padding:0;background:transparent}#note-content strong{color:inherit}#note-content .report-document tr:nth-child(even) td{background:transparent}#note-content .mermaid{background:var(--paper)}
+.table-scroll{overflow:auto;max-width:100%;margin:20px 0}.table-scroll table{display:table!important;width:100%;border-collapse:collapse;margin:0!important;font-size:.9em}th,td{border:1px solid var(--rule);padding:9px;vertical-align:top}th{background:var(--accent-soft)}pre{overflow:auto}img,svg{max-width:100%}.code-copy{border:1px solid var(--rule);border-radius:5px;background:var(--paper);font-size:11px}mark[data-reader-match]{background:#f3d78a;color:#1c252a}mark.current{outline:2px solid var(--accent)}.note-attachments{padding:24px var(--paper-pad);background:var(--paper)}
+.skip-link{position:fixed;left:12px;top:-60px;z-index:100;background:var(--paper);padding:10px}.skip-link:focus{top:8px}.drawer-backdrop{position:fixed;inset:73px 0 0;z-index:34;background:rgba(20,30,35,.2);border:0}.drawer-backdrop[hidden]{display:none}
+@media(max-width:640px){.topbar{grid-template-columns:minmax(0,1fr) auto;gap:8px}.sidebar{top:58px;height:calc(100vh - 58px)}.mobile-nav-button{top:76px}.display-panel{top:62px}.drawer-backdrop{top:58px}.note-page{margin-bottom:18px}.note-page .page-block{padding:24px 20px 44px}.note-summary{font-size:13px}#note-content{font-size:max(15px,var(--reader-font))}}
+@media print{.topbar,.sidebar,.mobile-nav-button,.drawer-backdrop,.code-copy,.heading-anchor,.skip-link{display:none!important}.experiment-heading{display:block!important}.note-page{box-shadow:none;margin:0;overflow:visible;break-after:page;page-break-after:always}.note-page:last-child{break-after:auto;page-break-after:auto}.page-block{break-after:auto!important;page-break-after:auto!important}.note-page h2,.note-page h3{break-after:avoid}.note-page table,.note-page figure,.math-display{break-inside:avoid}#note-content{font-size:11pt}.note-paper:not(.paginated-shell) #note-content{padding:24pt}body{background:#fff}}
+
+/* Match the reference reader hierarchy without the legacy report H1 rule. */
+:root{--reader-font:14px;--reader-heading:17px;--reader-title:28px}
+#note-content .experiment-heading{border:0;background:linear-gradient(135deg,var(--heading-start),var(--heading-end))}
+#note-content .note-heading h1.experiment-title{margin:0 0 12px;padding:0;border:0;font:700 var(--reader-title)/1.25 Georgia,"Times New Roman","Noto Serif SC","Songti SC",SimSun,serif;color:var(--ink)}
+#note-content h2.note-section-title{margin:0;padding:0;border:0;font:700 calc(var(--reader-heading) * 1.4)/1.3 Georgia,"Times New Roman","Noto Serif SC","Songti SC",SimSun,serif;color:var(--ink)}
+#note-content .note-heading h2.note-section-title{margin-top:18px}
+#note-content h3,#note-content h4{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",SimSun,serif;line-height:1.3;border:0;padding:0}
+#note-content .experiment-label{font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:calc(var(--reader-font) * .85);margin:0 0 10px}
+#note-content .note-summary{font-size:calc(var(--reader-font) * .93);line-height:1.55;margin:0 0 12px}
+@media(max-width:640px){#note-content .note-heading h1.experiment-title{font-size:24px}#note-content h2.note-section-title{font-size:21px}}
+
+.chapter-leaf-row{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px;align-items:baseline;padding:10px 28px 10px 10px;border-radius:8px}
+.chapter-leaf-row>span{font-size:var(--sidebar-font);font-weight:720;color:var(--accent)}
+.sidebar .chapter-leaf-row>a{display:block;padding:0;font-size:var(--sidebar-small);line-height:1.35;color:var(--muted)}
+.chapter-leaf-row:has(a.active){background:var(--accent-soft)}.sidebar .chapter-leaf-row>a.active{color:var(--accent);background:transparent;font-weight:680}.chapter-leaf-row:hover{background:var(--accent-soft)}
+
+/* Confirmed Notes typography, A4-like margins, and content-led tables. */
+.note-brand-line{display:flex;gap:10px;align-items:center;min-width:0}.note-brand-icon{flex:0 0 24px;object-fit:contain}.note-brand-line h2{min-width:0}.brand>p{margin-left:34px}
+.sidebar .home-button{border:0;background:transparent}.sidebar .home-button:hover{background:var(--accent-soft)}.sidebar .home-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sidebar .chapter-group summary>a,.sidebar .chapter-leaf-row>a{font-size:var(--sidebar-font);font-weight:650}.sidebar .chapter-group ol a{font-size:calc(var(--sidebar-font) * .923);font-weight:400}.chapter-group summary{grid-template-columns:auto minmax(0,1fr)}.chapter-group summary>a{white-space:normal}
+.note-page{container-type:inline-size}.note-page .experiment-heading,.note-page .page-block{padding-left:12.1%;padding-right:12.1%}.note-page .experiment-heading{padding-top:clamp(42px,12.1cqw,143px);padding-bottom:26px}.note-page .page-block{padding-top:32px;padding-bottom:clamp(42px,12.1cqw,143px)}
+#note-content h3{font-weight:700;padding-bottom:6px;border-bottom:1px solid var(--rule);margin-top:32px;margin-bottom:14px}.section-number{display:inline-block;margin-right:.65em;color:var(--accent);font-family:Inter,"Segoe UI",sans-serif;font-size:.85em;font-variant-numeric:tabular-nums}
+#note-content .section-label{margin-top:18px}#note-content .note-section-heading .section-label{margin-top:0}
+.sidebar-copyright{margin:24px 8px 0;padding-top:16px;border-top:1px solid var(--rule);font-size:11px;color:var(--muted);line-height:1.65;overflow-wrap:anywhere}.sidebar .sidebar-copyright a{display:inline;padding:0;font-size:inherit;color:inherit;text-decoration:underline;background:transparent}
+#note-content .table-scroll table{width:max-content!important;max-width:100%;table-layout:auto;font-size:.92em}#note-content .table-scroll th,#note-content .table-scroll td{white-space:normal;overflow-wrap:break-word;min-width:0}#note-content .report-document table{width:auto}.table-scroll{width:100%}
+@media(max-width:640px){.note-page .experiment-heading{padding:28px 24px 20px}.note-page .page-block{padding:24px 24px 32px}.brand>p{margin-left:0}}
+@media print{.note-page .experiment-heading{padding:2.54cm 2.54cm .6cm}.note-page .page-block{padding:.6cm 2.54cm 2.54cm}}
+
+/* Screenshot corrections: compact heading, two-row brand and centered tables. */
+.note-brand-line{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:10px;row-gap:3px;align-items:center}
+.note-brand-icon{grid-column:1;grid-row:1 / 3;width:40px;height:40px}
+.note-brand-line h2,.note-brand-line p{grid-column:2;margin:0}.note-brand-line p{display:block}
+.sidebar .chapter-group summary>a,.sidebar .chapter-leaf-row>a,.sidebar .chapter-group summary>span,.sidebar .chapter-leaf-row>span{font-weight:400}
+.note-page .experiment-heading{padding-top:28px}
+#note-content .table-scroll table{margin-left:auto!important;margin-right:auto!important}
+#note-content .math-inline{display:inline;overflow:visible;max-width:100%}
+#note-content .math-display,#note-content mjx-container{overflow:visible!important}
+#note-content mjx-container:not([display="true"]){display:inline-block;max-width:100%;vertical-align:baseline}
+#note-content .reasoning-flow{display:flex;flex-wrap:wrap;justify-content:center;gap:.35em .5em;margin:24px 0;line-height:1.6}
+#note-content .reasoning-flow span{white-space:nowrap}
+@media(max-width:640px){.note-page .experiment-heading{padding-top:24px}.note-brand-line{grid-template-columns:36px minmax(0,1fr)}.note-brand-icon{width:36px;height:36px}}
+@media print{.note-page .experiment-heading{padding-top:.6cm}}
+
+.sidebar .chapter-group summary>a.active,.sidebar .chapter-leaf-row>a.active{font-weight:400}
+
+.note-home-link{grid-column:1;grid-row:1 / 3;display:grid;place-items:center;border-radius:5px}.note-home-link .note-brand-icon{grid-column:auto;grid-row:auto}.note-home-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Continuous documentation layout; theme colors and settings remain shared. */
+:root{--sidebar-w:280px;--page-w:860px;--reader-font:16px;--reader-heading:20px;--reader-title:32px;--sidebar-font:14px;--sidebar-small:13px}
+body.note-reader{background:var(--paper);font-family:"Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif}
+.topbar{height:68px;padding:12px 24px;box-shadow:none;background:var(--topbar-bg);border-bottom:1px solid var(--rule)}
+.reader-layout{display:grid;grid-template-columns:var(--sidebar-w) minmax(0,1fr);max-width:none;margin:0}
+.sidebar{position:sticky;top:68px;height:calc(100vh - 68px);width:auto;padding:24px 16px;background:var(--sidebar-bg);box-shadow:none;transform:none}
+#note-main{min-width:0;padding:42px 48px 90px;background:var(--paper)}
+.note-paper.experiment{width:100%;max-width:var(--page-w);margin:0 auto;background:transparent;box-shadow:none;overflow:visible}
+.note-heading.experiment-heading{padding:0 0 28px;margin:0 0 32px;background:transparent;border:0;border-bottom:1px solid var(--rule)}
+.note-category{font-size:12px;margin:0 0 10px;color:var(--muted);font-weight:500}
+.note-heading .experiment-title{font:650 var(--reader-title)/1.4 "Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;margin:0 0 14px;padding:0;border:0;color:var(--ink)}
+.note-summary{font:400 15px/1.75 "Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;margin:0;color:var(--muted)}
+.note-tags{margin-top:14px}.note-tags a{border:0;border-radius:4px;background:var(--accent-soft);font-size:12px;padding:3px 9px}.note-dates:empty{display:none}
+#note-content,#note-content .report-document{font:var(--reader-font)/1.8 "Segoe UI","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;color:var(--ink);background:transparent}
+#note-content .report-document .layout{display:block;max-width:none;margin:0}#note-content .report-body{padding:0;max-width:none}
+#note-content p{text-align:left;hyphens:none;margin:0 0 18px}#note-content li{margin:7px 0}#note-content ol,#note-content ul{padding-left:1.6em}
+#note-content h2,#note-content h3,#note-content h4{font-family:inherit;border:0;padding:0;line-height:1.5;scroll-margin-top:90px;color:var(--ink)}
+#note-content h2{font-size:calc(var(--reader-font)*1.5);font-weight:650;margin:48px 0 20px}#note-content .report-body>h2:first-child{margin-top:0}
+#note-content h3{font-size:var(--reader-heading);font-weight:650;margin:32px 0 16px}#note-content h4{font-size:calc(var(--reader-font)*1.0625);font-weight:650;margin:26px 0 12px}
+.section-number{font-family:inherit;font-size:.86em;font-weight:500;color:var(--accent);margin-right:.65em}
+.sidebar .chapter-group,.sidebar .chapter-group[open],.sidebar .chapter-group.active-chapter{background:transparent;border:0;border-radius:0;margin:2px 0;padding:0;box-shadow:none}
+.sidebar .chapter-group ol{background:transparent;border:0;border-left:1px solid var(--rule);border-radius:0;margin:0 0 8px 15px;padding:0 0 0 8px}
+.sidebar .chapter-group summary,.chapter-leaf-row{padding:10px 22px 10px 8px;border-radius:4px;gap:7px}
+.sidebar .chapter-group summary>a,.sidebar .chapter-leaf-row>a{font-size:14px;line-height:1.5;font-weight:400;color:var(--ink);border:0;box-shadow:none;background:transparent}
+.sidebar .chapter-group summary>span,.sidebar .chapter-leaf-row>span{font-size:11px;color:var(--muted)}
+.sidebar .chapter-group ol a{grid-template-columns:31px minmax(0,1fr);font-size:13px;line-height:1.5;padding:7px 8px;border:0;border-radius:3px}
+.sidebar .chapter-group a.active{box-shadow:none;background:var(--accent-soft);color:var(--accent);border:0;font-weight:500}
+.sidebar .chapter-group summary:has(a.active),.chapter-leaf-row:has(a.active){background:var(--accent-soft)}
+.sidebar .chapter-group summary>a.active,.sidebar .chapter-leaf-row>a.active{background:transparent;font-weight:500}
+.chapter-leaf-row:has(>span:empty){grid-template-columns:1fr}.chapter-leaf-row>span:empty{display:none}
+#note-content .math-display{margin:18px 0;padding:4px 0;overflow:visible}#note-content .table-scroll table{font-size:.875em;line-height:1.65;width:auto!important;max-width:100%;margin-inline:auto!important}
+#note-content th,#note-content td{padding:10px 12px;border:0;border-bottom:1px solid var(--rule)}#note-content th{background:var(--accent-soft);text-align:left;font-weight:600}
+#note-content .mermaid{padding:14px 0;border:0;background:transparent}.sidebar-copyright{font-size:10px}
+#note-content a:not(.heading-anchor):hover{text-decoration:underline}#note-content .table-scroll{margin:24px 0}.brand h2{font-weight:600}
+@media(max-width:1040px) and (min-width:901px){.reader-layout{grid-template-columns:var(--sidebar-w) minmax(0,1fr)}.sidebar{position:sticky;transform:none;width:auto;z-index:auto}.mobile-nav-button{display:none}#note-main{padding:36px 30px 70px}}
+@media(max-width:900px){.reader-layout{display:block}.sidebar{position:fixed;top:68px;left:0;z-index:35;width:min(86vw,300px);height:calc(100vh - 68px);transform:translateX(-102%);background:var(--paper)}.nav-open .sidebar{transform:translateX(0)}.mobile-nav-button{display:grid;position:fixed;top:82px;left:12px;z-index:30;background:var(--paper)}#note-main{padding:64px 28px 60px}.drawer-backdrop{top:68px}.display-panel{top:68px}.topbar{padding:10px 16px}.note-brand-line p{display:block}}
+@media(max-width:640px){#note-main{padding:64px 20px 48px}.note-heading .experiment-title{font-size:27px}.note-summary{font-size:14px}#note-content{font-size:16px}.note-brand-line h2{font-size:15px}.sidebar{top:68px;height:calc(100vh - 68px)}.topbar{height:68px}.display-panel{top:68px}}
+@media print{.reader-layout{display:block}#note-main{padding:0}.note-heading.experiment-heading{display:block!important}body.note-reader{background:#fff}.note-paper.experiment{max-width:none;box-shadow:none}#note-content{font-size:11pt}#note-content h2{break-before:auto}.table-scroll{overflow:visible}h2,h3,h4{break-after:avoid}tr{break-inside:avoid}@page{margin:2cm}}
+
+/* Center the complete documentation surface, not individual paragraphs. */
+body.note-reader{background:var(--paper)}
+.topbar{max-width:1240px;margin-inline:auto}
+.reader-layout{max-width:1240px;margin-inline:auto;grid-template-columns:var(--sidebar-w) minmax(0,1fr)}
+#note-main{padding:42px 44px 90px}
+.sidebar{border-left:0;border-right:1px solid var(--rule)}
+@media(min-width:1440px){.reader-layout{max-width:1240px}}
+@media(max-width:900px){.reader-layout{display:block}#note-main{padding:64px 28px 60px}}
+@media(max-width:640px){#note-main{padding:64px 20px 48px}}
+@media print{.reader-layout,.topbar{max-width:none}#note-main{padding:0}}
+</style></head><body class="note-reader"><a class="skip-link" href="#note-main">跳至正文</a>
+<header class="topbar"><div class="brand"><div class="note-brand-line"><a class="note-home-link" href="https://plastocyanin.org/" aria-label="返回主页" title="返回主页"><img class="note-brand-icon" src="https://plastocyanin.org/assets/images/imasen_phi_logo/favicon.ico" width="40" height="40" alt=""></a><h2>W 波段 EPR</h2><p>Notes · 磁共振</p></div></div><div class="toolbar"><div class="display-control"><button id="open-display" class="view-icon" aria-label="显示设置" title="显示设置" aria-controls="note-display-panel" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6"/></svg></button><section id="note-display-panel" class="display-panel" hidden aria-label="显示设置"><div class="display-panel-heading"><strong>显示设置</strong><span>阅读比例与主题</span></div><div class="display-setting-row"><span>阅读比例</span><div class="zoom-controls"><button id="reader-smaller" aria-label="缩小">−</button><output id="reader-scale">自动</output><button id="reader-larger" aria-label="放大">＋</button></div></div><button id="reader-auto" class="auto-scale-button" aria-pressed="true">自动适应屏幕</button><div class="display-setting-row"><span>主题</span><div class="theme-options"><button data-theme="sage" aria-label="鼠尾草绿"></button><button data-theme="mist" aria-label="雾蓝"></button><button data-theme="sand" aria-label="暖砂"></button><button data-theme="mauve" aria-label="灰紫"></button><button data-theme="gray" aria-label="浅灰"></button></div></div></section></div></div></header>
+<button id="toggle-toc" class="mobile-nav-button" aria-label="文章目录" aria-controls="note-sidebar" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M6 5h12M6 12h12M6 19h12"/></svg></button>
+<div class="layout reader-layout"><aside class="sidebar" id="note-sidebar" aria-label="文章目录"><div class="sidebar-tools"><a class="home-button" href="https://plastocyanin.org/notes/" aria-label="返回 Notes" title="返回 Notes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9"/></svg></a><input id="reader-search" type="search" placeholder="搜索本文" aria-label="搜索本文" autocomplete="off"></div><div class="search-navigation"><output id="reader-search-count" aria-live="polite">0 / 0</output><button id="search-prev" aria-label="上一项">↑</button><button id="search-next" aria-label="下一项">↓</button><button id="search-clear">清除</button></div><div class="sidebar-section-heading"><p class="sidebar-label">本文目录</p><div class="sidebar-tree-actions"><button id="toc-collapse" aria-label="收起全部小节" aria-expanded="true"><svg viewBox="0 0 24 24"><path d="m7 14 5-5 5 5"/></svg></button></div></div><nav id="note-toc" class="sidebar-tree"></nav><footer class="sidebar-copyright">© 2026 Hyphoon <a href="mailto:wuhaifeng@ustc.edu.cn">wuhaifeng@ustc.edu.cn</a>. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。</footer></aside><main id="note-main"><article class="note-paper experiment"><header class="note-heading experiment-heading"><p class="note-category experiment-label">磁共振</p><h1 class="experiment-title">W 波段 EPR 的物理基础、主要应用主线与代表性案例</h1><p class="note-summary">从频率与自旋哈密顿量出发，整理 W 波段的应用机制、案例与仪器需求。</p><div class="note-dates"></div><div class="note-tags"><a href="https://plastocyanin.org/notes/?tag=EPR">EPR</a><a href="https://plastocyanin.org/notes/?tag=W-band">W-band</a></div></header><div id="note-content" class="content-pane">
+<div class="report-document">
+
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+mermaid.initialize({
+  startOnLoad:true,
+  securityLevel:'loose',
+  theme:'default',
+  flowchart:{ useMaxWidth:true, htmlLabels:true, nodeSpacing:22, rankSpacing:36, curve:'basis' }
+});
+</script>
+
+<div class="layout">
+
+<div class="report-body">
+
+<h2 id="摘要">摘要</h2>
+<p>W 波段电子顺磁共振通常工作在约 <span class="math-inline">\(94\!-\!95\ \mathrm{GHz}\)</span> 。对于 <span class="math-inline">\(g\approx2\)</span> 的电子自旋，其共振磁场约为 <span class="math-inline">\(3.35\!-\!3.39\ \mathrm{T}\)</span> 。与 X 波段和 Q 波段相比，W 波段最重要的差异并不是“频率更高”这一表面参数，而是外磁场增加后，电子 Zeeman 相互作用与 <span class="math-inline">\(g\)</span> 各向异性、hyperfine、zero-field splitting（ZFS）、交换、电子—电子偶极耦合以及分子运动之间的相对能标发生系统变化。</p>
+<p>这一本质决定了 W 波段的主要科研价值可以归纳为五条主线：</p>
+<ol>
+<li><strong>利用高场增强 <span class="math-inline">\(g\)</span>-tensor 各向异性对应的共振场分离提高电子结构分辨能力</strong>，典型对象包括有机自由基、nitroxide、Cu(II)、V(IV)、金属蛋白以及固体缺陷；</li>
+<li><strong>利用电子 Zeeman 与 ZFS 的相对尺度变化研究高自旋体系</strong>，典型对象包括 Fe、Co、Ni、Mn 配合物、分子磁体、Gd(III) 和部分稀土体系；</li>
+<li><strong>利用高场取向选择获得局域结构信息</strong>，主要通过 ENDOR、ESEEM/HYSCORE、DEER/PELDOR、RIDME 等实验解析 hyperfine tensor、电子—电子距离和相对取向；</li>
+<li><strong>利用高频下增强的 <span class="math-inline">\(g/A\)</span> 动态调制研究快速分子运动与局域环境</strong>，尤其适用于 nitroxide spin labeling、蛋白、IDP、RNA 和膜体系；</li>
+<li><strong>利用高场低温条件下的高电子自旋极化和可寻址能级研究相干与量子自旋动力学</strong>，典型对象包括 rare-earth ions、molecular spin qubits、固体缺陷和受控耦合多自旋体系。</li>
+</ol>
+<p>这五条主线并不是五个彼此独立的应用行业，而是五种可由 spin Hamiltonian 追溯的高场物理机制。生物、催化、材料、光化学和量子信息等研究领域只是这些机制在不同样品体系中的具体落点。</p>
+<h2 id="理论基础-频率进入自旋-hamiltonian-后改变了什么">理论基础：频率进入自旋 Hamiltonian 后改变了什么</h2>
+<p>一般的 EPR 自旋 Hamiltonian 可写为</p>
+<p></p><div class="math-display">\[\hat H=
+\underbrace{\mu_B\mathbf B_0\cdot\mathbf g\cdot\hat{\mathbf S}}_{\text{electron Zeeman}}
+-\underbrace{\sum_k g_{n,k}\mu_N\mathbf B_0\cdot\hat{\mathbf I}_k}_{\text{nuclear Zeeman}}
++\underbrace{\sum_k\hat{\mathbf S}\cdot\mathbf A_k\cdot\hat{\mathbf I}_k}_{\text{hyperfine}}
++\underbrace{\hat{\mathbf S}\cdot\mathbf D\cdot\hat{\mathbf S}}_{\text{ZFS}}
++\underbrace{\sum_{ij}J_{ij}\hat{\mathbf S}_i\cdot\hat{\mathbf S}_j}_{\text{exchange}}
++\underbrace{\sum_{ij}\hat{\mathbf S}_i\cdot\mathbf D_{ij}^{ee}\cdot\hat{\mathbf S}_j}_{\text{e--e dipolar}}
++\cdots\]</div>
+<p>不同文献对 exchange Hamiltonian 的 <span class="math-inline">\(J\)</span> 符号和系数约定可能不同，因此比较实验 <span class="math-inline">\(J\)</span> 时必须先统一定义。W 波段产生的主要谱学差异，可以从上式中外场相关项与分子内禀相互作用项的相对能标变化出发理解。</p>
+<h3 id="基本能标">基本能标</h3>
+<p>对 <span class="math-inline">\(g=2.0023\)</span> ：</p>
+<table>
+<thead>
+<tr>
+<th>波段</th>
+<th style="text-align:right"><span class="math-inline">\(\nu\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(B_0\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(h\nu/hc\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(h\nu/k_B\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(\lambda=c/\nu\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(\Delta B\)</span> , <span class="math-inline">\(\Delta g=10^{-3}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X</td>
+<td style="text-align:right">9.5 GHz</td>
+<td style="text-align:right">0.339 T</td>
+<td style="text-align:right">0.317 cm <span class="math-inline">\(^{-1}\)</span></td>
+<td style="text-align:right">0.456 K</td>
+<td style="text-align:right">31.6 mm</td>
+<td style="text-align:right">0.169 mT</td>
+</tr>
+<tr>
+<td>Q</td>
+<td style="text-align:right">34 GHz</td>
+<td style="text-align:right">1.213 T</td>
+<td style="text-align:right">1.134 cm <span class="math-inline">\(^{-1}\)</span></td>
+<td style="text-align:right">1.632 K</td>
+<td style="text-align:right">8.82 mm</td>
+<td style="text-align:right">0.607 mT</td>
+</tr>
+<tr>
+<td>W</td>
+<td style="text-align:right">94 GHz</td>
+<td style="text-align:right">3.354 T</td>
+<td style="text-align:right">3.136 cm <span class="math-inline">\(^{-1}\)</span></td>
+<td style="text-align:right">4.511 K</td>
+<td style="text-align:right">3.19 mm</td>
+<td style="text-align:right">1.677 mT</td>
+</tr>
+</tbody>
+</table>
+<p>94 GHz、6 T 级超导磁体以及 CW/FT/ENDOR/ELDOR 是成熟 W-band 平台的典型配置；高功率自建系统则已达到 ns 量级脉冲和 GHz 级瞬时带宽。</p>
+<h3 id="电子-zeeman-与-g-tensor">电子 Zeeman 与 <span class="math-inline">\(g\)</span> -tensor</h3>
+<p>对一个给定分子取向 <span class="math-inline">\(\mathbf n\)</span> ，</p>
+<p></p><div class="math-display">\[g_{\rm eff}(\mathbf n)
+=
+\sqrt{
+\mathbf n^{\mathrm T}\mathbf g^{\mathrm T}\mathbf g\,\mathbf n
+},\]</div>
+<p>共振位置近似为</p>
+<p></p><div class="math-display">\[B_{\rm res}(\mathbf n)
+=
+\frac{h\nu}{\mu_B g_{\rm eff}(\mathbf n)}.\]</div>
+<p>微小 <span class="math-inline">\(g\)</span> 差异满足</p>
+<p></p><div class="math-display">\[\left|\frac{\partial B}{\partial g}\right|
+=
+\frac{B}{g},\]</div>
+<p>因此</p>
+<p></p><div class="math-display">\[|\Delta B_g|\simeq
+B_0\frac{|\Delta g|}{g}\]</div>
+<p>是 W-band <span class="math-inline">\(g\)</span> -resolution 的基本公式。这里增加的是<strong>场轴上的 <span class="math-inline">\(g\)</span> 色散</strong>，而不是 <span class="math-inline">\(g\)</span> 本身发生改变。例如 <span class="math-inline">\(\Delta g=10^{-4}\)</span> 时，W-band 仍对应约 <span class="math-inline">\(0.168\ \mathrm{mT}\)</span> ，与 X-band 下 <span class="math-inline">\(\Delta g=10^{-3}\)</span> 的场分离相当。</p>
+<h3 id="hyperfine-a">Hyperfine <span class="math-inline">\(A\)</span></h3>
+<p>对最简单的 <span class="math-inline">\(S=1/2\)</span> 、 <span class="math-inline">\(I=1/2\)</span> 体系，</p>
+<p></p><div class="math-display">\[E(m_S,m_I)
+\simeq
+g\mu_BB_0m_S+A m_Sm_I.\]</div>
+<p>一阶 EPR 超精细间隔</p>
+<p></p><div class="math-display">\[\Delta B_A\simeq\frac{A}{g\mu_B}\]</div>
+<p>并不会像 <span class="math-inline">\(\Delta B_g\)</span> 那样随 <span class="math-inline">\(B_0\)</span> 线性增加。因此，不能把 W-band 简化为“超精细分辨率整体提高”。W-band 对 <span class="math-inline">\(A\)</span> 的主要价值来自三方面： <span class="math-inline">\(g\)</span> -orientation 被分开后可以把 <span class="math-inline">\(A(\theta,\phi)\)</span> 与具体取向关联；二阶 hyperfine 混合的相对量级减小；ENDOR 中 nuclear Zeeman</p>
+<p></p><div class="math-display">\[\nu_n=\frac{|g_n|\mu_NB_0}{h}\]</div>
+<p>随 <span class="math-inline">\(B_0\)</span> 增大，使不同核种及不同 hyperfine branch 更容易分离。</p>
+<h3 id="zfs-d-e">ZFS <span class="math-inline">\(D/E\)</span></h3>
+<p>对常见 <span class="math-inline">\(S&gt;1/2\)</span> 体系，</p>
+<p></p><div class="math-display">\[\hat H_{\rm ZFS}
+=
+D\left[
+S_z^2-\frac{S(S+1)}3
+\right]
++
+E(S_x^2-S_y^2).\]</div>
+<p>决定能级混合程度的重要无量纲参数是</p>
+<p></p><div class="math-display">\[\eta_D=\frac{|D|}{g\mu_BB_0}
+\simeq\frac{|D|}{h\nu}.\]</div>
+<p>假设 <span class="math-inline">\(D=0.30\ \mathrm{cm^{-1}}\)</span> ，则</p>
+<p></p><div class="math-display">\[\eta_D(X)\approx0.95,
+\qquad
+\eta_D(Q)\approx0.26,
+\qquad
+\eta_D(W)\approx0.096.\]</div>
+<p>同一个体系在 X-band 已处于 Zeeman 与 ZFS 可比的区域，W-band 则明显接近 high-field limit。此时 <span class="math-inline">\(m_S\)</span> 作为近似好量子数更可靠，部分二阶位移减小， <span class="math-inline">\(D/E\)</span> 、 <span class="math-inline">\(g\)</span> 和 tensor orientation 更容易分开拟合。</p>
+<p>若 <span class="math-inline">\(D=3\ \mathrm{cm^{-1}}\)</span> ，W-band 下 <span class="math-inline">\(\eta_D\approx0.96\)</span> ，说明 94 GHz 对真正很大的 ZFS 仍可能不够，需要 200–1000 GHz 级 HFEPR。</p>
+<h3 id="exchange-j-与电子-电子-dipolar-coupling">Exchange <span class="math-inline">\(J\)</span> 与电子—电子 dipolar coupling</h3>
+<p>对两个自旋，</p>
+<p></p><div class="math-display">\[\hat H_J=J\mathbf S_1\cdot\mathbf S_2\]</div>
+<p>以及</p>
+<p></p><div class="math-display">\[\hat H_{dd}
+=
+\frac{\mu_0}{4\pi}
+\frac{g_1g_2\mu_B^2}{r^3}
+\left[
+\mathbf S_1\cdot\mathbf S_2
+-
+3(\mathbf S_1\cdot\hat{\mathbf r})
+(\mathbf S_2\cdot\hat{\mathbf r})
+\right].\]</div>
+<p>对 <span class="math-inline">\(g_1\simeq g_2\simeq2\)</span> ，偶极频率尺度约为</p>
+<p></p><div class="math-display">\[\frac{d}{h}
+\simeq
+\frac{52.0\ \mathrm{MHz\,nm^3}}{r^3}\]</div>
+<p>再乘取向因子。 <span class="math-inline">\(J\)</span> 和 <span class="math-inline">\(d\)</span> 均不会因 <span class="math-inline">\(B_0\)</span> 变大而增大。W 波段真正改变的是异质自旋的 Zeeman separation：</p>
+<p></p><div class="math-display">\[\Delta\omega_Z
+\simeq
+\frac{\mu_BB_0}{\hbar}\Delta g.\]</div>
+<p>当</p>
+<p></p><div class="math-display">\[|\Delta\omega_Z|\gg |J|/\hbar,\ |d|/\hbar\]</div>
+<p>时，不同自旋中心更容易频率选择，弱 exchange splitting 和 dipolar orientation 更容易解释。</p>
+<h3 id="orientation-selection">Orientation selection</h3>
+<p>冻结溶液或粉末包含所有 <span class="math-inline">\((\theta,\phi)\)</span> 。由于</p>
+<p></p><div class="math-display">\[B_{\rm res}=B_{\rm res}[g_{\rm eff}(\theta,\phi)],\]</div>
+<p>高场把不同 <span class="math-inline">\(g_{\rm eff}\)</span> 的取向摊开到更大的场区间。若脉冲频率带宽为 <span class="math-inline">\(\Delta\nu_{\rm exc}\)</span> ，对应的可激发 <span class="math-inline">\(g\)</span> 区间近似为</p>
+<p></p><div class="math-display">\[\Delta g_{\rm exc}
+\simeq
+g\frac{\Delta\nu_{\rm exc}}{\nu}.\]</div>
+<p>在相同绝对脉冲带宽下，94 GHz 所选取的 <span class="math-inline">\(\Delta g\)</span> 仅为 9.5 GHz 的约十分之一，因此 orientation-selective ENDOR、HYSCORE、PELDOR 特别自然。</p>
+<p>这一特征同时带来明确的实验代价：对希望同时激发全部 powder spectrum 的实验，W-band 的取向选择反而导致 excitation-hole、调制深度变化和 orientation-biased distance distribution。高功率 quasi-optical W-band 系统采用 kW 脉冲和约 1 GHz 瞬时带宽，正是为了处理这一问题。</p>
+<h3 id="分子运动与-omega-tau-c">分子运动与 <span class="math-inline">\(\omega\tau_c\)</span></h3>
+<p>各向异性 <span class="math-inline">\(g\)</span> 被分子转动调制时，</p>
+<p></p><div class="math-display">\[\delta\omega_g(t)
+\sim
+\frac{\mu_BB_0}{\hbar}
+\delta g(t).\]</div>
+<p>单相关时间的简单谱密度写为</p>
+<p></p><div class="math-display">\[J(\omega)
+=
+\frac{\tau_c}{1+\omega^2\tau_c^2}.\]</div>
+<p>因此频率进入问题有两条路径：</p>
+<p></p><div class="math-display">\[\omega_e\tau_c
+\quad\text{以及}\quad
+\langle\delta\omega_g^2\rangle
+\propto B_0^2(\Delta g)^2.\]</div>
+<p>在极快运动区，</p>
+<p></p><div class="math-display">\[\frac1{T_{2,g}}
+\sim
+\langle\delta\omega_g^2\rangle\tau_c
+\propto B_0^2(\Delta g)^2\tau_c.\]</div>
+<p>所以 X→W 的近十倍场差可以使 <span class="math-inline">\(g\)</span> -anisotropy 引起的运动展宽增加约两个数量级的系数尺度，实际线形还受到 <span class="math-inline">\(A\)</span> -anisotropy、转动扩散 tensor、exchange 和 unresolved hyperfine 的共同影响。</p>
+<p>需要避免把下面的简单尺度估计直接等同于真实的 CW-EPR 动力学时间窗：</p>
+<p></p><div class="math-display">\[\tau_c\sim\omega_e^{-1}.\]</div>
+<p>94 GHz 下</p>
+<p></p><div class="math-display">\[\omega_e^{-1}
+=
+(2\pi94\,\mathrm{GHz})^{-1}
+\approx1.69\ \mathrm{ps},\]</div>
+<p>它只代表单一 Lorentzian spectral-density 的频率尺度，<strong>不能直接当作 nitroxide CW-EPR 的“运动时间窗”</strong>。真实 W-band nitroxide line shape 对数百 ps 到 ns 附近的转动非常敏感，是因为 <span class="math-inline">\(g/A\)</span> 各向异性的完整 stochastic modulation。</p>
+<h3 id="boltzmann-polarization">Boltzmann polarization</h3>
+<p>对电子二能级，</p>
+<p></p><div class="math-display">\[P=\tanh\left(\frac{h\nu}{2k_BT}\right).\]</div>
+<p>计算结果为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"><span class="math-inline">\(T\)</span></th>
+<th style="text-align:right">X, 9.5 GHz</th>
+<th style="text-align:right">Q, 34 GHz</th>
+<th style="text-align:right">W, 94 GHz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">300 K</td>
+<td style="text-align:right">0.076%</td>
+<td style="text-align:right">0.272%</td>
+<td style="text-align:right">0.752%</td>
+</tr>
+<tr>
+<td style="text-align:right">80 K</td>
+<td style="text-align:right">0.285%</td>
+<td style="text-align:right">1.02%</td>
+<td style="text-align:right">2.82%</td>
+</tr>
+<tr>
+<td style="text-align:right">10 K</td>
+<td style="text-align:right">2.28%</td>
+<td style="text-align:right">8.14%</td>
+<td style="text-align:right">22.2%</td>
+</tr>
+<tr>
+<td style="text-align:right">4 K</td>
+<td style="text-align:right">5.69%</td>
+<td style="text-align:right">20.1%</td>
+<td style="text-align:right">51.1%</td>
+</tr>
+</tbody>
+</table>
+<p>因此，在低温条件下 W-band 可以进入明显更高的电子自旋热极化区。这一特点对于稀土自旋、分子磁体和固体缺陷尤其重要。</p>
+<h3 id="t-1-t-2-没有统一的-w-band-定律"><span class="math-inline">\(T_1/T_2\)</span> 没有统一的“W-band 定律”</h3>
+<p>对理想二能级可写</p>
+<p></p><div class="math-display">\[\frac1{T_2}
+=
+\frac1{2T_1}+
+\frac1{T_\phi},\]</div>
+<p>实际固体 EPR 更常测到 phase-memory time <span class="math-inline">\(T_m\)</span> ，还包含 spectral diffusion、核自旋 bath、instantaneous diffusion 等贡献。 <span class="math-inline">\(T_1\)</span> 可同时包含 direct、Raman、Orbach、分子运动及局域振动通道，各项对 <span class="math-inline">\(B_0\)</span> 和 <span class="math-inline">\(T\)</span> 的依赖不同。因此 W-band 有时出现更短 <span class="math-inline">\(T_1\)</span> ，有时变化很小，还有体系表现出复杂的场依赖。</p>
+<h3 id="脉冲带宽">脉冲带宽</h3>
+<p>矩形脉冲的频谱主瓣尺度约为</p>
+<p></p><div class="math-display">\[\Delta\nu_{\rm pulse}\sim\frac1{t_p},\]</div>
+<p>相应场宽近似</p>
+<p></p><div class="math-display">\[\Delta B_{\rm exc}
+\simeq
+\frac{\Delta\nu_{\rm pulse}}
+{\gamma_e/2\pi},
+\qquad
+\frac{\gamma_e}{2\pi}\approx28.0\ \mathrm{GHz/T}.\]</div>
+<p>例如 <span class="math-inline">\(t_p=16\ \mathrm{ns}\)</span> 时，</p>
+<p></p><div class="math-display">\[\Delta\nu\sim62.5\ \mathrm{MHz},
+\qquad
+\Delta B\sim2.23\ \mathrm{mT}.\]</div>
+<p>若一个刚性自由基具有 <span class="math-inline">\(\Delta g=0.006\)</span> ，其 W-band <span class="math-inline">\(g\)</span> 色散约</p>
+<p></p><div class="math-display">\[\Delta B_g
+\sim3.35\times\frac{0.006}{2}
+\approx10.1\ \mathrm{mT},\]</div>
+<p>因此普通矩形脉冲只激发其中一部分。</p>
+<h3 id="谐振器-样品体积和介电损耗">谐振器、样品体积和介电损耗</h3>
+<p>典型 resonator 的磁场转换效率可以粗略写成</p>
+<p></p><div class="math-display">\[\frac{B_1}{\sqrt{P}}
+\propto
+\sqrt{\frac{Q_L}{V_{\rm eff}}},\]</div>
+<p>而 resonator bandwidth 满足</p>
+<p></p><div class="math-display">\[\Delta\nu_{\rm cav}\sim\frac{\nu_0}{Q_L}.\]</div>
+<p>更高 <span class="math-inline">\(Q\)</span> 有利于 <span class="math-inline">\(B_1\)</span> ，却压缩带宽并延长 ring-down；低 <span class="math-inline">\(Q\)</span> 适合宽带脉冲，却需要更多微波功率。W-band 波长只有约 3.2 mm，经典 resonator 的 mode volume 较小，对微量固体、单晶和有限样品量有利，但水样的 dielectric loading 更严重。</p>
+<p>因此 W-band 灵敏度需要区分至少三种概念：</p>
+<p></p><div class="math-display">\[\text{spin sensitivity},\qquad
+\text{concentration sensitivity},\qquad
+\text{sample-limited sensitivity}.\]</div>
+<p>热极化、较小 <span class="math-inline">\(V_{\rm eff}\)</span> 和 filling factor 对后两者有利；更小的实际样品量、介电损耗、毫米波传输损耗以及脉冲功率又可能抵消这些因素。</p>
+<h2 id="从物理机制到应用-五条主要主线">从物理机制到应用：五条主要主线</h2>
+<h3 id="1-利用高场增强-g-tensor-各向异性对应的共振场分离提高电子结构分辨能力">1. 利用高场增强 <span class="math-inline">\(g\)</span>-tensor 各向异性对应的共振场分离提高电子结构分辨能力</h3>
+<h4 id="1-1-理论依据">1.1 理论依据</h4>
+<p>对于 <span class="math-inline">\(S=1/2\)</span> 且电子 Zeeman 项占主导的体系，共振位置近似为</p>
+<p></p><div class="math-display">\[B_{\rm res}=\frac{h\nu}{\mu_B g_{\rm eff}}.\]</div>
+<p>对小的 <span class="math-inline">\(g\)</span> 差异有</p>
+<p></p><div class="math-display">\[|\Delta B_g|\simeq B_0\frac{|\Delta g|}{g}.\]</div>
+<p>因此，在相同 <span class="math-inline">\(\Delta g\)</span> 下，场轴分离与 <span class="math-inline">\(B_0\)</span> 近似成正比。以 <span class="math-inline">\(\Delta g=10^{-3}\)</span> 为例，X、Q、W 波段的场分离约为 <span class="math-inline">\(0.17\)</span> 、 <span class="math-inline">\(0.61\)</span> 和 <span class="math-inline">\(1.68\ \mathrm{mT}\)</span> 。当谱线宽度与 <span class="math-inline">\(\Delta B_g\)</span> 同量级时，这一差异会直接决定若干 <span class="math-inline">\(g\)</span> 主值、自由基物种或缺陷中心能否被独立分辨。</p>
+<p>这一机制需要与 hyperfine 分辨区分。一阶 hyperfine 场间隔近似为</p>
+<p></p><div class="math-display">\[\Delta B_A\simeq\frac{A}{g\mu_B},\]</div>
+<p>其本身不会随 <span class="math-inline">\(B_0\)</span> 同比例增加。因此 W 波段对自由基、Cu(II) 或 V(IV) 的价值主要来自 <span class="math-inline">\(g\)</span> tensor 的展开以及由此产生的取向分离，而不是所有 <span class="math-inline">\(A\)</span> 线都自动获得同等程度的分辨改善。</p>
+<p>实际可观测优势还受 linewidth、 <span class="math-inline">\(g\)</span> -strain、unresolved hyperfine、exchange broadening 和样品非均匀性限制。若 intrinsic linewidth 已明显大于 W 波段产生的 <span class="math-inline">\(\Delta B_g\)</span> ，继续提高场强不会自动恢复被展宽掩盖的信息。</p>
+<h4 id="1-2-适用自旋体系与科学问题">1.2 适用自旋体系与科学问题</h4>
+<p>这一主线最适合下列体系：organic radicals、semiquinone、flavin、nitroxide、Cu(II)、V(IV)、Mo(V)、部分 Cr(V) 体系，以及 semiconductor / oxide / surface defect centers。</p>
+<p>对应的科学问题包括：自由基究竟属于哪一种电子结构；多个近似 <span class="math-inline">\(g\approx2\)</span> 的物种能否被区分；Cu(II) 或 V(IV) 的 <span class="math-inline">\(g_x\)</span> 、 <span class="math-inline">\(g_y\)</span> 、 <span class="math-inline">\(g_z\)</span> 及其 rhombicity 是否可以独立确定；缺陷中心的电子局域轨道和局部对称性是否能够由 <span class="math-inline">\(g\)</span> tensor 约束。</p>
+<h4 id="1-3-代表性案例">1.3 代表性案例</h4>
+<table>
+<thead>
+<tr>
+<th>体系</th>
+<th>W-band 实验</th>
+<th>主要参数</th>
+<th>W-band 获得的信息</th>
+<th>与 X/Q 的关系</th>
+<th>代表文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光合作用相关 semiquinone radical anions</td>
+<td>3-mm / W-band CW</td>
+<td><span class="math-inline">\(g_x,g_y,g_z\)</span></td>
+<td>分开接近 <span class="math-inline">\(g=2\)</span> 的细小 <span class="math-inline">\(g\)</span> 各向异性，用于约束 semiquinone 电子结构</td>
+<td>X-band 的场轴 <span class="math-inline">\(g\)</span> 色散约小一个数量级；Q-band 为中间条件</td>
+<td>Burghaus et al., <em>J. Phys. Chem.</em> 1993, <a href="https://doi.org/10.1021/j100131a037">DOI 10.1021/j100131a037</a></td>
+</tr>
+<tr>
+<td>Nitroxide spin label in solvents</td>
+<td>9/95 GHz CW + DFT</td>
+<td><span class="math-inline">\(g_{ii}\)</span> 、 <span class="math-inline">\(A_{ii}\)</span></td>
+<td>解析 solvent polarity 与 H-bond 对 nitroxide <span class="math-inline">\(g/A\)</span> tensor 的影响</td>
+<td>X 更容易由 <span class="math-inline">\(A\)</span> 与快速运动平均主导；W 对 <span class="math-inline">\(g\)</span> 相关环境变化更敏感</td>
+<td>Owenius et al., <em>JPC A</em> 2001, <a href="https://doi.org/10.1021/jp0116914">DOI 10.1021/jp0116914</a></td>
+</tr>
+<tr>
+<td>Azurin Type-I Cu(II) 单晶</td>
+<td>95 GHz single-crystal EPR</td>
+<td>完整 <span class="math-inline">\(g\)</span> tensor</td>
+<td>观察弱 rhombicity 和角度依赖，约束 blue-copper electronic structure</td>
+<td>X-band 下 <span class="math-inline">\(g_x/g_y\)</span> 间隔更小</td>
+<td><em>A W-Band EPR Study of a Single Crystal of Azurin</em>, <a href="https://doi.org/10.1021/ja00086a044">DOI 10.1021/ja00086a044</a></td>
+</tr>
+<tr>
+<td><span class="math-inline">\([\mathrm{VO(H_2O)_5}]^{2+}\)</span></td>
+<td>X + 94 GHz EPR + ESE-ENDOR</td>
+<td><span class="math-inline">\(g\)</span> 、 <span class="math-inline">\(A(^{51}V)\)</span> 、ligand hyperfine</td>
+<td>高场分离 <span class="math-inline">\(g/A\)</span> tensor 取向并结合 ENDOR 约束局域电子密度</td>
+<td>X 对强 <span class="math-inline">\(^{51}V\)</span> hyperfine 有价值，W 提供高场 tensor 约束；二者互补</td>
+<td><em>Electronic Structure of the Aqueous Vanadyl Ion…</em>, <a href="https://doi.org/10.1021/jp992186y">DOI 10.1021/jp992186y</a></td>
+</tr>
+<tr>
+<td>Cr/Mo M–M bonded paddlewheel complexes</td>
+<td>W-band CW</td>
+<td><span class="math-inline">\(g\)</span> tensor</td>
+<td>利用高场 <span class="math-inline">\(g\)</span> 各向异性分析未成对电子轨道和金属—金属键电子结构</td>
+<td>X 下小 <span class="math-inline">\(g\)</span> 差异更容易重叠</td>
+<td><em>Applications of High-Field (W-Band) EPR to M–M Bonded Units</em>, <a href="https://doi.org/10.1021/ic0260670">DOI 10.1021/ic0260670</a></td>
+</tr>
+<tr>
+<td>MgO(001) thin-film trapped electron centers</td>
+<td>94 GHz UHV CW-EPR</td>
+<td><span class="math-inline">\(g\)</span> 、defect identity</td>
+<td>区分多个接近 <span class="math-inline">\(g=2\)</span> 的表面 trapped-electron species</td>
+<td>W-band 对 tiny <span class="math-inline">\(\Delta g\)</span> 的放大有利于新物种识别</td>
+<td>Rocker et al., <em>Rev. Sci. Instrum.</em> 2014, <a href="https://doi.org/10.1063/1.4893729">DOI 10.1063/1.4893729</a></td>
+</tr>
+<tr>
+<td>Silicon FET donor spins / 2DEG</td>
+<td>94 GHz EDMR</td>
+<td>resonance position、donor/2DEG signals</td>
+<td>高场 <span class="math-inline">\(g\)</span> 分离与热极化共同改善不同电学自旋通道的区分</td>
+<td>文献中 W-band 条件下可分开 X-band 中未充分分离的线</td>
+<td>Lang et al., <em>RSI</em> 2011, <a href="https://doi.org/10.1063/1.3557395">DOI 10.1063/1.3557395</a>；Lo et al., <em>PRL</em> 2011, <a href="https://doi.org/10.1103/PhysRevLett.106.207601">DOI 10.1103/PhysRevLett.106.207601</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-4-适用边界">1.4 适用边界</h4>
+<p>这一类应用属于 W-band 最直接、最容易定量预测的优势。如果用户问题的核心可以写成“两个中心之间的 <span class="math-inline">\(\Delta g\)</span> 太小，而 X/Q 下对应的 <span class="math-inline">\(\Delta B\)</span> 小于或接近谱线宽度”，W-band 具有明确物理依据。</p>
+<p>相反，如果谱线主要由很大的 unresolved hyperfine、exchange broadening、强 <span class="math-inline">\(g\)</span> -strain 或结构分布决定，而且其宽度明显大于 W-band 产生的 <span class="math-inline">\(g\)</span> 色散，那么 W-band 的收益会被展宽主导。此时需要先判断谱线宽度来源，而不是仅比较频率。</p>
+<hr>
+<h3 id="2-高自旋体系-zfs-与高场能级结构">2. 高自旋体系、ZFS 与高场能级结构</h3>
+<h4 id="2-1-理论依据">2.1 理论依据</h4>
+<p>对 <span class="math-inline">\(S&gt;1/2\)</span> 体系，ZFS Hamiltonian 常写为</p>
+<p></p><div class="math-display">\[\hat H_{\rm ZFS}
+=
+D\left[S_z^2-\frac{S(S+1)}3\right]
++
+E(S_x^2-S_y^2).\]</div>
+<p>判断体系是否接近 high-field limit 的基本量是</p>
+<p></p><div class="math-display">\[\eta_D=\frac{|D|}{g\mu_BB_0}\simeq\frac{|D|}{h\nu}.\]</div>
+<p>随着频率由 X 增至 W， <span class="math-inline">\(\eta_D\)</span> 明显减小，电子 Zeeman 项相对占优，部分由 ZFS 引起的能级混合和二阶位移随之减弱。此时 <span class="math-inline">\(m_S\)</span> 更接近好量子数，<span class="math-inline">\(D\)</span> 、 <span class="math-inline">\(E\)</span> 、 <span class="math-inline">\(g\)</span> 以及 tensor axes 更容易分别约束。</p>
+<p>94 GHz 对应</p>
+<p></p><div class="math-display">\[\frac{h\nu}{hc}\approx3.14\ \mathrm{cm^{-1}}.\]</div>
+<p>因此 W-band 对 <span class="math-inline">\(D\)</span> 位于约 <span class="math-inline">\(0.1\!-\!1\ \mathrm{cm^{-1}}\)</span> 的许多 moderate-ZFS 体系具有显著作用；若 <span class="math-inline">\(D\)</span> 达到数十甚至数百 <span class="math-inline">\(\mathrm{cm^{-1}}\)</span> ，94 GHz 仍不能视为充分的 high-field 条件，需要更高频率 HFEPR。</p>
+<p>对于 Gd(III) 等半整数高自旋体系，central transition</p>
+<p></p><div class="math-display">\[m_S=-1/2\leftrightarrow +1/2\]</div>
+<p>的一阶 ZFS 位移消失，主要受二阶项影响，其宽化尺度近似满足</p>
+<p></p><div class="math-display">\[\Delta\nu_{\rm ZFS}^{(2)}\propto\frac{D^2}{\nu_e}.\]</div>
+<p>因此频率增加可以使 central transition 相对集中，这也是 W-band Gd-EPR、Gd-ENDOR 以及金属离子 PDS 的重要基础。</p>
+<h4 id="2-2-适用自旋体系与科学问题">2.2 适用自旋体系与科学问题</h4>
+<p>典型对象包括 high-spin Fe、Co、Ni、Mn complexes，Fe clusters，single-molecule magnets，高自旋 nitrene，Gd(III)，部分 rare-earth ions 以及具有明显 spin–orbit / crystal-field anisotropy 的分子自旋体系。</p>
+<p>科学问题主要涉及 ZFS 的大小与符号、rhombicity、磁各向异性轴、excited <span class="math-inline">\(m_S\)</span> transition、spin–orbit coupling、central-transition linewidth 以及高场下电子本征态组成。</p>
+<h4 id="2-3-代表性案例">2.3 代表性案例</h4>
+<table>
+<thead>
+<tr>
+<th>体系</th>
+<th>W-band 实验</th>
+<th>主要参数</th>
+<th>W-band 获得的信息</th>
+<th>与 X/Q 的关系</th>
+<th>代表文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Planar Fe <span class="math-inline">\(_4\)</span> (OCH <span class="math-inline">\(_3\)</span> ) <span class="math-inline">\(_6\)</span> (dpm) <span class="math-inline">\(_6\)</span> 单分子磁体</td>
+<td>95 GHz single-crystal EPR</td>
+<td><span class="math-inline">\(D,E,g\)</span> 、angular dependence</td>
+<td>解析 ZFS-split transitions 和磁各向异性</td>
+<td>X-band 对 moderate/large <span class="math-inline">\(D\)</span> 更容易处于强混合区</td>
+<td><em>Single-Crystal High-Frequency EPR…Fe4</em>, <a href="https://doi.org/10.1021/jp003441d">DOI 10.1021/jp003441d</a></td>
+</tr>
+<tr>
+<td>High-spin molecular nitrenes</td>
+<td>94 GHz W-band EPR</td>
+<td><span class="math-inline">\(D\)</span> 的大小和符号、spin–orbit contribution</td>
+<td>利用高场能级顺序和转移位置判断磁各向异性及 <span class="math-inline">\(D\)</span> 符号</td>
+<td>低频条件下不同参数组合可能产生相似谱形</td>
+<td><em>Effect of Spin–Orbit Coupling on the Sign of Magnetic Anisotropy</em>, <a href="https://doi.org/10.1021/acs.jpca.2c04211">DOI 10.1021/acs.jpca.2c04211</a></td>
+</tr>
+<tr>
+<td>Gd-doped silicate glasses</td>
+<td>X/Q/W CW</td>
+<td>linewidth、clustering、local environment</td>
+<td>利用高场 central transition 和 multifrequency line shape 区分局域结构与浓度展宽</td>
+<td>多频比较用于识别不同展宽机制</td>
+<td>Smirnov &amp; Sen, <em>J. Chem. Phys.</em> 2001, <a href="https://doi.org/10.1063/1.1403436">DOI 10.1063/1.1403436</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="2-4-适用边界">2.4 适用边界</h4>
+<p>“高自旋”本身不足以构成 W-band 的充分理由。首先需要估算 <span class="math-inline">\(D/h\nu\)</span> 。如果 <span class="math-inline">\(D\)</span> 远小于 X/Q 的 Zeeman 能标，W-band 可能只带来有限增量；如果 <span class="math-inline">\(D\)</span> 远大于 94 GHz 对应能标，W-band 又可能仍不足以进入清晰的 high-field regime。最适合 W-band 的区域通常是 X/Q 下 ZFS 与 Zeeman 已发生明显竞争，而 94 GHz 足以显著改变该比例的体系。</p>
+<hr>
+<h3 id="3-orientation-selective-epr-局域配位-电子-核耦合与电子-电子几何结构">3. Orientation-selective EPR：局域配位、电子—核耦合与电子—电子几何结构</h3>
+<h4 id="3-1-理论依据">3.1 理论依据</h4>
+<p>冻结溶液或粉末样品包含完整的分子取向分布。对于各向异性 <span class="math-inline">\(g\)</span> tensor，不同取向具有不同的</p>
+<p></p><div class="math-display">\[g_{\rm eff}(\theta,\phi)\]</div>
+<p>和相应的</p>
+<p></p><div class="math-display">\[B_{\rm res}(\theta,\phi).\]</div>
+<p>W-band 增大了不同 <span class="math-inline">\(g_{\rm eff}\)</span> 之间在场轴上的分离。对脉冲实验，若绝对激发带宽为 <span class="math-inline">\(\Delta\nu_{\rm exc}\)</span> ，可激发的 <span class="math-inline">\(g\)</span> 区间近似为</p>
+<p></p><div class="math-display">\[\Delta g_{\rm exc}
+\simeq
+g\frac{\Delta\nu_{\rm exc}}{\nu}.\]</div>
+<p>因此在相同绝对脉冲带宽下，W-band 会选择更窄的一组 <span class="math-inline">\(g\)</span> 值和分子取向。这个效应可以被用于 orientation-selected ENDOR、ESEEM/HYSCORE 和 PELDOR，也会在实验设计中产生 excitation bandwidth 限制。</p>
+<p>对 ENDOR/HYSCORE，W-band 的核心价值是把电子自旋取向选择与 nuclear hyperfine tensor 联系起来，从而确定 ligand nucleus、 <span class="math-inline">\(A\)</span> tensor、tensor relative orientation 和局部配位几何。对 DEER/RIDME，取向选择既可以增加 dipolar tensor 和相对取向信息，也可能使距离分布带有 orientation bias。</p>
+<h4 id="3-2-适用自旋体系与科学问题">3.2 适用自旋体系与科学问题</h4>
+<p>典型体系包括 flavin 和其他刚性自由基、Cu(II) metalloproteins、Gd(III) complexes、Mn/Gd metal tags、光生 radical pairs 以及刚性 coupled-spin molecular systems。</p>
+<p>对应问题包括：哪个核与顺磁中心直接耦合；配体核的 hyperfine tensor 如何定向；金属中心的局部配位几何如何变化；两个电子自旋之间的距离和相对取向是多少；距离分布是否包含明确的构象或取向信息。</p>
+<h4 id="3-3-代表性案例">3.3 代表性案例</h4>
+<table>
+<thead>
+<tr>
+<th>体系</th>
+<th>W-band 实验</th>
+<th>主要参数</th>
+<th>W-band 获得的信息</th>
+<th>与 X/Q 的关系</th>
+<th>代表文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neutral flavin radical</td>
+<td>94 GHz pulsed ENDOR</td>
+<td><span class="math-inline">\(g\)</span> -matrix orientation、<span class="math-inline">\(A\)</span> tensor</td>
+<td>通过 <span class="math-inline">\(g\)</span> 选择取向，再以 ENDOR 关联 electron–nuclear tensor</td>
+<td>X/Q 对相近 <span class="math-inline">\(g\)</span> 取向的分离较弱</td>
+<td>Kay et al., <em>JACS</em> 2005, <a href="https://doi.org/10.1021/ja051572s">DOI 10.1021/ja051572s</a></td>
+</tr>
+<tr>
+<td>Cu <span class="math-inline">\(_A\)</span> metalloprotein variants</td>
+<td>W FS-ESE + ENDOR</td>
+<td><span class="math-inline">\(g\)</span> 、Cu/ligand hyperfine、<span class="math-inline">\(^{14}N\)</span> couplings</td>
+<td>区分 ligand nuclei 及 axial-Met perturbation，并关联 ground-state electronic structure</td>
+<td>X 可给主体 Cu 信号；W-ENDOR 更适合弱 ligand tensor 的定向分析</td>
+<td><em>Pulsed EPR/ENDOR Characterization…CuA</em>, <a href="https://doi.org/10.1021/ja003924v">DOI 10.1021/ja003924v</a></td>
+</tr>
+<tr>
+<td>Aqueous Gd(III) / MRI-related complexes</td>
+<td>W-band <span class="math-inline">\(^{17}O\)</span> pulsed ENDOR</td>
+<td><span class="math-inline">\(^{17}O\)</span> hyperfine</td>
+<td>研究配位水和局域水合结构</td>
+<td>高场 central transition 与更高 nuclear Larmor frequency 有利于 ENDOR</td>
+<td>Raitsimring et al., <a href="https://doi.org/10.1021/jp040306i">DOI 10.1021/jp040306i</a></td>
+</tr>
+<tr>
+<td>Two Mn <span class="math-inline">\(^{2+}\)</span> -EDTA protein tags</td>
+<td>95 GHz DEER</td>
+<td><span class="math-inline">\(r\)</span> 、distance distribution</td>
+<td>利用 high-field central transition 开展金属标签 PDS</td>
+<td>X-band 中 high-spin Mn ZFS powder broadening 更强</td>
+<td>Banerjee et al., <em>JPCL</em> 2012, <a href="https://doi.org/10.1021/jz201521d">DOI 10.1021/jz201521d</a></td>
+</tr>
+<tr>
+<td>Charge-separated donor–acceptor radical pair</td>
+<td>95 GHz orientation-resolving dipolar EPR</td>
+<td><span class="math-inline">\(r\)</span> 、dipolar tensor、relative orientation</td>
+<td>在距离之外获得 radical-pair relative orientation</td>
+<td>W-band 的 <span class="math-inline">\(g\)</span> selection 更容易将 molecular orientation 映射到场位置</td>
+<td><em>Orientation Resolving Dipolar High-Field EPR…</em>, <a href="https://doi.org/10.1021/jp401573z">DOI 10.1021/jp401573z</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-4-适用边界">3.4 适用边界</h4>
+<p>Orientation selection 具有双重性质。对于结构研究，它是 W-band 的重要信息来源；对于只希望无偏地激发整个 powder spectrum 的实验，它会成为限制。普通 nitroxide–nitroxide DEER 是典型例子：频率增加后 rigid nitroxide 的 <span class="math-inline">\(g\)</span> 色散变宽，而可用脉冲的绝对带宽通常不会同比例增加，pump/observer pulse 因而只覆盖部分取向。若科研问题主要是稳健的距离分布而非角度信息，Q-band 往往已经具有较好的实验折中。W-band 更适合 metal tags、heterospin systems、取向解析或具有足够宽带激发能力的实验。</p>
+<hr>
+<h3 id="4-spin-labeling-局域环境与快速分子动力学">4. Spin labeling、局域环境与快速分子动力学</h3>
+<h4 id="4-1-理论依据">4.1 理论依据</h4>
+<p>对 nitroxide 等各向异性自旋探针，分子转动会同时调制 <span class="math-inline">\(g\)</span> tensor 和 <span class="math-inline">\(A\)</span> tensor。对 <span class="math-inline">\(g\)</span> 的频率调制可近似写为</p>
+<p></p><div class="math-display">\[\delta\omega_g(t)
+\sim
+\frac{\mu_BB_0}{\hbar}\delta g(t).\]</div>
+<p>因此</p>
+<p></p><div class="math-display">\[\langle\delta\omega_g^2\rangle
+\propto B_0^2(\Delta g)^2.\]</div>
+<p>与此同时，谱密度中还包含 <span class="math-inline">\(\omega_e\tau_c\)</span> 。频率增加后，X-band 中仍接近快速运动平均极限的局域转动，在 W-band 中可能产生明显的 line-shape 差异。W-band 对运动的敏感性不能简化为一个固定的 <span class="math-inline">\(\tau_c\)</span> 数值，因为真实 nitroxide 谱形取决于 <span class="math-inline">\(g/A\)</span> tensor、rotational-diffusion tensor、局部构象交换以及 stochastic-Liouville 动力学。</p>
+<p>这类应用与“高场提高 <span class="math-inline">\(g\)</span> 分辨”具有共同物理来源，但科学问题不同。电子结构研究关注静态</p>
+<p></p><div class="math-display">\[g\rightarrow\text{electronic structure},\]</div>
+<p>而 spin-label dynamics 关注时间依赖的</p>
+<p></p><div class="math-display">\[g(t),A(t)\rightarrow\text{molecular dynamics}.\]</div>
+<h4 id="4-2-适用自旋体系与科学问题">4.2 适用自旋体系与科学问题</h4>
+<p>主要对象是 nitroxide spin labels 及其他适用于 biomolecular EPR 的稳定自由基。科学问题包括 protein side-chain mobility、IDP segmental motion、RNA local dynamics、membrane ordering/fluidity、local polarity、hydrogen bonding 和 local p <span class="math-inline">\(K_a\)</span> 。</p>
+<h4 id="4-3-代表性案例">4.3 代表性案例</h4>
+<table>
+<thead>
+<tr>
+<th>体系</th>
+<th>W-band 实验</th>
+<th>主要参数</th>
+<th>W-band 获得的信息</th>
+<th>与 X/Q 的关系</th>
+<th>代表文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nitroxide in solvents</td>
+<td>9/95 GHz CW + DFT</td>
+<td><span class="math-inline">\(g_{ii}\)</span> 、 <span class="math-inline">\(A_{ii}\)</span></td>
+<td>将 polarity/H-bond 对 <span class="math-inline">\(g\)</span> 与 <span class="math-inline">\(A\)</span> 的影响区分开</td>
+<td>多频数据比单一 X-band 更容易区分环境效应与 motional averaging</td>
+<td>Owenius et al., <em>JPC A</em> 2001, <a href="https://doi.org/10.1021/jp0116914">DOI 10.1021/jp0116914</a></td>
+</tr>
+<tr>
+<td>pH-sensitive nitroxide protein label</td>
+<td>W-band CW</td>
+<td><span class="math-inline">\(g\)</span> 、local p<span class="math-inline">\(K_a\)</span></td>
+<td>通过小的 <span class="math-inline">\(g\)</span> 位移探测局部静电和质子化状态</td>
+<td>X 中同样 <span class="math-inline">\(\Delta g\)</span> 对应的场位移更小</td>
+<td>Voinov et al., <em>Biochemistry</em> 2008, <a href="https://doi.org/10.1021/bi800272f">DOI 10.1021/bi800272f</a></td>
+</tr>
+<tr>
+<td>Intrinsically disordered protein constructs</td>
+<td>CW W/D-band</td>
+<td>line shape、rotational dynamics</td>
+<td>识别亚纳秒至 ns 附近快速局域运动的频率依赖</td>
+<td>X-band 对高度快速运动时的结构差异可能较弱；W/D 提供不同频率窗口</td>
+<td>Casey et al., <em>BBRC</em> 2014, <a href="https://doi.org/10.1016/j.bbrc.2014.06.045">DOI 10.1016/j.bbrc.2014.06.045</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-4-适用边界">4.4 适用边界</h4>
+<p>这一方向通常需要多频 EPR 才能得到最可靠的动力学解释。单独 W-band line shape 可能同时受到 <span class="math-inline">\(g/A\)</span> anisotropy、motion、exchange 和 unresolved interactions 影响。对含水样品，高频介电损耗、样品厚度和 resonator loading 也是实际限制。因此，W-band 更适合被视为 X/Q/W 多频动力学中的关键频率点，而不是完全替代 X-band。</p>
+<hr>
+<h3 id="5-高极化-低温脉冲与量子自旋动力学">5. 高极化、低温脉冲与量子自旋动力学</h3>
+<h4 id="5-1-理论依据">5.1 理论依据</h4>
+<p>电子自旋热极化满足</p>
+<p></p><div class="math-display">\[P=\tanh\left(\frac{h\nu}{2k_BT}\right).\]</div>
+<p>94 GHz 下</p>
+<p></p><div class="math-display">\[\frac{h\nu}{k_B}\approx4.51\ \mathrm{K}.\]</div>
+<p>因此 W-band 在低温条件下可以获得显著高于 X-band 的热极化。例如 10 K 时，9.5 GHz 和 94 GHz 的理论电子极化分别约为 <span class="math-inline">\(2.28\%\)</span> 和 <span class="math-inline">\(22.2\%\)</span> 。</p>
+<p>高极化有利于低温脉冲 EPR，但不能直接等同于实际 SNR 增加相同比例。真实检测还受到 resonator conversion efficiency、样品体积、介电损耗、receiver noise、dead time、pulse bandwidth 以及 <span class="math-inline">\(T_1\)</span> 限制。</p>
+<p>对于 qubits、rare-earth ions 和 defects，高场还会改变本征态组成和不同跃迁之间的频率可寻址性。因此 W-band 可以用于测量</p>
+<p></p><div class="math-display">\[T_1,\quad T_m/T_2,\quad T_2^*,\quad \text{Rabi oscillation}\]</div>
+<p>以及场依赖的 coherence / decoherence mechanism。</p>
+<h4 id="5-2-适用自旋体系与科学问题">5.2 适用自旋体系与科学问题</h4>
+<p>主要对象包括 Yb(III) 等 Kramers ions、Gd(III) 与其他稀土自旋、molecular spin qubits、耦合分子量子比特、SiC 等宽禁带材料缺陷以及可进行光极化或电学读出的固态自旋。</p>
+<p>核心科学问题包括高场下 <span class="math-inline">\(T_1\)</span> 和 <span class="math-inline">\(T_m\)</span> 如何变化；能否实现 coherent manipulation；anisotropic <span class="math-inline">\(g\)</span> 或 weak exchange 是否可以作为频率寻址手段；高场是否改变 dominant relaxation pathway；不同自旋单元之间的交换或偶极耦合能否被独立解析。</p>
+<h4 id="5-3-代表性案例">5.3 代表性案例</h4>
+<table>
+<thead>
+<tr>
+<th>体系</th>
+<th>W-band 实验</th>
+<th>主要参数</th>
+<th>W-band 获得的信息</th>
+<th>与 X/Q 的关系</th>
+<th>代表文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yb <span class="math-inline">\(^{3+}\)</span> :CaWO <span class="math-inline">\(_4\)</span></td>
+<td>X/W pulse EPR</td>
+<td>Rabi oscillation、coherence dynamics</td>
+<td>比较高场和低场条件下的 coherent spin manipulation</td>
+<td>X/W 联合用于识别场依赖机制</td>
+<td>Rakhmatullin et al., <em>PRB</em> 2009, <a href="https://doi.org/10.1103/PhysRevB.79.172408">DOI 10.1103/PhysRevB.79.172408</a></td>
+</tr>
+<tr>
+<td>Cr <span class="math-inline">\(_7\)</span> Ni rings + Co node supramolecular qubits</td>
+<td>multifrequency CW，含 94 GHz</td>
+<td>anisotropic <span class="math-inline">\(J_{12},J_{23}\)</span> 、 <span class="math-inline">\(g_i\)</span></td>
+<td>高场放大不同 spin centers 的 Zeeman separation，使弱 anisotropic exchange multiplet 最清楚</td>
+<td>原文明确报告 W-band 94 GHz 下结构 “best resolved”</td>
+<td>Ferrando-Soria et al., <em>Nat. Commun.</em> 2016, <a href="https://doi.org/10.1038/ncomms11377">DOI 10.1038/ncomms11377</a></td>
+</tr>
+<tr>
+<td>Isotopically enriched 6H- <span class="math-inline">\(^{28}\)</span> SiC defects</td>
+<td>photo-pulse ESR 94 GHz</td>
+<td><span class="math-inline">\(T_1,T_2,T_2^*\)</span> 、Rabi</td>
+<td>光极化与 W-band pulse EPR 联合测量 defect coherent dynamics</td>
+<td>高场条件用于研究量子态动力学和相干操控</td>
+<td>Murzakhanov et al., <em>APL</em> 2024, <a href="https://doi.org/10.1063/5.0222098">DOI 10.1063/5.0222098</a></td>
+</tr>
+<tr>
+<td>Silicon device donor spins / 2DEG</td>
+<td>94 GHz EDMR</td>
+<td>resonance、spin-dependent transport</td>
+<td>高场极化和 <span class="math-inline">\(g\)</span> 分离共同作用于器件自旋读出</td>
+<td>与 X-band 对比可区分高场下增强的电学自旋信号</td>
+<td>Lang et al., <em>RSI</em> 2011, <a href="https://doi.org/10.1063/1.3557395">DOI 10.1063/1.3557395</a>；Lo et al., <em>PRL</em> 2011, <a href="https://doi.org/10.1103/PhysRevLett.106.207601">DOI 10.1103/PhysRevLett.106.207601</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="5-4-适用边界">5.4 适用边界</h4>
+<p>量子自旋体系不能只以“W-band 极化更高”作为充分理由。若 <span class="math-inline">\(T_1\)</span> 随场强显著延长，repetition rate 可能下降；若 direct process 或其他高场 relaxation channel 增强，<span class="math-inline">\(T_1\)</span> 也可能缩短。<span class="math-inline">\(T_m\)</span> 还受 nuclear-spin bath、instantaneous diffusion 和 spectral diffusion 支配。因此 W-band 的实际价值需要结合高场本征态、极化、弛豫和脉冲控制共同判断。</p>
+<hr>
+<h2 id="应用地图-why-w-band-spin-system-observable-scientific-question">应用地图：Why W-band → Spin system → Observable → Scientific question</h2>
+<div class="mermaid">flowchart LR
+ A["W-band：ν ≈ 94 GHz<br>B0 ≈ 3.35 T"]
+
+ A --&gt; B1["g 色散增加<br>ΔB_g ≈ B0·Δg/g"]
+ A --&gt; B2["Zeeman/ZFS 比值改变<br>D/hν ↓"]
+ A --&gt; B3["取向选择增强<br>Δg_exc ≈ g·Δν_exc/ν"]
+ A --&gt; B4["动态调制增强<br>ωeτc ↑，B0·Δg ↑"]
+ A --&gt; B5["低温热极化增加<br>P = tanh(hν/2kBT)"]
+
+ B1 --&gt; C1["Organic radicals<br>Cu(II)/V(IV)<br>surface/solid defects"]
+ B2 --&gt; C2["High-spin TM<br>SMM<br>Gd/rare-earth"]
+ B3 --&gt; C3["Metal proteins<br>radical pairs<br>Mn/Gd tags"]
+ B4 --&gt; C4["Nitroxide labels<br>protein/IDP/RNA/membrane"]
+ B5 --&gt; C5["Molecular qubits<br>rare-earth ions<br>solid-state spins"]
+
+ C1 --&gt; D1["g tensor<br>electronic structure<br>defect identity"]
+ C2 --&gt; D2["D/E<br>high-field eigenstates<br>central transition"]
+ C3 --&gt; D3["A tensor<br>r / orientation<br>local geometry"]
+ C4 --&gt; D4["τc<br>local polarity<br>conformational dynamics"]
+ C5 --&gt; D5["T1 / Tm / T2<br>Rabi<br>coherence"]
+
+ D1 --&gt; E1["自由基或金属中心的电子结构是什么"]
+ D2 --&gt; E2["ZFS 与磁各向异性如何决定能级"]
+ D3 --&gt; E3["局域配位和自旋间几何结构如何"]
+ D4 --&gt; E4["亚纳秒到 ns 局域运动如何变化"]
+ D5 --&gt; E5["高场自旋态能否稳定、操控与读出"]
+</div>
+<h2 id="领域映射-同一科研领域可能对应不同-w-band-物理机制">领域映射：同一科研领域可能对应不同 W-band 物理机制</h2>
+<table>
+<thead>
+<tr>
+<th>科研领域</th>
+<th>常见样品</th>
+<th>主要 W-band 机制</th>
+<th>典型实验</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>光化学 / 光合作用</td>
+<td>semiquinone、flavin、radical pair</td>
+<td><span class="math-inline">\(g\)</span> resolution、orientation selection、dipolar geometry</td>
+<td>CW、TR-EPR、ENDOR、dipolar EPR</td>
+</tr>
+<tr>
+<td>金属蛋白</td>
+<td>Cu(II)、Cu <span class="math-inline">\(_A\)</span> 、Mn/Gd-tagged proteins</td>
+<td><span class="math-inline">\(g/A\)</span> tensor、orientation-selected hyperfine、high-spin central transition</td>
+<td>CW、ESE、ENDOR/HYSCORE、DEER/RIDME</td>
+</tr>
+<tr>
+<td>Spin labeling 生物物理</td>
+<td>nitroxide-labelled protein、IDP、RNA、membrane</td>
+<td><span class="math-inline">\(g/A\)</span> dynamic modulation、local polarity、fast motion</td>
+<td>multifrequency CW、2D-ELDOR</td>
+</tr>
+<tr>
+<td>催化与表面科学</td>
+<td>transition-metal centers、surface radicals、oxide defects</td>
+<td><span class="math-inline">\(g\)</span> resolution、metal <span class="math-inline">\(g/A/D\)</span> 、surface defect discrimination</td>
+<td>CW、ENDOR、UHV-EPR、photo-EPR</td>
+</tr>
+<tr>
+<td>分子磁性</td>
+<td>high-spin clusters、SMM</td>
+<td>Zeeman/ZFS 比值、magnetic anisotropy</td>
+<td>CW、single-crystal EPR、pulse</td>
+</tr>
+<tr>
+<td>分子量子信息</td>
+<td>molecular qubits、coupled spin units</td>
+<td>high-field eigenstates、 <span class="math-inline">\(\Delta gB_0\)</span> addressability、polarization、coherence</td>
+<td>pulse EPR、Rabi、ENDOR、ELDOR</td>
+</tr>
+<tr>
+<td>固态量子与半导体</td>
+<td>SiC defects、donor spins、2DEG</td>
+<td><span class="math-inline">\(g\)</span> separation、polarization、coherence、spin-dependent transport</td>
+<td>pulse EPR、photo-EPR、EDMR</td>
+</tr>
+<tr>
+<td>稀土与高自旋标签</td>
+<td>Yb、Gd、Mn</td>
+<td>central transition、high-field states、polarization</td>
+<td>CW、ENDOR、DEER/RIDME、relaxation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="w-band-相对于-x-q-的适用性判断">W-band 相对于 X/Q 的适用性判断</h2>
+<h3 id="w-band-具有明显优势的场景">W-band 具有明显优势的场景</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>判据</th>
+<th>主要原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小 <span class="math-inline">\(\Delta g\)</span> 被 X/Q 线宽掩盖</td>
+<td><span class="math-inline">\(B_0\Delta g/g\)</span> 在 W-band 达到可分辨尺度</td>
+<td>场轴 <span class="math-inline">\(g\)</span> 色散线性增加</td>
+</tr>
+<tr>
+<td>Moderate-ZFS 高自旋体系</td>
+<td>X/Q 下 <span class="math-inline">\(D\sim h\nu\)</span> ，W 下 <span class="math-inline">\(D/h\nu\)</span> 明显减小</td>
+<td>态混合减弱，高场本征态更清楚</td>
+</tr>
+<tr>
+<td>Cu/V 等需要完整 tensor 和取向信息的体系</td>
+<td><span class="math-inline">\(g_x/g_y\)</span> 或 ligand hyperfine 在低场难以定向归属</td>
+<td>高场 <span class="math-inline">\(g\)</span> 取向选择与 ENDOR/HYSCORE 结合</td>
+</tr>
+<tr>
+<td>Mn/Gd metal-tag PDS</td>
+<td>central transition 在高场显著集中</td>
+<td>二阶 ZFS 宽化近似按 <span class="math-inline">\(1/\nu\)</span> 减弱</td>
+</tr>
+<tr>
+<td>需要 orientation-resolved radical-pair / coupled-spin 几何</td>
+<td>谱线能按 <span class="math-inline">\(g\)</span> 取向分离</td>
+<td>可获得距离之外的角度信息</td>
+</tr>
+<tr>
+<td>稀土 / defect / qubit 的低温高场动力学</td>
+<td>需要高场极化、本征态和 coherence 数据</td>
+<td>高极化与高场能级结构共同提供信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="w-band-有明确增量-但-x-q-仍然重要的场景">W-band 有明确增量，但 X/Q 仍然重要的场景</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>W-band 增量</th>
+<th>为什么仍需 X/Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nitroxide fast dynamics</td>
+<td>对快速运动和 <span class="math-inline">\(g\)</span> -related environment 更敏感</td>
+<td>动力学拟合通常需要多频数据约束</td>
+</tr>
+<tr>
+<td>一般 Cu(II)/V(IV) 电子结构</td>
+<td>更好 <span class="math-inline">\(g\)</span> tensor / orientation resolution</td>
+<td>X-band 常对宽范围 hyperfine 和 routine characterization 更高效</td>
+</tr>
+<tr>
+<td>缺陷与半导体中心</td>
+<td>tiny <span class="math-inline">\(\Delta g\)</span> 、高极化和高场读出</td>
+<td>不同场强可帮助区分机制，且器件/样品适配成本不同</td>
+</tr>
+<tr>
+<td>Coupled-spin exchange</td>
+<td><span class="math-inline">\(\Delta gB_0\)</span> 使异质自旋更容易寻址</td>
+<td>多频数据更适合区分 <span class="math-inline">\(J\)</span> 、<span class="math-inline">\(g\)</span> 和其他相互作用贡献</td>
+</tr>
+</tbody>
+</table>
+<h3 id="不宜仅为了-w-band-配置的典型场景">不宜仅为了 W-band 配置的典型场景</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常规 nitroxide–nitroxide DEER，仅要求距离分布</td>
+<td>W-band orientation selection 和有限 pulse bandwidth 可能增加距离反演偏差；Q-band 常已是较实用折中</td>
+</tr>
+<tr>
+<td>极大 ZFS 的高自旋体系</td>
+<td>94 GHz 仍可能低于 ZFS 能标，需要更高频率 HFEPR</td>
+</tr>
+<tr>
+<td>水相样品且只需要常规 CW 定性</td>
+<td>W-band 的介电损耗、样品尺寸和 resonator loading 成本未必对应新的谱学信息</td>
+</tr>
+<tr>
+<td>单纯追求“更高灵敏度”</td>
+<td>热极化增加不等于实际 spin sensitivity 或 concentration sensitivity 必然提高</td>
+</tr>
+<tr>
+<td>线宽由结构分布、exchange broadening 或强 <span class="math-inline">\(g\)</span> -strain 主导</td>
+<td>高频产生的额外 <span class="math-inline">\(g\)</span> 色散可能仍小于 intrinsic broadening</td>
+</tr>
+</tbody>
+</table>
+<h2 id="w-band-仪器模块与科研需求">W-band 仪器模块与科研需求</h2>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>主要科研任务</th>
+<th>对应物理机制</th>
+<th>核心实验条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>W-band CW</td>
+<td><span class="math-inline">\(g\)</span> tensor、ZFS、defect identification、多频 line-shape</td>
+<td><span class="math-inline">\(g\)</span> 色散、Zeeman/ZFS 比值、运动频率依赖</td>
+<td>高场均匀度与稳定性、宽磁场扫描、可靠频率标定</td>
+</tr>
+<tr>
+<td>Pulse / echo-detected EPR</td>
+<td><span class="math-inline">\(T_1\)</span> 、<span class="math-inline">\(T_m/T_2\)</span> 、Rabi、高场谱选择</td>
+<td>高极化、高场本征态、取向选择</td>
+<td>高 <span class="math-inline">\(B_1\)</span> 、低 dead time、稳定 phase coherence</td>
+</tr>
+<tr>
+<td>ENDOR / ESEEM / HYSCORE</td>
+<td>ligand nuclei、配位结构、hyperfine tensor</td>
+<td>orientation selection、nuclear Zeeman increase</td>
+<td>RF coil、宽核频率范围、低温、可控 orientation selection</td>
+</tr>
+<tr>
+<td>DEER / PELDOR</td>
+<td>Mn/Gd tag 距离、异质自旋距离与取向</td>
+<td>high-spin central transition、 <span class="math-inline">\(g\)</span> addressability</td>
+<td>双频微波、宽带脉冲、高功率、低温</td>
+</tr>
+<tr>
+<td>RIDME</td>
+<td>high-spin metal label PDS</td>
+<td>relaxation-assisted dipolar modulation</td>
+<td>合适的 <span class="math-inline">\(T_1/T_m\)</span> 、低温、稳定 echo detection</td>
+</tr>
+<tr>
+<td>光激发 / TR-EPR</td>
+<td>photoradicals、radical pairs、defects</td>
+<td><span class="math-inline">\(g\)</span> resolution、spin polarization、orientation</td>
+<td>光路耦合、时序同步、低温兼容</td>
+</tr>
+<tr>
+<td>低温系统</td>
+<td>rare-earth、SMM、qubit、Gd/Mn PDS</td>
+<td>Boltzmann polarization、relaxation、high-field states</td>
+<td>4–80 K 稳定控温、低振动、低热负载</td>
+</tr>
+<tr>
+<td>UHV / device / wafer interface</td>
+<td>surface radicals、oxide defects、EDMR</td>
+<td>tiny <span class="math-inline">\(\Delta g\)</span> 、high-field polarization</td>
+<td>特殊 resonator、空间开放度、机械稳定性、光/电接口</td>
+</tr>
+</tbody>
+</table>
+<p>从科研仪器能力角度看，W-band CW、W-band pulse 和完整的 W-band pulsed-structure capability 应当区分。CW 主要处理 <span class="math-inline">\(g\)</span> tensor、ZFS 和 line-shape；pulse 进一步进入 relaxation、echo detection 和 coherent control；ENDOR、DEER/RIDME 则要求更高的毫米波功率、双频或 RF 通道、脉冲带宽和低温兼容性。这些能力对应不同的科研问题，不能仅以“是否为 W-band”归为同一层级。</p>
+<h2 id="代表性案例总索引">代表性案例总索引</h2>
+<p>下表保留前述调研中的全部 20 个主要案例，并给出其主要归属。部分实例同时涉及两条物理主线，这里按最核心的 W-band 信息来源归类。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">编号</th>
+<th>体系 / 科学问题</th>
+<th>主要主线</th>
+<th>代表文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">1</td>
+<td>Photosynthetic semiquinone <span class="math-inline">\(g\)</span> tensor</td>
+<td>1. <span class="math-inline">\(g\)</span> 分辨</td>
+<td>Burghaus et al., 1993, <a href="https://doi.org/10.1021/j100131a037">10.1021/j100131a037</a></td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td>Flavin radical tensor orientation / ENDOR</td>
+<td>3. 取向选择</td>
+<td>Kay et al., 2005, <a href="https://doi.org/10.1021/ja051572s">10.1021/ja051572s</a></td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td>Nitroxide solvent polarity / H-bond response</td>
+<td>4. 动力学与环境</td>
+<td>Owenius et al., 2001, <a href="https://doi.org/10.1021/jp0116914">10.1021/jp0116914</a></td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td>Protein local electrostatics / p <span class="math-inline">\(K_a\)</span></td>
+<td>4. 动力学与环境</td>
+<td>Voinov et al., 2008, <a href="https://doi.org/10.1021/bi800272f">10.1021/bi800272f</a></td>
+</tr>
+<tr>
+<td style="text-align:right">5</td>
+<td>IDP fast rotational dynamics</td>
+<td>4. 动力学与环境</td>
+<td>Casey et al., 2014, <a href="https://doi.org/10.1016/j.bbrc.2014.06.045">10.1016/j.bbrc.2014.06.045</a></td>
+</tr>
+<tr>
+<td style="text-align:right">6</td>
+<td>Azurin Type-I Cu full <span class="math-inline">\(g\)</span> tensor</td>
+<td>1. <span class="math-inline">\(g\)</span> 分辨</td>
+<td><a href="https://doi.org/10.1021/ja00086a044">10.1021/ja00086a044</a></td>
+</tr>
+<tr>
+<td style="text-align:right">7</td>
+<td>Cu <span class="math-inline">\(_A\)</span> ligand hyperfine / ENDOR</td>
+<td>3. 取向选择</td>
+<td><a href="https://doi.org/10.1021/ja003924v">10.1021/ja003924v</a></td>
+</tr>
+<tr>
+<td style="text-align:right">8</td>
+<td>Aqueous vanadyl electronic structure</td>
+<td>1. <span class="math-inline">\(g\)</span> 分辨</td>
+<td><a href="https://doi.org/10.1021/jp992186y">10.1021/jp992186y</a></td>
+</tr>
+<tr>
+<td style="text-align:right">9</td>
+<td>Cr/Mo M–M bonded orbital character</td>
+<td>1. <span class="math-inline">\(g\)</span> 分辨</td>
+<td><a href="https://doi.org/10.1021/ic0260670">10.1021/ic0260670</a></td>
+</tr>
+<tr>
+<td style="text-align:right">10</td>
+<td>Fe <span class="math-inline">\(_4\)</span> single-molecule magnet anisotropy</td>
+<td>2. ZFS / high-spin</td>
+<td><a href="https://doi.org/10.1021/jp003441d">10.1021/jp003441d</a></td>
+</tr>
+<tr>
+<td style="text-align:right">11</td>
+<td>High-spin nitrene ZFS sign</td>
+<td>2. ZFS / high-spin</td>
+<td><a href="https://doi.org/10.1021/acs.jpca.2c04211">10.1021/acs.jpca.2c04211</a></td>
+</tr>
+<tr>
+<td style="text-align:right">12</td>
+<td>Yb <span class="math-inline">\(^{3+}\)</span> :CaWO <span class="math-inline">\(_4\)</span> coherent spin manipulation</td>
+<td>5. 量子自旋</td>
+<td>Rakhmatullin et al., 2009, <a href="https://doi.org/10.1103/PhysRevB.79.172408">10.1103/PhysRevB.79.172408</a></td>
+</tr>
+<tr>
+<td style="text-align:right">13</td>
+<td>Gd-doped glass central-transition / clustering</td>
+<td>2. ZFS / high-spin</td>
+<td>Smirnov &amp; Sen, 2001, <a href="https://doi.org/10.1063/1.1403436">10.1063/1.1403436</a></td>
+</tr>
+<tr>
+<td style="text-align:right">14</td>
+<td>Gd <span class="math-inline">\(^{17}\)</span> O ENDOR / water coordination</td>
+<td>3. 取向选择</td>
+<td><a href="https://doi.org/10.1021/jp040306i">10.1021/jp040306i</a></td>
+</tr>
+<tr>
+<td style="text-align:right">15</td>
+<td>Mn <span class="math-inline">\(^{2+}\)</span> -EDTA protein DEER</td>
+<td>3. 取向与距离</td>
+<td>Banerjee et al., 2012, <a href="https://doi.org/10.1021/jz201521d">10.1021/jz201521d</a></td>
+</tr>
+<tr>
+<td style="text-align:right">16</td>
+<td>Radical-pair orientation-resolved dipolar EPR</td>
+<td>3. 取向与距离</td>
+<td><a href="https://doi.org/10.1021/jp401573z">10.1021/jp401573z</a></td>
+</tr>
+<tr>
+<td style="text-align:right">17</td>
+<td>Cr <span class="math-inline">\(_7\)</span> Ni / Co coupled molecular qubits</td>
+<td>5. 量子自旋 / exchange</td>
+<td>Ferrando-Soria et al., 2016, <a href="https://doi.org/10.1038/ncomms11377">10.1038/ncomms11377</a></td>
+</tr>
+<tr>
+<td style="text-align:right">18</td>
+<td>MgO surface trapped-electron centers</td>
+<td>1. <span class="math-inline">\(g\)</span> 分辨 / defect</td>
+<td>Rocker et al., 2014, <a href="https://doi.org/10.1063/1.4893729">10.1063/1.4893729</a></td>
+</tr>
+<tr>
+<td style="text-align:right">19</td>
+<td>Silicon FET donor / 2DEG EDMR</td>
+<td>1 &amp; 5. defect / high-field readout</td>
+<td>Lang et al., 2011, <a href="https://doi.org/10.1063/1.3557395">10.1063/1.3557395</a>；Lo et al., 2011, <a href="https://doi.org/10.1103/PhysRevLett.106.207601">10.1103/PhysRevLett.106.207601</a></td>
+</tr>
+<tr>
+<td style="text-align:right">20</td>
+<td>6H- <span class="math-inline">\(^{28}\)</span> SiC defect coherence</td>
+<td>5. 量子自旋</td>
+<td>Murzakhanov et al., 2024, <a href="https://doi.org/10.1063/5.0222098">10.1063/5.0222098</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="结论">结论</h2>
+<p>W-band EPR 的应用边界可以从 spin Hamiltonian 本身得到较为统一的解释。频率升高后，电子 Zeeman 项按 <span class="math-inline">\(B_0\)</span> 增加，而 hyperfine、ZFS、exchange 和 dipolar interactions 的内禀参数不随外场同比例改变。由此产生五类具有明确物理来源的信息增量：场轴 <span class="math-inline">\(g\)</span> 色散增加、Zeeman/ZFS 相对能标改变、orientation selection 增强、<span class="math-inline">\(g/A\)</span> 动态调制对快速运动更敏感，以及低温电子热极化增加。</p>
+<p>这五类效应分别对应自由基与金属中心电子结构、高自旋与分子磁性、局域配位与电子—电子几何、spin-label 动力学、量子自旋与固体缺陷等研究问题。它们之间存在交叉，但不应仅按“生物、材料、催化、量子”进行平行分类，因为同一科研领域可能依赖完全不同的 W-band 物理机制。</p>
+<p>判断一个科研问题是否真正需要 W-band，可以采用统一的分析顺序：</p>
+<p></p><div class="math-display">\[\text{Hamiltonian term}
+\rightarrow
+\text{W-induced scaling}
+\rightarrow
+\text{observable}
+\rightarrow
+\text{spin system}
+\rightarrow
+\text{scientific question}
+\rightarrow
+\text{experiment}
+\rightarrow
+\text{X/Q comparison}
+\rightarrow
+\text{instrument requirement}.\]</div>
+<p>只有当高场条件能够改变限制当前谱学信息的关键能标、分辨尺度或取向选择时，W-band 才构成明确的技术需求。对仅要求常规定性、常规 nitroxide 距离分布或不存在显著高场信息增量的样品，X/Q-band 仍可能是更合适的实验条件。</p>
+
+
+</div>
+</div>
+
+
+
+</div>
+</div></article></main></div><button class="drawer-backdrop" aria-label="关闭目录" hidden></button><script>(()=>{'use strict';const $=s=>document.querySelector(s),body=document.body,root=document.documentElement,content=$('#note-content');if(!content)return;const store={get:(k,d)=>{try{return localStorage.getItem('plastocyanin-doc-preview-'+k)||d}catch{return d}},set:(k,v)=>{try{localStorage.setItem('plastocyanin-doc-preview-'+k,v)}catch{}}};
+// Continuous document preview: preserve existing content nodes and anchors.
+const headings=[...content.querySelectorAll('h2,h3,h4')],toc=$('#note-toc'),ids=new Set([...document.querySelectorAll('[id]')].map(x=>x.id)),links=new Map();let group,list,chapter=0,sub=0,part=0;
+headings.forEach((h,i)=>{if(!h.id){let id='section-'+(i+1);while(ids.has(id))id+='-';h.id=id;ids.add(id)}
+const titleHTML=h.innerHTML.replace(/^(?:第\s*\d+\s*章[\s：:、.]*|\d+(?:\.\d+)*[.、．]?\s+)/u,''),href='#'+encodeURIComponent(h.id);let number='';
+if(h.tagName==='H2'){const abstract=h.id==='摘要';if(!abstract)chapter++;sub=0;part=0;number=abstract?'':'第 '+chapter+' 章';group=document.createElement('details');group.className='chapter-group';group.open=false;const summary=document.createElement('summary'),num=document.createElement('span'),a=document.createElement('a');num.textContent=number;a.href=href;a.innerHTML=titleHTML;summary.append(num,a);group.append(summary);list=document.createElement('ol');group.append(list);toc.append(group);links.set(h,a)}
+else if(h.tagName==='H3'){part=0;number=chapter+'.'+(++sub);const li=document.createElement('li'),a=document.createElement('a'),num=document.createElement('span'),label=document.createElement('span');a.href=href;num.textContent=number;label.innerHTML=titleHTML;a.append(num,label);li.append(a);if(list)list.append(li);links.set(h,a)}
+else number=chapter+'.'+sub+'.'+(++part);
+h.innerHTML=titleHTML;if(number){const num=document.createElement('span');num.className='section-number';num.textContent=number;h.prepend(num)}const anchor=document.createElement('a');anchor.href=href;anchor.className='heading-anchor';anchor.textContent='#';anchor.setAttribute('aria-label','链接到本节');h.append(anchor)});
+// Leaf sections are links, with no empty disclosure control or arrow.
+toc.querySelectorAll('details').forEach(d=>{const ol=d.querySelector('ol');if(ol.children.length)return;const leaf=document.createElement('div');leaf.className='chapter-group chapter-leaf';const row=document.createElement('div');row.className='chapter-leaf-row';const summary=d.querySelector('summary');while(summary.firstChild)row.append(summary.firstChild);leaf.append(row);d.replaceWith(leaf)});
+if(!toc.querySelector('details'))$('#toc-collapse').hidden=true;
+const tocLinks=[...links.values()];function activate(h){links.forEach((a,key)=>{const active=key===h;a.classList.toggle('active',active);if(active){a.setAttribute('aria-current','location');const parent=a.closest('details');toc.querySelectorAll('details').forEach(d=>d.open=d===parent)}else a.removeAttribute('aria-current')})}if('IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>{const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);if(visible.length)activate(visible[0].target)},{rootMargin:'-110px 0px -65% 0px'});headings.forEach(h=>obs.observe(h))}if(headings.length)activate(headings[0]);
+$('#toc-collapse').onclick=()=>{const open=$('#toc-collapse').getAttribute('aria-expanded')!=='true';toc.querySelectorAll('details').forEach(d=>d.open=open);$('#toc-collapse').setAttribute('aria-expanded',String(open));$('#toc-collapse').dataset.state=open?'collapse':'expand';$('#toc-collapse').setAttribute('aria-label',open?'收起全部小节':'展开全部小节')};
+let returnFocus=null;const backdrop=$('.drawer-backdrop');function closeDrawer(){body.classList.remove('nav-open');backdrop.hidden=true;$('#toggle-toc').setAttribute('aria-expanded','false')}function openDrawer(){body.classList.add('nav-open');backdrop.hidden=false;$('#toggle-toc').setAttribute('aria-expanded','true')}$('#toggle-toc').onclick=()=>{if(body.classList.contains('nav-open'))closeDrawer();else{openDrawer();returnFocus=$('#toggle-toc');$('#reader-search').focus()}};backdrop.onclick=()=>{closeDrawer();$('#toggle-toc').focus()};links.forEach((a,h)=>a.onclick=e=>{e.stopPropagation();activate(h);closeDrawer()});
+function panel(open){$('#note-display-panel').hidden=!open;$('#open-display').setAttribute('aria-expanded',String(open));if(open){returnFocus=$('#open-display');$('#reader-smaller').focus()}}$('#open-display').onclick=()=>panel($('#note-display-panel').hidden);document.addEventListener('click',e=>{if(!e.target.closest('.display-control'))panel(false)});
+const searchRoot=content;let marks=[],current=-1;const input=$('#reader-search');function clearMarks(){searchRoot.querySelectorAll('mark[data-reader-match]').forEach(m=>{const p=m.parentNode;m.replaceWith(document.createTextNode(m.textContent));p.normalize()});marks=[];current=-1;$('#reader-search-count').textContent='0 / 0'}function move(delta){if(!marks.length)return;marks.forEach(m=>m.classList.remove('current'));current=(current+delta+marks.length)%marks.length;marks[current].classList.add('current');marks[current].scrollIntoView({block:'center'});$('#reader-search-count').textContent=(current+1)+' / '+marks.length}
+function search(){clearMarks();const q=input.value.trim().toLocaleLowerCase();if(!q)return;const walker=document.createTreeWalker(searchRoot,NodeFilter.SHOW_TEXT,{acceptNode:n=>!n.parentElement.closest('script,style,pre,code,mjx-container,.math-inline,.math-display,.mermaid,.heading-anchor,.note-summary,.note-category,.note-dates,.note-tags,.note-attachments,.page-marker,mark')&&n.textContent.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT});const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);for(const n of nodes){const text=n.textContent,lower=text.toLocaleLowerCase();let pos=0,index=lower.indexOf(q),found=false;const frag=document.createDocumentFragment();while(index>=0){found=true;frag.append(document.createTextNode(text.slice(pos,index)));const m=document.createElement('mark');m.dataset.readerMatch='';m.textContent=text.slice(index,index+q.length);frag.append(m);marks.push(m);pos=index+q.length;index=lower.indexOf(q,pos)}if(found){frag.append(document.createTextNode(text.slice(pos)));n.replaceWith(frag)}}move(1)}let timer;input.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(search,180)});$('#search-next').onclick=()=>move(1);$('#search-prev').onclick=()=>move(-1);$('#search-clear').onclick=()=>{clearTimeout(timer);input.value='';clearMarks();input.focus()};input.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();clearTimeout(timer);if(!marks.length)search();else move(e.shiftKey?-1:1)}};
+let scale=1,mode=store.get('scale','auto');function applyScale(){scale=mode==='auto'?(1):Math.min(1.6,Math.max(.8,Number(mode)||1));for(const [key,value]of Object.entries({'sidebar-w':280,'page-w':860,'reader-font':16,'reader-heading':20,'reader-title':32,'sidebar-font':14,'sidebar-small':13,'paper-pad':36}))root.style.setProperty('--'+key,(value*scale).toFixed(1)+'px');$('#reader-scale').textContent=(mode==='auto'?'自动 ':'')+Math.round(scale*100)+'%';$('#reader-auto').setAttribute('aria-pressed',String(mode==='auto'))}function adjust(d){mode=String(Math.min(1.6,Math.max(.8,Math.round((scale+d)*100)/100)));store.set('scale',mode);applyScale()}$('#reader-smaller').onclick=()=>adjust(-.1);$('#reader-larger').onclick=()=>adjust(.1);$('#reader-auto').onclick=()=>{mode='auto';store.set('scale',mode);applyScale()};addEventListener('resize',()=>{if(mode==='auto')applyScale();if(innerWidth>900)closeDrawer()});applyScale();
+function setTheme(theme){if(!['mist','sage','sand','mauve','gray'].includes(theme))theme='mist';root.dataset.theme=theme;document.querySelectorAll('.theme-options button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===theme)));store.set('theme',theme)}setTheme(store.get('theme','mist'));document.querySelectorAll('.theme-options button').forEach(b=>b.onclick=()=>setTheme(b.dataset.theme));
+content.querySelectorAll('table').forEach(t=>{if(t.parentElement.classList.contains('table-scroll'))return;const wrap=document.createElement('div');wrap.className='table-scroll';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','表格，可横向滚动');t.before(wrap);wrap.append(t)});content.querySelectorAll('pre:has(code)').forEach(pre=>{const button=document.createElement('button');button.textContent='复制';button.className='code-copy';button.onclick=async()=>{try{await navigator.clipboard.writeText(pre.querySelector('code').textContent);button.textContent='已复制'}catch{button.textContent='请选中文本复制'}setTimeout(()=>button.textContent='复制',1500)};pre.before(button)});
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();if(innerWidth<=900)openDrawer();returnFocus=$('#toggle-toc');input.focus()}if(e.key==='Escape'){clearTimeout(timer);closeDrawer();panel(false);returnFocus?.focus()}if(e.key==='Tab'&&body.classList.contains('nav-open')){const items=[...$('#note-sidebar').querySelectorAll('a,button,input,summary')].filter(x=>x.offsetParent!==null),first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+if(location.hash){requestAnimationFrame(()=>{let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}const h=document.getElementById(id);if(h){activate(h);h.scrollIntoView()}})}
+// Text-only TeX arrow chains are prose: wrap at node boundaries.
+content.querySelectorAll('.math-display').forEach(el=>{const raw=el.textContent.trim();const nodes=[...raw.matchAll(/\\text\{([^{}]+)\}/g)];const remainder=raw.replace(/\\text\{[^{}]+\}|\\rightarrow|\\\[|\\\]|\s/g,'');if(nodes.length>1&&/^[.,;。；，]*$/.test(remainder)){el.className='reasoning-flow';el.replaceChildren();nodes.forEach((node,i)=>{if(i){const arrow=document.createElement('span');arrow.textContent='→';el.append(arrow)}const span=document.createElement('span');span.textContent=node[1]+(i===nodes.length-1?remainder:'');el.append(span)})}});
+// Fit only oversized formulas to their containing line; never add a scroll region.
+function fitMath(){content.querySelectorAll('mjx-container').forEach(m=>{m.style.fontSize='';const math=m.querySelector('mjx-math');if(!math)return;const parent=m.closest('.math-display')||m.closest('td,th,p,li,h3,h4,.page-block');if(!parent)return;const available=parent.clientWidth;const width=math.getBoundingClientRect().width;if(available>0&&width>available){const size=parseFloat(getComputedStyle(m).fontSize);m.style.fontSize=(size*available/width*.98)+'px'}})}
+let mathFrame;function scheduleMath(){cancelAnimationFrame(mathFrame);mathFrame=requestAnimationFrame(fitMath)}
+new MutationObserver(scheduleMath).observe(content,{childList:true,subtree:true});
+addEventListener('resize',scheduleMath);new MutationObserver(scheduleMath).observe(root,{attributes:true,attributeFilter:['style']});
+document.fonts?.ready.then(scheduleMath);scheduleMath();
+})();
+</script></body></html>
