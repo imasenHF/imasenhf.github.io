@@ -38,3 +38,5 @@ bundle exec jekyll serve
 用于长篇调研、学习笔记、实验方法及计算记录。新文章使用 `_notes/` 内的 Markdown 或 HTML，指定 `layout: note`；元数据统一展示，首页与列表读取同一来源。阅读界面提供 Home、自动目录、页内搜索、主题、缩放、图表与打印样式，不包含教材页码或扫描页功能。
 
 完整写作字段、功能限制与检查方法见 [docs/NOTE_TEMPLATE.md](docs/NOTE_TEMPLATE.md)。W 波段 EPR 报告是首个迁移样例。
+
+Notes 模板沿用 NMR_EXP 阅读器的主题和侧栏比例；Home 图标与页内搜索同列于侧栏顶部，正文按 H2 小节生成独立纸张与 Notes 页码。W 波段调研用作完整样例。使用说明见 [Notes 模板文档](docs/NOTE_TEMPLATE.md)。

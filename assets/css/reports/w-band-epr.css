@@ -39,10 +39,10 @@
   color:var(--muted); font-size:12px;
 }
 @media (max-width:1050px) {
-  .layout { display:block; } .report-document aside { display:none; } .report-document main { max-width:none; padding:28px 20px 60px; } .report-document h1 { font-size:25px; } .report-document table { display:block; overflow-x:auto; }
+  .report-document .layout { display:block; } .report-document aside { display:none; } .report-document main { max-width:none; padding:28px 20px 60px; } .report-document h1 { font-size:25px; } .report-document table { display:block; overflow-x:auto; }
 }
 @media print {
-  aside { display:none; } .report-document .layout { display:block; } .report-document main { max-width:none; padding:0; }
+  .report-document aside { display:none; } .report-document .layout { display:block; } .report-document main { max-width:none; padding:0; }
 }
 
 .report-document{--bg:#f6f6f3;--text:#26333a;--heading:#193d53;--border:#d9ddd9;--link:#355c7d;font-family:inherit}.report-document .layout{max-width:1300px}.report-document aside{top:16px;background:transparent}.report-document main{padding:35px 40px 80px}.report-document h1{font-size:30px}.report-document table{display:block;overflow:auto}.report-document pre{overflow:auto}@media(max-width:760px){.report-document .layout{display:block!important}.report-document aside{display:none!important}.report-document main{padding:24px!important}.report-document h1{font-size:24px}}
