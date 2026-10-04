@@ -128,3 +128,7 @@ SpinFront 主入口改为 /spinfront/，旧 /SpinFront/ 保留兼容跳转，保
 
 
 用户已手动将独立仓库改名为 nmrexp、spinplot、easycurling。正式地址使用 /nmrexp/、/spinplot/、/spinfront/；主站元数据与项目索引同步更新。EasyCurling 是 Python/Windows 软件仓库，没有网页入口，源码和下载链接使用 github.com/imasenHF/easycurling，发布资产文件名仍按实际大小写保留。旧 /NMR_EXP/、/SpinPlot/、/SpinFront/ 根入口保留静态跳转，404 兼容脚本处理旧前缀的深层页面，保留查询参数与锚点；GitHub Pages 静态兼容页不等于服务器 301。
+
+
+## 2026-10-05 导航与项目分类
+Notes 侧栏 Home 返回 /notes/，顶部 ICO 返回 /。首页介绍原文不变，在“正在学的东西，”后主动断行，手机自然换行。Projects 按 _data/project-types.yml 的分类和顺序分组；项目用 project_type 标注，未知类别显示于其他项目。专题调研条目用 note 指向 Notes slug，标题、摘要、URL 从原笔记读取，正文只维护一份。首页精选项目保持原有三个入口。

@@ -57,3 +57,5 @@
 @media print{.note-page .experiment-heading{padding-top:.6cm}}
 
 .sidebar .chapter-group summary>a.active,.sidebar .chapter-leaf-row>a.active{font-weight:400}
+
+.note-home-link{grid-column:1;grid-row:1 / 3;display:grid;place-items:center;border-radius:5px}.note-home-link .note-brand-icon{grid-column:auto;grid-row:auto}.note-home-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
