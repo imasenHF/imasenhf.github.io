@@ -23,7 +23,7 @@ bundle exec jekyll serve
 
 ## 发布前
 
-运行 `bundle exec jekyll build`。发布环境必须编译 Jekyll，部署 `_site/`；不要直接上传模板源码。现有 NMR_EXP 与 SpinPlot 独立项目地址保持不变。此轮未提交、推送或部署。
+运行 `bundle exec jekyll build`。发布环境必须编译 Jekyll，部署 `_site/`；不要直接上传模板源码。独立项目正式入口为 /nmrexp/ 与 /spinplot/。此轮未提交、推送或部署。
 
 ## 科学视觉资源
 
@@ -40,3 +40,7 @@ bundle exec jekyll serve
 完整写作字段、功能限制与检查方法见 [docs/NOTE_TEMPLATE.md](docs/NOTE_TEMPLATE.md)。W 波段 EPR 报告是首个迁移样例。
 
 Notes 模板沿用 NMR_EXP 阅读器的主题和侧栏比例；Home 图标与页内搜索同列于侧栏顶部，正文按 H2 小节生成独立纸张与 Notes 页码。W 波段调研用作完整样例。使用说明见 [Notes 模板文档](docs/NOTE_TEMPLATE.md)。
+
+
+## URL 约定
+新增网页路径使用小写，项目显示名保持原样。项目入口为 /nmrexp/、/spinplot/、/spinfront/。旧大写根入口和深层页面通过静态兼容页跳转，查询参数和锚点保留。下载资产、代码文件按实际文件名引用，不统一转换文件名大小写。EasyCurling 源码位于 https://github.com/imasenHF/easycurling 。

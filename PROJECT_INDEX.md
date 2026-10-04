@@ -6,9 +6,9 @@
 | 项目 | 用途与来源 | 已确认仓库 | 网页入口 | 当前状态 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | plastocyanin 主站 | 个人项目、笔记、经历与兴趣的统一入口；用户明确定位 | imasenHF/imasenhf.github.io | https://plastocyanin.org/ | 单页静态站；当前页面结构与部署见 SITE_CONTEXT.md | 按当前要求另行制定页面维护任务 |
-| NMR_EXP | 实验参考资料库；用户明确要求 | 待补，本次未检查外部仓库 | /NMR_EXP/ 为必须保留的路径，当前可用性待检查 | 主站无对应目录；首页 NMR Experiments 条目没有链接，显示 In preparation；资料库实际状态待检查 | 检查实际仓库与发布入口，确认资料来源、个人贡献及说明 |
+| NMR_EXP | 实验参考资料库；用户明确要求 | 待补，本次未检查外部仓库 | /nmrexp/ 为必须保留的路径，当前可用性待检查 | 主站无对应目录；首页 NMR Experiments 条目没有链接，显示 In preparation；资料库实际状态待检查 | 检查实际仓库与发布入口，确认资料来源、个人贡献及说明 |
 | SpinFront | NMR/EPR 信息整理项目；用户明确范围 | 待补 | 待补；主站只在主题列表中出现名称 | 主站未发现项目页面或归档文件，具体格式与现有规范待补 | 获取实际代码、现有规范、样例及发布入口后整理 |
-| SpinPlot | 浏览器端 CW EPR 数据处理与作图软件 | imasenHF/SpinPlot | https://plastocyanin.org/SpinPlot/ 直接打开软件；旧 /SpinPlot/legacy/ 跳转首页 | 当前版本 0.2.2（首次公开 0.1.0）；新增仅缩小预览、Clear config 与手动行列布局；ΔB 工具关闭保留标记，独立 Clear ΔB 清除标记并支持 Undo；Ctrl＋左键拖动平移 Y，Shift＋左键拖动平移 X。部署成功，在线布局应用与配置复位已检查。使用 MAJOR.MINOR.PATCH 版本规则；package.json 管理应用版本，项目文件格式版本独立。Vite 构建，算法和界面尚未模块化；完整数据操作未验收，PDF 中文字体仍有限制 | 按该仓库 docs/ARCHITECTURE.md 迁移模块；主站 /projects/spinplot/ 介绍页尚未建立 |
+| SpinPlot | 浏览器端 CW EPR 数据处理与作图软件 | imasenHF/spinplot | https://plastocyanin.org/spinplot/ 直接打开软件；旧 /spinplot/legacy/ 跳转首页 | 当前版本 0.2.2（首次公开 0.1.0）；新增仅缩小预览、Clear config 与手动行列布局；ΔB 工具关闭保留标记，独立 Clear ΔB 清除标记并支持 Undo；Ctrl＋左键拖动平移 Y，Shift＋左键拖动平移 X。部署成功，在线布局应用与配置复位已检查。使用 MAJOR.MINOR.PATCH 版本规则；package.json 管理应用版本，项目文件格式版本独立。Vite 构建，算法和界面尚未模块化；完整数据操作未验收，PDF 中文字体仍有限制 | 按该仓库 docs/ARCHITECTURE.md 迁移模块；主站 /projects/spinplot/ 介绍页尚未建立 |
 | 其他小项目 | 用户已有工具及小项目，逐项整理 | 待补 | 待补 | 名称、数量、完成程度及公开范围待补 | 逐项确认用途、运行方式、本人贡献及公开价值 |
 
 ## 现有页面条目的解释
@@ -33,3 +33,15 @@ Notes 是学习笔记与技术记录的内容栏目，Interests 是兴趣内容�
 ## 首页 K 款确认
 
 用户选定 K：黄色 #F0BE32 内线宽 3.5、白色单侧描边 3（总外宽 9.5），谱线位于结构下半部前景，无坐标轴。此前背景谱线与后景叠层方案废止。用户已授权修改后直接提交并推送，取代此前暂不提交要求。
+
+
+## 2026-10-05 当前仓库与 URL
+
+| 项目 | 源码仓库 | 正式网页入口 |
+|---|---|---|
+| NMR Experiment Library | https://github.com/imasenHF/nmrexp | /nmrexp/ |
+| SpinPlot | https://github.com/imasenHF/spinplot | /spinplot/ |
+| SpinFront | 主仓库 | /spinfront/ |
+| EasyCurling | https://github.com/imasenHF/easycurling | Python/Windows 软件，无网页入口 |
+
+此表覆盖早期路径记录。

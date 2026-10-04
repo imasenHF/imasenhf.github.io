@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /404.html
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>页面地址</title><script>
+const aliases={NMR_EXP:'nmrexp',nmr_exp:'nmrexp',SpinPlot:'spinplot',SpinFront:'spinfront'};
+const parts=location.pathname.split('/');const target=aliases[parts[1]];
+if(target){parts[1]=target;location.replace(parts.join('/')+location.search+location.hash);}
+</script></head><body><h1>页面地址已更改或不存在</h1><p><a href="/">返回首页</a> · <a href="/nmrexp/">NMR Experiment Library</a> · <a href="/spinplot/">SpinPlot</a> · <a href="/spinfront/">SpinFront</a></p></body></html>

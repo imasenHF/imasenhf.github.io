@@ -125,3 +125,6 @@ ICO 跨顶部标题和分类两行居中；目录 H2 和章序号均为常规字
 
 ## 2026-10-05 URL 小写迁移
 SpinFront 主入口改为 /spinfront/，旧 /SpinFront/ 保留兼容跳转，保留查询参数与锚点。NMR_EXP 与 SpinPlot 独立仓库改名待 GitHub 管理登录完成；在新地址部署前，主站仍指向有效旧地址。规划路径 /nmr_exp/、/spinplot/，项目显示名称不变。
+
+
+用户已手动将独立仓库改名为 nmrexp、spinplot、easycurling。正式地址使用 /nmrexp/、/spinplot/、/spinfront/；主站元数据与项目索引同步更新。EasyCurling 是 Python/Windows 软件仓库，没有网页入口，源码和下载链接使用 github.com/imasenHF/easycurling，发布资产文件名仍按实际大小写保留。旧 /NMR_EXP/、/SpinPlot/、/SpinFront/ 根入口保留静态跳转，404 兼容脚本处理旧前缀的深层页面，保留查询参数与锚点；GitHub Pages 静态兼容页不等于服务器 301。
