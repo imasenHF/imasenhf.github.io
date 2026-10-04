@@ -1,0 +1,29 @@
+title: plastocyanin
+url: "https://plastocyanin.org"
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Shanghai
+markdown: kramdown
+excerpt_separator: ""
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+  projects:
+    output: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - SITE_CONTEXT.md
+  - PROJECT_INDEX.md
+  - CV_RECORDS.md
+  - vendor
+  - scripts
+  - design-preview
+  - node_modules

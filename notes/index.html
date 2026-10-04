@@ -1,0 +1,5 @@
+---
+title: Notes
+nav: notes
+---
+<section class="container page-heading"><p class="eyebrow">Notes</p><h1>笔记与调研</h1><p>学习、计算与实践中的记录。</p><label class="search-label" for="note-search">搜索标题、摘要与标签</label><input id="note-search" type="search" placeholder="例如：W-band、距离测量" autocomplete="off"></section><section class="container page-body">{% include note-list.html %}<p id="search-empty" hidden>没有匹配的笔记。</p><p class="result-count" id="search-count" aria-live="polite"></p></section><script>const input=document.getElementById('note-search'),rows=[...document.querySelectorAll('.note-row')];function filterNotes(){const query=input.value.trim().toLowerCase();let count=0;for(const row of rows){row.hidden=!row.textContent.toLowerCase().includes(query);if(!row.hidden)count++;}document.getElementById('search-empty').hidden=count!==0;document.getElementById('search-count').textContent=query?'找到 '+count+' 篇笔记':'';}input.addEventListener('input',filterNotes);</script>

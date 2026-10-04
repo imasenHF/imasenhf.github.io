@@ -1,0 +1,1049 @@
+---
+layout: default
+title: "X 波段连续波与脉冲 EPR 在医学领域的应用"
+summary: "整理自由基、金属蛋白、距离测量与医学材料中的 EPR 应用，并区分低频体内成像。"
+nav: notes
+category: 磁共振
+tags: ["EPR", "医学应用"]
+featured: true
+order: 2
+published_at: null
+math: true
+report_css: /assets/css/reports/x-band-epr-medical.css
+---
+<div class="report-document">
+{% raw %}
+
+<div class="layout">
+<aside>
+<h2>目录</h2>
+<nav id="toc"><a class="lv2" href="#%E6%91%98%E8%A6%81">摘要</a><a class="lv3" href="#%E6%91%98%E8%A6%81-%E6%8A%80%E6%9C%AF%E5%88%86%E5%B7%A5">CW、时间分辨与自旋回波型脉冲EPR的应用分工</a><a class="lv2" href="#%E6%8A%A5%E5%91%8A%E8%8C%83%E5%9B%B4%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%A6%82%E8%A7%88">报告范围与数据概览</a><a class="lv2" href="#2-%E8%87%AA%E7%94%B1%E5%9F%BA%E6%B4%BB%E6%80%A7%E6%B0%AE%E8%84%82%E8%B4%A8%E8%BF%87%E6%B0%A7%E5%8C%96%E4%B8%8E%E6%B0%A7%E5%8C%96%E8%BF%98%E5%8E%9F%E7%8A%B6%E6%80%81">1 自由基、活性氮、脂质过氧化与氧化还原状态</a><a class="lv3" href="#21-ros%E8%87%AA%E6%97%8B%E6%8D%95%E8%8E%B7%E4%B8%8E%E8%87%AA%E6%97%8B%E6%8E%A2%E9%92%88">1.1 ROS自旋捕获与自旋探针</a><a class="lv3" href="#22-%E6%B4%BB%E6%80%A7%E6%B0%AE%E4%B8%8Eno">1.2 活性氮与NO</a><a class="lv3" href="#23-%E8%84%82%E8%B4%A8%E8%BF%87%E6%B0%A7%E5%8C%96%E4%B8%8E%E9%93%81%E6%AD%BB%E4%BA%A1">1.3 脂质过氧化与铁死亡</a><a class="lv3" href="#24-%E6%95%B4%E4%BD%93%E6%B0%A7%E5%8C%96%E8%BF%98%E5%8E%9F%E7%8A%B6%E6%80%81">1.4 整体氧化还原状态</a><a class="lv2" href="#3-%E7%BA%BF%E7%B2%92%E4%BD%93fe%E2%80%93s%E7%B0%87%E8%A1%80%E7%BA%A2%E7%B4%A0%E8%9B%8B%E7%99%BD%E4%B8%8E%E8%87%AA%E7%94%B1%E5%9F%BA%E9%85%B6">2 线粒体、Fe–S簇、血红素蛋白与自由基酶</a><a class="lv3" href="#31-%E7%BA%BF%E7%B2%92%E4%BD%93%E5%91%BC%E5%90%B8%E9%93%BE">2.1 线粒体呼吸链</a><a class="lv3" href="#32-fe%E2%80%93s%E7%B0%87%E4%B8%8E%E6%84%9F%E6%9F%93-%E4%BB%A3%E8%B0%A2%E9%9D%B6%E7%82%B9">2.2 Fe–S簇与感染/代谢靶点</a><a class="lv3" href="#33-%E8%A1%80%E7%BA%A2%E7%B4%A0%E8%9B%8B%E7%99%BD%E4%B8%8E%E8%A1%80%E7%BA%A2%E7%B4%A0%E9%85%B6">2.3 血红素蛋白与血红素酶</a><a class="lv3" href="#34-%E8%87%AA%E7%94%B1%E5%9F%BA%E9%85%B6">2.4 自由基酶</a><a class="lv3" href="#35-%E9%93%9C%E9%94%B0%E5%8F%8A%E5%85%B6%E4%BB%96%E9%87%91%E5%B1%9E%E8%9B%8B%E7%99%BD">2.5 铜、锰及其他金属蛋白</a><a class="lv2" href="#4-%E4%BD%8D%E7%82%B9%E5%AE%9A%E5%90%91%E8%87%AA%E6%97%8B%E6%A0%87%E8%AE%B0%E8%86%9C%E8%9B%8B%E7%99%BD%E8%B7%9D%E7%A6%BB%E5%88%86%E5%B8%83%E4%B8%8E%E6%B4%BB%E6%80%A7%E4%B8%AD%E5%BF%83">3 位点定向自旋标记、膜蛋白、距离分布与活性中心</a><a class="lv3" href="#41-%E4%BD%8D%E7%82%B9%E5%AE%9A%E5%90%91%E8%87%AA%E6%97%8B%E6%A0%87%E8%AE%B0%E4%B8%8Ex%E6%B3%A2%E6%AE%B5cw">3.1 位点定向自旋标记与X波段CW</a><a class="lv3" href="#42-%E8%86%9C%E8%9B%8B%E7%99%BD%E4%B8%8E%E8%8D%AF%E7%89%A9%E9%9D%B6%E7%82%B9%E6%9E%84%E8%B1%A1">3.2 膜蛋白与药物靶点构象</a><a class="lv3" href="#43-deer-peldor%E8%B7%9D%E7%A6%BB%E5%88%86%E5%B8%83">3.3 DEER/PELDOR距离分布</a><a class="lv3" href="#44-%E8%9B%8B%E7%99%BD%E8%81%9A%E9%9B%86%E4%B8%8E%E6%B7%80%E7%B2%89%E6%A0%B7%E7%BB%93%E6%9E%84">3.4 蛋白聚集与淀粉样结构</a><a class="lv3" href="#45-endoreseem%E4%B8%8Ehyscore%E6%B4%BB%E6%80%A7%E4%B8%AD%E5%BF%83">3.5 ENDOR、ESEEM与HYSCORE活性中心</a><a class="lv2" href="#5-%E8%8D%AF%E7%89%A9%E5%85%89%E5%8A%A8%E5%8A%9B%E6%B2%BB%E7%96%97%E6%94%BE%E7%96%97%E4%B8%8E%E5%8C%BB%E7%94%A8%E6%9D%90%E6%96%99">4 药物、光/声动力治疗、放疗与医用材料</a><a class="lv3" href="#51-%E8%8D%AF%E7%89%A9%E4%BB%A3%E8%B0%A2%E4%B8%8E%E6%AF%92%E6%80%A7">4.1 药物代谢与毒性</a><a class="lv3" href="#52-%E5%85%89%E5%8A%A8%E5%8A%9B%E6%B2%BB%E7%96%97%E4%B8%8E%E5%8E%9F%E4%BD%8D%E5%85%89%E7%85%A7">4.2 光/声动力治疗与原位光照</a><a class="lv3" href="#53-%E6%94%BE%E7%96%97flash%E4%B8%8E%E6%94%BE%E5%B0%84%E6%95%8F%E5%8C%96">4.3 放疗、FLASH与放射敏化</a><a class="lv3" href="#54-%E7%BA%B3%E7%B1%B3%E8%8D%AF%E7%89%A9%E4%B8%8E%E5%8C%BB%E7%94%A8%E6%9D%90%E6%96%99">4.4 纳米药物与医用材料</a><a class="lv2" href="#6-%E4%B8%B4%E5%BA%8A%E4%BD%93%E6%B6%B2%E7%BB%84%E7%BB%87%E8%BE%90%E5%B0%84%E5%89%82%E9%87%8F%E5%AD%A6%E4%B8%8E%E8%8D%AF%E5%93%81%E8%BE%90%E7%85%A7%E7%81%AD%E8%8F%8C">5 临床体液、组织、辐射剂量学与药品辐照灭菌</a><a class="lv3" href="#61-%E4%B8%B4%E5%BA%8A%E4%BD%93%E6%B6%B2%E4%B8%8E%E7%BB%84%E7%BB%87%E6%A0%B7%E6%9C%AC">5.1 临床体液与组织样本</a><a class="lv3" href="#62-%E7%89%99%E9%87%89%E8%B4%A8%E7%A6%BB%E4%BD%93%E5%89%82%E9%87%8F%E5%AD%A6">5.2 牙釉质离体剂量学</a><a class="lv3" href="#63-%E6%8C%87%E7%94%B2%E7%A6%BB%E4%BD%93%E5%89%82%E9%87%8F%E5%AD%A6">5.3 指甲离体剂量学</a><a class="lv3" href="#64-%E8%8D%AF%E5%93%81%E4%B8%8E%E8%BE%85%E6%96%99%E8%BE%90%E7%85%A7%E7%81%AD%E8%8F%8C">5.4 药品与辅料辐照灭菌</a><a class="lv2" href="#8-%E4%BD%8E%E9%A2%91%E4%BD%93%E5%86%85epr%E4%B8%8Eepr%E6%88%90%E5%83%8F%E6%89%A9%E5%B1%95">6 低频体内EPR与EPR成像扩展</a><a class="lv3" href="#81-%E6%A4%8D%E5%85%A5%E5%BC%8F%E6%8E%A2%E9%92%88%E4%BD%93%E5%86%85%E6%B0%A7%E6%B5%8B%E9%87%8F">6.1 植入式探针体内氧测量</a><a class="lv3" href="#82-oxychip%E7%9A%84cw%E4%B8%8E%E8%84%89%E5%86%B2%E6%B0%A7%E6%B5%8B%E9%87%8F">6.2 OxyChip的CW与脉冲氧测量</a><a class="lv3" href="#83-%E8%84%89%E5%86%B2%E6%B0%A7%E6%88%90%E5%83%8F">6.3 脉冲氧成像</a><a class="lv3" href="#84-%E6%B0%A7%E5%8C%96%E8%BF%98%E5%8E%9F%E4%B8%8E%E5%A4%9A%E5%8F%82%E6%95%B0%E6%88%90%E5%83%8F">6.4 氧化还原与多参数成像</a><a class="lv3" href="#85-%E4%BD%93%E5%86%85%E7%89%99%E9%BD%BF%E5%89%82%E9%87%8F%E5%AD%A6">6.5 体内牙齿剂量学</a><a class="lv3" href="#86-pedri%E4%B8%8Eomri">6.6 PEDRI与OMRI</a><a class="lv2" href="#10-%E7%BB%93%E8%AE%BA%E4%B8%8E%E7%A0%94%E7%A9%B6%E5%AE%9E%E6%96%BD%E5%BB%BA%E8%AE%AE">7 结论与研究实施建议</a><a class="lv2" href="#%E9%99%84%E5%BD%95A-%E7%A0%94%E7%A9%B6%E8%8C%83%E5%9B%B4%E4%B8%8E%E5%88%A4%E5%AE%9A%E8%A7%84%E5%88%99">附录A 研究范围、案例收录与判定规则</a><a class="lv3" href="#11-%E9%A2%91%E6%AE%B5%E5%92%8C%E6%8A%80%E6%9C%AF%E8%BE%B9%E7%95%8C">A.1 频段和技术边界</a><a class="lv3" href="#13-%E6%A1%88%E4%BE%8B%E5%AD%97%E6%AE%B5%E4%B8%8E%E5%BA%94%E7%94%A8%E9%98%B6%E6%AE%B5">A.2 案例字段与应用阶段</a><a class="lv2" href="#%E9%99%84%E5%BD%95B-%E6%97%B6%E9%97%B4%E5%88%86%E8%BE%A8%E4%B8%8E%E8%84%89%E5%86%B2EPR%E8%BE%B9%E7%95%8C">附录B 时间分辨EPR与自旋回波型脉冲EPR的技术边界</a><a class="lv2" href="#%E9%99%84%E5%BD%95C-%E6%A1%88%E4%BE%8B%E6%80%BB%E8%A1%A8%E4%B8%8E%E6%96%B9%E6%B3%95%E5%AF%B9%E7%85%A7">附录C 案例总表与方法对照</a><a class="lv3" href="#91-%E6%A1%88%E4%BE%8B%E6%80%BB%E8%A1%A8">C.1 案例总表</a><a class="lv3" href="#92-cw%E4%B8%8E%E8%84%89%E5%86%B2%E5%BA%94%E7%94%A8%E5%AF%B9%E7%85%A7">C.2 CW与脉冲应用对照</a><a class="lv3" href="#93-%E5%8C%BB%E5%AD%A6%E9%A2%86%E5%9F%9F%E4%B8%8E%E6%A0%B7%E5%93%81%E9%98%B6%E6%AE%B5%E5%88%86%E5%B8%83">C.3 医学领域与样品阶段分布</a><a class="lv3" href="#94-%E4%BB%AA%E5%99%A8%E9%85%8D%E7%BD%AE%E5%AF%B9%E5%BA%94%E8%A1%A8">C.4 仪器配置对应表</a><a class="lv2" href="#%E9%99%84%E5%BD%95D-%E8%B5%84%E6%96%99%E6%9D%A5%E6%BA%90%E4%B8%8E%E6%A3%80%E7%B4%A2%E8%AF%B4%E6%98%8E">附录D 资料来源与检索说明</a></nav>
+</aside>
+<main>
+<h1 class="report-title">X波段连续波与脉冲电子顺磁共振在医学领域的应用</h1>
+<p class="report-meta meta">应用分类、案例核验、方法边界与仪器配置 · 28 个应用小类 · 69 条应用记录 · 文献检索截至 2026-09-08</p>
+<h2 id="摘要">摘要</h2><p>X波段电子顺磁共振已形成六类较明确的医学应用：自由基与氧化还原研究，线粒体和金属辅因子表征，疾病相关蛋白结构测量，药物与光/声动力治疗评价，临床样本及辐射剂量学，以及低频体内氧与氧化还原成像。现有文献中，连续波EPR案例数量最多，脉冲EPR集中于蛋白构象、局部核环境和自旋间距离，时间分辨EPR主要用于光激发三重态、自由基对及短寿命反应中间体。</p><p>在自由基医学与治疗材料研究中，X波段CW-EPR通常通过DMPO、BMPO、PBN、TEMP及环状羟胺探针识别或比较ROS/RNS。相关实验多数在模型反应液、细胞或离体组织中完成。EPR直接给出自由基加合物、稳定探针或顺磁中心的谱学变化；炎症改善、肿瘤抑制、组织修复和动物生存等医学终点主要来自生化、组织学、影像学与分子生物学实验。二者需要分层表述。</p><p>在生物无机与结构生物学研究中，低温CW谱可分辨呼吸链、Fe–S簇、血红素蛋白及其他金属中心的价态和配位变化；CW位点定向自旋标记反映局部运动性与溶剂可及性；ENDOR、ESEEM和HYSCORE测量近邻核耦合；DEER/PELDOR给出约纳米尺度的距离分布。这些方法适合研究疾病相关酶、受体、膜蛋白和蛋白聚集体，但实验结论受到标记位点、低温冻结构象、相位记忆时间和背景模型影响。</p><p>临床应用成熟度存在明显差别。牙釉质和指甲剂量学已建立较系统的取样、校准和信号分离流程；OxyChip等植入式氧探针已进入人体可行性研究；疾病体液和组织谱多为小样本关联研究。体内氧测量、EPR成像及PEDRI/OMRI通常采用约250 MHz至1.2 GHz的低频专用设备，常规X波段谱仪受含水组织介电损耗、测量深度和谐振器口径限制。</p><p>总体而言，EPR在医学研究中的可靠用途是识别顺磁物种、测量自旋相关结构参数并比较自由基反应强度。其结果需要与适当的化学空白、自由基猝灭剂、探针特异性对照以及细胞和动物终点共同解释。当前较活跃的方向包括氧化应激与炎症、铁死亡、疾病相关金属蛋白、膜蛋白构象、光/声动力治疗、纳米酶自由基调节和低频组织氧测量。</p><h3 id="摘要-技术分工">CW、时间分辨与自旋回波型脉冲EPR的应用分工</h3><table>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th><strong>医学问题</strong></th>
+<th><strong>首选读出</strong></th>
+<th><strong>常见样品与条件</strong></th>
+<th><strong>主要观测量</strong></th>
+<th><strong>典型限制</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>短寿命ROS/RNS</td>
+<td>X波段CW＋自旋捕获/羟胺探针</td>
+<td>反应液、细胞、组织匀浆；室温或冻存</td>
+<td>超精细分裂、双积分、动力学</td>
+<td>捕获竞争、加合物衰减、探针交叉反应</td>
+</tr>
+<tr>
+<td>组织内源中心</td>
+<td>X波段CW低温谱</td>
+<td>新鲜速冻组织；4–170 K</td>
+<td>g值、线宽、谱组分、功率饱和</td>
+<td>多组分重叠、组织异质性、无法读取EPR静默物种</td>
+</tr>
+<tr>
+<td>蛋白局部结构</td>
+<td>X波段CW-SDSL</td>
+<td>自旋标记蛋白、膜或纳米盘；室温</td>
+<td>线形、转动相关时间、可及性</td>
+<td>标签扰动、构象与标签转子卷积</td>
+</tr>
+<tr>
+<td>电子—电子距离</td>
+<td>X或Q波段DEER/PELDOR</td>
+<td>双标记样品；通常20–80 K</td>
+<td>偶极演化、距离分布、调制深度</td>
+<td>浓度、相位记忆时间、背景模型</td>
+</tr>
+<tr>
+<td>近邻核配位</td>
+<td>X/Q波段ENDOR、ESEEM、HYSCORE</td>
+<td>金属蛋白或自由基；低温</td>
+<td>超精细与核四极耦合</td>
+<td>盲点、谱拥挤、同位素标记需求</td>
+</tr>
+<tr>
+<td>弛豫与氧</td>
+<td>脉冲T1/T2或CW线宽</td>
+<td>固体探针或三芳甲基自由基</td>
+<td>R1、R2、线宽—pO2校准</td>
+<td>需专用低频装置用于体内和成像</td>
+</tr>
+</tbody>
+</table>
+<p class="summary-note">文献收录、案例判定及参数记录原则见附录A；时间分辨EPR与自旋回波型脉冲EPR的详细技术边界见附录B。</p><section class="overview-panel">
+<h2 id="报告范围与数据概览">报告范围与数据概览</h2>
+<p class="overview-caption">报告统计口径</p><p class="overview-intro">
+    本报告按医学应用主线整理 X 波段连续波电子顺磁共振（CW-EPR）、X 波段脉冲 EPR、
+    时间分辨 EPR 以及低频体内 EPR 与成像相关研究。案例统计采用应用记录口径，
+    同一研究在不同应用问题下可保留交叉标签，因此 69 条应用记录对应 67 项独立研究。
+    频段和实验模式以原始论文方法部分或可确认公开资料为准，未公开参数保持“未报告”或“未完整公开”。
+  </p>
+<div class="overview-grid">
+<div class="overview-card"><div class="metric">28</div><div class="metric-label">应用小类</div></div>
+<div class="overview-card"><div class="metric">69</div><div class="metric-label">应用记录</div></div>
+<div class="overview-card"><div class="metric">67</div><div class="metric-label">独立研究</div></div>
+<div class="overview-card"><div class="metric">2026-09-08</div><div class="metric-label">检索截止日期</div></div>
+</div>
+<div class="chart-grid">
+<div class="chart-card">
+<h3>应用大类分布</h3>
+<div class="bar-row"><div class="bar-label">自由基、氮物种、脂质过氧化与氧化还原</div><div class="bar-track"><span style="width:23.2%"></span></div><div class="bar-value">16 条 · 23.2%</div></div>
+<div class="bar-row"><div class="bar-label">线粒体、Fe–S、血红素、自由基酶与金属蛋白</div><div class="bar-track"><span style="width:14.5%"></span></div><div class="bar-value">10 条 · 14.5%</div></div>
+<div class="bar-row"><div class="bar-label">自旋标记、膜蛋白、距离、聚集与活性中心</div><div class="bar-track"><span style="width:14.5%"></span></div><div class="bar-value">10 条 · 14.5%</div></div>
+<div class="bar-row"><div class="bar-label">药物、PDT/SDT、放疗、纳米药物与材料</div><div class="bar-track"><span style="width:18.8%"></span></div><div class="bar-value">13 条 · 18.8%</div></div>
+<div class="bar-row"><div class="bar-label">临床样本、离体剂量学与辐照灭菌</div><div class="bar-track"><span style="width:11.6%"></span></div><div class="bar-value">8 条 · 11.6%</div></div>
+<div class="bar-row"><div class="bar-label">低频体内EPR、EPRI与PEDRI/OMRI</div><div class="bar-track"><span style="width:17.4%"></span></div><div class="bar-value">12 条 · 17.4%</div></div>
+</div>
+<div class="chart-card">
+<h3>样品阶段分布</h3>
+<div class="bar-row"><div class="bar-label">模型 / 纯化体系</div><div class="bar-track"><span style="width:31.9%"></span></div><div class="bar-value">22 条 · 31.9%</div></div>
+<div class="bar-row"><div class="bar-label">细胞 / 体外微生物</div><div class="bar-track"><span style="width:11.6%"></span></div><div class="bar-value">8 条 · 11.6%</div></div>
+<div class="bar-row"><div class="bar-label">动物 / 临床前联合研究</div><div class="bar-track"><span style="width:33.3%"></span></div><div class="bar-value">23 条 · 33.3%</div></div>
+<div class="bar-row"><div class="bar-label">人体离体样本</div><div class="bar-track"><span style="width:11.6%"></span></div><div class="bar-value">8 条 · 11.6%</div></div>
+<div class="bar-row"><div class="bar-label">人体可行性</div><div class="bar-track"><span style="width:5.8%"></span></div><div class="bar-value">4 条 · 5.8%</div></div>
+<div class="bar-row"><div class="bar-label">药品 / 器械质量研究</div><div class="bar-track"><span style="width:5.8%"></span></div><div class="bar-value">4 条 · 5.8%</div></div>
+</div>
+</div>
+</section>
+<h2 id="2-自由基活性氮脂质过氧化与氧化还原状态">1 自由基、活性氮、脂质过氧化与氧化还原状态</h2><p class="medical-context major"><strong>医学背景。</strong>氧化还原失衡参与炎症、缺血再灌注损伤、心血管疾病、神经退行性病变、感染和肿瘤治疗反应。ROS与RNS寿命短、反应选择性受微环境控制，医学研究需要同时辨认自由基种类、生成位置、时间过程以及与组织损伤的对应关系。</p>
+<h3 id="21-ros自旋捕获与自旋探针">1.1 ROS自旋捕获与自旋探针</h3><p class="medical-context"><strong>医学背景。</strong>ROS参与吞噬细胞杀菌、细胞信号和线粒体代谢；过量或持续生成会损伤蛋白、脂质与DNA。医学实验通常比较疾病模型与抗氧化干预下的自由基谱，同时需要区分反应液、离体组织和活体来源。</p>
+<p>ROS的稳态浓度和寿命通常低于常规EPR直接检出范围。硝酮自旋捕获剂将自由基转化为具有特征超精细分裂的加合物；环状羟胺则被氧化为较稳定的硝氧自由基，常用于相对定量。两者测得的化学事件不同，不宜把CMH信号直接写成“超氧绝对浓度”。</p>
+<section class="case-entry" id="case-A1-1"><h4 class="case-title">案例A1-1｜创伤氧化环境与Rac2</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.freeradbiomed.2007.10.056" target="_blank" rel="noopener noreferrer" class="case-source">Ojha et al., 2008</a>｜动物模型的离体读出</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较创伤修复过程中氧化物生成的时间变化，并分析Rac2缺失对炎症反应和伤口闭合的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于确认创口环境中可被DMPO捕获的自由基负荷，并量化Rac2相关氧化反应的贡献。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>医学背景为皮肤创伤修复；样品为小鼠8 mm创口冲洗液；顺磁对象为DMPO自由基加合物。采用Bruker ESP300E X波段CW、室温、TM110腔和100 kHz调制，局部加入50 μL、1 M DMPO，10 min后取样并与TEMPO标准比较双积分。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>创口氧化物在第2天达峰，Rac2缺失小鼠信号约低3倍，并伴随较慢闭合。阶段为动物模型的离体读出；限制包括冲洗稀释、加合物衰减及非实时测量。</p></section><section class="case-entry" id="case-A1-2"><h4 class="case-title">案例A1-2｜斑马鱼组织超氧测量</h4><p class="case-meta"><a href="https://doi.org/10.1371/journal.pone.0318212" target="_blank" rel="noopener noreferrer" class="case-source">Moghadam et al., 2025</a>｜动物离体组织方法研究</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在斑马鱼幼体和成体心脏中比较DMPO自旋捕获与CMH羟胺探针，建立适合小体积组织的超氧相关读出。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于比较两类探针对线粒体抑制和抗氧化干预的响应幅度、采集时间及化学选择性。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>医学背景为心血管氧化应激模型；样品为斑马鱼幼体池和成体心脏；顺磁对象为DMPO加合物或CMH氧化生成的CM•。常规X波段CW比较100 mM DMPO与1 mM CMH；鱼藤酮使幼体和心脏信号分别增加约2.1倍和3.8倍，NAC及PEG-SOD降低信号。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>CMH的5 s采集信噪比高于DMPO的3.5 min采集。阶段为动物离体组织方法研究；限制是CMH反映总体氧化反应，DMPO-OOH可迅速转化且DMPO细胞通透性有限。</p></section><section class="case-entry new-case" id="case-A1-3"><h4 class="case-title">案例A1-3｜GH-CDs调节ROS/RNS并干预溃疡性结肠炎</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.cej.2024.157800" target="_blank" rel="noopener noreferrer" class="case-source">Wang et al., 2024</a>｜材料模型、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价生物相容性碳点纳米酶对ROS/RNS的调节作用，并在DSS结肠炎模型中联合考察炎症、肠屏障与肠道菌群。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于验证模型反应体系中的自由基生成或清除响应，说明材料具有可测的自由基调节能力；动物组织中的氧化应激变化由生化和组织学实验评价。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>应用记录标注仪器为EPR200M；当前可访问公开页面未完整列出捕获剂、微波频率、功率和调制参数。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>论文报告GH-CDs具有ROS/RNS清除活性，并在结肠炎模型中改善炎症和肠稳态。阶段为材料模型、细胞与动物；限制是EPR方法字段尚不完整，不能把反应液谱写作肠道原位自由基测量。</p></section><section class="case-entry new-case" id="case-A1-4"><h4 class="case-title">案例A1-4｜川芎来源碳点缓解心肌缺血再灌注损伤</h4><p class="case-meta"><a href="https://doi.org/10.1186/s12951-025-03477-w" target="_blank" rel="noopener noreferrer" class="case-source">Guo et al., 2025</a>｜模型反应、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究以川芎来源碳点干预心肌缺血再灌注损伤，分析氧化应激、线粒体损伤与凋亡之间的联系。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于检验材料对O2•-和•OH的清除能力，确认其抗氧化作用具有自由基化学基础。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>采用EPR200M连续波X波段；O2•-由核黄素/甲硫氨酸体系生成，•OH由Fe2+/H2O2 Fenton体系生成，公开方法段未完整列出捕获剂和桥路参数。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>EPR信号随碳点处理降低；后续细胞与大鼠MIRI实验显示氧化应激、线粒体损伤和凋亡减轻。阶段为模型反应、细胞与动物；限制是自由基清除谱来自无细胞体系。</p></section><section class="case-entry new-case" id="case-A1-5"><h4 class="case-title">案例A1-5｜Cur-Fe金属-多酚纳米酶干预溃疡性结肠炎</h4><p class="case-meta"><a href="https://doi.org/10.1186/s12951-024-02802-z" target="_blank" rel="noopener noreferrer" class="case-source">Zhu et al., 2024</a>｜模型反应、细胞与DSS小鼠</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究构建口服仿生Cur-Fe纳米酶，以抗氧化、抗炎、肠屏障保护和菌群调节共同干预溃疡性结肠炎。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR直接比较BMPO/•OOH加合物信号，检验材料对黄嘌呤氧化酶体系所生成超氧相关物种的清除作用。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>采用EPR200M；BMPO加入次黄嘌呤/黄嘌呤氧化酶体系，37 ℃反应15 min后测量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>Cur-Fe使BMPO/•OOH信号明显降低。阶段为模型反应、细胞与DSS小鼠；限制是EPR结果对应体外模型反应，肠道疗效由其他实验读取。</p></section><section class="case-entry new-case" id="case-A1-6"><h4 class="case-title">案例A1-6｜酵母微囊递送金属-多酚纳米酶治疗结肠炎</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12166400/" target="_blank" rel="noopener noreferrer" class="case-source">Chai et al., 2025</a>｜模型反应、细胞与DSS小鼠</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究利用酵母微囊保护和递送金属-多酚纳米酶，评价其缓解氧化应激、修复肠屏障和调节菌群的作用。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR分别用BMPO和DMPO记录O2•-与•OH相关加合物，判断微囊制剂在胃肠道模拟条件下保留自由基清除活性的程度。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>采用EPR200M，在超氧和Fenton模型以及含H2O2的模拟炎症结肠液中测量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>微囊纳米酶使两类自由基加合物信号降低。阶段为模型反应、细胞与DSS小鼠；限制是体内自由基变化未由EPR直接测量。</p></section><section class="case-entry new-case" id="case-A1-7"><h4 class="case-title">案例A1-7｜苦瓜来源细胞外囊泡缓解溃疡性结肠炎</h4><p class="case-meta"><a href="https://doi.org/10.1186/s12951-025-03346-6" target="_blank" rel="noopener noreferrer" class="case-source">Gao et al., 2025</a>｜模型反应、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价苦瓜来源细胞外囊泡的抗氧化、抗炎和肠屏障保护作用，并用于DSS结肠炎模型。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于验证囊泡对•OH和O2•-相关自由基加合物的清除响应，为后续细胞和动物效应提供材料化学依据。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>采用CIQTEK EPR200M；20 μg/mL囊泡已使•OH信号明显降低，并使O2•-相关信号下降。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>当前可访问方法段未给出捕获剂名称和完整桥路参数。阶段为模型反应、细胞与动物；限制是EPR读出来自无细胞反应体系。</p></section><section class="case-entry new-case" id="case-A1-8"><h4 class="case-title">案例A1-8｜铁皮石斛来源碳点纳米酶干预急慢性结肠炎</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12667543/" target="_blank" rel="noopener noreferrer" class="case-source">Xu et al., 2025</a>｜模型反应与急慢性动物模型</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价铁皮石斛来源碳点对急性和慢性结肠炎中黏液层、上皮屏障和免疫炎症的综合作用。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于确认材料对O2•-和•OH相关自由基信号的浓度依赖清除能力。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>采用CIQTEK EPR200-Plus；论文图中O2•-和•OH的ESR信号随DO-CDs浓度增加而降低，并由NBT、SOD试剂盒、TMB和DPPH测定交叉比较。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>公开正文未定位到捕获剂和完整仪器参数。阶段为模型反应与急慢性动物模型；限制是EPR未直接读取结肠组织内自由基。</p></section><section class="case-entry new-case" id="case-A1-9"><h4 class="case-title">案例A1-9｜药用植物来源碳点纳米酶干预溃疡性结肠炎</h4><p class="case-meta"><a href="https://doi.org/10.1021/acsami.5c08068" target="_blank" rel="noopener noreferrer" class="case-source">Li et al., 2025</a>｜模型反应、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究利用药用植物来源碳点联合抗氧化、抗炎与肠屏障保护，评价其对溃疡性结肠炎的治疗作用。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于确认材料清除•OH与O2•-的能力，并与细胞氧化应激和动物炎症终点对应。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>原文方法明确记录CIQTEK EPR200M，摘要报告两类自由基清除率均超过95%。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>当前公开页面未完整列出捕获剂、频率和微波参数。阶段为模型反应、细胞与动物；限制是高比例清除率依赖指定反应条件，不代表体内绝对清除率。</p></section><section class="case-entry new-case" id="case-A1-10"><h4 class="case-title">案例A1-10｜金银花来源碳点抑制肺部炎症与焦亡</h4><p class="case-meta"><a href="https://doi.org/10.1002/adfm.202418683" target="_blank" rel="noopener noreferrer" class="case-source">Deng et al., 2025</a>｜模型反应、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价金银花来源碳点的SOD样催化和药理作用，分析其对Caspase11/GSDMD依赖性焦亡及肺部炎症的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于比较不同浓度Hy-CDs对超氧相关信号的清除效果，验证其SOD样抗氧化活性。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>论文图注明确给出•O2-清除的EPR分析，应用记录标注EPR200M。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>公开方法未完整给出捕获剂、频率、功率和调制幅度。阶段为模型反应、细胞与动物；限制是EPR部分主要评价材料活性，焦亡通路由细胞和组织实验判定。</p></section><blockquote>
+<p><strong>方法补充。</strong> 低温组织EPR可在给药后快速冻存，以减少离体氧化；功率饱和曲线用于分辨弛豫不同的谱组分；快速冻淬适合毫秒级酶中间体，但不等于脉冲EPR。</p>
+</blockquote>
+<h3 id="22-活性氮与no">1.2 活性氮与NO</h3><p class="medical-context"><strong>医学背景。</strong>NO参与血管舒张、神经传递和免疫防御，过量NO与超氧反应形成过氧亚硝酸盐，可引起硝化和氧化损伤。NO的扩散、血红素结合和快速代谢使终点浓度难以由常规化学法单独描述。</p>
+<p>NO可直接与血红素、Fe—S簇或外源二硫代氨基甲酸铁络合物形成可检出的顺磁中心。Fe-MGD/Fe-DETC等捕获体系提高稳定性，但产物量还受铁、硫醇、氧和细胞还原环境影响。</p>
+<section class="case-entry" id="case-A2-1"><h4 class="case-title">案例A2-1｜内毒素血症小鼠NO捕获</h4><p class="case-meta"><a href="https://doi.org/10.18388/abp.2003_3671" target="_blank" rel="noopener noreferrer" class="case-source">Plonka et al., 2003</a>｜动物感染/炎症模型</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在LPS诱导的全身炎症模型中检测肝、肺等组织的NO生成，并比较匀浆与完整器官测量。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR通过NO-铁络合物的特征谱确认组织中NO相关产物，并界定X波段对含水完整器官的限制。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为LPS小鼠肝匀浆、完整肝和肺；顺磁对象为NO–Fe(DTCS)2。肝匀浆用室温X波段CW，完整器官另用S波段。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>两频段均检出组织NO相关信号，S波段更适合完整器官。阶段为动物感染/炎症模型；限制是X波段样品为匀浆，捕获物形成不只由NO浓度决定。</p></section><section class="case-entry" id="case-A2-2"><h4 class="case-title">案例A2-2｜工程化间充质干细胞储存NO</h4><p class="case-meta"><a href="https://doi.org/10.7554/eLife.84820" target="_blank" rel="noopener noreferrer" class="case-source">Huang et al., 2023</a>｜近期</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究构建可储存和释放NO的工程化间充质干细胞，并评价其对急性肾损伤的干预作用。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于定量Fe-DETC捕获的NO络合物，检验细胞制剂形成可测NO储库的能力。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为工程化MSC及急性肾损伤模型；顺磁对象为Fe2+–DETC捕获的NO络合物。乙酸乙酯提取物装入50 μL毛细管，X波段CW室温测量，100 kHz调制、10 mW、2 G调制幅度、30次扫描，并以TEMPO校准双积分。结果显示工程化MSC可储存并释放NO，动物模型中出现治疗效应。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>限制是终点提取测量，提取率和捕获效率影响绝对量。</p></section><h3 id="23-脂质过氧化与铁死亡">1.3 脂质过氧化与铁死亡</h3><p class="medical-context"><strong>医学背景。</strong>脂质过氧化破坏细胞膜并构成铁死亡的核心化学过程，与肿瘤治疗、缺血损伤和神经退行性疾病有关。医学判定需要将自由基生成与铁依赖性、GPX4/GSH状态、脂质组学及药理拯救实验共同解释。</p>
+<p>EPR在本类问题中常检测脂质碳中心、烷氧基或过氧基自由基，或检测触发脂质过氧化的羟基自由基。铁死亡判定仍需结合ferrostatin-1/liproxstatin-1拯救、脂质组学、GPX4/GSH状态和细胞死亡表型。</p>
+<section class="case-entry" id="case-A3-1"><h4 class="case-title">案例A3-1｜HPLC-ESR鉴定有机过氧化物自由基</h4><p class="case-meta"><a href="https://doi.org/10.1016/S1044-0305(03)00336-2" target="_blank" rel="noopener noreferrer" class="case-source">Guo et al., 2003</a>｜分析方法</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究将色谱分离、EPR与质谱结合，用于鉴定有机过氧化物分解形成的多种自由基加合物。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR提供自由基中心的超精细指纹，解决复杂氧化体系中不同DMPO加合物相互重叠的问题。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为有机过氧化物与DMPO反应体系；顺磁对象为氧中心和碳中心DMPO加合物。X波段CW与液相分离、质谱联用，用超精细常数和MS/MS鉴定不同加合物。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>该工作建立了复杂脂质氧化体系中“先分离、再判定”的路线。阶段为分析方法；限制是色谱过程和加合物寿命会改变组分比例。</p></section><section class="case-entry" id="case-A3-2"><h4 class="case-title">案例A3-2｜Fe(III)-salophene诱导磷脂过氧化</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.redox.2024.103257" target="_blank" rel="noopener noreferrer" class="case-source">Su et al., 2024</a>｜近期</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价Fe(III)-salophene配合物诱导三阴性乳腺癌细胞铁死亡的化学基础，并结合脂质组学和抑制剂实验。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于确认配合物/H2O2模型中的烷氧基自由基化学，为脂质过氧化起始过程提供直接谱学信息。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为Fe-salophene化学体系和三阴性乳腺癌细胞；顺磁对象为DMPO–OCH3。Magnettech MS-5000 X波段CW，9.5 GHz、−15°C、10 mW、0.1 mT/100 kHz调制、330–345 mT、120 s扫描；模型含0.5 mM配合物、100 mM DMPO、5 mM H2O2和10%甲醇。细胞LC50约0.07–0.11 μM，铁死亡抑制剂可保护，脂质组学显示PE/PI氧化。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>限制是EPR使用酸性含甲醇模型，不能单独指定细胞内自由基。</p></section><h3 id="24-整体氧化还原状态">1.4 整体氧化还原状态</h3><p class="medical-context"><strong>医学背景。</strong>循环和组织氧化还原状态反映氧化剂生成、抗氧化缓冲和代谢还原力的综合结果，可用于运动应激、炎症和药效研究。单一探针通常响应多种氧化还原反应，结果适合相对比较。</p>
+<p>此类测量通常读取硝氧自由基探针的氧化、还原或消失动力学。结果代表样品对探针的净氧化还原作用，需避免把复合反应压缩为单一ROS指标。</p>
+<section class="case-entry" id="case-A4-1"><h4 class="case-title">案例A4-1｜运动期间人外周血氧化状态</h4><p class="case-meta"><a href="https://pubmed.ncbi.nlm.nih.gov/12797470/" target="_blank" rel="noopener noreferrer" class="case-source">Paolini et al., 2003</a>｜人体观察</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较运动员与一般活动者在受控运动前后的外周血氧化还原响应。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR记录羟胺探针形成的稳定硝氧自由基，给出循环体系总体氧化反应的相对变化。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为运动员和一般活动者受控运动期间的外周血；顺磁对象为脂溶性羟胺探针氧化生成的持久硝氧自由基。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>X波段CW比较运动前后信号，观察到两类受试者的静息和运动响应不同。阶段为人体观察；限制是探针对多种氧中心物种响应，开放摘要未给完整功率和调制参数。</p></section><section class="case-entry" id="case-A4-2"><h4 class="case-title">案例A4-2｜PC-SOD调节炎症小鼠血液状态</h4><p class="case-meta"><a href="https://doi.org/10.3390/molecules30091882" target="_blank" rel="noopener noreferrer" class="case-source">Lazarova et al., 2025</a>｜临床前药效</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较普通SOD与磷酰胆碱修饰SOD在炎症模型中的药效持续时间。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR以血液中CMP探针氧化产物为读出，检验两种制剂对离体血液氧化状态的调节幅度和持续性。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>LPS小鼠血液加入1 mM CMP孵育15 min，Bruker ER116DS X波段CW，9.4 GHz、336 mT、2 mW、100 kHz、0.063 mT调制、室温。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>普通SOD的作用在30 min内消失，PC-SOD在给药2 h后仍使信号接近健康对照。阶段为临床前药效；限制是CMP同时与多种还原剂反应，测量为离体终点。</p></section><h2 id="3-线粒体fe–s簇血红素蛋白与自由基酶">2 线粒体、Fe–S簇、血红素蛋白与自由基酶</h2><p class="medical-context major"><strong>医学背景。</strong>线粒体电子传递、铁硫簇装配、血红素代谢和金属酶催化与能量代谢、遗传性线粒体病、感染和肿瘤密切相关。此类体系中的顺磁金属中心和蛋白自由基可作为辅因子状态、配位结构与电子转移异常的直接读出。</p>
+<h3 id="31-线粒体呼吸链">2.1 线粒体呼吸链</h3><p class="medical-context"><strong>医学背景。</strong>呼吸链缺陷会降低ATP生成并改变ROS、NADH/NAD+及铁硫簇氧化态，常见于线粒体病、心肌损伤和神经退行性病变。低温组织谱可保留多个呼吸链顺磁中心。</p>
+<p>呼吸链复合物含多种Fe–S簇、黄素和半醌自由基。低温X波段CW能在组织中直接读取还原态中心；脉冲回波检测场扫和DEER可在纯化复合物中辅助谱线归属。组织谱的强度由中心浓度、氧化还原占据和弛豫共同决定。</p>
+<section class="case-entry" id="case-B1-1"><h4 class="case-title">案例B1-1｜复合物I Fe–S簇的DEER归属</h4><p class="case-meta"><a href="https://doi.org/10.1073/pnas.0908050107" target="_blank" rel="noopener noreferrer" class="case-source">Roessler et al., 2010</a>｜纯化复合物机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究对线粒体复合物I的多个Fe-S簇进行归属，厘清电子传递链内相邻顺磁中心的位置关系。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>回波检测与DEER用于分离重叠簇信号并读取簇间偶极耦合，以判定N4和N5的结构归属。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为牛心线粒体复合物I；顺磁对象为还原态[2Fe–2S]+和[4Fe–4S]+簇。采用X波段脉冲回波检测场扫和四脉冲DEER，样品电位约−0.4或−0.3 V、10 K。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>N4被归于TYKY亚基第一个[4Fe–4S]簇，N5被归于75 kDa亚基全半胱氨酸配位簇。阶段为纯化复合物机制；限制是谱线重叠且拟合依赖结构模型。</p></section><section class="case-entry" id="case-B1-2"><h4 class="case-title">案例B1-2｜线粒体DNA耗竭综合征组织谱</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.freeradbiomed.2016.01.001" target="_blank" rel="noopener noreferrer" class="case-source">Bennett et al., 2016</a>｜动物疾病模型</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究利用DGUOK缺陷动物模型分析线粒体DNA耗竭对肝组织呼吸链的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>低温EPR用于识别Fe-S簇和半醌等内源顺磁中心的异常组合，提供组织水平的呼吸链功能指纹。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为DGUOK缺陷大鼠新鲜冻存肝组织；顺磁对象为呼吸链Fe–S簇、半醌及其他内源中心。X波段CW约9.5 GHz，在低温多温点读取。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>结果直接显示呼吸链异常并与复合物表达和酶活降低相符。阶段为动物疾病模型；限制是谱峰重叠、组织异质性以及尚无跨实验室诊断阈值。</p></section><h3 id="32-fe–s簇与感染-代谢靶点">2.2 Fe–S簇与感染/代谢靶点</h3><p class="medical-context"><strong>医学背景。</strong>Fe-S簇参与电子传递、酶催化、DNA复制与修复；簇装配或氧化损伤异常可导致代谢病，也可影响病毒和细菌蛋白功能。药物作用需要区分簇破坏、金属替换和蛋白失活。</p>
+<p>Fe–S簇的EPR可见性取决于氧化态和自旋态。快速厌氧纯化、受控还原和低温冻存是方法核心；未出现信号不能简单解释为“没有簇”。</p>
+<section class="case-entry" id="case-B2-1"><h4 class="case-title">案例B2-1｜SARS-CoV-2 nsp12的Fe–S簇</h4><p class="case-meta"><a href="https://doi.org/10.1126/science.abi5224" target="_blank" rel="noopener noreferrer" class="case-source">Maio et al., 2021</a>｜病毒靶点机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究重新判定SARS-CoV-2 RNA聚合酶的金属辅因子，并评价氧化还原活性分子对病毒复制的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于确认还原态Fe-S簇信号及其受TEMPOL破坏的响应，区分Fe-S辅因子与先前提出的Zn位点。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为厌氧纯化的病毒RNA依赖RNA聚合酶及细胞体系；顺磁对象为还原态Fe–S簇。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>低温X波段CW与元素分析、结构和酶活联合，发现两个先前被建模为Zn位点的Fe–S辅因子；TEMPOL可破坏簇并抑制聚合酶和细胞内病毒复制。阶段为病毒靶点机制；限制是体外还原条件与药物暴露不能直接换算成人体剂量。</p></section><section class="case-entry" id="case-B2-2"><h4 class="case-title">案例B2-2｜SARS-CoV-2 nsp14/nsp10簇</h4><p class="case-meta"><a href="https://www.nature.com/articles/s41467-025-62832-5" target="_blank" rel="noopener noreferrer" class="case-source">Maio et al., 2025</a>｜纯化病毒蛋白</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究分析SARS-CoV-2 nsp14/nsp10校对与甲基转移复合体中的金属中心。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>低温X波段EPR用于确认蛋白中氧化还原敏感的Fe-S中心，并记录其还原态谱形。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为各50 μM厌氧纯化nsp14或nsp10，0.5 mM连二亚硫酸盐还原后冻存；顺磁对象为Fe–S簇。Bruker E580 X波段CW，9.439 GHz、10 K、5 G调制、20 mW。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>研究显示病毒校对/甲基转移复合体含氧化还原敏感Fe–S中心。阶段为纯化病毒蛋白；限制是强还原剂和高蛋白浓度与细胞内环境不同。</p></section><h3 id="33-血红素蛋白与血红素酶">2.3 血红素蛋白与血红素酶</h3><p class="medical-context"><strong>医学背景。</strong>血红素蛋白承担氧运输、药物代谢和过氧化物反应。铁自旋态、轴向配体和质子化状态会随底物、抑制剂及反应中间体改变。</p>
+<p>高自旋和低自旋Fe(III)血红素在X波段具有特征g值；配体、更换自旋态和Compound I/II/0等中间体可通过低温CW、功率依赖和快速冻淬研究。对强各向异性低自旋血红素，多频测量常比单一X波段更可靠。</p>
+<section class="case-entry" id="case-B3-1"><h4 class="case-title">案例B3-1｜高自旋血红素构象关系</h4><p class="case-meta"><a href="https://www.jbc.org/article/S0021-9258(18)62232-X/pdf" target="_blank" rel="noopener noreferrer" class="case-source">Peisach et al., 1971</a>｜方法基础</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究系统比较多类高自旋Fe(III)血红素蛋白，建立轴向配位、蛋白构象与谱形之间的经验关系。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR以g约6和g约2区域的有效g值及线形判定血红素铁的自旋态和局部配位差异。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>不同高自旋Fe(III)血红素蛋白在X波段的g≈6和g≈2区域被系统比较，建立蛋白构象、轴向配位与谱形之间的经验关系。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>样品为纯化血红素蛋白，观测量为有效g值与线形。阶段为方法基础；限制是经验归属存在多解性，需要结构、光谱和配体实验联合。</p></section><section class="case-entry" id="case-B3-2"><h4 class="case-title">案例B3-2｜结核分枝杆菌CYP121 Compound 0</h4><p class="case-meta"><a href="https://doi.org/10.1021/jacs.3c04991" target="_blank" rel="noopener noreferrer" class="case-source">Nguyen et al., 2023</a>｜结核药靶机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究用快速冻淬和XFEL结构捕获结核分枝杆菌CYP121催化循环中的早期过氧中间体。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于在毫秒时间窗识别高自旋Fe(III)-OOH的特征g值，并验证Compound 0的形成与衰减。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为409 μM CYP121–cYY与20 mM过乙酸1:1混合的快速冻淬液和单晶浆液；顺磁对象为高自旋Fe(III)-OOH。X波段CW 9.4 GHz、10 K、1.002 mW、100 kHz、0.6 mT调制，−155°C冻淬5–500 ms。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>5 ms出现g≈6.87、5.77、2.00中间体，结合XFEL结构定为Compound 0。阶段为结核药靶机制；限制是高过乙酸浓度以及晶体/溶液反应速率差异。</p></section><h3 id="34-自由基酶">2.4 自由基酶</h3><p class="medical-context"><strong>医学背景。</strong>RNR等自由基酶利用受控蛋白自由基完成核苷酸还原和其他难反应。自由基辅因子的形成、转移和猝灭直接关联DNA合成、抗感染与抗肿瘤药物作用。</p>
+<p>自由基酶的目标常是鉴定稳定蛋白自由基或冻结瞬态中间体。X波段CW负责存在性、浓度和动力学；ENDOR/ESEEM/HYSCORE用于近邻核结构。部分关键脉冲实验位于Q波段，必须逐项标注。</p>
+<section class="case-entry" id="case-B4-1"><h4 class="case-title">案例B4-1｜肿瘤细胞RNR酪氨酰自由基</h4><p class="case-meta"><a href="https://doi.org/10.1016/0891-5849(90)90042-H" target="_blank" rel="noopener noreferrer" class="case-source">Liermann et al., 1990</a>｜肿瘤细胞药效机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较多类自由基猝灭剂对完整肿瘤细胞核糖核苷酸还原酶活性的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR直接记录RNR酪氨酰自由基强度，量化药物导致的自由基辅因子损失。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为完整Ehrlich腹水瘤细胞；顺磁对象为核糖核苷酸还原酶M2/R2酪氨酰自由基。低温CW-EPR比较羟基脲、焦没食子酚和硫代氨基脲的猝灭效力，范围跨约3个数量级。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>公开资料未给精确频率，因此不计入严格X波段统计。阶段为肿瘤细胞药效机制；限制是旧式暴露条件和频段信息不足。</p></section><section class="case-entry" id="case-B4-2"><h4 class="case-title">案例B4-2｜细胞内RNR自由基结构</h4><p class="case-meta"><a href="https://doi.org/10.1002/anie.202102914" target="_blank" rel="noopener noreferrer" class="case-source">Meichsner et al., 2021</a>｜活细胞机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在完整活细菌中测量RNR自由基的浓度、局部结构和自由基对距离。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>X波段CW给出细胞内Y122自由基浓度，Q波段DEER与ENDOR补充距离和近邻核耦合信息。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>完整存活大肠杆菌中表达RNR β2；顺磁对象为Y122•和内源Mn2+。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>X波段CW 9.6 GHz测得平均体相自由基浓度18±5 μM；Q波段34 GHz完成DEER和Davies ENDOR，显示细胞内自由基对距离和较窄分布。阶段为活细胞机制；限制是脉冲结果采用Q波段，过表达及Fe2+/O2处理可能改变天然占据。</p></section><h3 id="35-铜锰及其他金属蛋白">2.5 铜、锰及其他金属蛋白</h3><p class="medical-context"><strong>医学背景。</strong>Cu、Mn等金属中心参与抗氧化防御、电子转移和细胞死亡调控。价态与配位变化可改变酶活和金属毒性，也是铜死亡等新型细胞死亡研究的重要化学基础。</p>
+<p>Cu(II)、Mn(II/III/IV)、Mo(V)、Ni(I/III)等中心可直接观察。CW提供g/A、氧化态和配位对称性；脉冲超精细谱可确定近邻N/H等核；天然金属中心DEER可读取构象异质性。</p>
+<section class="case-entry" id="case-B5-1"><h4 class="case-title">案例B5-1｜MnSOD的过氧化物酶活性</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.freeradbiomed.2012.08.573" target="_blank" rel="noopener noreferrer" class="case-source">Ansenberger-Fricano et al., 2013</a>｜蛋白和肿瘤细胞</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究考察高H2O2条件下人MnSOD的过氧化物酶样反应，并延伸至肿瘤细胞模型。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于识别羟胺氧化产物和DMPO蛋白自由基加合物，检验异常氧化路径的出现。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为重组人MnSOD及高表达MnSOD的MCF-7细胞；顺磁对象为CAT1H氧化产物和DMPO蛋白自由基加合物。Bruker EMX X波段CW，9.81 GHz、100 kHz调制，蛋白0.25–0.5 mg/mL、DMPO 50 mM、H2O2 1 mM。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>结果提示高H2O2下出现过氧化物酶样反应。阶段为蛋白和肿瘤细胞；限制是后续研究指出部分荧光测定可能有光化学伪影，因果解释存在争议。</p></section><section class="case-entry" id="case-B5-2"><h4 class="case-title">案例B5-2｜Elesclomol介导细胞铜递送</h4><p class="case-meta"><a href="https://doi.org/10.1073/pnas.2216722120" target="_blank" rel="noopener noreferrer" class="case-source">Zulkifli et al., 2023</a>｜分子药理和细胞</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究解析elesclomol-Cu复合物经FDX1还原后向细胞递送铜的分子过程。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR确认配合物中Cu(II)的顺磁态及其在FDX1作用下消失，为Cu(II)还原和Cu(I)释放提供直接读出。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为ES–Cu复合物、纯化人FDX1及铜缺乏细胞；顺磁对象为ES–Cu(II)。Bruker 300E室温X波段CW，9.36 GHz、1.0 G/100 kHz调制、25 dB衰减。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>EPR确认复合物中铜为Cu(II)，联合遗传和生化结果显示FDX1将其还原并释放Cu(I)。阶段为分子药理和细胞；限制是细胞内路径主要由非EPR实验确定。</p></section><h2 id="4-位点定向自旋标记膜蛋白距离分布与活性中心">3 位点定向自旋标记、膜蛋白、距离分布与活性中心</h2><p class="medical-context major"><strong>医学背景。</strong>离子通道、受体、转运蛋白和聚集性蛋白的构象平衡会改变信号转导、药物效能和病理聚集。位点定向自旋标记将特定残基转化为局部磁探针，使溶液和膜环境中的运动性、可及性及纳米尺度距离能够被测量。</p>
+<h3 id="41-位点定向自旋标记与x波段cw">3.1 位点定向自旋标记与X波段CW</h3><p class="medical-context"><strong>医学背景。</strong>许多疾病相关蛋白具有构象多态和柔性区域，晶体结构难以完整描述其溶液动力学。SDSL-CW适合逐位点比较局部运动、溶剂暴露和短程相互作用。</p>
+<p>SDSL将稳定自由基引入选定位点。室温X波段CW线形反映标签运动、局部拥挤和主链动力学；功率饱和配合顺磁碰撞剂可估计水相或膜相可及性。结果是“蛋白构象与标签转子”的卷积，需用多位点、对照突变和结构模型解释。</p>
+<section class="case-entry" id="case-C1-1"><h4 class="case-title">案例C1-1｜载脂蛋白A-I的脂质敏感构象开关</h4><p class="case-meta"><a href="https://doi.org/10.1038/nsb1016" target="_blank" rel="noopener noreferrer" class="case-source">Oda et al., 2003</a>｜纯化蛋白/脂质模型</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究以多位点自旋标记分析ApoA-I结合脂质前后的局部重排，解释HDL形成相关构象变化。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR通过线形、可及性和短程偶极展宽定位脂质敏感区及运动性变化。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为多个半胱氨酸位点标记的ApoA-I及脂质结合复合物；顺磁对象为R1硝氧自由基。X波段CW比较线形、可及性和位点间偶极展宽，确定C端脂质敏感区与重排。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>医学背景为HDL形成和动脉粥样硬化。阶段为纯化蛋白/脂质模型；限制是标签可能改变局部折叠，距离范围短于DEER。</p></section><section class="case-entry" id="case-C1-2"><h4 class="case-title">案例C1-2｜KCNQ1/KCNE1复合体动力学</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.bbamem.2024.184377" target="_blank" rel="noopener noreferrer" class="case-source">Stowe et al., 2024</a>｜膜蛋白基础研究</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较KCNQ1与KCNE1游离及复合状态的局部动力学，分析心律失常相关通道组装。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR线形用于识别复合形成引起的位点特异运动受限，但单个位点线形不唯一对应整体构象。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为重构膜环境中的KCNQ1和KCNE1自旋标记构建体；顺磁对象为硝氧自由基。X波段CW线形分析比较游离与复合状态，识别相互作用引起的运动受限和位点特异变化。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>医学背景为心律失常相关钾通道。阶段为膜蛋白基础研究；限制是线形不能单独给出唯一全局构象。</p></section><h3 id="42-膜蛋白与药物靶点构象">3.2 膜蛋白与药物靶点构象</h3><p class="medical-context"><strong>医学背景。</strong>膜受体、离子通道和转运蛋白是主要药物靶点，其功能取决于脂质环境、配体和辅助亚基共同调节的构象平衡。重构膜体系可将特定变量分离研究。</p>
+<p>本小类通常联合X波段CW与低温PDS。CW适合快速比较配体、脂质和膜张力对局部动力学的作用；DEER给出较长距离分布。近期高灵敏PDS多在Q波段完成。</p>
+<section class="case-entry" id="case-C2-1"><h4 class="case-title">案例C2-1｜KCNE1在脂质双层中的拓扑</h4><p class="case-meta"><a href="https://doi.org/10.1021/acs.biochem.5b00505" target="_blank" rel="noopener noreferrer" class="case-source">Sahu et al., 2015</a>｜重构膜蛋白</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在脂质双层中建立KCNE1的跨膜拓扑和不同残基的膜内深度。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR功率饱和分别读取氧与NiEDDA碰撞可及性，并由深度参数界定膜内外位置。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为多位点R1标记KCNE1重构于POPC/POPG双层；X波段CW测量线形、氧/镍EDDA功率饱和可及性，并结合深度参数建立跨膜拓扑。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>医学背景为长QT综合征相关辅助亚基。阶段为重构膜蛋白；限制是可及性—深度标定依赖膜组成和碰撞剂分配。</p></section><section class="case-entry" id="case-C2-2"><h4 class="case-title">案例C2-2｜膜焦磷酸酶抑制剂下的构象不对称</h4><p class="case-meta"><a href="https://elifesciences.org/articles/102288" target="_blank" rel="noopener noreferrer" class="case-source">Liu et al., 2025</a>｜抗感染靶点机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较不同抑制剂稳定的膜焦磷酸酶构象，分析抗感染靶点的二聚体不对称性。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>X波段CW报告局部运动变化，Q波段PDS给出距离约束，用于区分配体诱导的构象群。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为Thermotoga maritima膜焦磷酸酶自旋标记体；X波段CW 9.4 GHz、298 K、10 mW、0.1 mT/100 kHz调制比较配体条件；距离测量在Q波段34 GHz、50 K完成。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>结果显示不同抑制剂稳定不对称构象。阶段为抗感染靶点机制；限制是PDS采用Q波段，重构体系与细胞膜仍有差别。</p></section><h3 id="43-deer-peldor距离分布">3.3 DEER/PELDOR距离分布</h3><p class="medical-context"><strong>医学背景。</strong>蛋白活化和药物偏向性常表现为多个构象亚态比例变化。DEER/PELDOR读取纳米尺度距离分布，可比较配体、突变和膜环境对构象群的影响。</p>
+<p>四脉冲DEER通过泵浦一组电子自旋并观测另一组自旋的回波调制，通常读取约2–8 nm距离。报告距离分布时应同时说明背景扣除、正则化或模型、置信区间和标签构象库。</p>
+<section class="case-entry" id="case-C3-1"><h4 class="case-title">案例C3-1｜复合物I天然簇的X波段DEER</h4><p class="case-meta"><a href="https://doi.org/10.1073/pnas.0908050107" target="_blank" rel="noopener noreferrer" class="case-source">Roessler et al., 2010</a>｜基础</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究以复合物I天然Fe-S簇作为内源自旋对完成结构归属。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>X波段DEER读取取向选择性偶极相互作用，说明天然金属簇也可用于纳米尺度距离判断。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>与B1-1相同研究，以天然Fe–S簇作为自旋对，在10 K获得取向选择性偶极信息并完成簇归属。该案例说明X波段脉冲并不限于人工硝氧标记。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>限制是多中心耦合、短T2和谱重叠。</p></section><section class="case-entry" id="case-C3-2"><h4 class="case-title">案例C3-2｜μ阿片受体配体效能与构象群</h4><p class="case-meta"><a href="https://doi.org/10.1038/s41586-024-07295-2" target="_blank" rel="noopener noreferrer" class="case-source">Zhao et al., 2024</a>｜药物靶点机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较μ阿片受体在不同激动剂和转导蛋白条件下的构象群，分析构象占比与药效的联系。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>Q波段DEER给出20-100 Å距离分布及其条件依赖变化，区分单一静态结构无法表达的受体亚态。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为双标记μOR，在不同激动剂和转导蛋白条件下测量。四脉冲DEER使用Q波段34 GHz、50 K、Bruker E580/QT-II、18/36 ns观察脉冲和100 ns啁啾泵浦脉冲；全局高斯混合模型处理20–100 Å距离。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>结果把配体特异构象群与内在效能联系起来。阶段为药物靶点机制；限制是高浓度纯化受体、低温冻结和模型依赖；不计入X波段案例数。</p></section><blockquote>
+<p><strong>X波段近期方法参照。</strong> 2021年Cu(II)—硝氧自由基样品在9.286/9.221 GHz进行四脉冲DEER，τ1=400 ns、τ2=3 μs、8 ns步进；该研究显示X波段仍可用于金属—自由基距离，但相位记忆时间限制可促使改用三脉冲序列。<a href="https://doi.org/10.1007/s00723-021-01321-6" rel="noopener noreferrer" target="_blank"><u>Russell 2021</u></a></p>
+</blockquote>
+<h3 id="44-蛋白聚集与淀粉样结构">3.4 蛋白聚集与淀粉样结构</h3><p class="medical-context"><strong>医学背景。</strong>Aβ、tau、α-synuclein等蛋白的寡聚和纤维化与神经退行性病变相关。早期寡聚体异质且寿命有限，残基级结构与聚集动力学需要互补方法。</p>
+<p>单标记CW可利用运动受限和自旋交换监测聚集；系统位点扫描可定位有序区；DEER可测寡聚体或纤维中的距离分布。标签稀释和标记比例控制是避免强交换展宽的必要条件。</p>
+<section class="case-entry" id="case-C4-1"><h4 class="case-title">案例C4-1｜Aβ聚集过程的CW监测</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2779421/" target="_blank" rel="noopener noreferrer" class="case-source">Sepkhanova et al., 2009</a>｜体外蛋白聚集</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究连续跟踪Aβ肽由单体向寡聚体和聚集体发展的过程。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>CW-EPR利用运动受限和自旋交换引起的线宽变化区分不同聚集阶段。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为Aβ肽的位点自旋标记体；顺磁对象为硝氧自由基。X波段CW随孵育时间读取线宽、运动相关时间和强自旋交换，区分单体、寡聚体和聚集体。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>医学背景为阿尔茨海默病。阶段为体外蛋白聚集；限制是标签和孵育条件会改变聚集途径。</p></section><section class="case-entry" id="case-C4-2"><h4 class="case-title">案例C4-2｜Aβ42寡聚体平行同向β片层（2023/2024，近期）</h4><p class="case-meta"><a href="https://doi.org/10.1021/acschemneuro.3c00364" target="_blank" rel="noopener noreferrer" class="case-source">Jang et al., 2023</a>｜体外疾病蛋白机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究对Aβ42进行高密度位点扫描，定位寡聚体有序区和核心残基。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR将残基运动性与分子间自旋相互作用结合，判定平行同向β片层及其三个主要结构段。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为覆盖42个残基位置中的37个可测自旋标记Aβ42寡聚体；Bruker EMXnano X波段CW。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>运动性和分子间自旋—自旋相互作用定位9–11、15–22及30–40三个结构段，34–38为核心，并指向平行同向β片层。阶段为体外疾病蛋白机制；限制是制备得到的寡聚体未必等同患者脑内全部物种。</p></section><h3 id="45-endoreseem与hyscore活性中心">3.5 ENDOR、ESEEM与HYSCORE活性中心</h3><p class="medical-context"><strong>医学背景。</strong>金属酶和自由基酶的活性取决于近邻配位核、氢键和质子化状态。常规CW谱常把弱超精细耦合压在线宽内，双共振和回波调制可补充局部核信息。</p>
+<p>ENDOR使用射频翻转与电子自旋耦合的核；ESEEM从回波随脉冲间隔的调制中读取弱耦合核；HYSCORE用二维相关分离重叠耦合。三者常需同位素替换、场位选择和谱模拟。</p>
+<section class="case-entry" id="case-C5-1"><h4 class="case-title">案例C5-1｜Ni-SOD组氨酸配位</h4><p class="case-meta"><a href="https://pubmed.ncbi.nlm.nih.gov/19707802/" target="_blank" rel="noopener noreferrer" class="case-source">Lee et al., 2010</a>｜抗氧化酶机制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究解析Ni-SOD活性中心His-1配位与氧化态相关氢键变化。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>ESEEM和ENDOR分别读取14N及1H超精细耦合，确定CW谱难以分辨的配位核信息。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为Streptomyces seoulensis Ni-SOD；顺磁对象为Ni中心。X波段14N ESEEM解析His-1远端氮耦合，Q波段14N/1H CW及脉冲ENDOR解析轴向氮和质子耦合。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>结果显示氧化态改变His-1相关氢键。阶段为抗氧化酶机制；限制是关键参数来自多频联合，ENDOR采用Q波段。</p></section><section class="case-entry" id="case-C5-2"><h4 class="case-title">案例C5-2｜LPMO组氨酸支架的pH调控</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11590009/" target="_blank" rel="noopener noreferrer" class="case-source">Haak et al., 2024</a>｜金属酶方法研究</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究分析铜依赖LPMO组氨酸支架随pH和配体变化的配位化学。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>ENDOR、ESEEM与HYSCORE分辨近邻氮、氢核耦合和质子化变化，限定Cu(II)活性中心结构。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为铜依赖裂解多糖单加氧酶及pH/配体变体；顺磁对象为Cu(II)。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>联合X/Q波段CW、ENDOR、ESEEM和HYSCORE确定组氨酸支架配位及质子化变化。阶段为金属酶方法研究；限制是体系主要面向酶化学，与具体疾病的联系间接，且不同超精细实验的频率需逐谱引用。</p></section><h2 id="5-药物光动力治疗放疗与医用材料">4 药物、光/声动力治疗、放疗与医用材料</h2><p class="medical-context major"><strong>医学背景。</strong>药物代谢、光敏与声敏反应、放射化学及纳米材料催化常伴随单电子转移和自由基生成。医学评价需要区分治疗所需的活性物种、非特异氧化损伤、材料残余自由基及其与细胞和动物终点的关系。</p>
+<h3 id="51-药物代谢与毒性">4.1 药物代谢与毒性</h3><p class="medical-context"><strong>医学背景。</strong>药物可经P450氧化、金属配位或单电子还原形成活性中间体。自由基和金属价态变化有助于解释药效与毒性，但仍需代谢物、暴露量和生物学终点共同判断。</p>
+<p>EPR可直接捕获药物裂解自由基、半醌和金属配合物，也可利用低温血红素谱分析药物与P450的配位。药物自由基的出现只能说明单电子过程发生，毒性判断仍需细胞暴露、代谢物鉴定和剂量—反应数据。</p>
+<section class="case-entry" id="case-D1-1"><h4 class="case-title">案例D1-1｜抗真菌唑类与P450血红素配位</h4><p class="case-meta"><a href="https://doi.org/10.1038/s41598-018-37330-y" target="_blank" rel="noopener noreferrer" class="case-source">Jeffreys et al., 2019</a>｜药物—酶模型</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较多种抗真菌唑类与P450血红素结构域的配位模式，并分析位点突变的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>低温EPR以高、低自旋Fe(III)组分变化判定直接氮配位、间接配位及多构象结合。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为FDA批准唑类与野生型及A82F/F87V P450 BM3血红素结构域；顺磁对象为低/高自旋Fe(III)。Bruker ER-300D/EMX X波段CW，10 K、0.5 mW、100 kHz、5 G调制。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>不同唑类产生直接或间接氮配位及多谱组分，tioconazole对突变体结合更强。阶段为药物—酶模型；限制是BM3是细菌P450，5% DMSO本身可改变血红素谱。</p></section><section class="case-entry" id="case-D1-2"><h4 class="case-title">案例D1-2｜醌—喹啉螯合剂的金属依赖自由基</h4><p class="case-meta"><a href="https://doi.org/10.3390/ph16081116" target="_blank" rel="noopener noreferrer" class="case-source">Selyutina et al., 2023</a>｜候选抗癌药化学</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价醌-喹啉候选抗癌化合物在不同金属离子和光照条件下的单电子反应。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR直接测量半醌自由基产率，判定Fe、Cu和Zn配位对自由基生成的差异。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为醌—喹啉候选物、电子供体及Fe3+/Cu2+/Zn2+；顺磁对象为半醌自由基。Bruker ER200D-SRC X波段CW，25°C、20 mW、1 G调制、增益8×10^5、时间常数200 ms。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>Fe和Cu配合物的自由基产率高于游离药物和Zn配合物，光照后增加。阶段为候选抗癌药化学；限制是甲醇模型体系，无细胞药代和动物毒性。</p></section><h3 id="52-光动力治疗与原位光照">4.2 光/声动力治疗与原位光照</h3><p class="medical-context"><strong>医学背景。</strong>PDT和SDT分别以光或超声激活敏化剂产生1O2、O2•-、•OH等物种，用于肿瘤和感染治疗。敏化效率受氧水平、激发条件、电子供体和材料微环境影响。</p>
+<p>光/声敏治疗中的EPR读出包括：CW自旋捕获识别1O2、O2•−、•OH或烷基自由基；时间分辨EPR直接观察光敏剂三重态及自旋极化；声动力体系则比较超声前后捕获谱。TEMP/4-oxo-TEMP生成的TEMPO类三线谱易受杂质和非1O2氧化干扰，应配置暗对照、叠氮化物或组氨酸猝灭、溶剂与探针空白。</p>
+<section class="case-entry" id="case-D2-1"><h4 class="case-title">案例D2-1｜螺旋BODIPY三重态与低剂量PDT</h4><p class="case-meta"><a href="https://doi.org/10.1002/anie.202005269" target="_blank" rel="noopener noreferrer" class="case-source">Wang et al., 2020</a>｜光物理与动物前验证</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究表征螺旋BODIPY光敏剂的三重态光物理，并将其纳米制剂用于低剂量PDT联合免疫治疗。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>时间分辨EPR读取三重态极化相位、零场分裂和寿命，判定系间窜越后形成的光敏活性态。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>30 μM光敏剂置于甲苯/MeTHF 3:1玻璃态，80 K、555 nm激光激发，采用X波段时间分辨EPR观察三重态电子自旋极化和零场分裂。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>得到(a,e,a,e,a,e)偏振谱、约52%三重态量子产率和492 μs寿命；纳米制剂随后用于小鼠PDT联合免疫治疗。阶段为光物理与动物前验证；限制是80 K玻璃态与生理环境不同。该TR-EPR不属于自旋回波型脉冲EPR。</p></section><section class="case-entry" id="case-D2-2"><h4 class="case-title">案例D2-2｜ICG抗菌光动力的ROS判定</h4><p class="case-meta"><a href="https://foliamedica.bg/article/135281/" target="_blank" rel="noopener noreferrer" class="case-source">Tanev et al., 2024</a>｜抗菌PDT体外研究</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究分析ICG抗菌光动力体系的活性物种组成，并比较光照条件与微生物灭活效果。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR通过不同捕获剂的特征谱区分1O2、O2•-及碳中心自由基，界定抗菌光化学路径。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为吲哚菁绿光敏体系及微生物模型；顺磁对象为烷基自由基、超氧和1O2捕获产物。Bruker EMXmicro X波段CW，配置相应自旋捕获剂并在照光后测量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>研究比较光强、光敏剂与微生物灭活结果。阶段为抗菌PDT体外研究；限制是不同捕获剂动力学和光漂白会影响组分比例，EPR反应液结果不等同细胞内局部分布。</p></section><section class="case-entry new-case" id="case-D2-3"><h4 class="case-title">案例D2-3｜缺氧条件下Ir(III)光敏剂介导光氧化还原治疗</h4><p class="case-meta"><a href="https://doi.org/10.26599/NR.2025.94907353" target="_blank" rel="noopener noreferrer" class="case-source">Rong et al., 2025</a>｜光化学、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究构建聚碳酸酯Ir(III)光敏体系，利用NADH参与的光氧化还原反应，在低氧条件下结合光活化化疗治疗4T1乳腺癌。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于辨认照光后形成的•OH、O2•-和1O2相关物种，检验体系中I型电子转移和II型能量转移并存的反应特征。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>DMPO用于•OH和O2•-捕获，论文以TEMP/TEMPO三线读出评价1O2；660 nm、190 mW cm-2照光。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>公开资料未完整列出频率、功率和调制参数。阶段为光化学、细胞与动物；限制是捕获反应液中的物种比例受氧、NADH和探针竞争影响。</p></section><section class="case-entry new-case" id="case-D2-4"><h4 class="case-title">案例D2-4｜代谢重编程纳米药物增强结肠癌声动力免疫治疗</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.apsb.2025.03.046" target="_blank" rel="noopener noreferrer" class="case-source">Zhang et al., 2025</a>｜模型反应、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究通过纳米药物调节肿瘤代谢并增强声动力诱导的免疫原性损伤，用于结肠癌声动力免疫治疗。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR以TEMP捕获1O2，确认超声作用下材料形成声敏ROS，并比较有无超声和材料的对照。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>采用CIQTEK EPR200M连续波X波段；50 μL TEMP加入1 mL、100 μg/mL材料，超声3 min。Methods记载1 W cm-2，Fig. 3图注记载1.5 W cm-2，报告保留该原文差异。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>材料+TEMP+US条件的1O2特征信号最强。阶段为模型反应、细胞与动物；限制是EPR结果对应无细胞声敏反应。</p></section><section class="case-entry new-case" id="case-D2-5"><h4 class="case-title">案例D2-5｜自噬阻断联合声动力与Ca2+过载治疗结肠癌</h4><p class="case-meta"><a href="https://doi.org/10.1002/smtd.202402091" target="_blank" rel="noopener noreferrer" class="case-source">Zhao et al., 2025</a>｜材料模型、细胞与动物</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究构建仿生纳米平台，将声敏反应、保护性自噬阻断和Ca2+过载联合用于结肠癌治疗。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于验证超声触发的活性氧生成，说明联合治疗中的氧化损伤起始于可测的声敏自由基过程。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>应用记录标注EPR200M。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>主文确认Ce6、CaO2与自噬抑制组分的联合体系，EPR捕获剂和桥路参数位于未完整公开的补充材料，故记为未报告。阶段为材料模型、细胞与动物；限制是EPR物种和定量条件尚需以补充材料复核。</p></section><section class="case-entry new-case" id="case-D2-6"><h4 class="case-title">案例D2-6｜日光触发ROS/RNS重分配治疗感染创面</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.biomaterials.2025.123793" target="_blank" rel="noopener noreferrer" class="case-source">Zhou et al., 2025</a>｜材料模型、细菌、细胞与动物创面</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究设计含ZnO和L-精氨酸的创面材料，以日光触发自由基生成和后续含氮活性物种转化，用于感染创面治疗。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于判定日光照射后O2•-和•OH相关物种的形成，并为其经L-精氨酸反应形成ONOO-的路径提供自由基层面依据。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>应用记录标注CIQTEK EPR200-Plus、常温测量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>摘要明确ZnO光照产生O2•-和•OH并在L-精氨酸体系中形成较低浓度、高反应性的ONOO-，公开页面未完整给出捕获剂和微波参数。阶段为材料模型、细菌、细胞与动物创面；限制是EPR实验条件尚未完整公开。</p></section><h3 id="53-放疗flash与放射敏化">4.3 放疗、FLASH与放射敏化</h3><p class="medical-context"><strong>医学背景。</strong>电离辐射通过水辐解和生物分子电离形成瞬态自由基。放射敏化剂、NO释放材料和FLASH剂量率会改变自由基生成与耗氧过程，需要与物理剂量测量分开评价。</p>
+<p>EPR在本类应用中可测辐射化学自由基、脂质过氧化、氧状态和固体剂量计。超高剂量率实验需区分束流剂量学、脉冲内自由基化学和辐照后的稳定产物。</p>
+<section class="case-entry" id="case-D3-1"><h4 class="case-title">案例D3-1｜X射线后大鼠羟基自由基生成</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.freeradbiomed.2004.02.016" target="_blank" rel="noopener noreferrer" class="case-source">Takeshita et al., 2004</a>｜动物辐射化学</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在大鼠中追踪X射线辐照引发的羟基自由基相关反应，并评价抗氧化剂干预。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR检测PBN-甲基加合物，并借助13C-DMSO验证该产物来源于•OH介导的甲基自由基。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>大鼠腹腔注射PBN/DMSO后接受X射线，收集胆汁，用X波段CW检测六线PBN—甲基加合物，并以13C-DMSO确认来源。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>40 Gy以上出现剂量相关信号，没食子酸甲酯抑制。阶段为动物辐射化学；限制是•OH经DMSO转化后的间接读数，检出剂量高于常见临床分割剂量。</p></section><section class="case-entry" id="case-D3-2"><h4 class="case-title">案例D3-2｜NO释放金属有机层放射敏化</h4><p class="case-meta"><a href="https://doi.org/10.1002/advs.202413518" target="_blank" rel="noopener noreferrer" class="case-source">Xiong et al., 2025</a>｜纳米放射增敏临床前</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究构建可释放NO的Hf基金属有机层，用于增强X射线诱导的肿瘤氧化损伤。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR比较辐照前后DMPO捕获谱，确认材料体系中ROS生成及其与NO释放并存。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为Hf基SNAP/MOL纳米层；顺磁对象为8 Gy X射线后DMPO捕获的ROS。Bruker Elexsys E500 X波段CW；反应液含200 μM Hf、100 mM DMPO，辐照后立即测量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>细胞和荷瘤鼠实验显示NO释放与ROS生成协同。阶段为纳米放射增敏临床前；限制是EPR来自无细胞制剂，肿瘤内自由基未由X波段直接原位读取。</p></section><blockquote>
+<p><strong>FLASH补充案例。</strong> 亚油酸胶束和磷脂酰胆碱脂质体在常规电子束下出现线性脂质过氧化，FLASH条件下在较高剂量/脉冲时未见相同终产物。论文含DMPO捕获，但开放方法未完整公开X波段参数，因此只作为中等置信度的机制案例。<a href="https://doi.org/10.1016/j.radphyschem.2022.110733" rel="noopener noreferrer" target="_blank"><u>Froidevaux 2023</u></a></p>
+</blockquote>
+<h3 id="54-纳米药物与医用材料">4.4 纳米药物与医用材料</h3><p class="medical-context"><strong>医学背景。</strong>纳米药物可清除或催化生成ROS/RNS，也可改变药物定位和肿瘤微环境；植入材料和高分子在合成或灭菌后可能残留自由基。材料体系中的EPR结果需要与生物相容性、药代和组织效应分别核对。</p>
+<p>纳米药物研究常利用EPR确认催化产ROS能力、探针所在微环境、膜流动性和释放动力学。医用高分子则关注聚合、辐照灭菌产生的残余自由基及其衰减。无细胞高H2O2体系适合比较配方，不能直接代表肿瘤内反应速率。</p>
+<section class="case-entry" id="case-D4-1"><h4 class="case-title">案例D4-1｜TEMPO标记聚合物包覆磁铁矿</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.cap.2014.03.021" target="_blank" rel="noopener noreferrer" class="case-source">Krzyminiewski et al., 2014</a>｜纳米递送材料表征</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究以TEMPO标记聚合物包覆磁铁矿纳米粒，考察载体表面微环境随pH、温度和介质的变化。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR线宽、运动性和信号衰减反映硝氧标签与聚合物、磁性核及溶剂的相互作用。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为TEMPO标记的聚合物包覆Fe3O4纳米粒；顺磁对象为表面硝氧自由基与磁性核相互作用。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>X波段CW约9.4 GHz比较pH、温度和介质条件下的线宽、运动性和信号衰减，用于分析纳米载体微环境。阶段为纳米递送材料表征；限制是标签密度、表面交换和粒子磁性共同影响线形。</p></section><section class="case-entry" id="case-D4-2"><h4 class="case-title">案例D4-2｜植入式镫骨假体辐照灭菌</h4><p class="case-meta"><a href="https://doi.org/10.2478/nuka-2024-0028" target="_blank" rel="noopener noreferrer" class="case-source">Kwacz et al., 2024</a>｜植入物临床前质量研究</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价电子束和γ射线灭菌对光固化镫骨假体材料中残余自由基的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR识别聚合物自由基类型并测量其在空气、真空和水中的衰减，判断灭菌后自由基残留时间。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为DS3000光固化聚合物、PDMS膜和完整假体，经电子束或γ射线25 kGy处理；顺磁对象为烯丙基和增长链自由基。Bruker EMXplus X波段CW，室温、1 mW、0.1 mT调制、扫宽60 mT。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>DS3000信号在空气中约24 h快速衰减，真空/水中较慢；PDMS未见室温持久信号。阶段为植入物临床前质量研究；限制是缺少长期体内生物相容性数据。</p></section><section class="case-entry new-case" id="case-D4-3"><h4 class="case-title">案例D4-3｜MnO2-蜂毒肽纳米颗粒增强抗肿瘤免疫</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.biomaterials.2022.121706" target="_blank" rel="noopener noreferrer" class="case-source">Tang et al., 2022</a>｜模型反应、细胞和多种小鼠肿瘤模型</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究构建MnO2-蜂毒肽纳米颗粒，在模拟肿瘤微环境中消耗GSH并形成•OH，评价其对原位肿瘤和肺转移模型的免疫治疗作用。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于确认材料在指定反应体系中形成羟基自由基，为氧化损伤和免疫激活机制提供自由基读出。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>应用记录标注CIQTEK EPR200-Plus。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>公开摘要确认GSH消耗和Fenton样•OH生成，捕获剂、频率、功率及调制参数未完整公开。阶段为模型反应、细胞和多种小鼠肿瘤模型；限制是动物免疫效应依赖流式、细胞因子和组织学实验，EPR未直接测量肿瘤内•OH。</p></section><blockquote>
+<p><strong>脉冲/双共振补充案例。</strong> γ/β辐照PLGA聚合物和微球可先用X波段CW及功率依赖分离谱组分，再用ENDOR/EIE判定局部超精细耦合。该组合适合材料自由基结构解析。<a href="https://doi.org/10.1016/j.jconrel.2005.09.009" rel="noopener noreferrer" target="_blank"><u>Bushell 2005</u></a></p>
+</blockquote>
+<h2 id="6-临床体液组织辐射剂量学与药品辐照灭菌">5 临床体液、组织、辐射剂量学与药品辐照灭菌</h2><p class="medical-context major"><strong>医学背景。</strong>临床体液和组织保留疾病相关内源顺磁中心，牙釉质与指甲则保存辐射诱导自由基。相关应用覆盖生物标志物研究、核与辐射事故分诊以及药品和医疗材料灭菌质量评价，其准确度高度依赖取样、储存、制样和校准。</p>
+<h3 id="61-临床体液与组织样本">5.1 临床体液与组织样本</h3><p class="medical-context"><strong>医学背景。</strong>人体体液和组织包含血红素、铁蛋白、转铁蛋白、铜蛋白及自由基等混合顺磁成分。疾病相关差异容易受到采血、缺氧、冻存、pH和组织异质性影响。</p>
+<p>人体样本接近真实病理状态，主要难点来自前处理、冻存时间、pH、血氧状态和多组分重叠。诊断研究必须报告病例谱、盲法、预设阈值、外部验证及与常规检测的增量信息。</p>
+<section class="case-entry" id="case-E1-1"><h4 class="case-title">案例E1-1｜黑色素瘤患者全血铁中心</h4><p class="case-meta"><a href="https://doi.org/10.1007/s00723-011-0219-3" target="_blank" rel="noopener noreferrer" class="case-source">Krzyminiewski et al., 2011</a>｜小队列人体离体样本</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较黑色素瘤患者与健康人全血中铁、铜相关内源顺磁中心。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>低温EPR分辨MetHb、转铁蛋白/铁蛋白Fe(III)及铜蓝蛋白Cu(II)组分，检验其与临床铁状态的关联。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>20例黑色素瘤患者与20名健康者，全血冻存于77 K；顺磁对象包括MetHb、转铁蛋白/铁蛋白Fe3+和铜蓝蛋白Cu2+。Bruker EMX-10 X波段CW，9.4 GHz、20 mW、100 kHz、1 mT调制。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>g≈6.08–6.09归于MetHb，g≈4.14–4.22主要归于转铁蛋白Fe3+，并与转铁蛋白饱和度相关。阶段为小队列人体离体样本；限制是混合谱、储存和酸碱状态会改变信号。</p></section><section class="case-entry" id="case-E1-2"><h4 class="case-title">案例E1-2｜人脑组织温度依赖内源中心（2025在线/2026卷期，近期）</h4><p class="case-meta"><a href="https://doi.org/10.1002/mrm.70222" target="_blank" rel="noopener noreferrer" class="case-source">Avanzine 2025/2026</a>｜人体离体方法基线</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究建立不同脑区和供者的人脑内源顺磁中心温度基线。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR多温点积分和谱分解用于区分Cu(II)、高自旋Fe(III)及铁蛋白信号的温度依赖。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>8名离体供者、17个脑区，冻干研磨；顺磁对象为高自旋Fe(III)、Cu(II)和铁蛋白。X波段CW约9.148–9.149 GHz，在193–293 K获得约570条谱并用EasySpin分解。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>Cu(II)积分近似服从1/T，Fe(III)和铁蛋白表现为非线性且存在脑区/供者差异。阶段为人体离体方法基线；限制是无明确疾病对照、冻干改变微环境、Fe(II)为EPR静默。</p></section><h3 id="62-牙釉质离体剂量学">5.2 牙釉质离体剂量学</h3><p class="medical-context"><strong>医学背景。</strong>牙釉质中的碳酸根自由基可保存多年，是核事故和既往照射剂量重建的重要材料。低剂量精度受天然本底、牙位、样品质量和机械制样影响。</p>
+<p>电离辐射在牙釉质羟基磷灰石中形成稳定碳酸根自由基。X波段具有较高质量灵敏度，适合牙釉质粉末或小活检；本底、机械制样、颗粒尺寸和修复树脂信号需要校正。</p>
+<section class="case-entry" id="case-E2-1"><h4 class="case-title">案例E2-1｜牙釉质X波段快速扫描</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4539305/" target="_blank" rel="noopener noreferrer" class="case-source">Yu et al., 2015</a>｜离体方法</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究比较快速扫描与常规CW对小质量牙釉质低剂量信号的测量能力。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR分离辐射诱导碳酸根自由基与天然本底，并评价0.5-1 Gy范围的重复性。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>60 mg牙釉质接受0、0.5、1或10 Gy；顺磁对象为剂量相关碳酸根自由基与天然本底。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>X波段快速扫描9.62 GHz与CW比较，34 min采集下0.5 Gy信号可辨；1 Gy重复剂量估计的变异系数从CW的3.9%降至快速扫描的0.4%。阶段为离体方法；限制是样品颗粒尺寸差异可造成显著灵敏度偏差。</p></section><section class="case-entry" id="case-E2-2"><h4 class="case-title">案例E2-2｜最小牙釉质质量与事故分诊</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.net.2023.09.016" target="_blank" rel="noopener noreferrer" class="case-source">Kim et al., 2024</a>｜放射事故离体分诊方法</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究确定放射事故分诊中牙釉质活检的最低可用质量。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>X波段CW用于检验约15 mg样品对0.5 Gy以上剂量的可辨识度和不确定度。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>研究以X波段CW评估牙釉质活检的最低质量，经实验室比对后认为约15 mg样品可评估0.5 Gy以上吸收剂量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>阶段为放射事故离体分诊方法；限制是仍需取样，口腔位置、既往医疗照射和机械诱导信号影响不确定度。</p></section><h3 id="63-指甲离体剂量学">5.3 指甲离体剂量学</h3><p class="medical-context"><strong>医学背景。</strong>指甲取样方便，适合大规模事故分诊；辐射诱导信号与剪切产生的机械信号重叠，并随水合和时间快速变化。</p>
+<p>指甲角蛋白受辐射后产生稳定或半稳定自由基，同时剪切会产生机械诱导信号。水处理、时间衰减、指甲油和个体差异是误差来源。</p>
+<section class="case-entry" id="case-E3-1"><h4 class="case-title">案例E3-1｜离体指甲剂量学验证</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4095917/" target="_blank" rel="noopener noreferrer" class="case-source">He et al., 2014</a>｜离体方法</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究验证剪取人指甲用于事故后离体剂量重建的流程。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR通过水处理和时间序列测量分离辐射诱导、机械诱导及本底信号。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为剪取人指甲，经已知剂量照射并进行水处理和时间序列X波段CW测量；顺磁对象为辐射诱导信号、机械诱导信号和本底。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>研究提出信号分离和校准程序。阶段为离体方法；限制是剪切伪影和快速衰减，事故后取样时间影响结果。</p></section><section class="case-entry" id="case-E3-2"><h4 class="case-title">案例E3-2｜年龄与个体因素对指甲信号的影响</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11774696/" target="_blank" rel="noopener noreferrer" class="case-source">Azariasl et al., 2025</a>｜人体离体方法优化</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评估年龄和个体因素对指甲辐射响应的影响。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR量化统一照射条件下的信号离散度，用于判断单一校准曲线的适用范围。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>人体指甲在受控照射后用X波段CW比较辐射诱导信号随年龄和个体因素的变化。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>结果显示个体本底和响应差异会影响统一校准。阶段为人体离体方法优化；限制是队列规模、采集位置和水合状态仍需标准化。</p></section><h3 id="64-药品与辅料辐照灭菌">5.4 药品与辅料辐照灭菌</h3><p class="medical-context"><strong>医学背景。</strong>辐照灭菌适用于热敏药品、辅料和医疗材料，处理后可能产生长寿命自由基。EPR可用于辐照鉴别和衰减研究，化学安全性仍需色谱、杂质与药效数据评价。</p>
+<p>辐照灭菌后的固体药物常形成可长期保存的自由基。X波段CW可用于辐照鉴别、自由基衰减和稳定性评价；谱信号存在不代表药物效力或毒性发生改变，需要色谱、杂质和药效分析。</p>
+<section class="case-entry" id="case-E4-1"><h4 class="case-title">案例E4-1｜L-组氨酸辅料γ辐照</h4><p class="case-meta"><a href="https://doi.org/10.1016/j.ijpharm.2017.09.033" target="_blank" rel="noopener noreferrer" class="case-source">Vallotto et al., 2017</a>｜辅料质量研究</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究长期跟踪γ辐照L-组氨酸辅料的自由基形成、衰减及储存后再生。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR提供碳/氮中心自由基谱形和动力学，用于区分初始辐射产物与后续储存反应。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>样品为药用辅料L-组氨酸，经γ辐照后长期储存；顺磁对象为辐射诱导碳/氮中心自由基。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>常规X波段CW跟踪谱形和衰减，并观察储存后自由基再生现象。阶段为辅料质量研究；限制是湿度、氧和包装条件对动力学敏感。</p></section><section class="case-entry" id="case-E4-2"><h4 class="case-title">案例E4-2｜哮喘药物辐照鉴别</h4><p class="case-meta"><a href="https://doi.org/10.1093/rpd/ncad165" target="_blank" rel="noopener noreferrer" class="case-source">Ece et al., 2023</a>｜药品灭菌质量控制</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价三种哮喘相关制剂在γ辐照后的长期可鉴别性。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR以持久自由基谱作为辐照标志，检验灭菌处理在两年时间尺度上的可追溯性。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>Airfix、Ventolin和Prednol制剂接受γ辐照后以EPR比较辐照与未辐照样品；自由基信号至少可检出2年。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>研究使用常规X波段测读，但开放摘要未给精确GHz和功率，参数置信度为中等。阶段为药品灭菌质量控制；限制是不同辅料和包装形成不同谱，需逐产品建库。</p></section><h2 id="8-低频体内epr与epr成像扩展">6 低频体内EPR与EPR成像扩展</h2><p class="medical-context major"><strong>医学背景。</strong>组织缺氧和氧化还原异质性影响肿瘤放化疗、缺血性疾病、炎症和创伤修复。低频EPR降低含水组织的介电损耗并允许使用表面线圈或大口径谐振器，可在活体中读取局部pO2、探针还原动力学和空间分布。</p>
+<p>本章讨论约250 MHz至1.3 GHz的低频EPR，以及与MRI结合的PEDRI/OMRI。较低微波频率降低组织介电损耗，允许表面线圈、较大环隙谐振腔或大孔径成像磁体。空间分辨率、谱分辨率和硬件尺寸的取舍与X波段不同。下列能力不能表述为常规X波段台式谱仪可直接完成。</p>
+<h3 id="81-植入式探针体内氧测量">6.1 植入式探针体内氧测量</h3><p class="medical-context"><strong>医学背景。</strong>肿瘤、慢性创面和缺血组织的pO2会随治疗和灌注改变。植入式固体探针允许同一部位长期复测，适合纵向疗效和生理反应研究。</p>
+<p>固体碳材料或晶体探针的EPR线宽随局部氧浓度改变。探针植入后可在同一部位重复读数，适合治疗期间纵向监测；它给出探针邻域的局部pO2，不能代表整块肿瘤的氧分布。</p>
+<section class="case-entry" id="case-F1-1"><h4 class="case-title">案例F1-1｜OxyChip长期体内氧测量的临床前评估</h4><p class="case-meta"><a href="https://doi.org/10.1007/s10544-018-0272-x" target="_blank" rel="noopener noreferrer" class="case-source">Hou et al., 2018</a>｜动物器械验证</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究评价锂酞菁-PDMS植入探针在动物组织和肿瘤中的长期稳定性及重复测量能力。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>低频CW-EPR利用线宽-pO2标定读取植入点邻域氧分压。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>OxyChip为含锂酞菁微晶的PDMS植入物，植入啮齿动物皮下或肿瘤后，用约1.2 GHz L波段CW EPR读取线宽—pO2标定。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>研究显示探针可长期保留并重复测量。阶段为动物器械验证；限制是局部采样、植入位置和组织反应影响结果。</p></section><section class="case-entry" id="case-F1-2"><h4 class="case-title">案例F1-2｜肿瘤OxyChip首次人体研究</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8517507/" target="_blank" rel="noopener noreferrer" class="case-source">Schaner et al., 2021</a>｜早期人体可行性</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究将OxyChip用于浅表实体瘤患者，记录基线氧分压和高氧呼吸反应。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>低频CW-EPR提供植入点附近的连续局部pO2读数，揭示患者间和干预后的氧反应差异。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>浅表实体瘤患者植入OxyChip，采用约1.2 GHz表面线圈CW EPR测量基线及高氧呼吸反应。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>不同患者肿瘤pO2差异明显，多数测量对高氧干预有显著响应。阶段为早期人体可行性；限制是肿瘤深度通常需≤3 cm，读数代表植入点附近。</p></section><h3 id="82-oxychip的cw与脉冲氧测量">6.2 OxyChip的CW与脉冲氧测量</h3><p class="medical-context"><strong>医学背景。</strong>OxyChip将氧敏晶体固定于生物相容性聚合物中，减少探针迁移并保持可校准线宽或弛豫响应。CW与脉冲读出在速度、硬件和相干时间要求上不同。</p>
+<p>CW氧测量依赖氧致展宽；脉冲方法可利用氧浓度对电子自旋—晶格弛豫率R1e的影响。脉冲法有更直接的弛豫读出，但探针T2过短或仪器死时间过长时会受限。</p>
+<section class="case-entry" id="case-F2-1"><h4 class="case-title">案例F2-1｜固体氧探针的CW标定路线</h4><p class="case-meta"><a href="https://doi.org/10.1007/s10544-018-0272-x" target="_blank" rel="noopener noreferrer" class="case-source">Hou et al., 2018</a>｜基础</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究建立固体OxyChip探针由EPR线宽换算氧分压的标定和长期复测程序。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>CW-EPR确定线宽对已知pO2的响应曲线，为动物与人体局部氧测量提供定量基础。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>F1-1研究通过已知氧分压环境建立OxyChip线宽标定并验证长期重复性，代表低频CW局部氧测量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>限制同样是点测量与植入依赖。</p></section><section class="case-entry" id="case-F2-2"><h4 class="case-title">案例F2-2｜吉西他滨治疗胰腺肿瘤的CW/脉冲比较</h4><p class="case-meta"><a href="https://doi.org/10.1007/s11307-023-01859-w" target="_blank" rel="noopener noreferrer" class="case-source">Dziurman et al., 2024</a>｜动物治疗监测</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在胰腺肿瘤模型中比较CW与脉冲EPR对吉西他滨治疗期间氧变化的纵向记录。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>两种EPR读出用于检验局部pO2趋势的一致性，并分析固体探针相干时间对脉冲测量的影响。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>小鼠胰腺肿瘤植入OxyChip，使用低频CW和脉冲EPR纵向比较治疗期间pO2。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>两种路线总体一致，并揭示个体间氧反应差异。阶段为动物治疗监测；限制是脉冲性能受固体探针相干时间、谐振腔带宽和运动影响。</p></section><h3 id="83-脉冲氧成像">6.3 脉冲氧成像</h3><p class="medical-context"><strong>医学背景。</strong>肿瘤和缺血灶内部常存在明显氧异质性，单点pO2无法表达坏死区、灌注区和治疗敏感区的空间差别。脉冲EPRI通过R1e或回波序列构建三维氧图。</p>
+<p>脉冲EPR氧成像常在250 MHz左右向动物注射三芳甲基自由基探针，用反转恢复或单点成像获得R1e，再由标定换算绝对pO2。该方法可绘制肿瘤内缺氧分数，与放疗靶区设计相接。</p>
+<section class="case-entry" id="case-F3-1"><h4 class="case-title">案例F3-1｜250 MHz脉冲EPR氧成像平台（2008/2013，基础）</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2778030/" target="_blank" rel="noopener noreferrer" class="case-source">Epel et al., 2008</a>｜动物仪器与定量方法</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究开发250 MHz脉冲EPR平台，对三芳甲基自由基探针进行三维分布和氧成像。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>回波与R1e读出将探针弛豫映射为pO2，实现动物体内空间分辨的氧定量。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>小动物接受三芳甲基自由基探针，250 MHz大孔径脉冲成像仪通过回波/单点成像序列获得三维分布和R1e。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>阶段为动物仪器与定量方法；限制是需要专用低场磁体、快速梯度、宽带功放和大体积谐振腔。</p></section><section class="case-entry" id="case-F3-2"><h4 class="case-title">案例F3-2｜人体尺寸脉冲EPR成像仪中的兔肿瘤氧图</h4><p class="case-meta"><a href="https://doi.org/10.1007/s11307-023-01852-3" target="_blank" rel="noopener noreferrer" class="case-source">Epel et al., 2024</a>｜大型动物转化前研究</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在人尺寸孔径平台中获得兔肿瘤氧图，评价低频脉冲EPRI向大型对象扩展的可行性。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR成像用于测量肿瘤内部pO2空间异质性，而非单点平均值。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>兔肿瘤在人体尺寸约250 MHz脉冲EPR成像仪中测量，获得肿瘤pO2空间分布，验证大孔径系统的尺度扩展。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>阶段为大型动物转化前研究；限制是探针给药、SAR、运动校正、梯度和重建速度仍限制人体应用。</p></section><h3 id="84-氧化还原与多参数成像">6.4 氧化还原与多参数成像</h3><p class="medical-context"><strong>医学背景。</strong>pH、pO2、还原力和谷胱甘肽共同构成疾病微环境。多响应探针把不同化学变量编码到线位、线宽、超精细分裂或衰减速率中。</p>
+<p>可还原硝氧自由基的信号衰减速率反映组织还原动力学；功能化三芳甲基自由基可同时报告pO2、pH、无机磷或巯基状态。信号衰减受灌注、排泄、膜通透性和化学还原共同控制，必须用药代或双探针对照解释。</p>
+<section class="case-entry" id="case-F4-1"><h4 class="case-title">案例F4-1｜肿瘤pH、氧化还原与谷胱甘肽联合监测</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5336491/" target="_blank" rel="noopener noreferrer" class="case-source">Bobko et al., 2012</a>｜动物功能成像</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在荷瘤小鼠中联合监测pH、pO2、氧化还原状态和谷胱甘肽相关反应。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR利用探针谱线位置、线宽及还原衰减的不同响应维度分离多项微环境参数。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>荷瘤小鼠接受功能性硝氧/三芳甲基探针，以L波段EPR读取谱线位置、线宽和信号衰减，得到pH、pO2和还原状态的组合信息。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>阶段为动物功能成像；限制是多参数反演依赖标定和探针分布。</p></section><section class="case-entry" id="case-F4-2"><h4 class="case-title">案例F4-2｜HOPE71多参数三芳甲基探针</h4><p class="case-meta"><a href="https://doi.org/10.1021/acs.analchem.2c03476" target="_blank" rel="noopener noreferrer" class="case-source">Gluth et al., 2022</a>｜探针与动物前方法</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究设计HOPE71三芳甲基探针，并完成其对氧、pH和磷酸盐的体外标定。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>X波段EPR确认各敏感参数及校准关系，体内空间读出仍需低频EPRI设备。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>HOPE71在X波段体外完成pO2、pH和磷酸盐敏感性标定，并面向低频体内成像设计。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>其体内读出需低频EPR成像硬件。阶段为探针与动物前方法；限制是X波段标定不能等同体内X波段成像，体内稳定性和清除仍需评估。</p></section><h3 id="85-体内牙齿剂量学">6.5 体内牙齿剂量学</h3><p class="medical-context"><strong>医学背景。</strong>放射事故后的快速分诊要求无创、可重复并覆盖大量人群。低频表面线圈可直接测量牙齿中的稳定辐射自由基，省去牙釉质取样。</p>
+<p>体内牙齿EPR使用约1.2 GHz表面线圈对切牙或犬齿测量，避免取样。低频组织穿透与口腔线圈工程是核心；X波段牙釉质粉末方法不能直接替代它。</p>
+<section class="case-entry" id="case-F5-1"><h4 class="case-title">案例F5-1｜体内牙齿EPR事故分诊平台</h4><p class="case-meta"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11064839/" target="_blank" rel="noopener noreferrer" class="case-source">Williams et al., 2014</a>｜人体可行性和应急设备开发</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究整合口腔定位、表面线圈和谱拟合，建立体内牙齿应急剂量测量平台。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>低频EPR非侵入读取牙釉质中稳定碳酸根自由基，用于事故人群快速分诊。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>研究整合永磁体、L波段表面线圈、口腔定位和谱拟合，对受试者牙齿的辐射诱导碳酸根自由基进行非侵入测量。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>阶段为人体可行性和应急设备开发；限制是牙齿几何、基线、头动与线圈耦合影响不确定度。</p></section><section class="case-entry" id="case-F5-2"><h4 class="case-title">案例F5-2｜放疗患者体内剂量验证</h4><p class="case-meta"><a href="https://pubmed.ncbi.nlm.nih.gov/38072322/" target="_blank" rel="noopener noreferrer" class="case-source">Draeger et al., 2024</a>｜人体方法验证</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究在放疗患者中比较牙齿EPR剂量与治疗计划剂量。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>EPR用于验证真实临床几何下的体内剂量重建能力，并评估重复定位误差。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>对接受头颈部或邻近区域放疗的患者，用低频体内EPR测量牙齿信号并与治疗计划剂量比较，证明真实患者环境中的可行性。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>阶段为人体方法验证；限制是样本量、牙位剂量梯度和重复定位仍需处理。</p></section><h3 id="86-pedri与omri">6.6 PEDRI与OMRI</h3><p class="medical-context"><strong>医学背景。</strong>PEDRI/OMRI利用电子自旋向核自旋的Overhauser极化转移获得自由基相关MRI对比，可用于探针分布和氧化还原动力学。电子照射、场循环和SAR决定人体应用边界。</p>
+<p>PEDRI/OMRI先在低场用射频饱和自由基EPR跃迁，通过Overhauser效应把电子自旋信息转移到水质子，再以MRI读取高分辨图像。它提供MRI解剖与自由基功能信息，但需要电子照射线圈、MRI线圈、场循环或专用低场磁体。</p>
+<section class="case-entry" id="case-F6-1"><h4 class="case-title">案例F6-1｜肿瘤氧化还原敏感MRI</h4><p class="case-meta"><a href="https://doi.org/10.1158/0008-5472.CAN-06-0879" target="_blank" rel="noopener noreferrer" class="case-source">Hyodo et al., 2006</a>｜动物成像</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究以硝氧自由基探针和OMRI绘制荷瘤小鼠的氧化还原异质性。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>电子自旋饱和引起的Overhauser增强及探针还原动力学共同提供组织氧化还原对比。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>荷瘤小鼠接受硝氧自由基探针，用低场DNP-MRI/OMRI监测探针还原引起的信号变化，绘制肿瘤氧化还原异质性。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>阶段为动物成像；限制是加热、探针药代和Overhauser增强效率。</p></section><section class="case-entry" id="case-F6-2"><h4 class="case-title">案例F6-2｜旋转磁体场循环DNP-MRI</h4><p class="case-meta"><a href="https://doi.org/10.1021/acs.analchem.1c02578" target="_blank" rel="noopener noreferrer" class="case-source">Utsumi et al., 2021</a>｜仪器与人体近场可行性</p><p class="case-field"><strong class="case-field-label">研究内容</strong>研究构建0.3 T MRI与5 mT ESR照射之间切换的旋转磁体DNP-MRI系统。</p><p class="case-field"><strong class="case-field-label">EPR所说明的问题</strong>实验检验场循环架构在模体和人体近场条件下形成可测Overhauser增强的可行性。</p><p class="case-field"><strong class="case-field-label">实验设计与参数</strong>系统在0.3 T进行MRI，在5 mT进行ESR照射，通过旋转磁体切换磁场。</p><p class="case-field"><strong class="case-field-label">主要结果与研究边界</strong>先用硝氧自由基模体优化序列，再在人手掌下放置自由基进行预临床验证。阶段为仪器与人体近场可行性；限制是场切换机械复杂度、扫描时间和电子照射均匀性。</p></section><h2 id="10-结论与研究实施建议">7 结论与研究实施建议</h2>
+<p>X波段CW适合测量顺磁物种的存在性、相对含量、谱形和条件响应。它适用于反应液、细胞、离体体液/组织、冻存组织、纯化蛋白、药物和固体材料；在医学研究中成熟度最高，前处理和对照设计常比仪器本身更决定结论质量。优先配置自旋捕获、变温/低温、功率饱和、原位照光和快速冻淬，可覆盖本报告多数应用。</p>
+<p>X波段脉冲EPR适合测量自旋中心间距离、近邻核耦合、弛豫与相干行为，并可按回波性质区分部分重叠谱组分。它主要用于低温纯化蛋白、重构膜、金属中心和稳定自旋标记样品，通常处于基础机制或候选药物靶点研究阶段。DEER、ENDOR、ESEEM和HYSCORE需要专门附件、较高样品浓度、玻璃化条件与谱模拟能力。近期生物大分子PDS常选择Q波段以获得更高灵敏度；报告中必须逐案例标明非X频段。</p>
+<p>时间分辨EPR适合光敏剂三重态、自由基对和光诱导电子转移，样品多为溶液或低温玻璃态。它需要激光触发和瞬态采集，不能以常规X波段回波模块替代。医学应用集中在PDT、光毒性和光生ROS前体机制，通常处于光物理到动物前验证阶段。</p>
+<p>低频体内EPR适合活体pO2、氧化还原动力学、体内牙齿剂量和三维氧成像。OxyChip已有人体可行性研究，脉冲氧成像已扩展至大型动物，PEDRI/OMRI仍依赖专用低场或场循环系统。此方向需要组织穿透、大孔径或表面线圈、运动校正和SAR管理，无法通过常规X波段谱仪的软件扩展直接实现。</p>
+<p>建议后续研究按三层建设：第一层建立X波段CW通用方法库和样品前处理规范；第二层围绕明确的结构或活性中心问题配置X波段脉冲与双共振；第三层仅在研究目标明确为活体空间信息时评估低频EPRI或PEDRI/OMRI合作平台。案例复现时应优先核对频段、温度、功率、调制幅度或脉冲长度、探针浓度、时间窗、样品阶段和阴性对照。</p>
+<h2 id="附录A-研究范围与判定规则">附录A 研究范围、案例收录与判定规则</h2>
+<h3 id="11-频段和技术边界">A.1 频段和技术边界</h3>
+<p>X波段通常指约8–12 GHz，生物医学实验最常见频率为9.2–9.8 GHz，对应约0.33–0.35 T静磁场。报告采用以下判定规则。</p>
+<ul>
+<li>原文明确给出8–12 GHz或直接写明X-band，记为“X波段确认”。</li>
+<li>论文同时使用X、Q、Ku、L或S波段时，逐项标注每种模式的频率，不以论文标题代替方法核验。</li>
+<li>摘要或开放方法未给出频率时，标为“频率未完整公开”，不计入严格X波段统计。</li>
+<li>低频体内测量单列，不把低频表面线圈、大口径成像仪或PEDRI装置描述成常规X波段附件。</li>
+</ul>
+<h3 id="13-案例字段与应用阶段">A.2 案例字段与应用阶段</h3>
+<p>“基础案例”用于说明方法形成或经典机制；“近期案例”优先选2021—2026年原始研究。每项案例先简述研究内容，再明确EPR所说明的主要问题，随后记录实验对象、顺磁中心或自旋探针、频段、模式、关键条件、结果、应用阶段与限制。应用阶段分为纯化/模型体系、细胞、动物、人体离体样本、人体可行性和质量控制六类。原文未公开的参数以“未报告”表示，不进行推测。</p>
+<h2 id="附录B-时间分辨与脉冲EPR边界">附录B 时间分辨EPR与自旋回波型脉冲EPR的技术边界</h2>
+<p>时间分辨EPR（TR-EPR）通常以激光、闪光或快速混合触发反应，在连续微波照射下按延迟时间记录瞬态吸收或发射信号。其代表性读出是电子自旋极化、三重态零场分裂、极化相位和瞬态寿命。D2-1的螺旋BODIPY案例属于这一类。另一条常见路线是光敏剂—受体体系的光诱导电子转移：在X波段直接读取自由基对的增强吸收/发射谱，利用极化相位判断电荷分离路径。此类实验对激光脉宽、重复频率、延迟和样品光密度高度敏感。</p>
+<p>自旋回波型脉冲EPR则以微波脉冲操控相干磁化，观测自由感应衰减或回波。回波检测场扫给出低温场谱；反转恢复、饱和恢复和两脉冲回波衰减给出T1、Tm或T2；DEER/PELDOR读取电子—电子偶极耦合；ENDOR、ESEEM和HYSCORE读取电子—核超精细耦合。二者都可称“脉冲相关实验”，但激发源、信号生成机制、时间尺度和可回答问题不同，不应把TR-EPR列入DEER/ENDOR仪器能力清单。</p>
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th><strong>维度</strong></th>
+<th><strong>时间分辨EPR</strong></th>
+<th><strong>自旋回波型脉冲EPR</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要触发</td>
+<td>光脉冲、快速混合、温度跳变</td>
+<td>微波脉冲序列，必要时配泵浦频率或射频</td>
+</tr>
+<tr>
+<td>典型时间尺度</td>
+<td>ns–ms瞬态化学</td>
+<td>ns–ms自旋相干与弛豫</td>
+</tr>
+<tr>
+<td>典型对象</td>
+<td>三重态、自由基对、光生电荷</td>
+<td>稳定自由基、金属中心、Fe–S簇、自旋标签</td>
+</tr>
+<tr>
+<td>主要读出</td>
+<td>极化相位、零场分裂、瞬态寿命</td>
+<td>场扫、T1/Tm、距离分布、超精细耦合</td>
+</tr>
+<tr>
+<td>医学问题</td>
+<td>光敏剂、光毒性、光生ROS前体</td>
+<td>蛋白结构、活性中心、金属簇和低温组织中心</td>
+</tr>
+</tbody>
+</table>
+<h2 id="附录C-案例总表与方法对照">附录C 案例总表与方法对照</h2>
+<h3 id="91-案例总表">C.1 案例总表</h3><p class="table-note">编号可跳转至正文对应案例；“代表文献”列可直接打开原始论文、PubMed/PMC 页面或期刊页面。</p>
+<p>下表按应用记录列出69个案例。B1-1/C3-1和F1-1/F2-1属于同一论文的交叉标签，因此对应67项独立研究。频段未在开放全文确认者标为“X，参数未公开”或“未核实”，不据此推断具体GHz。</p>
+<table class="case-summary-table">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>应用</strong></th>
+<th><strong>年份</strong></th>
+<th><strong>样品阶段</strong></th>
+<th><strong>频段/模式</strong></th>
+<th><strong>核心读出</strong></th>
+<th><strong>主要限制</strong></th>
+<th>代表文献</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="case-jump" href="#case-A1-1">A1-1</a></td>
+<td>创伤ROS</td>
+<td>2008</td>
+<td>动物组织</td>
+<td>X-CW</td>
+<td>DMPO-OH</td>
+<td>捕获间接、冻存</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.freeradbiomed.2007.10.056" rel="noopener noreferrer" target="_blank">Ojha 2008</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-A1-2">A1-2</a></td>
+<td>斑马鱼ROS</td>
+<td>2025</td>
+<td>动物</td>
+<td>X-CW</td>
+<td>CMH三线谱</td>
+<td>探针氧化非专一</td>
+<td><a class="source-link" href="https://doi.org/10.1371/journal.pone.0318212" rel="noopener noreferrer" target="_blank">Moghadam 2025</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-3">A1-3</a></td><td>GH-CDs与结肠炎</td><td>2024</td><td>模型/细胞/动物</td><td>EPR200M；参数未完整公开</td><td>ROS/RNS清除</td><td>反应液EPR；捕获剂未公开</td><td><a class="source-link" href="https://doi.org/10.1016/j.cej.2024.157800" rel="noopener noreferrer" target="_blank">CEJ 2024</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-4">A1-4</a></td><td>心肌缺血再灌注</td><td>2025</td><td>模型/细胞/动物</td><td>X-CW；EPR200M</td><td>O2•-/•OH清除</td><td>无细胞反应体系</td><td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12121267/" rel="noopener noreferrer" target="_blank">J Nanobiotechnol 2025</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-5">A1-5</a></td><td>Cur-Fe与结肠炎</td><td>2024</td><td>模型/细胞/动物</td><td>EPR200M</td><td>BMPO/•OOH</td><td>模型反应与体内终点分离</td><td><a class="source-link" href="https://doi.org/10.1186/s12951-024-02802-z" rel="noopener noreferrer" target="_blank">J Nanobiotechnol 2024</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-6">A1-6</a></td><td>酵母微囊纳米酶</td><td>2025</td><td>模型/细胞/动物</td><td>EPR200M</td><td>BMPO-OOH/DMPO-OH</td><td>体内自由基未直接测量</td><td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12166400/" rel="noopener noreferrer" target="_blank">Mater Today Bio 2025</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-7">A1-7</a></td><td>苦瓜细胞外囊泡</td><td>2025</td><td>模型/细胞/动物</td><td>EPR200M</td><td>O2•-/•OH清除</td><td>捕获剂未完整公开</td><td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11959773/" rel="noopener noreferrer" target="_blank">原始论文</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-8">A1-8</a></td><td>铁皮石斛碳点</td><td>2025</td><td>模型/动物</td><td>EPR200-Plus</td><td>O2•-/•OH清除</td><td>捕获剂未定位</td><td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12667543/" rel="noopener noreferrer" target="_blank">原始论文</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-9">A1-9</a></td><td>药用植物碳点</td><td>2025</td><td>模型/细胞/动物</td><td>EPR200M</td><td>O2•-/•OH清除</td><td>桥路参数未公开</td><td><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/?term=Medicinal+Plant-Derived+Carbon+Dots+Nanozymes+Ameliorate+Ulcerative+Colitis" rel="noopener noreferrer" target="_blank">ACS AMI 2025</a></td></tr>
+<tr><td><a class="case-jump" href="#case-A1-10">A1-10</a></td><td>金银花碳点与肺炎症</td><td>2025</td><td>模型/细胞/动物</td><td>EPR200M；参数未完整公开</td><td>超氧清除</td><td>捕获剂未公开</td><td><a class="source-link" href="https://doi.org/10.1002/adfm.202418683" rel="noopener noreferrer" target="_blank">AFM 2025</a></td></tr>
+
+<tr>
+<td><a class="case-jump" href="#case-A2-1">A2-1</a></td>
+<td>内毒素NO</td>
+<td>2003</td>
+<td>动物</td>
+<td>X/S-CW</td>
+<td>HbNO/DETC-Fe-NO</td>
+<td>多频、组织平均</td>
+<td><a class="source-link" href="https://doi.org/10.18388/abp.2003_3671" rel="noopener noreferrer" target="_blank">Plonka 2003</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-A2-2">A2-2</a></td>
+<td>MSC工程NO</td>
+<td>2023</td>
+<td>细胞/动物</td>
+<td>X-CW</td>
+<td>Fe-DETC-NO</td>
+<td>动物内定位有限</td>
+<td><a class="source-link" href="https://doi.org/10.7554/eLife.84820" rel="noopener noreferrer" target="_blank">Huang 2023</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-A3-1">A3-1</a></td>
+<td>脂质过氧化产物</td>
+<td>2003</td>
+<td>生化模型</td>
+<td>X-CW+HPLC</td>
+<td>PBN加合物</td>
+<td>加合物回收偏差</td>
+<td><a class="source-link" href="https://doi.org/10.1016/S1044-0305(03)00336-2" rel="noopener noreferrer" target="_blank">Guo 2003</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-A3-2">A3-2</a></td>
+<td>铁死亡药物</td>
+<td>2024</td>
+<td>细胞</td>
+<td>X-CW</td>
+<td>脂质自由基</td>
+<td>细胞器定位不足</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.redox.2024.103257" rel="noopener noreferrer" target="_blank">Su 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-A4-1">A4-1</a></td>
+<td>运动后血液氧化还原</td>
+<td>2003</td>
+<td>人体离体</td>
+<td>X-CW</td>
+<td>抗坏血酸自由基</td>
+<td>前处理敏感</td>
+<td><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/12797470/" rel="noopener noreferrer" target="_blank">Paolini 2003</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-A4-2">A4-2</a></td>
+<td>超氧化物歧化模拟物</td>
+<td>2025</td>
+<td>细胞/动物</td>
+<td>X-CW</td>
+<td>CP•/氧消耗</td>
+<td>探针反应竞争</td>
+<td><a class="source-link" href="https://doi.org/10.3390/molecules30091882" rel="noopener noreferrer" target="_blank">Lazarova 2025</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B1-1">B1-1</a></td>
+<td>复合物I簇归属</td>
+<td>2010</td>
+<td>纯化蛋白</td>
+<td>X-DEER</td>
+<td>簇间偶极</td>
+<td>10 K、多中心</td>
+<td><a class="source-link" href="https://doi.org/10.1073/pnas.0908050107" rel="noopener noreferrer" target="_blank">Roessler 2010</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B1-2">B1-2</a></td>
+<td>DGUOK线粒体病</td>
+<td>2016</td>
+<td>动物组织</td>
+<td>X-CW</td>
+<td>Fe–S/自由基谱</td>
+<td>病因特异性有限</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.freeradbiomed.2016.01.001" rel="noopener noreferrer" target="_blank">Bennett 2016</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B2-1">B2-1</a></td>
+<td>SARS-CoV-2 nsp12 Fe–S</td>
+<td>2021</td>
+<td>纯化蛋白</td>
+<td>X-CW</td>
+<td>g张量/还原响应</td>
+<td>体内状态未定</td>
+<td><a class="source-link" href="https://doi.org/10.1126/science.abi5224" rel="noopener noreferrer" target="_blank">Maio 2021</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B2-2">B2-2</a></td>
+<td>nsp14/nsp10 Fe–S</td>
+<td>2025</td>
+<td>纯化蛋白</td>
+<td>X-CW</td>
+<td>10 K簇谱</td>
+<td>病毒复制体外模型</td>
+<td><a class="source-link" href="https://www.nature.com/articles/s41467-025-62832-5" rel="noopener noreferrer" target="_blank">Maio 2025</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B3-1">B3-1</a></td>
+<td>血红素自旋态</td>
+<td>1971</td>
+<td>纯化蛋白</td>
+<td>X-CW</td>
+<td>g值/自旋态</td>
+<td>早期谱模拟有限</td>
+<td><a class="source-link" href="https://www.jbc.org/article/S0021-9258(18)62232-X/pdf" rel="noopener noreferrer" target="_blank">Peisach 1971</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B3-2">B3-2</a></td>
+<td>CYP121反应中间体</td>
+<td>2023</td>
+<td>纯化蛋白</td>
+<td>X-CW快速冻淬</td>
+<td>中间体占比</td>
+<td>冻淬时间分辨率</td>
+<td><a class="source-link" href="https://doi.org/10.1021/jacs.3c04991" rel="noopener noreferrer" target="_blank">Nguyen 2023</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B4-1">B4-1</a></td>
+<td>RNR肿瘤自由基</td>
+<td>1990</td>
+<td>细胞</td>
+<td>频段未核实</td>
+<td>酪氨酰自由基量</td>
+<td>灵敏度和归属</td>
+<td><a class="source-link" href="https://doi.org/10.1016/0891-5849(90)90042-H" rel="noopener noreferrer" target="_blank">Liermann 1990</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B4-2">B4-2</a></td>
+<td>细胞内RNR</td>
+<td>2021</td>
+<td>细胞</td>
+<td>X-CW+Q脉冲</td>
+<td>自由基/金属中心</td>
+<td>脉冲为非X</td>
+<td><a class="source-link" href="https://doi.org/10.1002/anie.202102914" rel="noopener noreferrer" target="_blank">Meichsner 2021</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B5-1">B5-1</a></td>
+<td>MnSOD副反应</td>
+<td>2013</td>
+<td>蛋白/细胞</td>
+<td>X-CW</td>
+<td>CAT1H/DMPO</td>
+<td>光化学伪影争议</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.freeradbiomed.2012.08.573" rel="noopener noreferrer" target="_blank">Ansenberger-Fricano 2013</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-B5-2">B5-2</a></td>
+<td>Elesclomol铜递送</td>
+<td>2023</td>
+<td>蛋白/细胞</td>
+<td>X-CW</td>
+<td>Cu(II)消失</td>
+<td>细胞路径靠联合实验</td>
+<td><a class="source-link" href="https://doi.org/10.1073/pnas.2216722120" rel="noopener noreferrer" target="_blank">Zulkifli 2023</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C1-1">C1-1</a></td>
+<td>ApoA-I构象</td>
+<td>2003</td>
+<td>蛋白/脂质</td>
+<td>X-CW SDSL</td>
+<td>运动/可及性</td>
+<td>标签卷积</td>
+<td><a class="source-link" href="https://doi.org/10.1038/nsb1016" rel="noopener noreferrer" target="_blank">Oda 2003</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C1-2">C1-2</a></td>
+<td>KCNQ1/KCNE1</td>
+<td>2024</td>
+<td>重构膜</td>
+<td>X-CW SDSL</td>
+<td>线形变化</td>
+<td>全局构象非唯一</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.bbamem.2024.184377" rel="noopener noreferrer" target="_blank">Stowe 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C2-1">C2-1</a></td>
+<td>KCNE1膜拓扑</td>
+<td>2015</td>
+<td>重构膜</td>
+<td>X-CW功率饱和</td>
+<td>深度参数</td>
+<td>膜组成依赖</td>
+<td><a class="source-link" href="https://doi.org/10.1021/acs.biochem.5b00505" rel="noopener noreferrer" target="_blank">Sahu 2015</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C2-2">C2-2</a></td>
+<td>焦磷酸酶抑制剂</td>
+<td>2025</td>
+<td>重构膜</td>
+<td>X-CW+Q-DEER</td>
+<td>动力学/距离</td>
+<td>距离为非X</td>
+<td><a class="source-link" href="https://elifesciences.org/articles/102288" rel="noopener noreferrer" target="_blank">Liu 2025</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C3-1">C3-1</a></td>
+<td>天然Fe–S簇距离</td>
+<td>2010</td>
+<td>纯化蛋白</td>
+<td>X-DEER</td>
+<td>偶极调制</td>
+<td>同B1-1</td>
+<td><a class="source-link" href="https://doi.org/10.1073/pnas.0908050107" rel="noopener noreferrer" target="_blank">Roessler 2010</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C3-2">C3-2</a></td>
+<td>μOR构象群</td>
+<td>2024</td>
+<td>纯化受体</td>
+<td>Q-DEER，非X</td>
+<td>20–100 Å分布</td>
+<td>冻结与模型依赖</td>
+<td><a class="source-link" href="https://doi.org/10.1038/s41586-024-07295-2" rel="noopener noreferrer" target="_blank">Zhao 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C4-1">C4-1</a></td>
+<td>Aβ聚集</td>
+<td>2009</td>
+<td>体外蛋白</td>
+<td>X-CW SDSL</td>
+<td>交换/运动</td>
+<td>标签影响聚集</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2779421/" rel="noopener noreferrer" target="_blank">Sepkhanova 2009</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C4-2">C4-2</a></td>
+<td>Aβ42寡聚体</td>
+<td>2023</td>
+<td>体外蛋白</td>
+<td>X-CW SDSL</td>
+<td>位点扫描</td>
+<td>与脑内物种差异</td>
+<td><a class="source-link" href="https://doi.org/10.1021/acschemneuro.3c00364" rel="noopener noreferrer" target="_blank">Jang 2023</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C5-1">C5-1</a></td>
+<td>Ni-SOD配位</td>
+<td>2010</td>
+<td>纯化蛋白</td>
+<td>X-ESEEM+Q-ENDOR</td>
+<td>14N/1H耦合</td>
+<td>多频联合</td>
+<td><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/19707802/" rel="noopener noreferrer" target="_blank">Lee 2010</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-C5-2">C5-2</a></td>
+<td>LPMO铜中心</td>
+<td>2024</td>
+<td>纯化蛋白</td>
+<td>X/Q多频脉冲</td>
+<td>ENDOR/ESEEM/HYSCORE</td>
+<td>医学联系间接</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11590009/" rel="noopener noreferrer" target="_blank">Haak 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-D1-1">D1-1</a></td>
+<td>唑类—P450</td>
+<td>2019</td>
+<td>蛋白模型</td>
+<td>X-CW低温</td>
+<td>Fe(III)自旋态</td>
+<td>细菌P450模型</td>
+<td><a class="source-link" href="https://doi.org/10.1038/s41598-018-37330-y" rel="noopener noreferrer" target="_blank">Jeffreys 2019</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-D1-2">D1-2</a></td>
+<td>醌—喹啉自由基</td>
+<td>2023</td>
+<td>化学模型</td>
+<td>X-CW</td>
+<td>半醌自由基</td>
+<td>无细胞药代</td>
+<td><a class="source-link" href="https://doi.org/10.3390/ph16081116" rel="noopener noreferrer" target="_blank">Selyutina 2023</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-D2-1">D2-1</a></td>
+<td>BODIPY光敏剂</td>
+<td>2020</td>
+<td>光物理/动物</td>
+<td>X-TR-EPR</td>
+<td>三重态极化</td>
+<td>80 K玻璃态</td>
+<td><a class="source-link" href="https://doi.org/10.1002/anie.202005269" rel="noopener noreferrer" target="_blank">Wang 2020</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-D2-2">D2-2</a></td>
+<td>ICG抗菌PDT</td>
+<td>2024</td>
+<td>体外微生物</td>
+<td>X-CW原位光照</td>
+<td>ROS捕获物</td>
+<td>捕获剂偏差</td>
+<td><a class="source-link" href="https://foliamedica.bg/article/135281/" rel="noopener noreferrer" target="_blank">Tanev 2024</a></td></tr>
+<tr><td><a class="case-jump" href="#case-D2-3">D2-3</a></td><td>Ir(III)缺氧光治疗</td><td>2025</td><td>模型/细胞/动物</td><td>频率参数未完整公开</td><td>•OH/O2•-/1O2</td><td>探针竞争与低氧条件</td><td><a class="source-link" href="https://doi.org/10.26599/NR.2025.94907353" rel="noopener noreferrer" target="_blank">Nano Research 2025</a></td></tr>
+<tr><td><a class="case-jump" href="#case-D2-4">D2-4</a></td><td>结肠癌声动力免疫</td><td>2025</td><td>模型/细胞/动物</td><td>X-CW；EPR200M</td><td>TEMP/1O2</td><td>超声功率原文不一致</td><td><a class="source-link" href="https://doi.org/10.1016/j.apsb.2025.03.046" rel="noopener noreferrer" target="_blank">APSB 2025</a></td></tr>
+<tr><td><a class="case-jump" href="#case-D2-5">D2-5</a></td><td>声动力+Ca2+过载</td><td>2025</td><td>模型/细胞/动物</td><td>EPR200M；参数未公开</td><td>声敏ROS</td><td>补充材料待复核</td><td><a class="source-link" href="https://doi.org/10.1002/smtd.202402091" rel="noopener noreferrer" target="_blank">Small Methods 2025</a></td></tr>
+<tr><td><a class="case-jump" href="#case-D2-6">D2-6</a></td><td>感染创面ROS/RNS</td><td>2025</td><td>模型/细胞/动物</td><td>EPR200-Plus；常温</td><td>O2•-/•OH/ONOO-</td><td>捕获条件未公开</td><td><a class="source-link" href="https://doi.org/10.1016/j.biomaterials.2025.123793" rel="noopener noreferrer" target="_blank">Biomaterials 2025</a></td></tr>
+
+<tr>
+<td><a class="case-jump" href="#case-D3-1">D3-1</a></td>
+<td>X射线自由基</td>
+<td>2004</td>
+<td>动物</td>
+<td>X-CW</td>
+<td>PBN-CH3</td>
+<td>需要高剂量</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.freeradbiomed.2004.02.016" rel="noopener noreferrer" target="_blank">Takeshita 2004</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-D3-2">D3-2</a></td>
+<td>NO-MOL放射敏化</td>
+<td>2025</td>
+<td>制剂/动物</td>
+<td>X-CW</td>
+<td>DMPO-ROS</td>
+<td>EPR为无细胞反应液</td>
+<td><a class="source-link" href="https://doi.org/10.1002/advs.202413518" rel="noopener noreferrer" target="_blank">Xiong 2025</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-D4-1">D4-1</a></td>
+<td>TEMPO磁铁矿</td>
+<td>2014</td>
+<td>纳米材料</td>
+<td>X-CW</td>
+<td>运动/线宽</td>
+<td>磁核影响线形</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.cap.2014.03.021" rel="noopener noreferrer" target="_blank">Krzyminiewski 2014</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-D4-2">D4-2</a></td>
+<td>镫骨假体灭菌</td>
+<td>2024</td>
+<td>植入材料</td>
+<td>X-CW</td>
+<td>残余自由基</td>
+<td>缺长期体内数据</td>
+<td><a class="source-link" href="https://doi.org/10.2478/nuka-2024-0028" rel="noopener noreferrer" target="_blank">Kwacz 2024</a></td></tr>
+<tr><td><a class="case-jump" href="#case-D4-3">D4-3</a></td><td>MnO2-蜂毒肽免疫治疗</td><td>2022</td><td>模型/细胞/动物</td><td>EPR200-Plus；参数未公开</td><td>•OH生成</td><td>肿瘤内自由基未直接测量</td><td><a class="source-link" href="https://doi.org/10.1016/j.biomaterials.2022.121706" rel="noopener noreferrer" target="_blank">Biomaterials 2022</a></td></tr>
+
+<tr>
+<td><a class="case-jump" href="#case-E1-1">E1-1</a></td>
+<td>黑色素瘤全血</td>
+<td>2011</td>
+<td>人体离体</td>
+<td>X-CW 77 K</td>
+<td>Fe/Cu中心</td>
+<td>小队列混合谱</td>
+<td><a class="source-link" href="https://doi.org/10.1007/s00723-011-0219-3" rel="noopener noreferrer" target="_blank">Krzyminiewski 2011</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-E1-2">E1-2</a></td>
+<td>人脑内源中心</td>
+<td>2025/26</td>
+<td>人体离体</td>
+<td>X-CW变温</td>
+<td>Fe/Cu/铁蛋白</td>
+<td>冻干、无疾病对照</td>
+<td><a class="source-link" href="https://doi.org/10.1002/mrm.70222" rel="noopener noreferrer" target="_blank">Avanzine 2025/2026</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-E2-1">E2-1</a></td>
+<td>牙釉质快速扫描</td>
+<td>2015</td>
+<td>人体离体</td>
+<td>X快速扫描/CW</td>
+<td>碳酸根自由基</td>
+<td>需取样</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4539305/" rel="noopener noreferrer" target="_blank">Yu 2015</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-E2-2">E2-2</a></td>
+<td>小质量牙釉质</td>
+<td>2024</td>
+<td>人体离体</td>
+<td>X-CW</td>
+<td>≥0.5 Gy剂量</td>
+<td>个体本底</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.net.2023.09.016" rel="noopener noreferrer" target="_blank">Kim 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-E3-1">E3-1</a></td>
+<td>指甲剂量学</td>
+<td>2014</td>
+<td>人体离体</td>
+<td>X-CW</td>
+<td>RIS/MIS分离</td>
+<td>剪切与衰减</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4095917/" rel="noopener noreferrer" target="_blank">He 2014</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-E3-2">E3-2</a></td>
+<td>指甲年龄效应</td>
+<td>2025</td>
+<td>人体离体</td>
+<td>X-CW</td>
+<td>个体响应</td>
+<td>标准化不足</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11774696/" rel="noopener noreferrer" target="_blank">Azariasl 2025</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-E4-1">E4-1</a></td>
+<td>组氨酸灭菌</td>
+<td>2017</td>
+<td>药品QC</td>
+<td>X-CW</td>
+<td>自由基衰减</td>
+<td>包装/湿度敏感</td>
+<td><a class="source-link" href="https://doi.org/10.1016/j.ijpharm.2017.09.033" rel="noopener noreferrer" target="_blank">Vallotto 2017</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-E4-2">E4-2</a></td>
+<td>哮喘药辐照</td>
+<td>2023</td>
+<td>药品QC</td>
+<td>X，参数未公开</td>
+<td>长期残留信号</td>
+<td>需逐产品建库</td>
+<td><a class="source-link" href="https://doi.org/10.1093/rpd/ncad165" rel="noopener noreferrer" target="_blank">Ece 2023</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F1-1">F1-1</a></td>
+<td>OxyChip长期氧测量</td>
+<td>2018</td>
+<td>动物</td>
+<td>L-CW，非X</td>
+<td>线宽-pO2</td>
+<td>点测量</td>
+<td><a class="source-link" href="https://doi.org/10.1007/s10544-018-0272-x" rel="noopener noreferrer" target="_blank">Hou 2018</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F1-2">F1-2</a></td>
+<td>OxyChip人体肿瘤</td>
+<td>2021</td>
+<td>人体可行性</td>
+<td>L-CW，非X</td>
+<td>基线/高氧响应</td>
+<td>深度≤约3 cm</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8517507/" rel="noopener noreferrer" target="_blank">Schaner 2021</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F2-1">F2-1</a></td>
+<td>OxyChip CW标定</td>
+<td>2018</td>
+<td>动物</td>
+<td>L-CW，非X</td>
+<td>氧致展宽</td>
+<td>同F1-1</td>
+<td><a class="source-link" href="https://doi.org/10.1007/s10544-018-0272-x" rel="noopener noreferrer" target="_blank">Hou 2018</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F2-2">F2-2</a></td>
+<td>OxyChip CW/脉冲</td>
+<td>2024</td>
+<td>动物</td>
+<td>低频CW/脉冲</td>
+<td>线宽/R1e</td>
+<td>运动与短相干</td>
+<td><a class="source-link" href="https://doi.org/10.1007/s11307-023-01859-w" rel="noopener noreferrer" target="_blank">Dziurman 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F3-1">F3-1</a></td>
+<td>250 MHz氧成像</td>
+<td>2008/13</td>
+<td>动物</td>
+<td>低频脉冲</td>
+<td>R1e三维图</td>
+<td>专用成像仪</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2778030/" rel="noopener noreferrer" target="_blank">Epel 2008</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F3-2">F3-2</a></td>
+<td>兔肿瘤大孔径成像</td>
+<td>2024</td>
+<td>大动物</td>
+<td>250 MHz脉冲</td>
+<td>pO2空间分布</td>
+<td>人体转化仍早</td>
+<td><a class="source-link" href="https://doi.org/10.1007/s11307-023-01852-3" rel="noopener noreferrer" target="_blank">Epel 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F4-1">F4-1</a></td>
+<td>肿瘤多参数成像</td>
+<td>2012</td>
+<td>动物</td>
+<td>L-EPRI</td>
+<td>pH/pO2/还原</td>
+<td>药代混杂</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5336491/" rel="noopener noreferrer" target="_blank">Bobko 2012</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F4-2">F4-2</a></td>
+<td>HOPE71探针</td>
+<td>2022</td>
+<td>探针/动物前</td>
+<td>X标定，低频成像目标</td>
+<td>多参数谱</td>
+<td>体内验证有限</td>
+<td><a class="source-link" href="https://doi.org/10.1021/acs.analchem.2c03476" rel="noopener noreferrer" target="_blank">Gluth 2022</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F5-1">F5-1</a></td>
+<td>体内牙齿分诊</td>
+<td>2014</td>
+<td>人体可行性</td>
+<td>L-CW，非X</td>
+<td>RIS剂量</td>
+<td>头动/牙位</td>
+<td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11064839/" rel="noopener noreferrer" target="_blank">Williams 2014</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F5-2">F5-2</a></td>
+<td>放疗患者牙齿</td>
+<td>2024</td>
+<td>人体验证</td>
+<td>低频CW，非X</td>
+<td>计划剂量对照</td>
+<td>小样本/定位</td>
+<td><a class="source-link" href="https://pubmed.ncbi.nlm.nih.gov/38072322/" rel="noopener noreferrer" target="_blank">Draeger 2024</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F6-1">F6-1</a></td>
+<td>肿瘤OMRI红氧</td>
+<td>2006</td>
+<td>动物</td>
+<td>低场PEDRI/OMRI</td>
+<td>DNP增强衰减</td>
+<td>加热与药代</td>
+<td><a class="source-link" href="https://doi.org/10.1158/0008-5472.CAN-06-0879" rel="noopener noreferrer" target="_blank">Hyodo 2006</a></td></tr>
+<tr>
+<td><a class="case-jump" href="#case-F6-2">F6-2</a></td>
+<td>场循环DNP-MRI</td>
+<td>2021</td>
+<td>人体近场可行性</td>
+<td>5 mT ESR/0.3 T MRI</td>
+<td>自由基MRI</td>
+<td>机械复杂度</td>
+<td><a class="source-link" href="https://doi.org/10.1021/acs.analchem.1c02578" rel="noopener noreferrer" target="_blank">Utsumi 2021</a></td></tr>
+</tbody>
+</table>
+<h3 id="92-cw与脉冲应用对照">C.2 CW与脉冲应用对照</h3>
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th><strong>医学任务</strong></th>
+<th><strong>X波段CW</strong></th>
+<th><strong>X波段脉冲</strong></th>
+<th><strong>首选条件</strong></th>
+<th><strong>主要警戒</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROS/RNS定性与相对定量</td>
+<td>自旋捕获、自旋探针、低温组织谱</td>
+<td>少量弛豫/回波辅助</td>
+<td>室温反应液或快速冻存组织</td>
+<td>捕获竞争、伪影、加合物寿命</td>
+</tr>
+<tr>
+<td>组织内源金属中心</td>
+<td>77 K或更低温g值、积分、功率饱和</td>
+<td>回波场扫、T1/Tm</td>
+<td>冷冻组织、低微波功率</td>
+<td>多组分重叠、EPR静默价态</td>
+</tr>
+<tr>
+<td>蛋白局部动力学</td>
+<td>SDSL线形、可及性、功率饱和</td>
+<td>T1/Tm辅助</td>
+<td>室温或变温蛋白/膜体系</td>
+<td>标签和膜模型扰动</td>
+</tr>
+<tr>
+<td>2–8 nm距离</td>
+<td>偶极展宽仅适合较短距离</td>
+<td>DEER/PELDOR</td>
+<td>低温、双频、长Tm标签</td>
+<td>背景扣除、取向选择、冻结</td>
+</tr>
+<tr>
+<td>活性中心核配位</td>
+<td>CW超精细可见时适用</td>
+<td>ENDOR/ESEEM/HYSCORE</td>
+<td>低温、场位选择、同位素替换</td>
+<td>频段混用需逐项标注</td>
+</tr>
+<tr>
+<td>反应中间体</td>
+<td>原位光照、快速冻淬</td>
+<td>回波场扫/弛豫可辅助</td>
+<td>ms级冻淬或可控光触发</td>
+<td>淬灭时间和光化学副反应</td>
+</tr>
+<tr>
+<td>光生三重态/自由基对</td>
+<td>TR-EPR专门配置</td>
+<td>不等同回波型脉冲</td>
+<td>激光同步、ns–ms门控</td>
+<td>光密度、重复频率、极化解释</td>
+</tr>
+</tbody>
+</table>
+<h3 id="93-医学领域与样品阶段分布">C.3 医学领域与样品阶段分布</h3>
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th><strong>应用大类</strong></th>
+<th><strong>应用记录数</strong></th>
+<th><strong>占比</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自由基、氮物种、脂质过氧化与氧化还原</td>
+<td>8</td>
+<td>14.3%</td>
+</tr>
+<tr>
+<td>线粒体、Fe–S、血红素、自由基酶与金属蛋白</td>
+<td>10</td>
+<td>17.9%</td>
+</tr>
+<tr>
+<td>自旋标记、膜蛋白、距离、聚集与活性中心</td>
+<td>10</td>
+<td>17.9%</td>
+</tr>
+<tr>
+<td>药物、PDT、放疗、纳米药物与材料</td>
+<td>8</td>
+<td>14.3%</td>
+</tr>
+<tr>
+<td>临床样本、离体剂量学与辐照灭菌</td>
+<td>8</td>
+<td>14.3%</td>
+</tr>
+<tr>
+<td>低频体内EPR、EPRI与PEDRI/OMRI扩展</td>
+<td>12</td>
+<td>21.4%</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>56</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p>按样品阶段编码，模型/纯化体系22条，细胞或体外微生物8条，动物或大型动物10条，人体离体样本8条，人体可行性4条，药品或器械质量研究4条。该统计以应用记录为单位，交叉标签案例仍保留，因此不能直接解释为独立论文数量或临床成熟度。</p>
+<h3 id="94-仪器配置对应表">C.4 仪器配置对应表</h3>
+<table>
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th><strong>配置</strong></th>
+<th><strong>关键硬件/附件</strong></th>
+<th><strong>主要实验</strong></th>
+<th><strong>对应医学应用</strong></th>
+<th><strong>不可替代条件</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X波段CW基础平台</td>
+<td>9–10 GHz桥、TE102/高Q腔、100 kHz调制、温控气流</td>
+<td>稳态谱、线形、积分、功率饱和</td>
+<td>ROS/RNS、药物自由基、SDSL、材料与剂量学</td>
+<td>样品腔尺寸和含水损耗限制活体</td>
+</tr>
+<tr>
+<td>X波段低温组织平台</td>
+<td>氦/氮低温系统、低功率校准、标准样品</td>
+<td>Fe–S、血红素、Cu/Mn/Fe中心、组织谱</td>
+<td>线粒体病、临床组织、金属蛋白</td>
+<td>温度和微波饱和必须报告</td>
+</tr>
+<tr>
+<td>自旋捕获/原位光照</td>
+<td>扁平池或毛细管、照光窗、LED/激光、温控与定时</td>
+<td>DMPO/PBN/DETC/TEMP等捕获</td>
+<td>氧化应激、PDT、放疗、药物毒性</td>
+<td>空白、猝灭剂和捕获动力学</td>
+</tr>
+<tr>
+<td>快速冻淬</td>
+<td>混合器、延迟管、冷异戊烷/液氮、低温CW或回波检测</td>
+<td>ms级酶反应中间体</td>
+<td>P450、自由基酶、金属活性中心</td>
+<td>实际淬灭时间需标定</td>
+</tr>
+<tr>
+<td>X波段脉冲基础平台</td>
+<td>脉冲桥、TWT/固态功放、AWG、低温系统</td>
+<td>回波场扫、T1、Tm/T2</td>
+<td>Fe–S簇、金属中心、标签弛豫</td>
+<td>仪器死时间和相干时间</td>
+</tr>
+<tr>
+<td>X波段DEER/PELDOR</td>
+<td>双频源、泵浦/观察通道、宽带谐振腔</td>
+<td>四脉冲/三脉冲DEER</td>
+<td>蛋白距离、天然簇距离</td>
+<td>标签浓度、玻璃化、背景模型</td>
+</tr>
+<tr>
+<td>ENDOR/ESEEM/HYSCORE</td>
+<td>射频功放/线圈、低温、场位选择、相位循环</td>
+<td>电子—核超精细</td>
+<td>金属酶、自由基酶、氢键与配位</td>
+<td>同位素样品和射频带宽</td>
+</tr>
+<tr>
+<td>X波段TR-EPR</td>
+<td>激光同步、瞬态采集器、光学谐振腔</td>
+<td>三重态与自由基对动力学</td>
+<td>PDT光敏剂、光毒性</td>
+<td>与回波型脉冲平台采用不同配置</td>
+</tr>
+<tr>
+<td>低频体内EPR/EPRI</td>
+<td>250 MHz–1.3 GHz磁体、表面线圈/大孔径腔、梯度、动物监护</td>
+<td>pO2、红氧、体内牙齿、三维EPRI</td>
+<td>动物纵向监测与早期人体</td>
+<td>常规X波段不能直接完成</td>
+</tr>
+<tr>
+<td>PEDRI/OMRI</td>
+<td>低场ESR照射、MRI接收、场循环或双磁场、SAR监测</td>
+<td>Overhauser增强MRI</td>
+<td>红氧与自由基分布</td>
+<td>属于专用混合成像系统</td>
+</tr>
+</tbody>
+</table>
+<h2 id="附录D-资料来源与检索说明">附录D 资料来源与检索说明</h2>
+<p>方法学基线参考用户提供的教材与专著：Hagen《Biomolecular EPR Spectroscopy》（2008）用于自旋捕获、自旋标记、细胞/氧化还原和双共振章节；Weil与Bolton《Electron Paramagnetic Resonance: Elementary Theory and Practical Applications》（2007）用于CW、脉冲、ENDOR/ESEEM和实验参数；Bertrand《Electron Paramagnetic Resonance Spectroscopy: Fundamentals》（2020）用于基础理论与谱解释；Abragam与Bleaney《Electron Paramagnetic Resonance of Transition Ions》（2012版）用于过渡金属离子；《Magnetic Resonance and Its Applications》（2014）用于低频磁共振应用背景。</p>
+<p>本次新增的13项研究来自医学相关应用文献表的逐篇筛选。能够访问全文或图注的论文按原文记录EPR对象和条件；仅能访问摘要或出版社页面的论文保留为中等置信度案例，并把捕获剂、频段或桥路参数写为未完整公开。新增案例的EPR结果大多来自无细胞模型反应液，其细胞和动物疗效依据相应论文中的生化、组织学、免疫或菌群实验。</p><p>案例文献优先使用论文全文、PubMed/PMC、出版社页面和DOI记录。检索覆盖截至2026年9月8日可确认的公开资料；“近期”优先指2021—2026年。正文每个案例均附可追溯链接。开放全文未提供频率或完整参数时已明确标注，未从仪器型号反推频段。教材用于解释方法边界，不替代具体案例的实验条件核验。</p>
+<div class="report-note">说明：本报告按医学应用主线组织。频段、模式与实验条件仅在原始论文或可确认公开资料明确给出时记录；未公开参数不作推断。</div><div class="footer">© 2026 wuhaifeng@ustc.edu.cn. All rights reserved. 本报告版权归作者所有，未经许可不得复制、转载或用于商业用途。</div>
+</main>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const links = [...document.querySelectorAll('#toc a[href^="#"]')];
+  const targets = links
+    .map(a => document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1))))
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      const active = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (!active) return;
+      links.forEach(a => {
+        const id = decodeURIComponent(a.getAttribute('href').slice(1));
+        a.classList.toggle('active', id === active.target.id);
+      });
+    }, {rootMargin:'-10% 0px -82% 0px', threshold:[0,1]});
+    targets.forEach(t => observer.observe(t));
+  }
+});
+</script>
+{% endraw %}
+</div>
