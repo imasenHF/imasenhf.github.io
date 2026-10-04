@@ -40,3 +40,18 @@
 #note-content .table-scroll table{width:max-content!important;max-width:100%;table-layout:auto;font-size:.92em}#note-content .table-scroll th,#note-content .table-scroll td{white-space:normal;overflow-wrap:break-word;min-width:0}#note-content .report-document table{width:auto}.table-scroll{width:100%}
 @media(max-width:640px){.note-page .experiment-heading{padding:28px 24px 20px}.note-page .page-block{padding:24px 24px 32px}.brand>p{margin-left:0}}
 @media print{.note-page .experiment-heading{padding:2.54cm 2.54cm .6cm}.note-page .page-block{padding:.6cm 2.54cm 2.54cm}}
+
+/* Screenshot corrections: compact heading, two-row brand and centered tables. */
+.note-brand-line{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:10px;row-gap:3px;align-items:center}
+.note-brand-icon{grid-column:1;grid-row:1 / 3;width:40px;height:40px}
+.note-brand-line h2,.note-brand-line p{grid-column:2;margin:0}.note-brand-line p{display:block}
+.sidebar .chapter-group summary>a,.sidebar .chapter-leaf-row>a,.sidebar .chapter-group summary>span,.sidebar .chapter-leaf-row>span{font-weight:400}
+.note-page .experiment-heading{padding-top:28px}
+#note-content .table-scroll table{margin-left:auto!important;margin-right:auto!important}
+#note-content .math-inline{display:inline;overflow:visible;max-width:100%}
+#note-content .math-display,#note-content mjx-container{overflow:visible!important}
+#note-content mjx-container:not([display="true"]){display:inline-block;max-width:100%;vertical-align:baseline}
+#note-content .reasoning-flow{display:flex;flex-wrap:wrap;justify-content:center;gap:.35em .5em;margin:24px 0;line-height:1.6}
+#note-content .reasoning-flow span{white-space:nowrap}
+@media(max-width:640px){.note-page .experiment-heading{padding-top:24px}.note-brand-line{grid-template-columns:36px minmax(0,1fr)}.note-brand-icon{width:36px;height:36px}}
+@media print{.note-page .experiment-heading{padding-top:.6cm}}
