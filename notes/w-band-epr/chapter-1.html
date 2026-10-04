@@ -1,0 +1,249 @@
+<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>理论基础 · W 波段 EPR</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="/assets/jtd/note-themes.css?v=4"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="/assets/jtd/zh-search.js"></script><script defer src="/notes/w-band-epr/just-the-docs.js"></script><script defer src="/assets/jtd/note-theme.js?v=4"></script><script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script defer src="/assets/jtd/note-anchors.js?v=1"></script></head><body><svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="svg-arrow-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-doc" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM8 11h8M8 15h8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="svg-link" viewBox="0 0 16 16"><path d="m6 10 4-4M5 7 3 9a2 2 0 0 0 3 3l2-2M8 6l2-2a2 2 0 0 1 3 3l-2 2" stroke="currentColor" fill="none"/></symbol></svg><a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><a class="brand-home" href="/" aria-label="返回主页"><img src="/assets/images/imasen_phi_logo/favicon.ico" width="36" height="36" alt=""></a><a href="/notes/w-band-epr/index.html" class="site-title lh-tight">W 波段 EPR</a><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航"><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/index.html">文档首页</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/chapter-1.html">理论基础</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="展开 应用主线" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-arrow-right"/></svg></button><a class="nav-list-link" href="/notes/w-band-epr/chapter-2.html">应用主线</a><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/application-1.html">电子结构分辨</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/application-2.html">高自旋体系</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/application-3.html">局域结构</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/application-4.html">分子运动</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/application-5.html">量子自旋动力学</a></li></ul></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/chapter-3.html">应用地图</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/chapter-4.html">领域映射</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/chapter-5.html">适用性判断</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/chapter-6.html">仪器需求</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/chapter-7.html">案例索引</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/w-band-epr/chapter-8.html">结论</a></li></ul></nav><div class="site-footer"><a href="/notes/">返回 Notes</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 W 波段 EPR 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 W 波段 EPR 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div><details class="doc-theme"><summary aria-label="主题设置" title="主题设置"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" stroke="currentColor" fill="none"/></svg></summary><div class="theme-options"><button data-theme="sage" aria-label="鼠尾草绿" title="鼠尾草绿"></button><button data-theme="mist" aria-label="雾蓝" title="雾蓝"></button><button data-theme="sand" aria-label="暖砂" title="暖砂"></button><button data-theme="mauve" aria-label="灰紫" title="灰紫"></button><button data-theme="gray" aria-label="浅灰" title="浅灰"></button></div></details></div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="/notes/w-band-epr/index.html">W 波段 EPR</a></li><li class="breadcrumb-nav-list-item"><span>理论基础</span></li></ol></nav><div class="main-content" id="main-content"><main><h1 id="理论基础-频率进入自旋-hamiltonian-后改变了什么"><a class="anchor-heading" href="#理论基础-频率进入自旋-hamiltonian-后改变了什么" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>理论基础</h1><details class="page-toc" open><summary>本页目录</summary><ul><li class="toc-level-2"><a href="#基本能标">基本能标</a></li><li class="toc-level-2"><a href="#电子-zeeman-与-g-tensor">电子 Zeeman 与 \(g\) -tensor</a></li><li class="toc-level-2"><a href="#hyperfine-a">Hyperfine \(A\)</a></li><li class="toc-level-2"><a href="#zfs-d-e">ZFS \(D/E\)</a></li><li class="toc-level-2"><a href="#exchange-j-与电子-电子-dipolar-coupling">Exchange \(J\) 与电子—电子 dipolar coupling</a></li><li class="toc-level-2"><a href="#orientation-selection">Orientation selection</a></li><li class="toc-level-2"><a href="#分子运动与-omega-tau-c">分子运动与 \(\omega\tau_c\)</a></li><li class="toc-level-2"><a href="#boltzmann-polarization">Boltzmann polarization</a></li><li class="toc-level-2"><a href="#t-1-t-2-没有统一的-w-band-定律">\(T_1/T_2\) 没有统一的“W-band 定律”</a></li><li class="toc-level-2"><a href="#脉冲带宽">脉冲带宽</a></li><li class="toc-level-2"><a href="#谐振器-样品体积和介电损耗">谐振器、样品体积和介电损耗</a></li></ul></details><p class="doc-subtitle">理论基础：频率进入自旋 Hamiltonian 后改变了什么</p>
+<p>一般的 EPR 自旋 Hamiltonian 可写为</p>
+<p></p><div class="math-display">\[\hat H=
+\underbrace{\mu_B\mathbf B_0\cdot\mathbf g\cdot\hat{\mathbf S}}_{\text{electron Zeeman}}
+-\underbrace{\sum_k g_{n,k}\mu_N\mathbf B_0\cdot\hat{\mathbf I}_k}_{\text{nuclear Zeeman}}
++\underbrace{\sum_k\hat{\mathbf S}\cdot\mathbf A_k\cdot\hat{\mathbf I}_k}_{\text{hyperfine}}
++\underbrace{\hat{\mathbf S}\cdot\mathbf D\cdot\hat{\mathbf S}}_{\text{ZFS}}
++\underbrace{\sum_{ij}J_{ij}\hat{\mathbf S}_i\cdot\hat{\mathbf S}_j}_{\text{exchange}}
++\underbrace{\sum_{ij}\hat{\mathbf S}_i\cdot\mathbf D_{ij}^{ee}\cdot\hat{\mathbf S}_j}_{\text{e--e dipolar}}
++\cdots\]</div>
+<p>不同文献对 exchange Hamiltonian 的 <span class="math-inline">\(J\)</span> 符号和系数约定可能不同，因此比较实验 <span class="math-inline">\(J\)</span> 时必须先统一定义。W 波段产生的主要谱学差异，可以从上式中外场相关项与分子内禀相互作用项的相对能标变化出发理解。</p>
+<h2 id="基本能标"><a class="anchor-heading" href="#基本能标" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>基本能标</h2>
+<p>对 <span class="math-inline">\(g=2.0023\)</span> ：</p>
+<table>
+<thead>
+<tr>
+<th>波段</th>
+<th style="text-align:right"><span class="math-inline">\(\nu\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(B_0\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(h\nu/hc\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(h\nu/k_B\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(\lambda=c/\nu\)</span></th>
+<th style="text-align:right"><span class="math-inline">\(\Delta B\)</span> , <span class="math-inline">\(\Delta g=10^{-3}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X</td>
+<td style="text-align:right">9.5 GHz</td>
+<td style="text-align:right">0.339 T</td>
+<td style="text-align:right">0.317 cm <span class="math-inline">\(^{-1}\)</span></td>
+<td style="text-align:right">0.456 K</td>
+<td style="text-align:right">31.6 mm</td>
+<td style="text-align:right">0.169 mT</td>
+</tr>
+<tr>
+<td>Q</td>
+<td style="text-align:right">34 GHz</td>
+<td style="text-align:right">1.213 T</td>
+<td style="text-align:right">1.134 cm <span class="math-inline">\(^{-1}\)</span></td>
+<td style="text-align:right">1.632 K</td>
+<td style="text-align:right">8.82 mm</td>
+<td style="text-align:right">0.607 mT</td>
+</tr>
+<tr>
+<td>W</td>
+<td style="text-align:right">94 GHz</td>
+<td style="text-align:right">3.354 T</td>
+<td style="text-align:right">3.136 cm <span class="math-inline">\(^{-1}\)</span></td>
+<td style="text-align:right">4.511 K</td>
+<td style="text-align:right">3.19 mm</td>
+<td style="text-align:right">1.677 mT</td>
+</tr>
+</tbody>
+</table>
+<p>94 GHz、6 T 级超导磁体以及 CW/FT/ENDOR/ELDOR 是成熟 W-band 平台的典型配置；高功率自建系统则已达到 ns 量级脉冲和 GHz 级瞬时带宽。</p>
+<h2 id="电子-zeeman-与-g-tensor"><a class="anchor-heading" href="#电子-zeeman-与-g-tensor" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>电子 Zeeman 与 <span class="math-inline">\(g\)</span> -tensor</h2>
+<p>对一个给定分子取向 <span class="math-inline">\(\mathbf n\)</span> ，</p>
+<p></p><div class="math-display">\[g_{\rm eff}(\mathbf n)
+=
+\sqrt{
+\mathbf n^{\mathrm T}\mathbf g^{\mathrm T}\mathbf g\,\mathbf n
+},\]</div>
+<p>共振位置近似为</p>
+<p></p><div class="math-display">\[B_{\rm res}(\mathbf n)
+=
+\frac{h\nu}{\mu_B g_{\rm eff}(\mathbf n)}.\]</div>
+<p>微小 <span class="math-inline">\(g\)</span> 差异满足</p>
+<p></p><div class="math-display">\[\left|\frac{\partial B}{\partial g}\right|
+=
+\frac{B}{g},\]</div>
+<p>因此</p>
+<p></p><div class="math-display">\[|\Delta B_g|\simeq
+B_0\frac{|\Delta g|}{g}\]</div>
+<p>是 W-band <span class="math-inline">\(g\)</span> -resolution 的基本公式。这里增加的是<strong>场轴上的 <span class="math-inline">\(g\)</span> 色散</strong>，而不是 <span class="math-inline">\(g\)</span> 本身发生改变。例如 <span class="math-inline">\(\Delta g=10^{-4}\)</span> 时，W-band 仍对应约 <span class="math-inline">\(0.168\ \mathrm{mT}\)</span> ，与 X-band 下 <span class="math-inline">\(\Delta g=10^{-3}\)</span> 的场分离相当。</p>
+<h2 id="hyperfine-a"><a class="anchor-heading" href="#hyperfine-a" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>Hyperfine <span class="math-inline">\(A\)</span></h2>
+<p>对最简单的 <span class="math-inline">\(S=1/2\)</span> 、 <span class="math-inline">\(I=1/2\)</span> 体系，</p>
+<p></p><div class="math-display">\[E(m_S,m_I)
+\simeq
+g\mu_BB_0m_S+A m_Sm_I.\]</div>
+<p>一阶 EPR 超精细间隔</p>
+<p></p><div class="math-display">\[\Delta B_A\simeq\frac{A}{g\mu_B}\]</div>
+<p>并不会像 <span class="math-inline">\(\Delta B_g\)</span> 那样随 <span class="math-inline">\(B_0\)</span> 线性增加。因此，不能把 W-band 简化为“超精细分辨率整体提高”。W-band 对 <span class="math-inline">\(A\)</span> 的主要价值来自三方面： <span class="math-inline">\(g\)</span> -orientation 被分开后可以把 <span class="math-inline">\(A(\theta,\phi)\)</span> 与具体取向关联；二阶 hyperfine 混合的相对量级减小；ENDOR 中 nuclear Zeeman</p>
+<p></p><div class="math-display">\[\nu_n=\frac{|g_n|\mu_NB_0}{h}\]</div>
+<p>随 <span class="math-inline">\(B_0\)</span> 增大，使不同核种及不同 hyperfine branch 更容易分离。</p>
+<h2 id="zfs-d-e"><a class="anchor-heading" href="#zfs-d-e" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>ZFS <span class="math-inline">\(D/E\)</span></h2>
+<p>对常见 <span class="math-inline">\(S&gt;1/2\)</span> 体系，</p>
+<p></p><div class="math-display">\[\hat H_{\rm ZFS}
+=
+D\left[
+S_z^2-\frac{S(S+1)}3
+\right]
++
+E(S_x^2-S_y^2).\]</div>
+<p>决定能级混合程度的重要无量纲参数是</p>
+<p></p><div class="math-display">\[\eta_D=\frac{|D|}{g\mu_BB_0}
+\simeq\frac{|D|}{h\nu}.\]</div>
+<p>假设 <span class="math-inline">\(D=0.30\ \mathrm{cm^{-1}}\)</span> ，则</p>
+<p></p><div class="math-display">\[\eta_D(X)\approx0.95,
+\qquad
+\eta_D(Q)\approx0.26,
+\qquad
+\eta_D(W)\approx0.096.\]</div>
+<p>同一个体系在 X-band 已处于 Zeeman 与 ZFS 可比的区域，W-band 则明显接近 high-field limit。此时 <span class="math-inline">\(m_S\)</span> 作为近似好量子数更可靠，部分二阶位移减小， <span class="math-inline">\(D/E\)</span> 、 <span class="math-inline">\(g\)</span> 和 tensor orientation 更容易分开拟合。</p>
+<p>若 <span class="math-inline">\(D=3\ \mathrm{cm^{-1}}\)</span> ，W-band 下 <span class="math-inline">\(\eta_D\approx0.96\)</span> ，说明 94 GHz 对真正很大的 ZFS 仍可能不够，需要 200–1000 GHz 级 HFEPR。</p>
+<h2 id="exchange-j-与电子-电子-dipolar-coupling"><a class="anchor-heading" href="#exchange-j-与电子-电子-dipolar-coupling" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>Exchange <span class="math-inline">\(J\)</span> 与电子—电子 dipolar coupling</h2>
+<p>对两个自旋，</p>
+<p></p><div class="math-display">\[\hat H_J=J\mathbf S_1\cdot\mathbf S_2\]</div>
+<p>以及</p>
+<p></p><div class="math-display">\[\hat H_{dd}
+=
+\frac{\mu_0}{4\pi}
+\frac{g_1g_2\mu_B^2}{r^3}
+\left[
+\mathbf S_1\cdot\mathbf S_2
+-
+3(\mathbf S_1\cdot\hat{\mathbf r})
+(\mathbf S_2\cdot\hat{\mathbf r})
+\right].\]</div>
+<p>对 <span class="math-inline">\(g_1\simeq g_2\simeq2\)</span> ，偶极频率尺度约为</p>
+<p></p><div class="math-display">\[\frac{d}{h}
+\simeq
+\frac{52.0\ \mathrm{MHz\,nm^3}}{r^3}\]</div>
+<p>再乘取向因子。 <span class="math-inline">\(J\)</span> 和 <span class="math-inline">\(d\)</span> 均不会因 <span class="math-inline">\(B_0\)</span> 变大而增大。W 波段真正改变的是异质自旋的 Zeeman separation：</p>
+<p></p><div class="math-display">\[\Delta\omega_Z
+\simeq
+\frac{\mu_BB_0}{\hbar}\Delta g.\]</div>
+<p>当</p>
+<p></p><div class="math-display">\[|\Delta\omega_Z|\gg |J|/\hbar,\ |d|/\hbar\]</div>
+<p>时，不同自旋中心更容易频率选择，弱 exchange splitting 和 dipolar orientation 更容易解释。</p>
+<h2 id="orientation-selection"><a class="anchor-heading" href="#orientation-selection" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>Orientation selection</h2>
+<p>冻结溶液或粉末包含所有 <span class="math-inline">\((\theta,\phi)\)</span> 。由于</p>
+<p></p><div class="math-display">\[B_{\rm res}=B_{\rm res}[g_{\rm eff}(\theta,\phi)],\]</div>
+<p>高场把不同 <span class="math-inline">\(g_{\rm eff}\)</span> 的取向摊开到更大的场区间。若脉冲频率带宽为 <span class="math-inline">\(\Delta\nu_{\rm exc}\)</span> ，对应的可激发 <span class="math-inline">\(g\)</span> 区间近似为</p>
+<p></p><div class="math-display">\[\Delta g_{\rm exc}
+\simeq
+g\frac{\Delta\nu_{\rm exc}}{\nu}.\]</div>
+<p>在相同绝对脉冲带宽下，94 GHz 所选取的 <span class="math-inline">\(\Delta g\)</span> 仅为 9.5 GHz 的约十分之一，因此 orientation-selective ENDOR、HYSCORE、PELDOR 特别自然。</p>
+<p>这一特征同时带来明确的实验代价：对希望同时激发全部 powder spectrum 的实验，W-band 的取向选择反而导致 excitation-hole、调制深度变化和 orientation-biased distance distribution。高功率 quasi-optical W-band 系统采用 kW 脉冲和约 1 GHz 瞬时带宽，正是为了处理这一问题。</p>
+<h2 id="分子运动与-omega-tau-c"><a class="anchor-heading" href="#分子运动与-omega-tau-c" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>分子运动与 <span class="math-inline">\(\omega\tau_c\)</span></h2>
+<p>各向异性 <span class="math-inline">\(g\)</span> 被分子转动调制时，</p>
+<p></p><div class="math-display">\[\delta\omega_g(t)
+\sim
+\frac{\mu_BB_0}{\hbar}
+\delta g(t).\]</div>
+<p>单相关时间的简单谱密度写为</p>
+<p></p><div class="math-display">\[J(\omega)
+=
+\frac{\tau_c}{1+\omega^2\tau_c^2}.\]</div>
+<p>因此频率进入问题有两条路径：</p>
+<p></p><div class="math-display">\[\omega_e\tau_c
+\quad\text{以及}\quad
+\langle\delta\omega_g^2\rangle
+\propto B_0^2(\Delta g)^2.\]</div>
+<p>在极快运动区，</p>
+<p></p><div class="math-display">\[\frac1{T_{2,g}}
+\sim
+\langle\delta\omega_g^2\rangle\tau_c
+\propto B_0^2(\Delta g)^2\tau_c.\]</div>
+<p>所以 X→W 的近十倍场差可以使 <span class="math-inline">\(g\)</span> -anisotropy 引起的运动展宽增加约两个数量级的系数尺度，实际线形还受到 <span class="math-inline">\(A\)</span> -anisotropy、转动扩散 tensor、exchange 和 unresolved hyperfine 的共同影响。</p>
+<p>需要避免把下面的简单尺度估计直接等同于真实的 CW-EPR 动力学时间窗：</p>
+<p></p><div class="math-display">\[\tau_c\sim\omega_e^{-1}.\]</div>
+<p>94 GHz 下</p>
+<p></p><div class="math-display">\[\omega_e^{-1}
+=
+(2\pi94\,\mathrm{GHz})^{-1}
+\approx1.69\ \mathrm{ps},\]</div>
+<p>它只代表单一 Lorentzian spectral-density 的频率尺度，<strong>不能直接当作 nitroxide CW-EPR 的“运动时间窗”</strong>。真实 W-band nitroxide line shape 对数百 ps 到 ns 附近的转动非常敏感，是因为 <span class="math-inline">\(g/A\)</span> 各向异性的完整 stochastic modulation。</p>
+<h2 id="boltzmann-polarization"><a class="anchor-heading" href="#boltzmann-polarization" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>Boltzmann polarization</h2>
+<p>对电子二能级，</p>
+<p></p><div class="math-display">\[P=\tanh\left(\frac{h\nu}{2k_BT}\right).\]</div>
+<p>计算结果为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"><span class="math-inline">\(T\)</span></th>
+<th style="text-align:right">X, 9.5 GHz</th>
+<th style="text-align:right">Q, 34 GHz</th>
+<th style="text-align:right">W, 94 GHz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">300 K</td>
+<td style="text-align:right">0.076%</td>
+<td style="text-align:right">0.272%</td>
+<td style="text-align:right">0.752%</td>
+</tr>
+<tr>
+<td style="text-align:right">80 K</td>
+<td style="text-align:right">0.285%</td>
+<td style="text-align:right">1.02%</td>
+<td style="text-align:right">2.82%</td>
+</tr>
+<tr>
+<td style="text-align:right">10 K</td>
+<td style="text-align:right">2.28%</td>
+<td style="text-align:right">8.14%</td>
+<td style="text-align:right">22.2%</td>
+</tr>
+<tr>
+<td style="text-align:right">4 K</td>
+<td style="text-align:right">5.69%</td>
+<td style="text-align:right">20.1%</td>
+<td style="text-align:right">51.1%</td>
+</tr>
+</tbody>
+</table>
+<p>因此，在低温条件下 W-band 可以进入明显更高的电子自旋热极化区。这一特点对于稀土自旋、分子磁体和固体缺陷尤其重要。</p>
+<h2 id="t-1-t-2-没有统一的-w-band-定律"><a class="anchor-heading" href="#t-1-t-2-没有统一的-w-band-定律" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a><span class="math-inline">\(T_1/T_2\)</span> 没有统一的“W-band 定律”</h2>
+<p>对理想二能级可写</p>
+<p></p><div class="math-display">\[\frac1{T_2}
+=
+\frac1{2T_1}+
+\frac1{T_\phi},\]</div>
+<p>实际固体 EPR 更常测到 phase-memory time <span class="math-inline">\(T_m\)</span> ，还包含 spectral diffusion、核自旋 bath、instantaneous diffusion 等贡献。 <span class="math-inline">\(T_1\)</span> 可同时包含 direct、Raman、Orbach、分子运动及局域振动通道，各项对 <span class="math-inline">\(B_0\)</span> 和 <span class="math-inline">\(T\)</span> 的依赖不同。因此 W-band 有时出现更短 <span class="math-inline">\(T_1\)</span> ，有时变化很小，还有体系表现出复杂的场依赖。</p>
+<h2 id="脉冲带宽"><a class="anchor-heading" href="#脉冲带宽" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>脉冲带宽</h2>
+<p>矩形脉冲的频谱主瓣尺度约为</p>
+<p></p><div class="math-display">\[\Delta\nu_{\rm pulse}\sim\frac1{t_p},\]</div>
+<p>相应场宽近似</p>
+<p></p><div class="math-display">\[\Delta B_{\rm exc}
+\simeq
+\frac{\Delta\nu_{\rm pulse}}
+{\gamma_e/2\pi},
+\qquad
+\frac{\gamma_e}{2\pi}\approx28.0\ \mathrm{GHz/T}.\]</div>
+<p>例如 <span class="math-inline">\(t_p=16\ \mathrm{ns}\)</span> 时，</p>
+<p></p><div class="math-display">\[\Delta\nu\sim62.5\ \mathrm{MHz},
+\qquad
+\Delta B\sim2.23\ \mathrm{mT}.\]</div>
+<p>若一个刚性自由基具有 <span class="math-inline">\(\Delta g=0.006\)</span> ，其 W-band <span class="math-inline">\(g\)</span> 色散约</p>
+<p></p><div class="math-display">\[\Delta B_g
+\sim3.35\times\frac{0.006}{2}
+\approx10.1\ \mathrm{mT},\]</div>
+<p>因此普通矩形脉冲只激发其中一部分。</p>
+<h2 id="谐振器-样品体积和介电损耗"><a class="anchor-heading" href="#谐振器-样品体积和介电损耗" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>谐振器、样品体积和介电损耗</h2>
+<p>典型 resonator 的磁场转换效率可以粗略写成</p>
+<p></p><div class="math-display">\[\frac{B_1}{\sqrt{P}}
+\propto
+\sqrt{\frac{Q_L}{V_{\rm eff}}},\]</div>
+<p>而 resonator bandwidth 满足</p>
+<p></p><div class="math-display">\[\Delta\nu_{\rm cav}\sim\frac{\nu_0}{Q_L}.\]</div>
+<p>更高 <span class="math-inline">\(Q\)</span> 有利于 <span class="math-inline">\(B_1\)</span> ，却压缩带宽并延长 ring-down；低 <span class="math-inline">\(Q\)</span> 适合宽带脉冲，却需要更多微波功率。W-band 波长只有约 3.2 mm，经典 resonator 的 mode volume 较小，对微量固体、单晶和有限样品量有利，但水样的 dielectric loading 更严重。</p>
+<p>因此 W-band 灵敏度需要区分至少三种概念：</p>
+<p></p><div class="math-display">\[\text{spin sensitivity},\qquad
+\text{concentration sensitivity},\qquad
+\text{sample-limited sensitivity}.\]</div>
+<p>热极化、较小 <span class="math-inline">\(V_{\rm eff}\)</span> 和 filling factor 对后两者有利；更小的实际样品量、介电损耗、毫米波传输损耗以及脉冲功率又可能抵消这些因素。</p>
+<hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000">© 2026 Hyphoon <a href="mailto:wuhaifeng@ustc.edu.cn">wuhaifeng@ustc.edu.cn</a>. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。</p><p class="text-small text-grey-dk-000">This site uses <a href="https://just-the-docs.com/">Just the Docs</a>, a documentation theme for Jekyll.</p></footer></main></div></div></div><div class="search-overlay"></div><script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});</script></body></html>

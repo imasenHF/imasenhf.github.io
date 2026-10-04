@@ -25,6 +25,7 @@ exclude:
   - CV_RECORDS.md
   - vendor
   - scripts
+  - _note_sources
   - design-preview
   - node_modules
 

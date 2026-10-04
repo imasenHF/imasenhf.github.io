@@ -5,7 +5,7 @@ from pathlib import Path
 import re,json,html
 R=Path(__file__).resolve().parents[1]; O=R/'preview/w-band-docs';O.mkdir(parents=True,exist_ok=True)
 BASE='/preview/w-band-docs/'
-s=(R/'_notes/w-band-epr.html').read_text().split('---',2)[2]
+s=(R/'_note_sources/w-band-epr.html').read_text().split('---',2)[2]
 s=s[s.index('<div class="report-body">')+len('<div class="report-body">'):]
 s=s[:s.rfind('{% endraw %}')];s=re.sub(r'\s*</div>\s*</div>\s*$','',s)
 def plain(t):

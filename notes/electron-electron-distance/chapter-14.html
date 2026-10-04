@@ -1,0 +1,2391 @@
+<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>软件与方法选择 · 电子—电子距离</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="/assets/jtd/note-themes.css?v=4"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="/assets/jtd/zh-search.js"></script><script defer src="/notes/electron-electron-distance/just-the-docs.js"></script><script defer src="/assets/jtd/note-theme.js?v=4"></script><script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script defer src="/assets/jtd/note-anchors.js?v=1"></script></head><body><svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="svg-arrow-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-doc" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM8 11h8M8 15h8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="svg-link" viewBox="0 0 16 16"><path d="m6 10 4-4M5 7 3 9a2 2 0 0 0 3 3l2-2M8 6l2-2a2 2 0 0 1 3 3l-2 2" stroke="currentColor" fill="none"/></symbol></svg><a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><a class="brand-home" href="/" aria-label="返回主页"><img src="/assets/images/imasen_phi_logo/favicon.ico" width="36" height="36" alt=""></a><a href="/notes/electron-electron-distance/index.html" class="site-title lh-tight">电子—电子距离</a><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航"><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/index.html">文档首页</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-1.html">偶极作用与距离核</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-2.html">距离分布与观测模型</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-3.html">相干路径与相位循环</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-4.html">自旋体系与样品</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-5.html">CW 短距离测定</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-6.html">四脉冲 DEER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-7.html">多脉冲 DEER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-8.html">双量子相干 DQC</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-9.html">SIFTER 与 SIDRE</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-10.html">RIDME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-11.html">光诱导偶极谱</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-12.html">参数与实验优化</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-13.html">距离反演与不确定度</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-14.html">软件与方法选择</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-15.html">应用案例</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-16.html">伪影与诊断</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-17.html">方法进展</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/references.html">参考文献</a></li></ul></nav><div class="site-footer"><a href="/notes/">返回 Notes</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 电子—电子距离 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 电子—电子距离 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div><details class="doc-theme"><summary aria-label="主题设置" title="主题设置"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" stroke="currentColor" fill="none"/></svg></summary><div class="theme-options"><button data-theme="sage" aria-label="鼠尾草绿" title="鼠尾草绿"></button><button data-theme="mist" aria-label="雾蓝" title="雾蓝"></button><button data-theme="sand" aria-label="暖砂" title="暖砂"></button><button data-theme="mauve" aria-label="灰紫" title="灰紫"></button><button data-theme="gray" aria-label="浅灰" title="浅灰"></button></div></details></div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="/notes/electron-electron-distance/index.html">电子—电子距离</a></li><li class="breadcrumb-nav-list-item"><span>软件与方法选择</span></li></ol></nav><div class="main-content" id="main-content"><main><h1 id="chapter-14"><a class="anchor-heading" href="#chapter-14" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>软件与方法选择</h1><details class="page-toc" open><summary>本页目录</summary><ul><li class="toc-level-2"><a href="#section-0">软件能力对照</a></li><li class="toc-level-2"><a href="#section-1">DeerLab具体案例：4-pulse DEER联合拟合</a></li><li class="toc-level-3"><a href="#section-2">计算条件与选择依据</a></li><li class="toc-level-3"><a href="#section-3">完整Python脚本</a></li><li class="toc-level-3"><a href="#section-4">数值结果</a></li><li class="toc-level-3"><a href="#section-5">结果解释与实验数据替换</a></li><li class="toc-level-2"><a href="#section-6">DeerAnalysis：交互处理与复查</a></li><li class="toc-level-2"><a href="#section-7">DeerNet：神经网络结果的定位</a></li><li class="toc-level-2"><a href="#section-8">EasySpin具体案例：CW耦合谱与脉冲自旋动力学</a></li><li class="toc-level-3"><a href="#section-9">模型设置与距离映射</a></li><li class="toc-level-3"><a href="#section-10">完整MATLAB脚本</a></li><li class="toc-level-3"><a href="#section-11">输出读取与拟合扩展</a></li><li class="toc-level-3"><a href="#section-12">脉冲案例A：Rabi振荡与π/2、π脉宽标定</a></li><li class="toc-level-3"><a href="#section-13">脉冲案例B：整形脉冲亚硝基Hahn echo</a></li><li class="toc-level-3"><a href="#section-14">EasySpin脉冲函数的适用边界</a></li><li class="toc-level-2"><a href="#section-15">MMMx与chiLife：标签构象到预测距离</a></li><li class="toc-level-2"><a href="#section-16">案例组合与后续扩展</a></li><li class="toc-level-2"><a href="#section-17">方法与软件选择矩阵</a></li><li class="toc-level-2"><a href="#section-18">软件结果的三级检查</a></li><li class="toc-level-2"><a href="#section-19">可重复计算记录</a></li><li class="toc-level-2"><a href="#section-20">本章结论</a></li></ul></details><p class="doc-subtitle">第14章　软件实现、交叉检查与方法选择</p>
+
+<nav class="chapter-jump" aria-label="本章目录"><div class="jump-label">本章目录</div><div class="chapter-jump-links"><a href="/notes/electron-electron-distance/chapter-14.html#c14-map">14.1 软件能力对照</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-deerlab">14.2 DeerLab具体案例：4-pulse DEER联合拟合</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-deeranalysis">14.3 DeerAnalysis：交互处理与复查</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-deernet">14.4 DeerNet：神经网络结果的定位</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-easyspin">14.5 EasySpin具体案例：CW耦合谱与脉冲自旋动力学</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-label">14.6 MMMx与chiLife：标签构象到预测距离</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-workflows">14.7 案例组合与后续扩展</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-selection">14.8 方法与软件选择矩阵</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-validation">14.9 软件结果的三级检查</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-record">14.10 可重复计算记录</a><a href="/notes/electron-electron-distance/chapter-14.html#c14-summary">14.11 本章结论</a></div></nav><figure class="flow-figure"><svg viewbox="0 0 1040 330" role="img" aria-label="EasySpin、DeerLab、DeerAnalysis、DeerNet和标签建模软件的能力边界">
+<g font-family="system-ui"><text x="520" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#193b59">软件在电子—电子距离测定流程中的位置</text>
+<g stroke="#9aa7b2"><rect x="25" y="62" width="220" height="92" rx="6" fill="#edf3f8"></rect><rect x="285" y="62" width="220" height="92" rx="6" fill="#edf7f1"></rect><rect x="545" y="62" width="220" height="92" rx="6" fill="#f5f1f7"></rect><rect x="805" y="62" width="210" height="92" rx="6" fill="#fff7e5"></rect></g>
+<g text-anchor="middle" fill="#263746"><text x="135" y="88" font-size="15" font-weight="700">EasySpin</text><text x="135" y="111" font-size="12">自旋哈密顿量、CW谱</text><text x="135" y="130" font-size="12">有限脉冲与密度矩阵检验</text><text x="395" y="88" font-size="15" font-weight="700">DeerLab</text><text x="395" y="111" font-size="12">前向模型、联合拟合</text><text x="395" y="130" font-size="12">正则化与不确定度</text><text x="655" y="88" font-size="15" font-weight="700">DeerAnalysis／DeerNet</text><text x="655" y="111" font-size="12">交互处理与神经网络对照</text><text x="655" y="130" font-size="12">批处理取决于具体版本</text><text x="910" y="88" font-size="15" font-weight="700">MMMx／chiLife</text><text x="910" y="111" font-size="12">标签构象与结构距离预测</text><text x="910" y="130" font-size="12">不读取实验脉冲响应</text></g>
+<g stroke="#6a7680" stroke-width="1.4"><line x1="135" y1="154" x2="135" y2="220"></line><line x1="395" y1="154" x2="395" y2="220"></line><line x1="655" y1="154" x2="655" y2="220"></line><line x1="910" y1="154" x2="910" y2="220"></line><line x1="135" y1="220" x2="910" y2="220"></line></g>
+<rect x="235" y="220" width="570" height="72" rx="6" fill="#fff" stroke="#193b59" stroke-width="1.5"></rect><text x="520" y="247" text-anchor="middle" font-size="15" font-weight="700" fill="#193b59">共同输出：带有模型定义、参数区间和残差的距离解释</text><text x="520" y="271" text-anchor="middle" font-size="12" fill="#53616c">采集相位循环和谱仪硬件控制仍由实验程序承担</text></g></svg><figcaption>图14-1　软件包覆盖的对象不同。EasySpin适合谱学与自旋动力学，DeerLab及DeerAnalysis处理PDS时间迹，标签建模软件连接电子自旋距离与分子结构。</figcaption></figure>
+
+<section id="c14-map"><h2 id="section-0"><a class="anchor-heading" href="#section-0" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>软件能力对照</h2><div class="wrap"><table><tr><th>软件</th><th>主要环境</th><th>适合任务</th><th>不直接承担</th></tr><tr><td>EasySpin</td><td>MATLAB</td><td>CW谱、耦合自旋体系、脉冲响应和自定义动力学</td><td>通用PDS背景与距离反演工作流</td></tr><tr><td>DeerLab</td><td>Python</td><td>PDS前向模型、参数化／非参数拟合、全局分析和不确定度</td><td>谱仪采集相位循环</td></tr><tr><td>DeerAnalysis</td><td>GUI及当前发布环境</td><td>交互式PDS处理、常规距离反演和结果浏览</td><td>自旋哈密顿量全谱模拟</td></tr><tr><td>DeerNet</td><td>神经网络模块</td><td>时间迹到距离分布的独立对照</td><td>任意超出训练分布的物理模型</td></tr><tr><td>MMMx／chiLife</td><td>MATLAB／Python</td><td>自旋标签rotamer及结构距离预测</td><td>实验背景和脉冲选择函数</td></tr></table></div></section>
+
+<section id="c14-deerlab"><h2 id="section-1"><a class="anchor-heading" href="#section-1" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>DeerLab具体案例：4-pulse DEER联合拟合</h2><p>本例使用DeerLab 1.2.0构造一条带均匀三维背景的4-pulse DEER时间迹，并在加入固定随机种子的高斯噪声后，联合拟合高斯距离分布、调制深度、有效浓度和重聚时间。案例的用途是核对参数单位、实验路径定义、拟合对象和区间输出；数据为合成数据，不代表仪器测量。</p>
+<div class="case-note"><p><span class="status status-run">已执行</span>　Python环境中已完成前向计算与拟合。时间单位为μs，距离单位为nm，浓度单位为μM；随机种子固定为20260915。</p></div>
+<h3 id="section-2"><a class="anchor-heading" href="#section-2" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>计算条件与选择依据</h3><div class="wrap"><table><tr><th>项目</th><th>设置</th><th>本例中的作用</th></tr><tr><td>实验模型</td><td><code>ex_4pdeer(0.50, 3.50, pathways=[1])</code></td><td>显式定义主偶极路径及其重聚时间</td></tr><tr><td>时间轴</td><td>0.10–3.996 μs，步长0.008 μs</td><td>覆盖约4 μs的偶极演化，同时避免把负时间段写入本例</td></tr><tr><td>距离网格</td><td>1.50–5.99 nm，步长0.01 nm</td><td>包围3.20 nm主峰并留出核函数计算边界</td></tr><tr><td>距离模型</td><td>单高斯，均值3.20 nm，标准差0.18 nm</td><td>使峰位和峰宽具有可直接核对的设定值</td></tr><tr><td>背景与调制</td><td>70 μM，调制深度0.35</td><td>检验距离参数与背景、调制参数的联合估计</td></tr><tr><td>噪声</td><td>独立高斯噪声，σ=0.003</td><td>使区间估计与残差检查具有有限噪声条件</td></tr></table></div>
+<p>4-pulse DEER适用于此例，是因为两类自旋包可按pump和observer通道建模，目标距离落在常规脉冲偶极谱时间窗内，且单路径模型足以描述所构造的数据。若数据来自5-pulse或7-pulse DEER，应把相应次路径及其重聚时间写入实验模型，不能直接复用本例的单路径设定。</p>
+<h3 id="section-3"><a class="anchor-heading" href="#section-3" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>完整Python脚本</h3><pre class="code"><code>import json
+from pathlib import Path
+
+import deerlab as dl
+import matplotlib.pyplot as plt
+import numpy as np
+
+OUTDIR = Path(__file__).resolve().parent
+rng = np.random.default_rng(20260915)
+
+# 4-pulse DEER timing and grids (time in microseconds, distance in nanometers)
+tau1, tau2 = 0.50, 3.50
+t = np.arange(0.10, tau1 + tau2, 0.008)
+r = np.arange(1.50, 6.00, 0.01)
+experiment = dl.ex_4pdeer(tau1, tau2, pathways=[1])
+
+# Parametric distance model plus homogeneous intermolecular background
+model = dl.dipolarmodel(t, r, Pmodel=dl.dd_gauss, experiment=experiment)
+truth = dict(mean=3.20, std=0.18, conc=70.0,
+             scale=1.0, mod=0.35, reftime=tau1)
+V_clean = model(**truth)
+V = V_clean + rng.normal(0.0, 0.003, t.size)
+
+# Joint fit of distance, modulation depth, background concentration and refocusing time
+fit = dl.fit(model, V, reg=False)
+Pfit = fit.evaluate(dl.dd_gauss, r)
+Pfit /= np.trapezoid(Pfit, r)
+residual = V - fit.model
+
+summary = {
+    'deerlab_version': dl.__VERSION__,
+    'truth': truth,
+    'fit': {
+        'mean_nm': float(fit.mean),
+        'std_nm': float(fit.std),
+        'conc_uM': float(fit.conc),
+        'modulation_depth': float(fit.mod),
+        'reftime_us': float(fit.reftime),
+        'rms': float(np.sqrt(np.mean(residual**2))),
+        'mean_95ci_nm': np.asarray(fit.meanUncert.ci(95)).tolist(),
+        'std_95ci_nm': np.asarray(fit.stdUncert.ci(95)).tolist(),
+    },
+}
+(OUTDIR / 'deerlab_case_results.json').write_text(
+    json.dumps(summary, indent=2, ensure_ascii=False), encoding='utf-8')
+
+fig, ax = plt.subplots(2, 1, figsize=(7.2, 6.0), constrained_layout=True)
+ax[0].plot(t, V, '.', ms=2.1, color='#7a838a', label='synthetic data')
+ax[0].plot(t, fit.model, lw=1.8, color='#285f8d', label='joint fit')
+ax[0].set(xlabel='Time / μs', ylabel='V(t) / a.u.')
+ax[0].legend(frameon=False)
+ax[1].plot(r, Pfit, lw=2.0, color='#8d3b3b')
+ax[1].axvline(truth['mean'], lw=1.0, ls='--', color='#53616c')
+ax[1].set(xlabel='Distance / nm', ylabel='P(r) / nm⁻¹', xlim=(2.4, 4.0))
+fig.savefig(OUTDIR / 'deerlab_case.svg', format='svg', metadata={'Date': None})
+</code></pre>
+<h3 id="section-4"><a class="anchor-heading" href="#section-4" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>数值结果</h3><div class="wrap"><table class="metric"><tr><th>拟合量</th><th>设定值</th><th>拟合值</th><th>95%区间</th></tr>
+<tr><td>平均距离</td><td>3.200 nm</td><td>3.2009 nm</td><td>3.1981–3.2037 nm</td></tr>
+<tr><td>分布标准差</td><td>0.180 nm</td><td>0.1775 nm</td><td>0.1737–0.1812 nm</td></tr>
+<tr><td>有效浓度</td><td>70.0 μM</td><td>70.60 μM</td><td>本例未单列</td></tr>
+<tr><td>调制深度</td><td>0.350</td><td>0.3492</td><td>本例未单列</td></tr>
+<tr><td>重聚时间</td><td>0.500 μs</td><td>0.4995 μs</td><td>本例未单列</td></tr>
+<tr><td>残差RMS</td><td>噪声σ = 0.003</td><td>0.002944</td><td>—</td></tr></table></div>
+<figure class="flow-figure case-figure"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="518.4pt" height="432pt" viewbox="0 0 518.4 432" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:rdf xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:agent>
+    </dc:creator>
+   </cc:work>
+  </rdf:rdf>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 432
+L 518.4 432
+L 518.4 0
+L 0 0
+z
+" style="fill: #ffffff"></path>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 39.58149 182.64351
+L 507.448198 182.64351
+L 507.448198 3.00024
+L 39.58149 3.00024
+z
+" style="fill: #ffffff"></path>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m59ca7c79f6" d="M 0 0
+L 0 3.5
+" style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="49.930978" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- 0.0 -->
+      <g transform="translate(41.979415 197.241948) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-30" d="M 2034 4250
+Q 1547 4250 1301 3770
+Q 1056 3291 1056 2328
+Q 1056 1369 1301 889
+Q 1547 409 2034 409
+Q 2525 409 2770 889
+Q 3016 1369 3016 2328
+Q 3016 3291 2770 3770
+Q 2525 4250 2034 4250
+z
+M 2034 4750
+Q 2819 4750 3233 4129
+Q 3647 3509 3647 2328
+Q 3647 1150 3233 529
+Q 2819 -91 2034 -91
+Q 1250 -91 836 529
+Q 422 1150 422 2328
+Q 422 3509 836 4129
+Q 1250 4750 2034 4750
+z
+" transform="scale(0.015625)"></path>
+        <path id="DejaVuSans-2e" d="M 684 794
+L 1344 794
+L 1344 0
+L 684 0
+L 684 794
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="104.516882" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- 0.5 -->
+      <g transform="translate(96.56532 197.241948) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-35" d="M 691 4666
+L 3169 4666
+L 3169 4134
+L 1269 4134
+L 1269 2991
+Q 1406 3038 1543 3061
+Q 1681 3084 1819 3084
+Q 2600 3084 3056 2656
+Q 3513 2228 3513 1497
+Q 3513 744 3044 326
+Q 2575 -91 1722 -91
+Q 1428 -91 1123 -41
+Q 819 9 494 109
+L 494 744
+Q 775 591 1075 516
+Q 1375 441 1709 441
+Q 2250 441 2565 725
+Q 2881 1009 2881 1497
+Q 2881 1984 2565 2268
+Q 2250 2553 1709 2553
+Q 1456 2553 1204 2497
+Q 953 2441 691 2322
+L 691 4666
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-35" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="159.102787" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- 1.0 -->
+      <g transform="translate(151.151225 197.241948) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-31" d="M 794 531
+L 1825 531
+L 1825 4091
+L 703 3866
+L 703 4441
+L 1819 4666
+L 2450 4666
+L 2450 531
+L 3481 531
+L 3481 0
+L 794 0
+L 794 531
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-31"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="213.688692" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- 1.5 -->
+      <g transform="translate(205.73713 197.241948) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-31"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-35" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="268.274597" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 2.0 -->
+      <g transform="translate(260.323034 197.241948) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-32" d="M 1228 531
+L 3431 531
+L 3431 0
+L 469 0
+L 469 531
+Q 828 903 1448 1529
+Q 2069 2156 2228 2338
+Q 2531 2678 2651 2914
+Q 2772 3150 2772 3378
+Q 2772 3750 2511 3984
+Q 2250 4219 1831 4219
+Q 1534 4219 1204 4116
+Q 875 4013 500 3803
+L 500 4441
+Q 881 4594 1212 4672
+Q 1544 4750 1819 4750
+Q 2544 4750 2975 4387
+Q 3406 4025 3406 3419
+Q 3406 3131 3298 2873
+Q 3191 2616 2906 2266
+Q 2828 2175 2409 1742
+Q 1991 1309 1228 531
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-32"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="322.860502" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 2.5 -->
+      <g transform="translate(314.908939 197.241948) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-32"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-35" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="377.446407" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 3.0 -->
+      <g transform="translate(369.494844 197.241948) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-33" d="M 2597 2516
+Q 3050 2419 3304 2112
+Q 3559 1806 3559 1356
+Q 3559 666 3084 287
+Q 2609 -91 1734 -91
+Q 1441 -91 1130 -33
+Q 819 25 488 141
+L 488 750
+Q 750 597 1062 519
+Q 1375 441 1716 441
+Q 2309 441 2620 675
+Q 2931 909 2931 1356
+Q 2931 1769 2642 2001
+Q 2353 2234 1838 2234
+L 1294 2234
+L 1294 2753
+L 1863 2753
+Q 2328 2753 2575 2939
+Q 2822 3125 2822 3475
+Q 2822 3834 2567 4026
+Q 2313 4219 1838 4219
+Q 1578 4219 1281 4162
+Q 984 4106 628 3988
+L 628 4550
+Q 988 4650 1302 4700
+Q 1616 4750 1894 4750
+Q 2613 4750 3031 4423
+Q 3450 4097 3450 3541
+Q 3450 3153 3228 2886
+Q 3006 2619 2597 2516
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-33"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="432.032311" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 3.5 -->
+      <g transform="translate(424.080749 197.241948) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-33"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-35" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="486.618216" y="182.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 4.0 -->
+      <g transform="translate(478.666654 197.241948) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-34" d="M 2419 4116
+L 825 1625
+L 2419 1625
+L 2419 4116
+z
+M 2253 4666
+L 3047 4666
+L 3047 1625
+L 3713 1625
+L 3713 1100
+L 3047 1100
+L 3047 0
+L 2419 0
+L 2419 1100
+L 313 1100
+L 313 1709
+L 2253 4666
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-34"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="text_10">
+     <!-- Time / μs -->
+     <g transform="translate(250.632813 210.920073) scale(0.1 -0.1)">
+      <defs>
+       <path id="DejaVuSans-54" d="M -19 4666
+L 3928 4666
+L 3928 4134
+L 2272 4134
+L 2272 0
+L 1638 0
+L 1638 4134
+L -19 4134
+L -19 4666
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-69" d="M 603 3500
+L 1178 3500
+L 1178 0
+L 603 0
+L 603 3500
+z
+M 603 4863
+L 1178 4863
+L 1178 4134
+L 603 4134
+L 603 4863
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-6d" d="M 3328 2828
+Q 3544 3216 3844 3400
+Q 4144 3584 4550 3584
+Q 5097 3584 5394 3201
+Q 5691 2819 5691 2113
+L 5691 0
+L 5113 0
+L 5113 2094
+Q 5113 2597 4934 2840
+Q 4756 3084 4391 3084
+Q 3944 3084 3684 2787
+Q 3425 2491 3425 1978
+L 3425 0
+L 2847 0
+L 2847 2094
+Q 2847 2600 2669 2842
+Q 2491 3084 2119 3084
+Q 1678 3084 1418 2786
+Q 1159 2488 1159 1978
+L 1159 0
+L 581 0
+L 581 3500
+L 1159 3500
+L 1159 2956
+Q 1356 3278 1631 3431
+Q 1906 3584 2284 3584
+Q 2666 3584 2933 3390
+Q 3200 3197 3328 2828
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-65" d="M 3597 1894
+L 3597 1613
+L 953 1613
+Q 991 1019 1311 708
+Q 1631 397 2203 397
+Q 2534 397 2845 478
+Q 3156 559 3463 722
+L 3463 178
+Q 3153 47 2828 -22
+Q 2503 -91 2169 -91
+Q 1331 -91 842 396
+Q 353 884 353 1716
+Q 353 2575 817 3079
+Q 1281 3584 2069 3584
+Q 2775 3584 3186 3129
+Q 3597 2675 3597 1894
+z
+M 3022 2063
+Q 3016 2534 2758 2815
+Q 2500 3097 2075 3097
+Q 1594 3097 1305 2825
+Q 1016 2553 972 2059
+L 3022 2063
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-20" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-2f" d="M 1625 4666
+L 2156 4666
+L 531 -594
+L 0 -594
+L 1625 4666
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-3bc" d="M 544 -1331
+L 544 3500
+L 1119 3500
+L 1119 1325
+Q 1119 872 1334 640
+Q 1550 409 1972 409
+Q 2434 409 2667 671
+Q 2900 934 2900 1459
+L 2900 3500
+L 3475 3500
+L 3475 806
+Q 3475 619 3529 530
+Q 3584 441 3700 441
+Q 3728 441 3778 458
+Q 3828 475 3916 513
+L 3916 50
+Q 3788 -22 3673 -56
+Q 3559 -91 3450 -91
+Q 3234 -91 3106 31
+Q 2978 153 2931 403
+Q 2775 156 2548 32
+Q 2322 -91 2016 -91
+Q 1697 -91 1473 31
+Q 1250 153 1119 397
+L 1119 -1331
+L 544 -1331
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-73" d="M 2834 3397
+L 2834 2853
+Q 2591 2978 2328 3040
+Q 2066 3103 1784 3103
+Q 1356 3103 1142 2972
+Q 928 2841 928 2578
+Q 928 2378 1081 2264
+Q 1234 2150 1697 2047
+L 1894 2003
+Q 2506 1872 2764 1633
+Q 3022 1394 3022 966
+Q 3022 478 2636 193
+Q 2250 -91 1575 -91
+Q 1294 -91 989 -36
+Q 684 19 347 128
+L 347 722
+Q 666 556 975 473
+Q 1284 391 1588 391
+Q 1994 391 2212 530
+Q 2431 669 2431 922
+Q 2431 1156 2273 1281
+Q 2116 1406 1581 1522
+L 1381 1569
+Q 847 1681 609 1914
+Q 372 2147 372 2553
+Q 372 3047 722 3315
+Q 1072 3584 1716 3584
+Q 2034 3584 2315 3537
+Q 2597 3491 2834 3397
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-54"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-69" transform="translate(57.958984 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6d" transform="translate(85.742188 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-65" transform="translate(183.154297 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(244.677734 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2f" transform="translate(276.464844 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(310.15625 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-3bc" transform="translate(341.943359 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-73" transform="translate(405.566406 0)"></use>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_10">
+      <defs>
+       <path id="m4b8bd10c1d" d="M 0 0
+L -3.5 0
+" style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="163.457873" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 0.6 -->
+      <g transform="translate(16.678365 167.257092) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-36" d="M 2113 2584
+Q 1688 2584 1439 2293
+Q 1191 2003 1191 1497
+Q 1191 994 1439 701
+Q 1688 409 2113 409
+Q 2538 409 2786 701
+Q 3034 994 3034 1497
+Q 3034 2003 2786 2293
+Q 2538 2584 2113 2584
+z
+M 3366 4563
+L 3366 3988
+Q 3128 4100 2886 4159
+Q 2644 4219 2406 4219
+Q 1781 4219 1451 3797
+Q 1122 3375 1075 2522
+Q 1259 2794 1537 2939
+Q 1816 3084 2150 3084
+Q 2853 3084 3261 2657
+Q 3669 2231 3669 1497
+Q 3669 778 3244 343
+Q 2819 -91 2113 -91
+Q 1303 -91 875 529
+Q 447 1150 447 2328
+Q 447 3434 972 4092
+Q 1497 4750 2381 4750
+Q 2619 4750 2861 4703
+Q 3103 4656 3366 4563
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-36" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="125.378779" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- 0.7 -->
+      <g transform="translate(16.678365 129.177998) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-37" d="M 525 4666
+L 3525 4666
+L 3525 4397
+L 1831 0
+L 1172 0
+L 2766 4134
+L 525 4134
+L 525 4666
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-37" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="87.299685" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_13">
+      <!-- 0.8 -->
+      <g transform="translate(16.678365 91.098904) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-38" d="M 2034 2216
+Q 1584 2216 1326 1975
+Q 1069 1734 1069 1313
+Q 1069 891 1326 650
+Q 1584 409 2034 409
+Q 2484 409 2743 651
+Q 3003 894 3003 1313
+Q 3003 1734 2745 1975
+Q 2488 2216 2034 2216
+z
+M 1403 2484
+Q 997 2584 770 2862
+Q 544 3141 544 3541
+Q 544 4100 942 4425
+Q 1341 4750 2034 4750
+Q 2731 4750 3128 4425
+Q 3525 4100 3525 3541
+Q 3525 3141 3298 2862
+Q 3072 2584 2669 2484
+Q 3125 2378 3379 2068
+Q 3634 1759 3634 1313
+Q 3634 634 3220 271
+Q 2806 -91 2034 -91
+Q 1263 -91 848 271
+Q 434 634 434 1313
+Q 434 1759 690 2068
+Q 947 2378 1403 2484
+z
+M 1172 3481
+Q 1172 3119 1398 2916
+Q 1625 2713 2034 2713
+Q 2441 2713 2670 2916
+Q 2900 3119 2900 3481
+Q 2900 3844 2670 4047
+Q 2441 4250 2034 4250
+Q 1625 4250 1398 4047
+Q 1172 3844 1172 3481
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-38" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="49.220591" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_14">
+      <!-- 0.9 -->
+      <g transform="translate(16.678365 53.01981) scale(0.1 -0.1)">
+       <defs>
+        <path id="DejaVuSans-39" d="M 703 97
+L 703 672
+Q 941 559 1184 500
+Q 1428 441 1663 441
+Q 2288 441 2617 861
+Q 2947 1281 2994 2138
+Q 2813 1869 2534 1725
+Q 2256 1581 1919 1581
+Q 1219 1581 811 2004
+Q 403 2428 403 3163
+Q 403 3881 828 4315
+Q 1253 4750 1959 4750
+Q 2769 4750 3195 4129
+Q 3622 3509 3622 2328
+Q 3622 1225 3098 567
+Q 2575 -91 1691 -91
+Q 1453 -91 1209 -44
+Q 966 3 703 97
+z
+M 1959 2075
+Q 2384 2075 2632 2365
+Q 2881 2656 2881 3163
+Q 2881 3666 2632 3958
+Q 2384 4250 1959 4250
+Q 1534 4250 1286 3958
+Q 1038 3666 1038 3163
+Q 1038 2656 1286 2365
+Q 1534 2075 1959 2075
+z
+" transform="scale(0.015625)"></path>
+       </defs>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-39" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="11.141497" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_15">
+      <!-- 1.0 -->
+      <g transform="translate(16.678365 14.940716) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-31"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="text_16">
+     <!-- V(t) / a.u. -->
+     <g transform="translate(10.598678 116.377344) rotate(-90) scale(0.1 -0.1)">
+      <defs>
+       <path id="DejaVuSans-56" d="M 1831 0
+L 50 4666
+L 709 4666
+L 2188 738
+L 3669 4666
+L 4325 4666
+L 2547 0
+L 1831 0
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-28" d="M 1984 4856
+Q 1566 4138 1362 3434
+Q 1159 2731 1159 2009
+Q 1159 1288 1364 580
+Q 1569 -128 1984 -844
+L 1484 -844
+Q 1016 -109 783 600
+Q 550 1309 550 2009
+Q 550 2706 781 3412
+Q 1013 4119 1484 4856
+L 1984 4856
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-74" d="M 1172 4494
+L 1172 3500
+L 2356 3500
+L 2356 3053
+L 1172 3053
+L 1172 1153
+Q 1172 725 1289 603
+Q 1406 481 1766 481
+L 2356 481
+L 2356 0
+L 1766 0
+Q 1100 0 847 248
+Q 594 497 594 1153
+L 594 3053
+L 172 3053
+L 172 3500
+L 594 3500
+L 594 4494
+L 1172 4494
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-29" d="M 513 4856
+L 1013 4856
+Q 1481 4119 1714 3412
+Q 1947 2706 1947 2009
+Q 1947 1309 1714 600
+Q 1481 -109 1013 -844
+L 513 -844
+Q 928 -128 1133 580
+Q 1338 1288 1338 2009
+Q 1338 2731 1133 3434
+Q 928 4138 513 4856
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-61" d="M 2194 1759
+Q 1497 1759 1228 1600
+Q 959 1441 959 1056
+Q 959 750 1161 570
+Q 1363 391 1709 391
+Q 2188 391 2477 730
+Q 2766 1069 2766 1631
+L 2766 1759
+L 2194 1759
+z
+M 3341 1997
+L 3341 0
+L 2766 0
+L 2766 531
+Q 2569 213 2275 61
+Q 1981 -91 1556 -91
+Q 1019 -91 701 211
+Q 384 513 384 1019
+Q 384 1609 779 1909
+Q 1175 2209 1959 2209
+L 2766 2209
+L 2766 2266
+Q 2766 2663 2505 2880
+Q 2244 3097 1772 3097
+Q 1472 3097 1187 3025
+Q 903 2953 641 2809
+L 641 3341
+Q 956 3463 1253 3523
+Q 1550 3584 1831 3584
+Q 2591 3584 2966 3190
+Q 3341 2797 3341 1997
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-75" d="M 544 1381
+L 544 3500
+L 1119 3500
+L 1119 1403
+Q 1119 906 1312 657
+Q 1506 409 1894 409
+Q 2359 409 2629 706
+Q 2900 1003 2900 1516
+L 2900 3500
+L 3475 3500
+L 3475 0
+L 2900 0
+L 2900 538
+Q 2691 219 2414 64
+Q 2138 -91 1772 -91
+Q 1169 -91 856 284
+Q 544 659 544 1381
+z
+M 1991 3584
+L 1991 3584
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-56"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-28" transform="translate(68.408203 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-74" transform="translate(107.421875 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-29" transform="translate(146.630859 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(185.644531 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2f" transform="translate(217.431641 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(251.123047 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-61" transform="translate(282.910156 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(344.189453 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-75" transform="translate(375.976562 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(439.355469 0)"></use>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <defs>
+     <path id="m2dd353716e" d="M 0 0.525
+C 0.139232 0.525 0.272779 0.469683 0.371231 0.371231
+C 0.469683 0.272779 0.525 0.139232 0.525 0
+C 0.525 -0.139232 0.469683 -0.272779 0.371231 -0.371231
+C 0.272779 -0.469683 0.139232 -0.525 0 -0.525
+C -0.139232 -0.525 -0.272779 -0.469683 -0.371231 -0.371231
+C -0.469683 -0.272779 -0.525 -0.139232 -0.525 0
+C -0.525 0.139232 -0.469683 0.272779 -0.371231 0.371231
+C -0.272779 0.469683 -0.139232 0.525 0 0.525
+z
+" style="stroke: #7a838a"></path>
+    </defs>
+    <g clip-path="url(#p38b5e25751)">
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="60.848159" y="172.570609" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="61.721533" y="170.766883" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="62.594907" y="170.695846" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="63.468282" y="172.204452" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="64.341656" y="173.789817" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="65.215031" y="171.787028" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="66.088405" y="173.552719" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="66.96178" y="174.271274" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="67.835154" y="170.957054" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="68.708529" y="172.239082" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="69.581903" y="170.613813" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="70.455278" y="170.481224" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="71.328652" y="168.709069" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="72.202027" y="167.852675" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="73.075401" y="166.636279" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="73.948776" y="165.414541" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="74.82215" y="164.554638" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="75.695525" y="160.46747" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="76.568899" y="157.716041" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="77.442274" y="157.379992" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="78.315648" y="153.981376" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="79.189023" y="150.962822" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="80.062397" y="147.426948" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="80.935772" y="145.208332" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="81.809146" y="139.136521" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="82.68252" y="135.65425" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="83.555895" y="128.509076" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="84.429269" y="123.662336" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="85.302644" y="120.648673" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="86.176018" y="114.823856" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="87.049393" y="107.742689" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="87.922767" y="102.611119" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="88.796142" y="95.127298" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="89.669516" y="90.71547" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="90.542891" y="82.722662" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="91.416265" y="75.553137" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="92.28964" y="69.887861" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="93.163014" y="63.080819" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="94.036389" y="55.861383" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="94.909763" y="49.256584" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="95.783138" y="43.764127" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="96.656512" y="39.045102" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="97.529887" y="33.32785" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="98.403261" y="28.884677" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="99.276636" y="23.922506" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="100.15001" y="20.071516" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="101.023384" y="20.0711" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="101.896759" y="13.096292" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="102.770133" y="13.456372" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="103.643508" y="12.842059" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="104.516882" y="11.165843" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="105.390257" y="12.297289" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="106.263631" y="12.843873" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="107.137006" y="15.210663" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="108.01038" y="16.565296" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="108.883755" y="19.145721" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="109.757129" y="27.822196" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="110.630504" y="28.583775" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="111.503878" y="33.683394" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="112.377253" y="39.749118" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="113.250627" y="44.798885" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="114.124002" y="50.766154" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="114.997376" y="55.14748" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="115.870751" y="64.438535" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="116.744125" y="70.352198" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="117.6175" y="76.117174" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="118.490874" y="83.068233" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="119.364249" y="91.218667" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="120.237623" y="93.632063" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="121.110997" y="103.61252" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="121.984372" y="110.711036" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="122.857746" y="116.677586" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="123.731121" y="119.127836" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="124.604495" y="127.329187" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="125.47787" y="129.39378" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="126.351244" y="135.843961" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="127.224619" y="140.372388" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="128.097993" y="143.601454" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="128.971368" y="148.203" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="129.844742" y="150.416772" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="130.718117" y="153.344581" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="131.591491" y="155.219506" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="132.464866" y="158.956487" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="133.33824" y="160.451697" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="134.211615" y="165.140727" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="135.084989" y="167.342695" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="135.958364" y="167.124671" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="136.831738" y="169.198358" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="137.705113" y="169.30982" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="138.578487" y="169.851248" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="139.451861" y="169.373172" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="140.325236" y="169.601121" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="141.19861" y="173.384639" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="142.071985" y="174.477907" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="142.945359" y="172.838049" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="143.818734" y="171.647034" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="144.692108" y="171.825022" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="145.565483" y="173.137829" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="146.438857" y="172.018588" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="147.312232" y="173.179348" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="148.185606" y="169.800205" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="149.058981" y="169.924006" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="149.932355" y="171.122736" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="150.80573" y="170.2937" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="151.679104" y="168.400016" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="152.552479" y="165.258377" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="153.425853" y="167.101903" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="154.299228" y="165.517395" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="155.172602" y="164.771709" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="156.045977" y="163.623029" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="156.919351" y="161.801854" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="157.792726" y="161.615374" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="158.6661" y="159.098274" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="159.539474" y="158.061612" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="160.412849" y="156.992279" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="161.286223" y="153.206527" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="162.159598" y="152.506712" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="163.032972" y="153.963667" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="163.906347" y="151.064363" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="164.779721" y="149.586201" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="165.653096" y="146.344977" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="166.52647" y="145.090336" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="167.399845" y="145.752711" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="168.273219" y="143.054597" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="169.146594" y="142.240598" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="170.019968" y="142.257255" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="170.893343" y="140.669552" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="171.766717" y="138.73242" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="172.640092" y="136.468602" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="173.513466" y="137.487526" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="174.386841" y="136.07336" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="175.260215" y="137.125703" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="176.13359" y="137.95578" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="177.006964" y="138.117388" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="177.880338" y="136.103864" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="178.753713" y="134.955221" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="179.627087" y="138.014381" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="180.500462" y="137.591269" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="181.373836" y="134.9014" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="182.247211" y="136.047188" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="183.120585" y="136.672046" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="183.99396" y="137.305166" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="184.867334" y="136.862997" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="185.740709" y="136.832475" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="186.614083" y="137.307273" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="187.487458" y="135.816769" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="188.360832" y="140.495123" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="189.234207" y="135.954354" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="190.107581" y="140.129264" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="190.980956" y="139.712004" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="191.85433" y="141.096367" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="192.727705" y="142.612008" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="193.601079" y="143.259318" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="194.474454" y="145.133778" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="195.347828" y="142.332316" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="196.221203" y="144.815817" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="197.094577" y="145.23651" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="197.967951" y="145.899642" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="198.841326" y="145.088482" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="199.7147" y="147.262885" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="200.588075" y="148.237774" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="201.461449" y="149.385392" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="202.334824" y="151.651395" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="203.208198" y="149.31559" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="204.081573" y="151.778421" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="204.954947" y="153.461365" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="205.828322" y="154.784366" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="206.701696" y="153.82815" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="207.575071" y="152.860893" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="208.448445" y="152.220451" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="209.32182" y="153.623714" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="210.195194" y="155.209153" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="211.068569" y="153.701977" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="211.941943" y="155.084773" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="212.815318" y="154.814041" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="213.688692" y="156.177788" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="214.562067" y="155.999186" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="215.435441" y="153.714056" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="216.308815" y="154.830002" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="217.18219" y="155.413381" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="218.055564" y="156.97137" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="218.928939" y="156.164954" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="219.802313" y="154.464753" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="220.675688" y="157.785155" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="221.549062" y="156.494646" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="222.422437" y="154.031854" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="223.295811" y="157.273344" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="224.169186" y="155.901573" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="225.04256" y="155.213479" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="225.915935" y="154.573452" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="226.789309" y="155.890727" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="227.662684" y="155.779146" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="228.536058" y="156.457636" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="229.409433" y="154.725982" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="230.282807" y="154.332651" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="231.156182" y="155.399933" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="232.029556" y="151.65947" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="232.902931" y="154.642217" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="233.776305" y="152.939503" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="234.64968" y="154.228494" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="235.523054" y="154.588491" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="236.396428" y="151.939383" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="237.269803" y="152.779337" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="238.143177" y="150.187712" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="239.016552" y="152.645639" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="239.889926" y="152.225807" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="240.763301" y="152.780058" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="241.636675" y="151.107686" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="242.51005" y="150.662282" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="243.383424" y="151.798415" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="244.256799" y="151.773465" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="245.130173" y="150.468179" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="246.003548" y="149.36839" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="246.876922" y="151.461259" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="247.750297" y="151.045408" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="248.623671" y="151.273413" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="249.497046" y="151.857448" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="250.37042" y="151.570236" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="251.243795" y="150.087523" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="252.117169" y="149.819067" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="252.990544" y="150.53154" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="253.863918" y="151.319641" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="254.737292" y="151.131313" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="255.610667" y="150.495581" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="256.484041" y="149.508369" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="257.357416" y="152.263281" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="258.23079" y="149.648923" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="259.104165" y="149.982752" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="259.977539" y="151.595412" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="260.850914" y="150.820939" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="261.724288" y="151.413656" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="262.597663" y="151.07194" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="263.471037" y="151.176131" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="264.344412" y="152.137972" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="265.217786" y="150.352751" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="266.091161" y="149.280613" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="266.964535" y="150.269283" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="267.83791" y="151.073446" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="268.711284" y="152.442927" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="269.584659" y="153.448413" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="270.458033" y="151.343533" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="271.331408" y="151.591561" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="272.204782" y="152.080016" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="273.078157" y="153.71605" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="273.951531" y="153.28592" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="274.824905" y="152.696397" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="275.69828" y="153.451392" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="276.571654" y="153.374856" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="277.445029" y="152.065788" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="278.318403" y="153.343924" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="279.191778" y="154.84211" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="280.065152" y="153.701155" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="280.938527" y="156.220257" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="281.811901" y="152.508054" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="282.685276" y="153.848263" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="283.55865" y="153.4028" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="284.432025" y="156.423667" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="285.305399" y="154.791705" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="286.178774" y="153.451379" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="287.052148" y="157.700502" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="287.925523" y="155.467063" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="288.798897" y="157.021618" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="289.672272" y="155.036459" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="290.545646" y="154.465981" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="291.419021" y="156.643719" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="292.292395" y="153.947795" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="293.165769" y="153.583332" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="294.039144" y="154.413319" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="294.912518" y="156.38181" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="295.785893" y="154.061854" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="296.659267" y="154.167273" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="297.532642" y="156.20884" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="298.406016" y="154.865206" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="299.279391" y="155.896923" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="300.152765" y="153.61537" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="301.02614" y="153.940137" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="301.899514" y="156.753412" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="302.772889" y="155.843267" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="303.646263" y="154.802576" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="304.519638" y="156.25911" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="305.393012" y="154.693173" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="306.266387" y="153.639935" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="307.139761" y="155.72138" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="308.013136" y="158.221278" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="308.88651" y="155.933807" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="309.759885" y="153.483091" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="310.633259" y="155.514371" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="311.506634" y="157.114016" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="312.380008" y="155.77261" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="313.253382" y="157.582179" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="314.126757" y="156.486883" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="315.000131" y="155.526467" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="315.873506" y="155.401227" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="316.74688" y="157.563778" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="317.620255" y="156.127277" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="318.493629" y="157.34271" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="319.367004" y="157.788598" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="320.240378" y="155.007582" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="321.113753" y="157.192085" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="321.987127" y="157.465602" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="322.860502" y="157.689521" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="323.733876" y="158.729153" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="324.607251" y="154.388849" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="325.480625" y="153.911575" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="326.354" y="155.87779" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="327.227374" y="156.155465" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="328.100749" y="155.815828" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="328.974123" y="156.089331" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="329.847498" y="154.955828" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="330.720872" y="156.672485" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="331.594246" y="158.325755" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="332.467621" y="158.443417" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="333.340995" y="159.327028" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="334.21437" y="156.630212" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="335.087744" y="157.865321" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="335.961119" y="156.928662" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="336.834493" y="158.459239" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="337.707868" y="157.479168" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="338.581242" y="155.311368" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="339.454617" y="156.808987" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="340.327991" y="157.305571" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="341.201366" y="155.941988" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="342.07474" y="158.933539" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="342.948115" y="155.829865" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="343.821489" y="157.762703" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="344.694864" y="158.08075" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="345.568238" y="157.996488" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="346.441613" y="156.600028" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="347.314987" y="157.329386" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="348.188362" y="157.396854" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="349.061736" y="157.572943" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="349.935111" y="157.920168" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="350.808485" y="158.278913" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="351.681859" y="159.032385" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="352.555234" y="158.860834" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="353.428608" y="157.797473" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="354.301983" y="158.166308" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="355.175357" y="156.890303" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="356.048732" y="158.238445" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="356.922106" y="158.11641" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="357.795481" y="157.079208" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="358.668855" y="158.241371" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="359.54223" y="156.279093" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="360.415604" y="157.094284" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="361.288979" y="158.731969" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="362.162353" y="158.788751" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="363.035728" y="158.486816" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="363.909102" y="158.947919" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="364.782477" y="160.270393" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="365.655851" y="157.178177" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="366.529226" y="159.474053" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="367.4026" y="158.719789" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="368.275975" y="161.144198" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="369.149349" y="158.431668" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="370.022723" y="159.287127" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="370.896098" y="158.671185" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="371.769472" y="159.959046" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="372.642847" y="160.370401" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="373.516221" y="159.989113" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="374.389596" y="158.293201" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="375.26297" y="159.74702" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="376.136345" y="157.859526" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="377.009719" y="158.706554" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="377.883094" y="158.805789" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="378.756468" y="159.097074" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="379.629843" y="157.850026" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="380.503217" y="161.148632" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="381.376592" y="160.221494" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="382.249966" y="160.163827" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="383.123341" y="158.249326" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="383.996715" y="160.971655" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="384.87009" y="159.416946" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="385.743464" y="158.642316" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="386.616839" y="158.602115" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="387.490213" y="160.371064" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="388.363588" y="158.715734" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="389.236962" y="158.194695" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="390.110336" y="160.229384" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="390.983711" y="157.781798" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="391.857085" y="158.883041" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="392.73046" y="159.725438" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="393.603834" y="159.698728" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="394.477209" y="160.314339" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="395.350583" y="160.685282" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="396.223958" y="159.898546" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="397.097332" y="159.909829" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="397.970707" y="160.802051" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="398.844081" y="158.493347" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="399.717456" y="160.020158" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="400.59083" y="159.204529" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="401.464205" y="158.882409" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="402.337579" y="161.369699" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="403.210954" y="159.41155" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="404.084328" y="159.836253" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="404.957703" y="161.840787" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="405.831077" y="158.909837" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="406.704452" y="160.028741" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="407.577826" y="160.557298" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="408.4512" y="158.835943" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="409.324575" y="161.360478" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="410.197949" y="160.252474" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="411.071324" y="161.320479" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="411.944698" y="159.720667" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="412.818073" y="161.428475" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="413.691447" y="160.568727" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="414.564822" y="159.983867" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="415.438196" y="162.641726" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="416.311571" y="161.940042" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="417.184945" y="161.463353" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="418.05832" y="160.529232" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="418.931694" y="161.96726" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="419.805069" y="161.970975" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="420.678443" y="160.227863" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="421.551818" y="158.024431" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="422.425192" y="161.430079" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="423.298567" y="163.431577" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="424.171941" y="162.106557" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="425.045316" y="159.288014" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="425.91869" y="162.298141" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="426.792065" y="161.776492" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="427.665439" y="162.217436" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="428.538813" y="160.790467" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="429.412188" y="162.172951" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="430.285562" y="162.84812" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="431.158937" y="162.555077" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="432.032311" y="161.900427" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="432.905686" y="163.107922" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="433.77906" y="161.721561" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="434.652435" y="161.854117" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="435.525809" y="162.014609" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="436.399184" y="162.520375" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="437.272558" y="162.934656" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="438.145933" y="162.115899" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="439.019307" y="163.61508" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="439.892682" y="161.928744" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="440.766056" y="163.76762" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="441.639431" y="161.282753" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="442.512805" y="160.977718" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="443.38618" y="161.903269" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="444.259554" y="162.926394" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="445.132929" y="162.794438" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="446.006303" y="162.76286" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="446.879677" y="161.801846" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="447.753052" y="162.254287" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="448.626426" y="162.377674" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="449.499801" y="162.854153" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="450.373175" y="163.691035" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="451.24655" y="162.702984" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="452.119924" y="161.150381" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="452.993299" y="164.637467" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="453.866673" y="163.00595" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="454.740048" y="165.728142" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="455.613422" y="162.721856" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="456.486797" y="163.640226" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="457.360171" y="163.755204" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="458.233546" y="161.449804" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="459.10692" y="162.824945" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="459.980295" y="163.963003" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="460.853669" y="162.498563" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="461.727044" y="164.129761" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="462.600418" y="162.843372" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="463.473793" y="161.594974" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="464.347167" y="161.840675" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="465.220542" y="164.062828" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="466.093916" y="164.847792" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="466.96729" y="164.419913" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="467.840665" y="162.580099" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="468.714039" y="165.215264" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="469.587414" y="163.127247" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="470.460788" y="163.680878" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="471.334163" y="165.764559" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="472.207537" y="163.873583" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="473.080912" y="164.436614" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="473.954286" y="162.840772" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="474.827661" y="163.481793" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="475.701035" y="164.467187" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="476.57441" y="163.320767" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="477.447784" y="163.201863" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="478.321159" y="161.742565" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="479.194533" y="165.385971" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="480.067908" y="165.510465" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="480.941282" y="165.0866" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="481.814657" y="165.226832" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="482.688031" y="163.953306" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="483.561406" y="163.670076" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="484.43478" y="164.13062" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="485.308154" y="165.993891" style="fill: #7a838a; stroke: #7a838a"></use>
+     <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="486.181529" y="165.11809" style="fill: #7a838a; stroke: #7a838a"></use>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <path d="M 60.848159 171.324474
+L 62.594907 172.148037
+L 64.341656 172.560641
+L 65.215031 172.602847
+L 66.088405 172.529052
+L 66.96178 172.333219
+L 67.835154 172.008281
+L 68.708529 171.546024
+L 69.581903 170.937013
+L 70.455278 170.170553
+L 71.328652 169.234699
+L 72.202027 168.11632
+L 73.075401 166.801221
+L 73.948776 165.274329
+L 75.695525 161.522013
+L 77.442274 156.732166
+L 79.189023 150.785752
+L 80.935772 143.587912
+L 82.68252 135.085935
+L 84.429269 125.287414
+L 86.176018 114.276451
+L 88.796142 95.88983
+L 95.783138 44.247568
+L 97.529887 33.303701
+L 99.276636 24.164704
+L 100.15001 20.412667
+L 101.023384 17.269659
+L 101.896759 14.775121
+L 102.770133 12.960601
+L 103.643508 11.849089
+L 104.516882 11.46305
+L 105.390257 11.939579
+L 106.263631 13.131946
+L 107.137006 15.025154
+L 108.01038 17.595211
+L 108.883755 20.809635
+L 109.757129 24.628137
+L 111.503878 33.882337
+L 113.250627 44.914207
+L 115.870751 63.685804
+L 121.984372 109.051191
+L 123.731121 120.549771
+L 125.47787 130.900959
+L 127.224619 139.982596
+L 128.971368 147.754987
+L 130.718117 154.246299
+L 132.464866 159.534989
+L 134.211615 163.731505
+L 135.958364 166.961225
+L 137.705113 169.350114
+L 138.578487 170.266057
+L 139.451861 171.014025
+L 140.325236 171.605825
+L 141.19861 172.052007
+L 142.071985 172.361865
+L 142.945359 172.543478
+L 143.818734 172.60379
+L 145.565483 172.383336
+L 147.312232 171.738312
+L 149.058981 170.697703
+L 150.80573 169.287028
+L 152.552479 167.533253
+L 154.299228 165.468692
+L 156.919351 161.879608
+L 159.539474 157.857568
+L 167.399845 145.43152
+L 170.019968 141.945668
+L 171.766717 139.975897
+L 173.513466 138.336169
+L 175.260215 137.052928
+L 177.006964 136.140093
+L 178.753713 135.599366
+L 180.500462 135.421072
+L 182.247211 135.585415
+L 183.99396 136.064049
+L 185.740709 136.821829
+L 187.487458 137.81863
+L 190.107581 139.666843
+L 193.601079 142.555549
+L 200.588075 148.553242
+L 203.208198 150.534385
+L 205.828322 152.247878
+L 208.448445 153.650021
+L 211.068569 154.719794
+L 213.688692 155.456279
+L 216.308815 155.875473
+L 218.928939 156.006783
+L 221.549062 155.889462
+L 224.169186 155.569167
+L 227.662684 154.910956
+L 233.776305 153.443976
+L 239.889926 152.028896
+L 244.256799 151.262508
+L 247.750297 150.856517
+L 251.243795 150.649779
+L 254.737292 150.637148
+L 259.104165 150.863992
+L 264.344412 151.412881
+L 271.331408 152.414589
+L 283.55865 154.191816
+L 290.545646 154.950047
+L 297.532642 155.469096
+L 305.393012 155.824053
+L 321.113753 156.234267
+L 335.087744 156.711069
+L 349.061736 157.42456
+L 407.577826 160.679015
+L 486.181529 164.715275
+L 486.181529 164.715275
+" clip-path="url(#p38b5e25751)" style="fill: none; stroke: #285f8d; stroke-width: 1.8; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_3">
+    <path d="M 39.58149 182.64351
+L 39.58149 3.00024
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_4">
+    <path d="M 507.448198 182.64351
+L 507.448198 3.00024
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_5">
+    <path d="M 39.58149 182.64351
+L 507.448198 182.64351
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_6">
+    <path d="M 39.58149 3.00024
+L 507.448198 3.00024
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_17">
+     <g>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m2dd353716e" x="408.671635" y="16.098678" style="fill: #7a838a; stroke: #7a838a"></use>
+     </g>
+    </g>
+    <g id="text_17">
+     <!-- synthetic data -->
+     <g transform="translate(426.671635 19.598678) scale(0.1 -0.1)">
+      <defs>
+       <path id="DejaVuSans-79" d="M 2059 -325
+Q 1816 -950 1584 -1140
+Q 1353 -1331 966 -1331
+L 506 -1331
+L 506 -850
+L 844 -850
+Q 1081 -850 1212 -737
+Q 1344 -625 1503 -206
+L 1606 56
+L 191 3500
+L 800 3500
+L 1894 763
+L 2988 3500
+L 3597 3500
+L 2059 -325
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-6e" d="M 3513 2113
+L 3513 0
+L 2938 0
+L 2938 2094
+Q 2938 2591 2744 2837
+Q 2550 3084 2163 3084
+Q 1697 3084 1428 2787
+Q 1159 2491 1159 1978
+L 1159 0
+L 581 0
+L 581 3500
+L 1159 3500
+L 1159 2956
+Q 1366 3272 1645 3428
+Q 1925 3584 2291 3584
+Q 2894 3584 3203 3211
+Q 3513 2838 3513 2113
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-68" d="M 3513 2113
+L 3513 0
+L 2938 0
+L 2938 2094
+Q 2938 2591 2744 2837
+Q 2550 3084 2163 3084
+Q 1697 3084 1428 2787
+Q 1159 2491 1159 1978
+L 1159 0
+L 581 0
+L 581 4863
+L 1159 4863
+L 1159 2956
+Q 1366 3272 1645 3428
+Q 1925 3584 2291 3584
+Q 2894 3584 3203 3211
+Q 3513 2838 3513 2113
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-63" d="M 3122 3366
+L 3122 2828
+Q 2878 2963 2633 3030
+Q 2388 3097 2138 3097
+Q 1578 3097 1268 2742
+Q 959 2388 959 1747
+Q 959 1106 1268 751
+Q 1578 397 2138 397
+Q 2388 397 2633 464
+Q 2878 531 3122 666
+L 3122 134
+Q 2881 22 2623 -34
+Q 2366 -91 2075 -91
+Q 1284 -91 818 406
+Q 353 903 353 1747
+Q 353 2603 823 3093
+Q 1294 3584 2113 3584
+Q 2378 3584 2631 3529
+Q 2884 3475 3122 3366
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-64" d="M 2906 2969
+L 2906 4863
+L 3481 4863
+L 3481 0
+L 2906 0
+L 2906 525
+Q 2725 213 2448 61
+Q 2172 -91 1784 -91
+Q 1150 -91 751 415
+Q 353 922 353 1747
+Q 353 2572 751 3078
+Q 1150 3584 1784 3584
+Q 2172 3584 2448 3432
+Q 2725 3281 2906 2969
+z
+M 947 1747
+Q 947 1113 1208 752
+Q 1469 391 1925 391
+Q 2381 391 2643 752
+Q 2906 1113 2906 1747
+Q 2906 2381 2643 2742
+Q 2381 3103 1925 3103
+Q 1469 3103 1208 2742
+Q 947 2381 947 1747
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-73"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-79" transform="translate(52.099609 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6e" transform="translate(111.279297 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-74" transform="translate(174.658203 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-68" transform="translate(213.867188 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-65" transform="translate(277.246094 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-74" transform="translate(338.769531 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-69" transform="translate(377.978516 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-63" transform="translate(405.761719 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(460.742188 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-64" transform="translate(492.529297 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-61" transform="translate(556.005859 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-74" transform="translate(617.285156 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-61" transform="translate(656.494141 0)"></use>
+     </g>
+    </g>
+    <g id="line2d_18">
+     <path d="M 398.671635 30.776803
+L 408.671635 30.776803
+L 418.671635 30.776803
+" style="fill: none; stroke: #285f8d; stroke-width: 1.8; stroke-linecap: square"></path>
+    </g>
+    <g id="text_18">
+     <!-- joint fit -->
+     <g transform="translate(426.671635 34.276803) scale(0.1 -0.1)">
+      <defs>
+       <path id="DejaVuSans-6a" d="M 603 3500
+L 1178 3500
+L 1178 -63
+Q 1178 -731 923 -1031
+Q 669 -1331 103 -1331
+L -116 -1331
+L -116 -844
+L 38 -844
+Q 366 -844 484 -692
+Q 603 -541 603 -63
+L 603 3500
+z
+M 603 4863
+L 1178 4863
+L 1178 4134
+L 603 4134
+L 603 4863
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-6f" d="M 1959 3097
+Q 1497 3097 1228 2736
+Q 959 2375 959 1747
+Q 959 1119 1226 758
+Q 1494 397 1959 397
+Q 2419 397 2687 759
+Q 2956 1122 2956 1747
+Q 2956 2369 2687 2733
+Q 2419 3097 1959 3097
+z
+M 1959 3584
+Q 2709 3584 3137 3096
+Q 3566 2609 3566 1747
+Q 3566 888 3137 398
+Q 2709 -91 1959 -91
+Q 1206 -91 779 398
+Q 353 888 353 1747
+Q 353 2609 779 3096
+Q 1206 3584 1959 3584
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-66" d="M 2375 4863
+L 2375 4384
+L 1825 4384
+Q 1516 4384 1395 4259
+Q 1275 4134 1275 3809
+L 1275 3500
+L 2222 3500
+L 2222 3053
+L 1275 3053
+L 1275 0
+L 697 0
+L 697 3053
+L 147 3053
+L 147 3500
+L 697 3500
+L 697 3744
+Q 697 4328 969 4595
+Q 1241 4863 1831 4863
+L 2375 4863
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6a"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6f" transform="translate(27.783203 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-69" transform="translate(88.964844 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6e" transform="translate(116.748047 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-74" transform="translate(180.126953 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(219.335938 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-66" transform="translate(251.123047 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-69" transform="translate(286.328125 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-74" transform="translate(314.111328 0)"></use>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_7">
+    <path d="M 39.58149 398.64351
+L 507.448198 398.64351
+L 507.448198 219.00024
+L 39.58149 219.00024
+z
+" style="fill: #ffffff"></path>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_10">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="39.58149" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_19">
+      <!-- 2.4 -->
+      <g transform="translate(31.629928 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-32"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-34" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="98.064828" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_20">
+      <!-- 2.6 -->
+      <g transform="translate(90.113266 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-32"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-36" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="156.548167" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_21">
+      <!-- 2.8 -->
+      <g transform="translate(148.596604 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-32"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-38" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="215.031505" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_22">
+      <!-- 3.0 -->
+      <g transform="translate(207.079943 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-33"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="273.514844" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_23">
+      <!-- 3.2 -->
+      <g transform="translate(265.563281 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-33"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-32" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="331.998182" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_24">
+      <!-- 3.4 -->
+      <g transform="translate(324.04662 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-33"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-34" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="390.481521" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_25">
+      <!-- 3.6 -->
+      <g transform="translate(382.529958 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-33"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-36" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="448.964859" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_26">
+      <!-- 3.8 -->
+      <g transform="translate(441.013297 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-33"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-38" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_18">
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m59ca7c79f6" x="507.448198" y="398.64351" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_27">
+      <!-- 4.0 -->
+      <g transform="translate(499.496635 413.241947) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-34"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="text_28">
+     <!-- Distance / nm -->
+     <g transform="translate(238.750781 426.920073) scale(0.1 -0.1)">
+      <defs>
+       <path id="DejaVuSans-44" d="M 1259 4147
+L 1259 519
+L 2022 519
+Q 2988 519 3436 956
+Q 3884 1394 3884 2338
+Q 3884 3275 3436 3711
+Q 2988 4147 2022 4147
+L 1259 4147
+z
+M 628 4666
+L 1925 4666
+Q 3281 4666 3915 4102
+Q 4550 3538 4550 2338
+Q 4550 1131 3912 565
+Q 3275 0 1925 0
+L 628 0
+L 628 4666
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-44"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-69" transform="translate(77.001953 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-73" transform="translate(104.785156 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-74" transform="translate(156.884766 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-61" transform="translate(196.09375 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6e" transform="translate(257.373047 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-63" transform="translate(320.751953 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-65" transform="translate(375.732422 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(437.255859 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2f" transform="translate(469.042969 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(502.734375 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6e" transform="translate(534.521484 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6d" transform="translate(597.900391 0)"></use>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_6">
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="390.477907" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_29">
+      <!-- 0.0 -->
+      <g transform="translate(16.678365 394.277126) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="354.154054" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_30">
+      <!-- 0.5 -->
+      <g transform="translate(16.678365 357.953273) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-35" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_30">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="317.830201" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_31">
+      <!-- 1.0 -->
+      <g transform="translate(16.678365 321.62942) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-31"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_31">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="281.506348" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_32">
+      <!-- 1.5 -->
+      <g transform="translate(16.678365 285.305567) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-31"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-35" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_32">
+      <g>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#m4b8bd10c1d" x="39.58149" y="245.182495" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="text_33">
+      <!-- 2.0 -->
+      <g transform="translate(16.678365 248.981714) scale(0.1 -0.1)">
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-32"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2e" transform="translate(63.623047 0)"></use>
+       <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-30" transform="translate(95.410156 0)"></use>
+      </g>
+     </g>
+    </g>
+    <g id="text_34">
+     <!-- P(r) / nm⁻¹ -->
+     <g transform="translate(10.598678 335.339063) rotate(-90) scale(0.1 -0.1)">
+      <defs>
+       <path id="DejaVuSans-50" d="M 1259 4147
+L 1259 2394
+L 2053 2394
+Q 2494 2394 2734 2622
+Q 2975 2850 2975 3272
+Q 2975 3691 2734 3919
+Q 2494 4147 2053 4147
+L 1259 4147
+z
+M 628 4666
+L 2053 4666
+Q 2838 4666 3239 4311
+Q 3641 3956 3641 3272
+Q 3641 2581 3239 2228
+Q 2838 1875 2053 1875
+L 1259 1875
+L 1259 0
+L 628 0
+L 628 4666
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-72" d="M 2631 2963
+Q 2534 3019 2420 3045
+Q 2306 3072 2169 3072
+Q 1681 3072 1420 2755
+Q 1159 2438 1159 1844
+L 1159 0
+L 581 0
+L 581 3500
+L 1159 3500
+L 1159 2956
+Q 1341 3275 1631 3429
+Q 1922 3584 2338 3584
+Q 2397 3584 2469 3576
+Q 2541 3569 2628 3553
+L 2631 2963
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-207b" d="M 428 3359
+L 2950 3359
+L 2950 3063
+L 428 3063
+L 428 3359
+z
+" transform="scale(0.015625)"></path>
+       <path id="DejaVuSans-b9" d="M 488 2431
+L 1125 2431
+L 1125 4341
+L 428 4213
+L 428 4575
+L 1147 4697
+L 1575 4697
+L 1575 2431
+L 2216 2431
+L 2216 2088
+L 488 2088
+L 488 2431
+z
+" transform="scale(0.015625)"></path>
+      </defs>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-50"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-28" transform="translate(60.302734 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-72" transform="translate(99.316406 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-29" transform="translate(140.429688 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(179.443359 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-2f" transform="translate(211.230469 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-20" transform="translate(244.921875 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6e" transform="translate(276.708984 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-6d" transform="translate(340.087891 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-207b" transform="translate(437.5 0)"></use>
+      <use xlink:href="/notes/electron-electron-distance/chapter-14.html#DejaVuSans-b9" transform="translate(490.283203 0)"></use>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_33">
+    <path d="M -1 390.477773
+L 74.671493 390.374153
+L 92.216495 390.119322
+L 103.913162 389.708655
+L 112.685663 389.159053
+L 118.533997 388.618446
+L 124.382331 387.889328
+L 130.230665 386.919794
+L 136.078998 385.648855
+L 141.927332 384.006659
+L 144.851499 383.022307
+L 147.775666 381.915455
+L 150.699833 380.675457
+L 153.624 379.291461
+L 156.548167 377.752531
+L 159.472334 376.047781
+L 162.396501 374.166532
+L 165.320668 372.098478
+L 168.244835 369.833879
+L 171.169001 367.36376
+L 174.093168 364.680131
+L 177.017335 361.776205
+L 179.941502 358.646632
+L 182.865669 355.287735
+L 185.789836 351.697735
+L 188.714003 347.876979
+L 191.63817 343.828151
+L 194.562337 339.556467
+L 197.486504 335.069845
+L 203.334838 325.49779
+L 209.183171 315.233893
+L 215.031505 304.448413
+L 232.576507 271.332515
+L 238.424841 261.002159
+L 241.349008 256.14714
+L 244.273175 251.551902
+L 247.197341 247.254967
+L 250.121508 243.293227
+L 253.045675 239.701421
+L 255.969842 236.511629
+L 258.894009 233.752795
+L 261.818176 231.450289
+L 264.742343 229.625522
+L 267.66651 228.295613
+L 270.590677 227.473119
+L 273.514844 227.165843
+L 276.439011 227.376706
+L 279.363178 228.103703
+L 282.287345 229.339933
+L 285.211511 231.073712
+L 288.135678 233.288752
+L 291.059845 235.964418
+L 293.984012 239.07605
+L 296.908179 242.595336
+L 299.832346 246.490746
+L 302.756513 250.728
+L 305.68068 255.270565
+L 308.604847 260.080185
+L 314.453181 270.342113
+L 320.301515 281.193353
+L 337.846516 314.24868
+L 343.69485 324.569071
+L 349.543184 334.211432
+L 352.467351 338.736978
+L 355.391518 343.049371
+L 358.315684 347.140172
+L 361.239851 351.003676
+L 364.164018 354.636741
+L 367.088185 358.0386
+L 370.012352 361.210652
+L 372.936519 364.156239
+L 375.860686 366.880418
+L 378.784853 369.389723
+L 381.70902 371.69194
+L 384.633187 373.795877
+L 387.557354 375.711146
+L 390.481521 377.447963
+L 393.405688 379.01695
+L 396.329854 380.428969
+L 399.254021 381.694956
+L 402.178188 382.825788
+L 408.026522 384.724472
+L 413.874856 386.206641
+L 419.72319 387.347001
+L 425.571524 388.211868
+L 431.419858 388.858528
+L 440.192358 389.522633
+L 448.964859 389.930266
+L 460.661527 390.228439
+L 478.206528 390.408177
+L 513.296531 390.47404
+L 519.4 390.47567
+L 519.4 390.47567
+" clip-path="url(#pce5b90f8bf)" style="fill: none; stroke: #8d3b3b; stroke-width: 2; stroke-linecap: square"></path>
+   </g>
+   <g id="line2d_34">
+    <path d="M 273.514844 398.64351
+L 273.514844 219.00024
+" clip-path="url(#pce5b90f8bf)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #53616c"></path>
+   </g>
+   <g id="patch_8">
+    <path d="M 39.58149 398.64351
+L 39.58149 219.00024
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_9">
+    <path d="M 507.448198 398.64351
+L 507.448198 219.00024
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_10">
+    <path d="M 39.58149 398.64351
+L 507.448198 398.64351
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="patch_11">
+    <path d="M 39.58149 219.00024
+L 507.448198 219.00024
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clippath id="p38b5e25751">
+   <rect x="39.58149" y="3.00024" width="467.866708" height="179.64327"></rect>
+  </clippath>
+  <clippath id="pce5b90f8bf">
+   <rect x="39.58149" y="219.00024" width="467.866708" height="179.64327"></rect>
+  </clippath>
+ </defs>
+</svg>
+<figcaption>图14-2　DeerLab合成案例的带噪时间迹、联合拟合和恢复距离分布。虚线表示设定的3.20 nm平均距离；曲线由本报告附带脚本实际生成。</figcaption></figure>
+<h3 id="section-5"><a class="anchor-heading" href="#section-5" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>结果解释与实验数据替换</h3><p>平均距离和分布宽度均恢复到设定值附近，残差RMS为0.002944，与注入噪声的标准差0.003相当，说明本例中的前向模型与生成模型相容。该结果只验证代码路线及单位映射。实验数据还需经过复数相位、时间零点、异常点和采集序列检查。</p>
+<p>替换为实测Bruker文件时，可使用<code>t, V = dl.deerload("sample.DTA")</code>读取时间轴和信号，并在建立模型前保存原始复数数据。若采用非参数距离分布，可移除<code>Pmodel=dl.dd_gauss</code>并启用相应正则化；输出中应增加正则化选择、点态区间和背景模型敏感性。</p></section>
+
+<section id="c14-deeranalysis"><h2 id="section-6"><a class="anchor-heading" href="#section-6" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>DeerAnalysis：交互处理与复查</h2><p>DeerAnalysis适合交互检查时间零点、背景范围、Tikhonov参数和距离分布。2026版公开仓库说明其采用重新设计的界面，并结合DeerLab与DeerNet。正式项目应保存软件版本、项目文件、导出时间迹和处理设置，截图只能作为附加记录。</p>
+<div class="wrap"><table><tr><th>操作</th><th>建议保存</th><th>复查条件</th></tr><tr><td>相位与零点</td><td>校正前后复数数据</td><td>虚部和零点邻域无系统结构</td></tr><tr><td>背景拟合</td><td>模型、拟合区间及参数</td><td>改变区间后主结论稳定</td></tr><tr><td>Tikhonov</td><td>L-curve及多个\(\alpha\)</td><td>主峰不依赖单个正则化点</td></tr><tr><td>DeerNet</td><td>网络输出和区间</td><td>与物理模型的差异得到解释</td></tr></table></div></section>
+
+<section id="c14-deernet"><h2 id="section-7"><a class="anchor-heading" href="#section-7" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>DeerNet：神经网络结果的定位</h2><p>DeerNet由模拟数据库训练，可快速给出距离分布及不确定度估计。它适合作为独立分析通道和异常提示。训练数据覆盖的背景、噪声、距离范围和实验类型决定其适用范围；多路径、高自旋谐波、强取向选择和明显交换作用需要单独确认。</p>
+<div class="box warn"><strong>使用限制</strong><p>神经网络与Tikhonov结果一致时，可以增加对主峰位置的信心；两者不一致时，应返回复数时间迹、背景、路径和训练分布适用性。结果差异不能通过简单平均处理。</p></div></section>
+
+<section id="c14-easyspin"><h2 id="section-8"><a class="anchor-heading" href="#section-8" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>EasySpin具体案例：CW耦合谱与脉冲自旋动力学</h2><p>本节设置三个可执行案例。CW案例用<code>pepper</code>计算双亚硝基的距离及交换耦合扫描；Rabi案例用<code>spidyan</code>计算单自旋在有限矩形脉冲下的纵向磁化；Hahn echo案例用<code>saffron</code>对亚硝基粉末体系和整形脉冲进行回波瞬态计算。</p>
+<div class="case-note"><p>本节脚本可复制到已安装EasySpin的MATLAB环境中手动运行。运行前应确认EasySpin已加入MATLAB搜索路径，并依据所用版本核对函数参数。示例输出用于比较距离、交换耦合、脉冲长度和脉冲形状对连续波谱或时间域信号的影响。</p></div><h3 id="section-9"><a class="anchor-heading" href="#section-9" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>模型设置与距离映射</h3><div class="eq">$$D_{dip}=\frac{52.04}{r^3}\ \mathrm{MHz},\qquad \mathbf D=\operatorname{diag}(D_{dip},D_{dip},-2D_{dip}).$$<span class="label">(14.1)</span></div>
+<div class="wrap"><table class="metric"><tr><th>电子距离</th><th><code>Sys.dip</code></th><th>预期谱学效应</th></tr><tr><td>1.2 nm</td><td>30.116 MHz</td><td>偶极张量最大，双标谱相对参照谱出现最明显的展宽和线形重分配</td></tr><tr><td>1.5 nm</td><td>15.419 MHz</td><td>偶极效应处于中间水平，适合检查交换项与偶极项的相关性</td></tr><tr><td>2.0 nm</td><td>6.505 MHz</td><td>偶极贡献减弱，线宽、g/A应变和基线误差更易影响距离判别</td></tr></table></div>
+<p><code>Sys.dip</code>的标量形式在EasySpin中展开为轴对称主值<code>[D D -2D]</code>；<code>Sys.J</code>采用 (+J\mathbf S_1\cdot\mathbf S_2) 的哈密顿量约定。脚本中的两个亚硝基具有相同且共轴的g与A张量，因此属于刚性、简化的双自由基测试模型。实际蛋白标签应加入两标签相对取向、rotamer分布、g/A应变及可能的距离分布。</p>
+<h3 id="section-10"><a class="anchor-heading" href="#section-10" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>完整MATLAB脚本</h3><pre class="code"><code>clear; clc;
+% EasySpin concrete case: X-band CW spectra of two coupled nitroxides
+% Units: g dimensionless, A/J/dip in MHz, field in mT, mwFreq in GHz
+
+rlist = [1.2 1.5 2.0];          % electron-electron distances / nm
+gN = [2.009 2.006 2.002];
+AN = [20 20 100];               % one 14N hyperfine tensor / MHz
+
+Exp.mwFreq = 9.5;
+Exp.Range = [330 350];
+Exp.nPoints = 4096;
+Opt.Method = 'matrix';
+
+% Single-nitroxide reference
+Ref.S = 1/2;
+Ref.g = gN;
+Ref.Nucs = '14N';
+Ref.A = AN;
+Ref.lwpp = 0.12;
+[B,spcRef] = pepper(Ref,Exp,Opt);
+spcRef = spcRef/max(abs(spcRef));
+
+% Biradical distance scan. Scalar Sys.dip denotes [D D -2D].
+spcDip = zeros(Exp.nPoints,numel(rlist));
+for k = 1:numel(rlist)
+  Sys.S = [1/2 1/2];
+  Sys.g = [gN; gN];
+  Sys.Nucs = '14N,14N';
+  Sys.A = [AN 0 0 0; 0 0 0 AN];
+  Sys.dip = 52.04/rlist(k)^3;   % point-dipole D / MHz
+  Sys.J = 0;                   % +J*S1.S2 convention
+  Sys.lwpp = 0.12;
+  [B,spcDip(:,k)] = pepper(Sys,Exp,Opt);
+  spcDip(:,k) = spcDip(:,k)/max(abs(spcDip(:,k)));
+end
+
+figure(1); clf
+plot(B,spcRef,'k--','LineWidth',1.1); hold on
+plot(B,spcDip,'LineWidth',1.2)
+xlabel('Magnetic field / mT'); ylabel('Normalized first derivative')
+legend('single nitroxide','1.2 nm','1.5 nm','2.0 nm')
+
+% Exchange-coupling sensitivity at a fixed 1.5 nm distance
+Jlist = [0 5 20];              % MHz
+Sys.dip = 52.04/1.5^3;
+spcJ = zeros(Exp.nPoints,numel(Jlist));
+for k = 1:numel(Jlist)
+  Sys.J = Jlist(k);
+  [B,spcJ(:,k)] = pepper(Sys,Exp,Opt);
+  spcJ(:,k) = spcJ(:,k)/max(abs(spcJ(:,k)));
+end
+
+figure(2); clf
+plot(B,spcJ,'LineWidth',1.2)
+xlabel('Magnetic field / mT'); ylabel('Normalized first derivative')
+legend('J = 0 MHz','J = 5 MHz','J = 20 MHz')
+</code></pre>
+<h3 id="section-11"><a class="anchor-heading" href="#section-11" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>输出读取与拟合扩展</h3><div class="wrap"><table><tr><th>输出</th><th>判读内容</th><th>实验用途</th></tr><tr><td>距离扫描谱</td><td>耦合增强时谱翼、转折点和三线结构的共同变化</td><td>确认双标谱变化可由偶极耦合解释的程度</td></tr><tr><td>交换扫描谱</td><td>固定偶极项后，交换耦合引起的线位和整体线形变化</td><td>检查仅以偶极展宽换算距离的偏差</td></tr><tr><td>单标参照谱</td><td>g、A和本征线宽</td><td>约束双标拟合中的共享谱学参数</td></tr><tr><td>残差与参数轮廓</td><td>$r$、$J$、线宽和张量应变间的相关性</td><td>给出可辨识区间，避免只报告单个最佳距离</td></tr></table></div>
+<p>实验全谱拟合可用EasySpin的<code>esfit</code>或外部优化器，把单标和双标数据作为联合目标函数。g、A和部分线宽由单标谱约束，双标谱增加距离分布及J项。小于约1.5–2.0 nm的刚性双自由基适合采用此路线；距离增大后偶极线形变化快速减弱，脉冲偶极谱通常更合适。</p>
+
+<h3 id="section-12"><a class="anchor-heading" href="#section-12" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>脉冲案例A：Rabi振荡与π/2、π脉宽标定</h3><p>Rabi案例使用单个共振电子自旋和30 MHz矩形微波脉冲，按1 ns步长扫描脉冲长度。检测算符设为<code>{'z1'}</code>，输出脉冲结束时的纵向磁化。共振且忽略弛豫时，理论关系为</p>
+<div class="eq">$$M_z(t_p)=M_z(0)\cos(2\pi\nu_1t_p),\qquad \nu_1=30\ \mathrm{MHz}.$$<span class="label">(14.2)</span></div>
+<div class="wrap"><table class="metric"><tr><th>量</th><th>理论值</th><th>模拟检查</th></tr><tr><td>Rabi周期</td><td>33.33 ns</td><td>相邻纵向磁化极大值的间隔</td></tr><tr><td>π/2脉宽</td><td>8.33 ns</td><td>首次 $M_z=0$ 的位置</td></tr><tr><td>π脉宽</td><td>16.67 ns</td><td>首次 $M_z=-M_z(0)$ 的位置</td></tr><tr><td>2π脉宽</td><td>33.33 ns</td><td>纵向磁化首次返回初值</td></tr></table></div>
+<pre class="code"><code>clear; clc; clf
+% EasySpin pulse case A: Rabi oscillation with spidyan
+
+Sys.ZeemanFreq = 9.500;          % resonance frequency / GHz
+
+Pulse.Type = 'rectangular';
+Pulse.tp = 0.001;                % initial pulse length / µs
+Pulse.Amplitude = 30;            % nutation frequency / MHz
+
+Exp.Sequence = {Pulse};
+Exp.mwFreq = 9.500;              % carrier frequency / GHz
+Exp.DetWindow = 0;               % detect immediately after pulse
+Exp.DetOperator = {'z1'};        % longitudinal electron magnetization
+
+Exp.nPoints = 99;
+Exp.Dim1 = {'p1.tp' 0.001};      % scan pulse 1 length in 1 ns steps
+
+[tp,Mz] = spidyan(Sys,Exp);
+figure(1); clf
+plot(tp*1e3,real(Mz),'LineWidth',1.3)
+xlabel('Pulse length / ns')
+ylabel('&lt;S_z&gt; / normalized units')
+title('Rabi oscillation, 30 MHz B_1')
+grid on
+</code></pre>
+<p>该脚本用于检查脉宽、$B_1$与翻转角之间的映射。实验nutation曲线还包含 $B_1$空间不均匀、离共振、自旋包分布、谐振器瞬态和弛豫，因此振荡包络不能直接归属于单一 $T_2$。可在脚本中增加<code>Sys.T1</code>、<code>Sys.T2</code>及频率偏移扫描，分别检查弛豫和失谐影响。</p>
+
+<h3 id="section-13"><a class="anchor-heading" href="#section-13" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>脉冲案例B：整形脉冲亚硝基Hahn echo</h3>
+<figure class="flow-figure"><svg viewbox="0 0 1040 270" role="img" aria-label="EasySpin Rabi与Hahn echo脉冲案例示意">
+<g font-family="system-ui"><text x="520" y="27" text-anchor="middle" font-size="17" font-weight="700" fill="#193b59">EasySpin脉冲模拟案例</text>
+<text x="45" y="73" font-size="14" font-weight="700" fill="#263746">A　Rabi：扫描矩形脉冲长度</text><line x1="45" y1="122" x2="990" y2="122" stroke="#71808c"></line><rect x="210" y="82" width="360" height="40" fill="#536f86"></rect><text x="390" y="107" text-anchor="middle" fill="#fff" font-size="13">p1.tp = 1, 2, …, 99 ns</text><text x="600" y="107" fill="#53616c" font-size="12">检测 ⟨Sᶻ⟩</text>
+<text x="45" y="171" font-size="14" font-weight="700" fill="#263746">B　Hahn echo：有限带宽整形脉冲</text><line x1="45" y1="232" x2="990" y2="232" stroke="#71808c"></line><rect x="120" y="197" width="70" height="35" fill="#536f86"></rect><rect x="430" y="181" width="70" height="51" fill="#8d3b3b"></rect><rect x="760" y="211" width="145" height="21" fill="#d6b36a"></rect><text x="155" y="192" text-anchor="middle" font-size="12">π/2 chirp</text><text x="465" y="175" text-anchor="middle" font-size="12">π chirp</text><text x="832" y="205" text-anchor="middle" font-size="12">echo window</text><text x="310" y="220" text-anchor="middle" font-size="12">τ</text><text x="630" y="220" text-anchor="middle" font-size="12">τ + tπ</text></g></svg><figcaption>图14-3　Rabi案例以脉宽为间接维；Hahn echo案例使用有限时长、有限扫频范围的整形脉冲并输出复数回波窗口。</figcaption></figure>
+<p>Hahn echo案例采用亚硝基 $S=1/2$、$I=1$ 自旋哈密顿量，在324.9 mT和9.1 GHz条件下使用±120 MHz扫频的quarter-sine/linear脉冲。π/2脉冲长度为0.200 μs，π脉冲长度为0.100 μs，脉冲间边沿延迟为0.200 μs。</p>
+<div class="wrap"><table><tr><th>EasySpin对象</th><th>本例设置</th><th>物理含义</th></tr><tr><td><code>p90.Frequency</code></td><td>[-120, 120] MHz</td><td>相对载频的扫频范围</td></tr><tr><td><code>p90.trise</code></td><td>0.030 μs</td><td>quarter-sine边沿平滑时间</td></tr><tr><td><code>Exp.Sequence</code></td><td><code>{p90 tau p180 tau+p180.tp}</code></td><td>EasySpin延迟按前一事件末端至后一事件起点定义；补加π脉冲时长使检测窗位于回波中心附近</td></tr><tr><td><code>Exp.DetWindow</code></td><td>[-0.15, 0.15] μs</td><td>回波中心两侧的复数瞬态窗口</td></tr><tr><td><code>Opt.GridSize</code></td><td>30</td><td>粉末取向平均网格，正式计算需做收敛性检查</td></tr></table></div>
+<pre class="code"><code>clear; clc; clf
+% EasySpin pulse case B: nitroxide Hahn echo with shaped pulses
+
+Sys.S = 1/2;
+Sys.g = [2.009 2.006 2.002];
+Sys.Nucs = '14N';
+Sys.A = [11 11 95];              % MHz
+Exp.Field = 324.9;               % mT
+Exp.mwFreq = 9.1;                % GHz
+
+% Quarter-sine-edged linear chirp excitation pulse
+p90.Type = 'quartersin/linear';
+p90.tp = 0.200;                  % µs
+p90.Flip = pi/2;
+p90.Frequency = [-120 120];      % MHz relative to carrier
+p90.trise = 0.030;               % µs
+
+% Refocusing pulse with the same sweep range
+p180 = p90;
+p180.tp = 0.100;                 % µs
+p180.Flip = pi;
+
+tau = 0.200;                     % µs
+Exp.Sequence = {p90 tau p180 tau+p180.tp};
+Exp.DetWindow = [-0.15 0.15];    % echo transient window / µs
+Exp.DetPhase = pi;
+
+Opt.GridSize = 30;               % powder-orientation grid
+Opt.Verbosity = true;
+
+[t,echo] = saffron(Sys,Exp,Opt);
+figure(2); clf
+plot(t,real(echo),'LineWidth',1.3); hold on
+plot(t,imag(echo),'LineWidth',1.0)
+xlabel('Detection time / µs')
+ylabel('Echo signal / a.u.')
+legend('I','Q')
+title('Nitroxide Hahn-echo transient')
+grid on
+</code></pre>
+<p>该案例用于比较I/Q回波、整形脉冲覆盖和取向平均。改变扫频范围可检查脉冲带宽不足引起的谱包选择；改变<code>GridSize</code>可识别离散取向采样产生的伪回波；把整形脉冲替换为矩形脉冲可比较有限带宽条件下的回波幅度和相位。</p>
+
+<h3 id="section-14"><a class="anchor-heading" href="#section-14" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>EasySpin脉冲函数的适用边界</h3><div class="wrap"><table><tr><th>函数</th><th>适合对象</th><th>本报告案例</th><th>限制条件</th></tr><tr><td><code>spidyan</code></td><td>有限脉冲、任意事件序列、状态轨迹和自定义检测</td><td>Rabi振荡</td><td>一次调用处理单一自旋包；粉末谱需显式循环或另用<code>saffron</code></td></tr><tr><td><code>saffron</code></td><td>单电子体系的脉冲EPR／ENDOR、粉末平均和瞬态</td><td>亚硝基Hahn echo</td><td>当前文档限定为单电子自旋体系；双电子PDS需另建传播模型</td></tr><tr><td><code>evolve</code></td><td>密度矩阵在理想脉冲与自由演化阶段的传播</td><td>本节未单列</td><td>脉冲有限带宽和整形波形需由更完整的传播方法处理</td></tr></table></div>
+<p>这两个脉冲案例覆盖实验前置校准与回波形成，尚未把4-pulse DEER、DQC或RIDME完整序列写成EasySpin双电子计算程序。此类PDS模拟需同时处理两个电子、自旋包选择、pump/observer频率、粉末取向、路径选择和相位循环，适合作为独立计算模块开发。</p></section>
+
+<section id="c14-label"><h2 id="section-15"><a class="anchor-heading" href="#section-15" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>MMMx与chiLife：标签构象到预测距离</h2><p>标签建模软件从分子结构和位点生成rotamer集合，计算电子自旋中心间的预测分布。其输出用于比较结构状态、选择标签位点和解释峰宽。实验选择权重、标记失败、聚集和背景不包含在常规rotamer计算中。</p>
+<div class="wrap"><table><tr><th>输入</th><th>输出</th><th>需与实验共同检查</th></tr><tr><td>PDB／结构模型</td><td>位点局部空间和标签可达体积</td><td>结构状态及缺失残基</td></tr><tr><td>标签类型与rotamer库</td><td>标签构象和权重</td><td>温度、溶剂和局部相互作用</td></tr><tr><td>两个标记位点</td><td>预测\(P_{calc}(r)\)</td><td>实验选择函数和反演分辨</td></tr><tr><td>多结构状态</td><td>各状态距离分布</td><td>状态比例及共享标签模型</td></tr></table></div></section>
+
+<section id="c14-workflows"><h2 id="section-16"><a class="anchor-heading" href="#section-16" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>案例组合与后续扩展</h2><div class="wrap"><table><tr><th>案例</th><th>选用方法的理由</th><th>说明的实验问题</th><th>扩展数据</th></tr><tr><td>EasySpin双亚硝基CW</td><td>1.2–2.0 nm短距离会改变整条CW线形，且$J$项可能不可忽略</td><td>双标展宽中可归属于偶极耦合的部分及$D/J$相关性</td><td>单标谱、温度系列、刚性分子尺</td></tr><tr><td>EasySpin Rabi</td><td>脉宽扫描直接连接 $B_1$、nutation频率和翻转角</td><td>π/2、π脉宽标定及失谐、弛豫、$B_1$不均匀的影响</td><td>实测nutation数据、谐振器瞬态和功率标定</td></tr><tr><td>EasySpin Hahn echo</td><td>有限扫频脉冲和粉末取向共同决定可检测回波</td><td>整形脉冲覆盖、I/Q相位、检测窗及取向网格收敛</td><td>实测反转轮廓、回波瞬态和场位系列</td></tr><tr><td>DeerLab 4-pulse DEER</td><td>频率分离的自旋包和约4 μs时间窗适合标准单路径模型</td><td>距离峰位、分布宽度、调制深度和背景可在同一前向模型中估计</td><td>实测复数时间迹、背景候选模型、重复测量</td></tr><tr><td>MMMx／chiLife结构比较</td><td>实验给出电子自旋距离，结构解释还需标签rotamer映射</td><td>候选构象的距离分布及状态比例与实验分布的相容程度</td><td>PDB、标签类型、位点与结构状态集合</td></tr></table></div>
+<p>EasySpin三项案例和DeerLab案例均给出完整代码，DeerLab案例同时给出实际运行结果。结构标签案例需要指定PDB、标记位点和标签类型，适合在后续具体样品章节中建立，避免用任意结构产生没有项目含义的示例。</p></section>
+
+<section id="c14-selection"><h2 id="section-17"><a class="anchor-heading" href="#section-17" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>方法与软件选择矩阵</h2><div class="wrap"><table class="decision"><tr><th>实验条件</th><th>实验方法</th><th>分析工具组合</th><th>最低检查</th></tr><tr><td>短距离且CW展宽明显</td><td>CW全谱分析</td><td>EasySpin＋联合拟合脚本</td><td>单标对照、\(D/J\)轮廓</td></tr><tr><td>谱包可频率分离</td><td>4p DEER</td><td>DeerLab或DeerAnalysis＋DeerNet对照</td><td>反转轮廓、背景和零点</td></tr><tr><td>长时间窗受Hahn衰减限制</td><td>5p／7p DEER</td><td>DeerLab多路径模型</td><td>路径幅度和回波交叉</td></tr><tr><td>同类自旋谱线高度重叠</td><td>DQC或SIFTER</td><td>EasySpin有限脉冲检查＋DeerLab自定义核</td><td>宽带覆盖和过滤组分</td></tr><tr><td>宽谱金属伙伴且\(T_1\)合适</td><td>RIDME</td><td>DeerLab谐波模型＋混合时间全局拟合</td><td>overtone coefficients</td></tr><tr><td>刚性标签或金属中心取向明显</td><td>多场位PDS</td><td>EasySpin选择函数＋全局前向模型</td><td>g/A/ZFS与Euler角</td></tr><tr><td>需要连接结构模型</td><td>任一可靠PDS方法</td><td>DeerLab＋MMMx／chiLife</td><td>电子中心与骨架距离区分</td></tr></table></div></section>
+
+<section id="c14-validation"><h2 id="section-18"><a class="anchor-heading" href="#section-18" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>软件结果的三级检查</h2><div class="wrap"><table><tr><th>级别</th><th>内容</th><th>通过条件</th></tr><tr><td><span class="tag level-a">A级</span></td><td>同一软件内的残差、参数轮廓和模型比较</td><td>残差无系统结构，参数区间有限</td></tr><tr><td><span class="tag level-b">B级</span></td><td>两种计算路线处理同一时间迹</td><td>主距离与主要状态结论一致</td></tr><tr><td><span class="tag level-c">C级</span></td><td>实验条件或结构对照</td><td>浓度、场位、标签或独立结构数据给出相容结果</td></tr></table></div><p>软件间一致只覆盖计算实现。实验伪影、错误序列模型或共同的前提错误可能在多个软件中产生相似结果，因此仍需实验对照。</p></section>
+
+<section id="c14-record"><h2 id="section-19"><a class="anchor-heading" href="#section-19" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>可重复计算记录</h2><div class="wrap"><table class="checklist"><tr><th>记录项</th><th>内容</th></tr><tr><td>环境</td><td>操作系统、MATLAB／Python版本、软件包版本和依赖</td></tr><tr><td>输入</td><td>原始文件校验值、单位、通道和元数据</td></tr><tr><td>预处理</td><td>相位、零点、裁剪、异常点和归一化</td></tr><tr><td>模型</td><td>核函数、背景、路径、谐波、取向和约束</td></tr><tr><td>输出</td><td>拟合曲线、残差、参数表、距离分布及区间</td></tr><tr><td>结构</td><td>PDB版本、标签库、位点和rotamer设置</td></tr></table></div></section>
+
+<section id="c14-summary"><h2 id="section-20"><a class="anchor-heading" href="#section-20" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>本章结论</h2><p>第三方软件可以覆盖谱学模拟、PDS反演、神经网络对照和标签结构建模，无需从头开发全部算法。项目仍需编写数据导入、单位统一、元数据保存、批处理和结果汇总代码。采集相位循环、硬件时序和目标谱仪校准不由这些分析包代替。</p></section><hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000">© 2026 Hyphoon <a href="mailto:wuhaifeng@ustc.edu.cn">wuhaifeng@ustc.edu.cn</a>. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。</p><p class="text-small text-grey-dk-000">This site uses <a href="https://just-the-docs.com/">Just the Docs</a>, a documentation theme for Jekyll.</p></footer></main></div></div></div><div class="search-overlay"></div><script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});</script></body></html>

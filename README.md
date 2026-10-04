@@ -33,14 +33,13 @@ bundle exec jekyll serve
 
 用户选定 K：黄色 #F0BE32 内线宽 3.5、白色单侧描边 3（总外宽 9.5），谱线位于结构下半部前景，无坐标轴。此前背景谱线与后景叠层方案废止。用户已授权修改后直接提交并推送，取代此前暂不提交要求。
 
-## Notes 共用阅读模板
+## Notes 文档模板
 
-用于长篇调研、学习笔记、实验方法及计算记录。新文章使用 `_notes/` 内的 Markdown 或 HTML，指定 `layout: note`；元数据统一展示，首页与列表读取同一来源。阅读界面提供 Home、自动目录、页内搜索、主题、缩放、图表与打印样式，不包含教材页码或扫描页功能。
+三篇技术调研采用 Just the Docs 原生文档布局、分章页面、中文及英文跨页搜索与主题切换。默认配色与主页一致；ICO 返回主页，文档标题返回文档首页，每页包含 Back to top 和版权信息。使用原生响应式布局，不提供手动阅读比例或纸张分页。
 
-完整写作字段、功能限制与检查方法见 [docs/NOTE_TEMPLATE.md](docs/NOTE_TEMPLATE.md)。W 波段 EPR 报告是首个迁移样例。
+正文唯一编辑来源在 `_note_sources/`，运行 `python scripts/build-note-docs.py <slug>` 生成 `_notes/` 文档主页、`notes/<slug>/` 子页及索引。修改正文后重新生成，不手工编辑生成页面。官方资源与 MIT 许可位于 `assets/jtd/`。
 
-Notes 模板沿用 NMR_EXP 阅读器的主题和侧栏比例；Home 图标与页内搜索同列于侧栏顶部，正文按 H2 小节生成独立纸张与 Notes 页码。W 波段调研用作完整样例。使用说明见 [Notes 模板文档](docs/NOTE_TEMPLATE.md)。
-
+用途、写作原则、元数据、公式与表格规范、发布检查见 [Notes 写作与版式规范](docs/NOTE_TEMPLATE.md)。
 
 ## URL 约定
 新增网页路径使用小写，项目显示名保持原样。项目入口为 /nmrexp/、/spinplot/、/spinfront/。旧大写根入口和深层页面通过静态兼容页跳转，查询参数和锚点保留。下载资产、代码文件按实际文件名引用，不统一转换文件名大小写。EasyCurling 源码位于 https://github.com/imasenHF/easycurling 。

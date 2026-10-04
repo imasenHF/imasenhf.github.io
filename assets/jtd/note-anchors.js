@@ -1,0 +1,1 @@
+(()=>{if(!location.hash)return;const id=decodeURIComponent(location.hash.slice(1));if(document.getElementById(id))return;fetch(new URL('anchor-map.json',location.href)).then(r=>r.json()).then(map=>{if(!map[id])return;const target=new URL(map[id],location.href);if(target.pathname!==location.pathname)location.replace(target.href)}).catch(()=>{});})();
