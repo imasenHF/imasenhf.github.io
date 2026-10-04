@@ -132,3 +132,7 @@ SpinFront 主入口改为 /spinfront/，旧 /SpinFront/ 保留兼容跳转，保
 
 ## 2026-10-05 导航与项目分类
 Notes 侧栏 Home 返回 /notes/，顶部 ICO 返回 /。首页介绍原文不变，在“正在学的东西，”后主动断行，手机自然换行。Projects 按 _data/project-types.yml 的分类和顺序分组；项目用 project_type 标注，未知类别显示于其他项目。专题调研条目用 note 指向 Notes slug，标题、摘要、URL 从原笔记读取，正文只维护一份。首页精选项目保持原有三个入口。
+
+
+## 2026-10-05 Projects 与 Notes 分区修订
+三份调研只在 Notes 展示，不在 Projects 重复设置入口。Projects 保留软件开发、参考资料、信息整理三类，后续按独立项目的实际类型扩展。此规则覆盖此前将调研笔记列入专题调研项目的安排。

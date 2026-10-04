@@ -45,3 +45,7 @@ Notes 是学习笔记与技术记录的内容栏目，Interests 是兴趣内容�
 | EasyCurling | https://github.com/imasenHF/easycurling | Python/Windows 软件，无网页入口 |
 
 此表覆盖早期路径记录。
+
+
+## 2026-10-05 Projects 与 Notes 分区修订
+三份调研只在 Notes 展示，不在 Projects 重复设置入口。Projects 保留软件开发、参考资料、信息整理三类，后续按独立项目的实际类型扩展。此规则覆盖此前将调研笔记列入专题调研项目的安排。
