@@ -28,3 +28,15 @@
 .chapter-leaf-row>span{font-size:var(--sidebar-font);font-weight:720;color:var(--accent)}
 .sidebar .chapter-leaf-row>a{display:block;padding:0;font-size:var(--sidebar-small);line-height:1.35;color:var(--muted)}
 .chapter-leaf-row:has(a.active){background:var(--accent-soft)}.sidebar .chapter-leaf-row>a.active{color:var(--accent);background:transparent;font-weight:680}.chapter-leaf-row:hover{background:var(--accent-soft)}
+
+/* Confirmed Notes typography, A4-like margins, and content-led tables. */
+.note-brand-line{display:flex;gap:10px;align-items:center;min-width:0}.note-brand-icon{flex:0 0 24px;object-fit:contain}.note-brand-line h2{min-width:0}.brand>p{margin-left:34px}
+.sidebar .home-button{border:0;background:transparent}.sidebar .home-button:hover{background:var(--accent-soft)}.sidebar .home-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sidebar .chapter-group summary>a,.sidebar .chapter-leaf-row>a{font-size:var(--sidebar-font);font-weight:650}.sidebar .chapter-group ol a{font-size:calc(var(--sidebar-font) * .923);font-weight:400}.chapter-group summary{grid-template-columns:auto minmax(0,1fr)}.chapter-group summary>a{white-space:normal}
+.note-page{container-type:inline-size}.note-page .experiment-heading,.note-page .page-block{padding-left:12.1%;padding-right:12.1%}.note-page .experiment-heading{padding-top:clamp(42px,12.1cqw,143px);padding-bottom:26px}.note-page .page-block{padding-top:32px;padding-bottom:clamp(42px,12.1cqw,143px)}
+#note-content h3{font-weight:700;padding-bottom:6px;border-bottom:1px solid var(--rule);margin-top:32px;margin-bottom:14px}.section-number{display:inline-block;margin-right:.65em;color:var(--accent);font-family:Inter,"Segoe UI",sans-serif;font-size:.85em;font-variant-numeric:tabular-nums}
+#note-content .section-label{margin-top:18px}#note-content .note-section-heading .section-label{margin-top:0}
+.sidebar-copyright{margin:24px 8px 0;padding-top:16px;border-top:1px solid var(--rule);font-size:11px;color:var(--muted);line-height:1.65;overflow-wrap:anywhere}.sidebar .sidebar-copyright a{display:inline;padding:0;font-size:inherit;color:inherit;text-decoration:underline;background:transparent}
+#note-content .table-scroll table{width:max-content!important;max-width:100%;table-layout:auto;font-size:.92em}#note-content .table-scroll th,#note-content .table-scroll td{white-space:normal;overflow-wrap:break-word;min-width:0}#note-content .report-document table{width:auto}.table-scroll{width:100%}
+@media(max-width:640px){.note-page .experiment-heading{padding:28px 24px 20px}.note-page .page-block{padding:24px 24px 32px}.brand>p{margin-left:0}}
+@media print{.note-page .experiment-heading{padding:2.54cm 2.54cm .6cm}.note-page .page-block{padding:.6cm 2.54cm 2.54cm}}

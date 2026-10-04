@@ -1,0 +1,2 @@
+{% assign rights = page.note_copyright | default: site.note_copyright %}
+<footer class="sidebar-copyright">© {{ rights.year }} {{ rights.author | escape }} <a href="mailto:{{ rights.email | escape }}">{{ rights.email | escape }}</a>. All rights reserved. {{ rights.notice | escape }}</footer>
