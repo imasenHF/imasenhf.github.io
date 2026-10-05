@@ -72,21 +72,15 @@ def navitem(slug,title,children=[]):
  return '<li class="nav-list-item">'+button+'<a class="nav-list-link" href="'+BASE+slug+'.html">'+html.escape(title)+'</a>'+('<ul class="nav-list">'+''.join(navitem(*c) for c in children)+'</ul>' if children else '')+'</li>'
 nav='<ul class="nav-list">'+navitem('index','文档首页')+''.join(navitem(*g) for g in groups)+'</ul>'
 if NOTE=='electron-electron-distance':
- # H2 chapters remain primary navigation; numbered H3 sections expand beneath them.
- items=[]
- for page in pages:
-  if page['slug']=='index':continue
-  children=[]
-  body=page['body']
-  heads=list(re.finditer(r'<h[23]([^>]*)>(.*?)</h[23]>',body,re.S))
-  for k,h in enumerate(heads):
-   ident=re.search(r'id="([^"]+)"',h[1])
-   if h[0].startswith('<h3'):
-    anchor=ident[1] if ident else 'section-'+str(k)
-    children.append('<li class="nav-list-item"><a class="nav-list-link" href="'+BASE+page['slug']+'.html#'+anchor+'">'+html.escape(plain(h[2]))+'</a></li>')
-  button='<button class="nav-list-expander btn-reset" aria-label="展开 '+html.escape(page['title'],quote=True)+'" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-arrow-right"/></svg></button>' if children else ''
-  items.append('<li class="nav-list-item">'+button+'<a class="nav-list-link" href="'+BASE+page['slug']+'.html">'+html.escape(page['title'])+'</a>'+('<ul class="nav-list">'+''.join(children)+'</ul>' if children else '')+'</li>')
- nav='<ul class="nav-list">'+navitem('index','文档首页')+''.join(items)+'</ul>' 
+ # Reproduce the original visual hierarchy: parts contain chapters.
+ def entry(url,title,children=''):
+  button='<button class="nav-list-expander btn-reset" aria-label="展开 '+html.escape(title,quote=True)+'" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-arrow-right"/></svg></button>' if children else ''
+  return '<li class="nav-list-item">'+button+'<a class="nav-list-link" href="'+BASE+url+'">'+html.escape(title)+'</a>'+('<ul class="nav-list">'+children+'</ul>' if children else '')+'</li>'
+ items=entry('index.html#summary','摘要与报告范围')+entry('index.html#abbreviations','缩写与术语')
+ for first,last,label in [(1,4,'第一部分 物理与实验基础'),(5,11,'第二部分 实验方法、脉冲序列与相干选择'),(12,14,'第三部分 参数、数据分析与软件实现'),(15,17,'第四部分 应用案例、异常诊断与方法进展')]:
+  children=''.join(entry('chapter-'+str(i)+'.html',pages[i]['title']) for i in range(first,last+1))
+  items+=entry('chapter-'+str(first)+'.html#part-'+str(first),label,children)
+ nav='<ul class="nav-list">'+items+entry('references.html','参考文献')+'</ul>'
 math=r'''<script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>'''
 settings='''<details class="doc-theme"><summary aria-label="主题设置" title="主题设置"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" stroke="currentColor" fill="none"/></svg></summary><div class="theme-options">'''+''.join('<button data-theme="'+k+'" aria-label="'+n+'" title="'+n+'"></button>' for k,n in [('sage','鼠尾草绿'),('mist','雾蓝'),('sand','暖砂'),('mauve','灰紫'),('gray','浅灰')])+'</div></details>'
 index={}
@@ -105,7 +99,7 @@ for page in pages:
  pos=body.index('</h1>')+5
  rail=''
  if NOTE=='electron-electron-distance' and toc:
-  rail='<aside class="page-toc-rail" aria-label="小节目录"><details class="page-toc" open><summary>本节目录</summary><ul>'+''.join(toc)+'</ul></details></aside>'
+  rail='<aside class="page-toc-rail" aria-label="小节目录"><details class="page-toc" open><summary>本章目录</summary><ul>'+''.join(toc)+'</ul></details></aside>'
  if toc and NOTE!='electron-electron-distance':body=body[:pos]+'<details class="page-toc" open><summary>本页目录</summary><ul>'+''.join(toc)+'</ul></details>'+body[pos:]
  body=re.sub(r'(<h[123] id="([^"]+)"[^>]*>)(.*?)(</h[123]>)',lambda m:m[1]+'<a class="anchor-heading" href="#'+html.escape(m[2],quote=True)+'" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>'+m[3]+m[4],body,flags=re.S)
  crumbs='<li class="breadcrumb-nav-list-item"><a href="'+BASE+'index.html">'+DOC_SHORT+'</a></li>'
@@ -121,7 +115,7 @@ for page in pages:
   pagehtml=pagehtml.replace('<body>','<body class="distance-doc">').replace('<main>'+body,'<main>'+rail+body)
  pagehtml=pagehtml.replace('</head>','<script defer src="/assets/jtd/note-anchors.js?v=1"></script></head>')
  import hashlib
- for asset in ['note-themes.css','note-theme.js','note-anchors.js']:
+ for asset in ['note-themes.css','note-theme.js','note-anchors.js','distance-toc.js']:
   version=hashlib.sha256((R/'assets/jtd'/asset).read_bytes()).hexdigest()[:10]
   pagehtml=re.sub(re.escape(asset)+r'\?v=[^"]+',asset+'?v='+version,pagehtml)
  if slug=='index':
