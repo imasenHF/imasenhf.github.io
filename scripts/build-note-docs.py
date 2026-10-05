@@ -45,6 +45,9 @@ else:
  titles=['偶极作用与距离核','距离分布与观测模型','相干路径与相位循环','自旋体系与样品','CW 短距离测定','四脉冲 DEER','多脉冲 DEER','双量子相干 DQC','SIFTER 与 SIDRE','RIDME','光诱导偶极谱','参数与实验优化','距离反演与不确定度','软件与方法选择','应用案例','伪影与诊断','方法进展']
  for i,a in enumerate(articles,1):
   body=a[1]
+  if i in [1,5,12,15]:
+   divider=re.search(r'<section class="part-divider" id="part-'+str(i)+r'">(.*?)</section>',s,re.S)
+   if divider:body=divider[0]+body
   # Keep the source chapter H2, section H3 and detail H4, with original numbering.
   body=re.sub(r'<nav class="chapter-jump".*?</nav>', '', body, flags=re.S)
   slug=f'chapter-{i}'
