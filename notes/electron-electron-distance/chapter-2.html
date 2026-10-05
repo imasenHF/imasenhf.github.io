@@ -1,13 +1,13 @@
-<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>距离分布与观测模型 · 电子—电子距离</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="/assets/jtd/note-themes.css?v=fecc6e19dc"><link rel="stylesheet" href="/assets/css/section-brand.css?v=20261005-brand"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="/assets/jtd/zh-search.js"></script><script defer src="/notes/electron-electron-distance/just-the-docs.js"></script><script defer src="/assets/jtd/note-theme.js?v=7878736304"></script><script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script defer src="/assets/jtd/note-anchors.js?v=259a0506ea"></script></head><body><svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="svg-arrow-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-doc" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM8 11h8M8 15h8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="svg-link" viewBox="0 0 16 16"><path d="m6 10 4-4M5 7 3 9a2 2 0 0 0 3 3l2-2M8 6l2-2a2 2 0 0 1 3 3l-2 2" stroke="currentColor" fill="none"/></symbol></svg><a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><div class="section-brand"><a class="section-brand-icon-link" href="/" aria-label="返回主页"><img class="section-brand-icon" src="/assets/images/imasen_phi_logo/imasen-phi-64.png" width="48" height="48" alt=""></a><div class="section-brand-text"><a class="section-brand-title" href="/">plastocyanin<span class="section-brand-dot">.</span></a><a class="section-brand-subtitle" href="/notes/" aria-label="返回 Notebook">N<span class="section-brand-gold">o</span>teb<span class="section-brand-gold">oo</span>k</a></div></div><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航"><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/index.html">文档首页</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-1.html">偶极作用与距离核</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-2.html">距离分布与观测模型</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-3.html">相干路径与相位循环</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-4.html">自旋体系与样品</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-5.html">CW 短距离测定</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-6.html">四脉冲 DEER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-7.html">多脉冲 DEER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-8.html">双量子相干 DQC</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-9.html">SIFTER 与 SIDRE</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-10.html">RIDME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-11.html">光诱导偶极谱</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-12.html">参数与实验优化</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-13.html">距离反演与不确定度</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-14.html">软件与方法选择</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-15.html">应用案例</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-16.html">伪影与诊断</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-17.html">方法进展</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/references.html">参考文献</a></li></ul></nav><div class="site-footer"><a href="/notes/">返回 Notebook</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 电子—电子距离 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 电子—电子距离 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div><details class="doc-theme"><summary aria-label="主题设置" title="主题设置"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" stroke="currentColor" fill="none"/></svg></summary><div class="theme-options"><button data-theme="sage" aria-label="鼠尾草绿" title="鼠尾草绿"></button><button data-theme="mist" aria-label="雾蓝" title="雾蓝"></button><button data-theme="sand" aria-label="暖砂" title="暖砂"></button><button data-theme="mauve" aria-label="灰紫" title="灰紫"></button><button data-theme="gray" aria-label="浅灰" title="浅灰"></button></div></details></div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="/notes/electron-electron-distance/index.html">电子—电子距离</a></li><li class="breadcrumb-nav-list-item"><span>距离分布与观测模型</span></li></ol></nav><div class="main-content" id="main-content"><main><h1 id="chapter-2"><a class="anchor-heading" href="#chapter-2" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>距离分布与观测模型</h1><details class="page-toc" open><summary>本页目录</summary><ul><li class="toc-level-2"><a href="#section-0">章节范围与核心结论</a></li><li class="toc-level-2"><a href="#section-1">从结构系综到反演结果的层级</a></li><li class="toc-level-2"><a href="#section-2">分子构象、标签构象与自旋距离</a></li><li class="toc-level-3"><a href="#section-3">条件几何分布</a></li><li class="toc-level-3"><a href="#section-4">不同距离定义</a></li><li class="toc-level-3"><a href="#section-5">实验有效分布</a></li><li class="toc-level-2"><a href="#section-6">从距离分布到时域信号</a></li><li class="toc-level-3"><a href="#section-7">单路径双自旋模型</a></li><li class="toc-level-3"><a href="#section-8">离散前向模型</a></li><li class="toc-level-2"><a href="#section-9">分子间偶极背景</a></li><li class="toc-level-3"><a href="#section-10">稀释自旋簇近似</a></li><li class="toc-level-3"><a href="#section-11">背景模型的适用范围</a></li><li class="toc-level-2"><a href="#section-12">激发、取向和弛豫选择</a></li><li class="toc-level-2"><a href="#section-13">时间零点、有限时间窗与噪声</a></li><li class="toc-level-3"><a href="#section-14">时间零点</a></li><li class="toc-level-3"><a href="#section-15">有限时间窗</a></li><li class="toc-level-3"><a href="#section-16">噪声和残差</a></li><li class="toc-level-2"><a href="#section-17">多自旋、多路径和高自旋谐波</a></li><li class="toc-level-3"><a href="#section-18">独立翻转近似下的多自旋信号</a></li><li class="toc-level-3"><a href="#section-19">多路径实验</a></li><li class="toc-level-3"><a href="#section-20">高自旋RIDME</a></li><li class="toc-level-2"><a href="#section-21">距离反演、模型选择与不确定度</a></li><li class="toc-level-3"><a href="#section-22">正则化目标函数</a></li><li class="toc-level-3"><a href="#section-23">参数化与非参数分布</a></li><li class="toc-level-3"><a href="#section-24">不确定度的分层报告</a></li><li class="toc-level-2"><a href="#section-25">距离分布的结构解释与报告规则</a></li><li class="toc-level-3"><a href="#section-26">峰位、宽度和面积</a></li><li class="toc-level-3"><a href="#section-27">最小报告内容</a></li><li class="toc-level-2"><a href="#section-28">应用案例：双组氨酸Cu(II)-NTA标签的距离建模</a></li><li class="toc-level-2"><a href="#section-29">本章结论</a></li></ul></details><p class="doc-subtitle">第2章　距离分布、背景与观测模型</p>
-
-<nav class="chapter-jump" aria-label="本章目录"><div class="jump-label">本章目录</div><div class="chapter-jump-links"><a href="/notes/electron-electron-distance/chapter-2.html#c2-scope">2.1 章节范围与核心结论</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-hierarchy">2.2 从结构系综到反演结果的层级</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-structural">2.3 分子构象、标签构象与自旋距离</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-forward">2.4 从距离分布到时域信号</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-background">2.5 分子间偶极背景</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-selection">2.6 激发、取向和弛豫选择</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-window">2.7 时间零点、有限时间窗与噪声</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-multispin">2.8 多自旋、多路径和高自旋谐波</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-inverse">2.9 距离反演、模型选择与不确定度</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-interpretation">2.10 距离分布的结构解释与报告规则</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-case">2.11 应用案例：双组氨酸Cu(II)-NTA标签的距离建模</a><a href="/notes/electron-electron-distance/chapter-2.html#c2-summary">2.12 本章结论</a></div></nav><section id="c2-scope">
-<h2 id="section-0"><a class="anchor-heading" href="#section-0" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>章节范围与核心结论</h2>
+<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>第2章 距离分布与观测模型 · 电子—电子距离</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="/assets/jtd/note-themes.css?v=fecc6e19dc"><link rel="stylesheet" href="/assets/css/section-brand.css?v=20261005-brand"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="/assets/jtd/zh-search.js"></script><script defer src="/notes/electron-electron-distance/just-the-docs.js"></script><script defer src="/assets/jtd/note-theme.js?v=7878736304"></script><script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><link rel="stylesheet" href="/assets/jtd/distance-content.css?v=f25846f0f5"><script defer src="/assets/jtd/note-anchors.js?v=259a0506ea"></script></head><body><svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="svg-arrow-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 15 6 6" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2"/></symbol><symbol id="svg-doc" viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM8 11h8M8 15h8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="svg-link" viewBox="0 0 16 16"><path d="m6 10 4-4M5 7 3 9a2 2 0 0 0 3 3l2-2M8 6l2-2a2 2 0 0 1 3 3l-2 2" stroke="currentColor" fill="none"/></symbol></svg><a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><div class="section-brand"><a class="section-brand-icon-link" href="/" aria-label="返回主页"><img class="section-brand-icon" src="/assets/images/imasen_phi_logo/imasen-phi-64.png" width="48" height="48" alt=""></a><div class="section-brand-text"><a class="section-brand-title" href="/">plastocyanin<span class="section-brand-dot">.</span></a><a class="section-brand-subtitle" href="/notes/" aria-label="返回 Notebook">N<span class="section-brand-gold">o</span>teb<span class="section-brand-gold">oo</span>k</a></div></div><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航"><ul class="nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/index.html">文档首页</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-1.html">第1章 偶极作用与距离核</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-2.html">第2章 距离分布与观测模型</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-3.html">第3章 相干路径与相位循环</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-4.html">第4章 自旋体系与样品</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-5.html">第5章 CW 短距离测定</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-6.html">第6章 四脉冲 DEER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-7.html">第7章 多脉冲 DEER</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-8.html">第8章 双量子相干 DQC</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-9.html">第9章 SIFTER 与 SIDRE</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-10.html">第10章 RIDME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-11.html">第11章 光诱导偶极谱</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-12.html">第12章 参数与实验优化</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-13.html">第13章 距离反演与不确定度</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-14.html">第14章 软件与方法选择</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-15.html">第15章 应用案例</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-16.html">第16章 伪影与诊断</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/chapter-17.html">第17章 方法进展</a></li><li class="nav-list-item"><a class="nav-list-link" href="/notes/electron-electron-distance/references.html">参考文献</a></li></ul></nav><div class="site-footer"><a href="/notes/">返回 Notebook</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 电子—电子距离 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 电子—电子距离 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div><details class="doc-theme"><summary aria-label="主题设置" title="主题设置"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 4v6M6 14v6" stroke="currentColor" fill="none"/></svg></summary><div class="theme-options"><button data-theme="sage" aria-label="鼠尾草绿" title="鼠尾草绿"></button><button data-theme="mist" aria-label="雾蓝" title="雾蓝"></button><button data-theme="sand" aria-label="暖砂" title="暖砂"></button><button data-theme="mauve" aria-label="灰紫" title="灰紫"></button><button data-theme="gray" aria-label="浅灰" title="浅灰"></button></div></details></div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="/notes/electron-electron-distance/index.html">电子—电子距离</a></li><li class="breadcrumb-nav-list-item"><span>第2章 距离分布与观测模型</span></li></ol></nav><div class="main-content" id="main-content"><main><h1 id="chapter-2"><a class="anchor-heading" href="#chapter-2" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>第2章 距离分布与观测模型</h1><details class="page-toc" open><summary>本页目录</summary><ul><li class="toc-level-2"><a href="#section-0">第2章　距离分布、背景与观测模型</a></li><li class="toc-level-3"><a href="#section-1">2.1 章节范围与核心结论</a></li><li class="toc-level-3"><a href="#section-2">2.2 从结构系综到反演结果的层级</a></li><li class="toc-level-3"><a href="#section-3">2.3 分子构象、标签构象与自旋距离</a></li><li class="toc-level-3"><a href="#section-4">2.4 从距离分布到时域信号</a></li><li class="toc-level-3"><a href="#section-5">2.5 分子间偶极背景</a></li><li class="toc-level-3"><a href="#section-6">2.6 激发、取向和弛豫选择</a></li><li class="toc-level-3"><a href="#section-7">2.7 时间零点、有限时间窗与噪声</a></li><li class="toc-level-3"><a href="#section-8">2.8 多自旋、多路径和高自旋谐波</a></li><li class="toc-level-3"><a href="#section-9">2.9 距离反演、模型选择与不确定度</a></li><li class="toc-level-3"><a href="#section-10">2.10 距离分布的结构解释与报告规则</a></li><li class="toc-level-3"><a href="#section-11">2.11 应用案例：双组氨酸Cu(II)-NTA标签的距离建模</a></li><li class="toc-level-3"><a href="#section-12">2.12 本章结论</a></li></ul></details>
+<header class="chapter-head"><div class="chapter-kicker">第一部分 · 第2章</div><h2 id="section-0"><a class="anchor-heading" href="#section-0" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>第2章　距离分布、背景与观测模型</h2><p class="chapter-subtitle">由分子构象和自旋标签到时域信号及反演结果</p></header>
+<section id="c2-scope">
+<h3 id="section-1"><a class="anchor-heading" href="#section-1" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.1 章节范围与核心结论</h3>
 <p class="lead">PDS实验直接记录的是回波幅度随扫描时间的变化。距离分布通过偶极核进入该时域信号，同时受到标签构象、激发带宽、取向选择、相干衰减、分子间背景、残留偶极路径及噪声影响。最终得到的距离分布依赖观测模型和反演方法，不能直接等同于蛋白骨架或核酸骨架的几何距离分布。</p>
 <p>本章建立从结构系综到实验信号的分层模型，明确各层变量及其适用条件。正则化算法和软件实现只介绍与观测模型有关的必要部分，完整的数据处理流程留在后续分析章节。</p>
 <div class="box ok"><strong>解释原则</strong><p>距离分布的峰位、宽度和面积具有不同含义。峰位主要反映被观测自旋中心的典型间距；宽度同时包含分子构象、标签构象和实验分辨因素；峰面积只有在激发、标记、弛豫及路径权重得到合理处理时，才可用于估计构象群体比例。</p></div>
 </section>
 <section id="c2-hierarchy">
-<h2 id="section-1"><a class="anchor-heading" href="#section-1" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>从结构系综到反演结果的层级</h2>
+<h3 id="section-2"><a class="anchor-heading" href="#section-2" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.2 从结构系综到反演结果的层级</h3>
 <p>距离实验可分为五个连续层级。每一层都引入新的变量或权重。</p>
 <div class="figure">
 <svg viewbox="0 0 900 420" role="img" aria-label="结构系综、标签构象、有效距离分布、实验信号和反演结果的层级关系">
@@ -27,15 +27,15 @@
 <p>早期概述常把这些影响写成多个一维分布的卷积。该写法只能作直观示意。标签构象通常依赖分子构象和局部环境，实验权重也可能依赖距离和取向，因此一般模型应使用条件概率和观测权重。</p>
 </section>
 <section id="c2-structural">
-<h2 id="section-2"><a class="anchor-heading" href="#section-2" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>分子构象、标签构象与自旋距离</h2>
-<h3 id="section-3"><a class="anchor-heading" href="#section-3" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>条件几何分布</h3>
+<h3 id="section-3"><a class="anchor-heading" href="#section-3" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.3 分子构象、标签构象与自旋距离</h3>
+<h4>2.3.1 条件几何分布</h4>
 <p>以 \(X\) 表示分子构象，\(L_A\) 和 \(L_B\) 表示两个标签的构象，\(E\) 表示溶剂、膜环境、温度和局部相互作用等条件。两个电子自旋代表点的位置写为 \(\mathbf R_A(X,L_A)\) 与 \(\mathbf R_B(X,L_B)\)。理想的自旋距离分布为</p>
 <div class="eq">$$P_{\mathrm{spin}}(r)=\int p(X)\,p(L_A,L_B\mid X,E)\,\delta\!\left[r-\left|\mathbf R_A(X,L_A)-\mathbf R_B(X,L_B)\right|\right]dX\,dL_A\,dL_B.$$ <span class="label">(2.1)</span></div>
 <p>式(2.1)允许标签构象与分子构象相关，也允许两个标签之间存在位阻或静电相关。独立rotamer近似对应</p>
 <div class="eq">$$p(L_A,L_B\mid X,E)\approx p(L_A\mid X,E)p(L_B\mid X,E).$$ <span class="label">(2.2)</span></div>
 <p>式(2.2)便于快速计算，但在短距离、刚性双功能标签、标签之间直接接触及强局部相互作用条件下可能不充分。</p>
 
-<h3 id="section-4"><a class="anchor-heading" href="#section-4" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>不同距离定义</h3>
+<h4>2.3.2 不同距离定义</h4>
 <div class="wrap"><table>
 <tr><th>距离名称</th><th>几何对象</th><th>主要用途</th><th>常见偏差来源</th></tr>
 <tr><td>电子自旋距离</td><td>两个磁性自旋中心或有效自旋密度中心</td><td>PDS和CW直接关联的量</td><td>自旋密度离域、取向模型</td></tr>
@@ -45,14 +45,14 @@
 <tr><td>构象群体距离</td><td>多个结构状态下上述距离的混合</td><td>构象平衡和异质性</td><td>状态数、群体权重和交换时间尺度</td></tr>
 </table></div>
 
-<h3 id="section-5"><a class="anchor-heading" href="#section-5" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>实验有效分布</h3>
+<h4>2.3.3 实验有效分布</h4>
 <p>激发、弛豫和相干路径会给不同构象赋予不同权重。定义综合观测权重 \(W\)，实验有效分布可写为</p>
 <div class="eq">$$P_{\mathrm{eff}}(r)=\frac{1}{Z}\int p(X)p(L_A,L_B\mid X,E)W(X,L_A,L_B;\boldsymbol\eta)\,\delta[r-r_{AB}]\,dX\,dL_A\,dL_B,$$ <span class="label">(2.3)</span></div>
 <p>其中 \(\boldsymbol\eta\) 表示磁场位置、微波频率、脉冲形状、温度、序列延迟及检测窗口等实验设置，\(Z\) 是归一化因子。取向选择实验中的 \(W\) 对分子取向具有明显依赖；不同构象具有不同 \(T_m\) 时，长延迟测量还会改变构象权重。</p>
 </section>
 <section id="c2-forward">
-<h2 id="section-6"><a class="anchor-heading" href="#section-6" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>从距离分布到时域信号</h2>
-<h3 id="section-7"><a class="anchor-heading" href="#section-7" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>单路径双自旋模型</h3>
+<h3 id="section-4"><a class="anchor-heading" href="#section-4" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.4 从距离分布到时域信号</h3>
+<h4>2.4.1 单路径双自旋模型</h4>
 <p>对于单一调制路径、孤立自旋对和均匀粉末取向，分子内偶极演化函数为</p>
 <div class="eq">$$D(t)=\int_0^\infty P_{\mathrm{eff}}(r)K(r,t)dr.$$ <span class="label">(2.4)</span></div>
 <p>若泵浦或等效翻转过程只影响比例 \(\lambda\) 的伙伴自旋，归一化分子内信号可写为</p>
@@ -61,7 +61,7 @@
 <div class="eq">$$V(t)=V_0\,V_{\mathrm{intra}}(t-t_0)\,V_{\mathrm{inter}}(t-t_0)+\varepsilon(t).$$ <span class="label">(2.6)</span></div>
 <p>其中 \(V_0\) 是尺度因子，\(t_0\) 是实验时间零点，\(V_{\mathrm{inter}}\) 是分子间背景，\(\varepsilon(t)\) 表示噪声和未建模误差。部分序列还需加入相干包络、未调制路径和额外偶极路径。</p>
 
-<h3 id="section-8"><a class="anchor-heading" href="#section-8" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>离散前向模型</h3>
+<h4>2.4.2 离散前向模型</h4>
 <p>在距离网格 \(r_j\) 和时间点 \(t_i\) 上，式(2.4)可写为</p>
 <div class="eq">$$\mathbf D=\mathbf K\mathbf P,\qquad K_{ij}=K(r_j,t_i)\Delta r.$$ <span class="label">(2.7)</span></div>
 <p>矩阵 \(\mathbf K\) 的列在有限时间窗内高度相关，使距离反演成为病态问题。时域噪声的微小变化可能对应多种明显不同的 \(P(r)\)。正则化或参数化模型用于限制解空间，不能补回实验中未记录的信息。</p>
@@ -77,15 +77,15 @@
 </table></div>
 </section>
 <section id="c2-background">
-<h2 id="section-9"><a class="anchor-heading" href="#section-9" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>分子间偶极背景</h2>
-<h3 id="section-10"><a class="anchor-heading" href="#section-10" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>稀释自旋簇近似</h3>
+<h3 id="section-5"><a class="anchor-heading" href="#section-5" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.5 分子间偶极背景</h3>
+<h4>2.5.1 稀释自旋簇近似</h4>
 <p>目标分子内的自旋构成有限尺寸自旋簇。其他分子上的自旋虽然距离较远，数量却很多，会产生平滑的时域衰减。Goldfarb与Stoll第19章在簇内和簇间贡献可分离时写出</p>
 <div class="eq">$$V(t)=F(t)B(t).$$ <span class="label">(2.8)</span></div>
 <p>对于均匀三维分布和常规DEER条件，背景常表现为单指数衰减。更一般的经验形式为</p>
 <div class="eq">$$B(t)=\exp\left[-(k|t|)^{d/3}\right],$$ <span class="label">(2.9)</span></div>
 <p>其中 \(k\) 与被泵浦自旋浓度、激发概率及偶极常数有关，\(d\) 是有效空间维度。均匀三维分布对应 \(d=3\)。膜、表面、排除体积和非均匀浓度可能产生不同指数。</p>
 
-<h3 id="section-11"><a class="anchor-heading" href="#section-11" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>背景模型的适用范围</h3>
+<h4>2.5.2 背景模型的适用范围</h4>
 <div class="wrap"><table>
 <tr><th>背景类型</th><th>适用条件</th><th>模型特征</th><th>主要检查方式</th></tr>
 <tr><td>三维均匀DEER背景</td><td>体相冻结溶液、自旋随机分布</td><td>近似单指数</td><td>浓度系列、单标样品、长时间段</td></tr>
@@ -98,7 +98,7 @@
 <div class="box critical"><strong>背景与长距离</strong><p>背景衰减和长距离偶极振荡都集中在低频区域。短时间窗内二者相关性较强。背景形式、拟合区间和时间零点的变化需要作为距离分布稳定性检查的一部分。</p></div>
 </section>
 <section id="c2-selection">
-<h2 id="section-12"><a class="anchor-heading" href="#section-12" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>激发、取向和弛豫选择</h2>
+<h3 id="section-6"><a class="anchor-heading" href="#section-6" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.6 激发、取向和弛豫选择</h3>
 <p>实验测得的 \(P_{\mathrm{eff}}(r)\) 包含序列选择权重。权重可拆成若干相互关联的组成：</p>
 <div class="eq">$$W=W_{\mathrm{label}}W_{\mathrm{exc}}W_{\mathrm{orient}}W_{\mathrm{relax}}W_{\mathrm{path}}W_{\mathrm{detect}}.$$ <span class="label">(2.10)</span></div>
 <div class="wrap"><table>
@@ -113,16 +113,16 @@
 <p>柔性nitroxide标签在常规低场选择条件下常接近各向同性权重。刚性标签、Cu(II)、Gd(III)、光生三重态及高场测量更容易出现显著取向选择。取向选择既可提供结构方向信息，也会改变一维距离分布的权重。</p>
 </section>
 <section id="c2-window">
-<h2 id="section-13"><a class="anchor-heading" href="#section-13" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>时间零点、有限时间窗与噪声</h2>
-<h3 id="section-14"><a class="anchor-heading" href="#section-14" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>时间零点</h3>
+<h3 id="section-7"><a class="anchor-heading" href="#section-7" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.7 时间零点、有限时间窗与噪声</h3>
+<h4>2.7.1 时间零点</h4>
 <p>实际核函数使用 \(t-t_0\)。矩形脉冲常以脉冲中心定义有效翻转时刻；整形脉冲的有效作用时刻还与扫频方向、频偏和动态相位有关。若 \(t_0\) 设置错误，时域偶极振荡获得额外相位，频域Pake谱形失去预期对称关系。</p>
 
-<h3 id="section-15"><a class="anchor-heading" href="#section-15" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>有限时间窗</h3>
+<h4>2.7.2 有限时间窗</h4>
 <p>实验信号等于无限时域信号与窗口函数的乘积：</p>
 <div class="eq">$$V_{\mathrm{obs}}(t)=W_t(t)V_{\mathrm{ideal}}(t).$$ <span class="label">(2.11)</span></div>
 <p>时域截断在频域对应与窗口函数傅里叶变换的卷积。较短的 \(t_{\max}\) 首先限制低偶极频率，因此长距离峰容易变宽并与背景相关。过大的时间增量 \(\Delta t\) 会产生快速偶极振荡的欠采样，主要影响短距离。</p>
 
-<h3 id="section-16"><a class="anchor-heading" href="#section-16" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>噪声和残差</h3>
+<h4>2.7.3 噪声和残差</h4>
 <p>最简单模型假设 \(\varepsilon\sim\mathcal N(0,\sigma^2\mathbf I)\)。实际数据还可能含有时间相关噪声、基线漂移、相位误差、周期性核调制和脉冲幅度漂移。随机噪声决定统计区间，结构化残差通常指向模型缺项或实验伪影。</p>
 <div class="wrap"><table>
 <tr><th>数据表现</th><th>优先检查</th><th>可能影响</th></tr>
@@ -134,28 +134,28 @@
 </table></div>
 </section>
 <section id="c2-multispin">
-<h2 id="section-17"><a class="anchor-heading" href="#section-17" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>多自旋、多路径和高自旋谐波</h2>
-<h3 id="section-18"><a class="anchor-heading" href="#section-18" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>独立翻转近似下的多自旋信号</h3>
+<h3 id="section-8"><a class="anchor-heading" href="#section-8" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.8 多自旋、多路径和高自旋谐波</h3>
+<h4>2.8.1 独立翻转近似下的多自旋信号</h4>
 <p>一个observer自旋与多个伙伴自旋耦合时，在独立翻转和单一observer路径近似下，分子内信号可写为多个自旋对因子的乘积：</p>
 <div class="eq">$$F(t\mid\mathcal C)=\prod_{j=1}^{N}\left[1-\lambda_j+\lambda_jK(r_{0j},t)\right],$$ <span class="label">(2.12)</span></div>
 <p>其中 \(\mathcal C\) 表示一个具体空间构型。样品信号还需对构型系综平均。乘积中的交叉项会产生组合频率；若使用线性双自旋模型处理，可能出现没有对应实际自旋对的峰。</p>
 
-<h3 id="section-19"><a class="anchor-heading" href="#section-19" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>多路径实验</h3>
+<h4>2.8.2 多路径实验</h4>
 <p>五脉冲和七脉冲DEER可同时产生多个偶极路径。每条路径具有重聚时间 \(T_p\)、幅度 \(\lambda_p\)、频率缩放或谐波因子 \(n_p\)，并可能带有独立背景。数据模型需要直接描述这些路径。把时域数据强行变换为理想四脉冲DEER曲线会丢失路径信息。</p>
 
-<h3 id="section-20"><a class="anchor-heading" href="#section-20" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>高自旋RIDME</h3>
+<h4>2.8.3 高自旋RIDME</h4>
 <p>对于 \(S&gt;1/2\) 的伙伴自旋，混合期可能发生多个 \(\Delta m_S\) 跃迁，产生偶极基频及高次谐波。前向模型可写成若干谐波核的加权和：</p>
 <div class="eq">$$K_{\mathrm{RIDME}}(r,t)=\sum_{n=1}^{n_{\max}}c_nK(r,nt),\qquad \sum_n c_n=1.$$ <span class="label">(2.13)</span></div>
 <p>系数 \(c_n\) 与自旋量子数、温度、混合时间、弛豫网络和实验条件有关。使用四脉冲DEER核处理此类信号会把谐波误换算为较短距离。</p>
 </section>
 <section id="c2-inverse">
-<h2 id="section-21"><a class="anchor-heading" href="#section-21" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>距离反演、模型选择与不确定度</h2>
-<h3 id="section-22"><a class="anchor-heading" href="#section-22" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>正则化目标函数</h3>
+<h3 id="section-9"><a class="anchor-heading" href="#section-9" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.9 距离反演、模型选择与不确定度</h3>
+<h4>2.9.1 正则化目标函数</h4>
 <p>非参数距离分布常通过带非负约束的正则化求解：</p>
 <div class="eq">$$\hat{\mathbf P}=\underset{\mathbf P\ge0}{\operatorname{argmin}}\left\{\|\mathbf V_{\mathrm{exp}}-\mathbf M(\boldsymbol\theta)\mathbf P\|_2^2+\alpha^2\|\mathbf L\mathbf P\|_2^2\right\}.$$ <span class="label">(2.14)</span></div>
 <p>\(\mathbf M(\boldsymbol\theta)\)包含偶极核、背景、调制深度、时间零点和路径参数，\(\alpha\)控制数据拟合与平滑约束的平衡，\(\mathbf L\)定义平滑阶数。DeerLab论文展示了背景参数与非参数 \(P(r)\) 同时拟合的单步方法，并指出短时间窗内先拟合背景、再反演距离的两步处理可能不稳定。</p>
 
-<h3 id="section-23"><a class="anchor-heading" href="#section-23" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>参数化与非参数分布</h3>
+<h4>2.9.2 参数化与非参数分布</h4>
 <div class="wrap"><table>
 <tr><th>方法</th><th>表示方式</th><th>适合情形</th><th>主要限制</th></tr>
 <tr><td>高斯或多高斯模型</td><td>有限个峰位、宽度和面积</td><td>状态数有结构依据、信号质量较高</td><td>峰数和峰形假设影响结果</td></tr>
@@ -164,7 +164,7 @@
 <tr><td>结构系综模型</td><td>构象及标签的加权组合</td><td>多距离对和已有结构模型</td><td>可辨识性取决于距离对数量与标签模型</td></tr>
 </table></div>
 
-<h3 id="section-24"><a class="anchor-heading" href="#section-24" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>不确定度的分层报告</h3>
+<h4>2.9.3 不确定度的分层报告</h4>
 <p>拟合区间通常只描述给定模型内的噪声传播。背景形式、路径模型、正则化强度和标签模型的差异属于模型相关变化，需要另行比较。</p>
 <div class="wrap"><table>
 <tr><th>层级</th><th>来源</th><th>推荐检查</th><th>报告形式</th></tr>
@@ -177,8 +177,8 @@
 </table></div>
 </section>
 <section id="c2-interpretation">
-<h2 id="section-25"><a class="anchor-heading" href="#section-25" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>距离分布的结构解释与报告规则</h2>
-<h3 id="section-26"><a class="anchor-heading" href="#section-26" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>峰位、宽度和面积</h3>
+<h3 id="section-10"><a class="anchor-heading" href="#section-10" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.10 距离分布的结构解释与报告规则</h3>
+<h4>2.10.1 峰位、宽度和面积</h4>
 <div class="wrap"><table>
 <tr><th>分布特征</th><th>可直接陈述的内容</th><th>需要附加条件的解释</th></tr>
 <tr><td>峰位或众数</td><td>有效自旋距离的主要位置</td><td>映射到骨架距离需要标签模型</td></tr>
@@ -188,12 +188,12 @@
 <tr><td>峰面积</td><td>当前模型下的相对分布权重</td><td>群体比例需要校正标记、激发、弛豫和路径权重</td></tr>
 </table></div>
 
-<h3 id="section-27"><a class="anchor-heading" href="#section-27" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>最小报告内容</h3>
+<h4>2.10.2 最小报告内容</h4>
 <p>距离结果应同时保存原始复数时域数据、处理后的信号、拟合曲线、残差、背景模型、时间零点、调制深度、距离网格、反演设置和不确定区间。应用结论同时注明自旋距离与结构距离的区别。</p>
 <div class="box warn"><strong>结论强度</strong><p>单一距离对通常适合判断结构模型是否相容或检测明显构象变化。多个距离对、标签模型和独立结构方法可以约束构象群体。平滑分布中的细小峰不宜单独作为新增构象状态的依据。</p></div>
 </section>
 <section id="c2-case">
-<h2 id="section-28"><a class="anchor-heading" href="#section-28" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>应用案例：双组氨酸Cu(II)-NTA标签的距离建模</h2>
+<h3 id="section-11"><a class="anchor-heading" href="#section-11" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.11 应用案例：双组氨酸Cu(II)-NTA标签的距离建模</h3>
 <p><strong>研究对象与科学问题：</strong>双组氨酸Cu(II)-NTA标签可用于蛋白质结构和骨架构象研究。实验距离直接对应Cu(II)中心，结构解释需要描述标签在α螺旋和β折叠位点上的构象分布。</p>
 <p><strong>方法选择依据：</strong>Cu(II)中心的位置比长柔性连接臂nitroxide标签更接近蛋白骨架，双功能配位还限制标签构象。该标签适合检验rotamer library能否把实验Cu-Cu距离分布转换为结构模型约束。</p>
 <p><strong>实验与建模概述：</strong>Hasanbasri等构建了基于分子动力学和半经验构象采样的两组rotamer libraries，并通过chiLife双功能标签模型预测GB1、GSTA1和YopO等体系的Cu-Cu距离分布，再与实验分布比较。</p>
@@ -202,7 +202,7 @@
 <p><strong>适用范围与限制：</strong>所报误差来自论文使用的测试体系和特定rotamer libraries。配位几何、局部二级结构、溶剂及蛋白构象超出建库条件时，需要重新检查标签分布。实验距离与预测结果的一致性也受PDS背景、取向选择和反演设置影响。</p>
 </section>
 <section id="c2-summary">
-<h2 id="section-29"><a class="anchor-heading" href="#section-29" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>本章结论</h2>
+<h3 id="section-12"><a class="anchor-heading" href="#section-12" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>2.12 本章结论</h3>
 <div class="wrap"><table>
 <tr><th>结论</th><th>适用条件</th><th>报告要求</th></tr>
 <tr><td>结构与标签共同决定自旋距离分布</td><td>标签分布可由条件概率描述</td><td>区分电子自旋、标签中心和骨架距离</td></tr>

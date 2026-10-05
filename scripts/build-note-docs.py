@@ -44,11 +44,13 @@ else:
  intro=s[s.index('<section class="abstract"'):s.index('<section class="part-divider"')];add('index',DOC_TITLE,'<p class="fs-6 fw-300">'+SUBTITLE+'</p><p><span class="label">EPR</span><span class="label">距离测量</span></p>'+intro)
  titles=['偶极作用与距离核','距离分布与观测模型','相干路径与相位循环','自旋体系与样品','CW 短距离测定','四脉冲 DEER','多脉冲 DEER','双量子相干 DQC','SIFTER 与 SIDRE','RIDME','光诱导偶极谱','参数与实验优化','距离反演与不确定度','软件与方法选择','应用案例','伪影与诊断','方法进展']
  for i,a in enumerate(articles,1):
-  body=a[1];head=re.search(r'<header.*?</header>',body,re.S);old=plain(re.search(r'<h2[^>]*>(.*?)</h2>',head[0],re.S)[1]);body=body[:head.start()]+body[head.end():]
-  if i in [1,5,12,15]:
-   divider=re.search(r'<section class="part-divider" id="part-'+str(i)+r'">(.*?)</section>',s,re.S)
-   if divider:body=divider[0]+body
-  slug=f'chapter-{i}';add(slug,titles[i-1],promote(body),old,oldid=slug);groups.append((slug,titles[i-1],[]))
+  body=a[1]
+  # Keep the source chapter H2, section H3 and detail H4, with original numbering.
+  body=re.sub(r'<nav class="chapter-jump".*?</nav>', '', body, flags=re.S)
+  slug=f'chapter-{i}'
+  numbered_title=f'第{i}章 '+titles[i-1]
+  add(slug,numbered_title,body,oldid=slug)
+  groups.append((slug,numbered_title,[]))
  refs=s[s.index('<section id="references"'):];add('references','参考文献',refs);groups.append(('references','参考文献',[]))
  for i in [1,5,12,15]:aliases[f'part-{i}']=f'chapter-{i}.html'
 # Preserve cross-page anchors before rewriting href values.
@@ -88,6 +90,9 @@ for page in pages:
  footer='''<hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000">© 2026 Hyphoon <a href="mailto:wuhaifeng@ustc.edu.cn">wuhaifeng@ustc.edu.cn</a>. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。</p><p class="text-small text-grey-dk-000">This site uses <a href="https://just-the-docs.com/">Just the Docs</a>, a documentation theme for Jekyll.</p></footer>'''
  pagehtml='''<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'''+html.escape(title)+''' · '+DOC_SHORT+'</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="'''+'''/assets/jtd/note-themes.css?v=4"><link rel="stylesheet" href="/assets/css/section-brand.css?v=20261005-brand"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="'''+'''/assets/jtd/zh-search.js"></script><script defer src="'''+BASE+'''just-the-docs.js"></script><script defer src="'''+'''/assets/jtd/note-theme.js?v=4"></script>'''+math+'''</head><body>'''+icons+'''<a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><div class="section-brand"><a class="section-brand-icon-link" href="/" aria-label="返回主页"><img class="section-brand-icon" src="/assets/images/imasen_phi_logo/imasen-phi-64.png" width="48" height="48" alt=""></a><div class="section-brand-text"><a class="section-brand-title" href="/">plastocyanin<span class="section-brand-dot">.</span></a><a class="section-brand-subtitle" href="/notes/" aria-label="返回 Notebook">N<span class="section-brand-gold">o</span>teb<span class="section-brand-gold">oo</span>k</a></div></div><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航">'''+nav+'''</nav><div class="site-footer"><a href="/notes/">返回 Notebook</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 '+DOC_SHORT+' 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 '+DOC_SHORT+' 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div>'''+settings+'''</div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list">'''+crumbs+'''</ol></nav><div class="main-content" id="main-content"><main>'''+body+footer+'''</main></div></div></div><div class="search-overlay"></div><script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});</script></body></html>'''
  pagehtml=pagehtml.replace("'+DOC_SHORT+'",DOC_SHORT)
+ if NOTE=='electron-electron-distance':
+  version=__import__('hashlib').sha256((R/'assets/jtd/distance-content.css').read_bytes()).hexdigest()[:10]
+  pagehtml=pagehtml.replace('</head>','<link rel="stylesheet" href="/assets/jtd/distance-content.css?v='+version+'"></head>')
  pagehtml=pagehtml.replace('</head>','<script defer src="/assets/jtd/note-anchors.js?v=1"></script></head>')
  import hashlib
  for asset in ['note-themes.css','note-theme.js','note-anchors.js']:
@@ -99,7 +104,7 @@ for page in pages:
   (R/'_notes'/f'{NOTE}.html').write_text('---\n'+meta.strip()+'\n---\n{% raw %}\n'+pagehtml+'\n{% endraw %}\n')
  else:(O/(slug+'.html')).write_text(pagehtml)
  # Sections in the upstream search-data format.
- chunks=list(re.finditer(r'<h[12]([^>]*)>(.*?)</h[12]>',body,re.S))
+ chunks=list(re.finditer(r'<h[123]([^>]*)>(.*?)</h[123]>',body,re.S))
  for k,h in enumerate(chunks):
   ident=re.search(r'id="([^"]+)"',h[1]);url=BASE+slug+'.html'+('#'+ident[1] if ident else '')
   txt=plain(body[h.end():chunks[k+1].start() if k+1<len(chunks) else len(body)])
