@@ -88,19 +88,19 @@ for page in pages:
  slug,title,body=page['slug'],page['title'],page['body'];heads=list(re.finditer(r'<h[23]([^>]*)>(.*?)</h[23]>',body,re.S))
  for k,h in enumerate(heads):
   if 'id=' not in h[1]:body=body.replace(h[0],h[0].replace('<h','<h',1).replace('>',' id="section-'+str(k)+'">',1),1)
- if NOTE=='electron-electron-distance':
+ if True:
   for k,h in enumerate(list(re.finditer(r'<h4([^>]*)>(.*?)</h4>',body,re.S))):
    if 'id=' not in h[1]:body=body.replace(h[0],h[0].replace('>',' id="detail-'+str(k)+'">',1),1)
  # Native inline page contents.
  toc=[]
- for level,attrs,t in re.findall(r'<h(['+('34' if NOTE=='electron-electron-distance' else '23')+r'])([^>]*)>(.*?)</h\1>',body,re.S):
+ for level,attrs,t in re.findall(r'<h(['+('34' if NOTE=='electron-electron-distance' else '234')+r'])([^>]*)>(.*?)</h\1>',body,re.S):
   ident=re.search(r'id="([^"]+)"',attrs)
   if ident:toc.append('<li class="toc-level-'+level+'"><a href="#'+html.escape(ident[1],quote=True)+'">'+html.escape(html.unescape(re.sub('<[^>]+>','',t)).strip())+'</a></li>')
  pos=body.index('</h1>')+5
  rail=''
- if NOTE=='electron-electron-distance' and toc:
+ if toc:
   rail='<aside class="page-toc-rail" aria-label="小节目录"><details class="page-toc" open><summary>本章目录</summary><ul>'+''.join(toc)+'</ul></details></aside>'
- if toc and NOTE!='electron-electron-distance':body=body[:pos]+'<details class="page-toc" open><summary>本页目录</summary><ul>'+''.join(toc)+'</ul></details>'+body[pos:]
+
  body=re.sub(r'(<h[123] id="([^"]+)"[^>]*>)(.*?)(</h[123]>)',lambda m:m[1]+'<a class="anchor-heading" href="#'+html.escape(m[2],quote=True)+'" aria-label="链接到本节"><svg viewBox="0 0 16 16"><use href="#svg-link"/></svg></a>'+m[3]+m[4],body,flags=re.S)
  crumbs='<li class="breadcrumb-nav-list-item"><a href="'+BASE+'index.html">'+DOC_SHORT+'</a></li>'
  if page['parent']:ps,pt=page['parent'];crumbs+='<li class="breadcrumb-nav-list-item"><a href="'+BASE+ps+'.html">'+html.escape(pt)+'</a></li>'
@@ -112,7 +112,9 @@ for page in pages:
  if NOTE=='electron-electron-distance':
   version=__import__('hashlib').sha256((R/'assets/jtd/distance-content.css').read_bytes()).hexdigest()[:10]
   pagehtml=pagehtml.replace('</head>','<link rel="stylesheet" href="/assets/jtd/distance-content.css?v='+version+'"><script defer src="/assets/jtd/distance-toc.js?v=1"></script></head>')
-  pagehtml=pagehtml.replace('<body>','<body class="distance-doc">').replace('<main>'+body,'<main>'+rail+body)
+  pagehtml=pagehtml.replace('<body>','<body class="distance-doc">')
+ pagehtml=pagehtml.replace('<main>'+body,'<main>'+rail+body).replace('<body>', '<body class="doc-with-right-toc">').replace('class="distance-doc"','class="distance-doc doc-with-right-toc"')
+ if NOTE!='electron-electron-distance':pagehtml=pagehtml.replace('</head>','<script defer src="/assets/jtd/distance-toc.js?v=1"></script></head>')
  pagehtml=pagehtml.replace('</head>','<script defer src="/assets/jtd/note-anchors.js?v=1"></script></head>')
  import hashlib
  for asset in ['note-themes.css','note-theme.js','note-anchors.js','distance-toc.js']:
