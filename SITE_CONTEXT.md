@@ -144,3 +144,7 @@ Notes 侧栏 Home 返回 /notes/，顶部 ICO 返回 /。首页介绍原文不�
 
 ## 2026-10-05 Notes 正式发布规范
 Notes 采用 Just the Docs 原生响应式文档格式及主页蓝灰暖白主题，不恢复纸张或阅读比例调节。W 波段标题为“W 波段 EPR：原理与应用”，副标题为“高场效应、应用体系与实验条件”。三篇调研的原文统一维护于 `_note_sources/`，生成器输出正式主页、子页面、搜索与旧锚点映射。写作与版式要求以 `docs/NOTE_TEMPLATE.md` 为准，覆盖旧阅读器说明。
+
+## 栏目标识（2026-10-05）
+
+显示名称使用 Notebook 与 Workshop，URL 保留 `/notes/` 与 `/projects/`。栏目列表页与子页采用主页 Georgia 字体的双行标识，ICO 为 48 px 跨两行，`plastocyanin` 25 px，栏目名 16 px 居中。Notebook 采用已选 F，Workshop 采用已选 A：字母 o 使用主页圆点金色 #b68c37，其余字母 #203139。ICO 与主标题返回主页，副标题返回栏目列表；文档目录首页与面包屑继续返回文档首页。
