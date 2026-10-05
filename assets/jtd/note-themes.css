@@ -16,7 +16,8 @@ body{color:var(--ink);background:var(--paper)}.side-bar{background:var(--sidebar
 /* Shared navigation states must follow the selected palette at every depth. */
 #site-nav .nav-list-link{color:var(--nav-text,var(--accent))}
 #site-nav .nav-list-link:hover,#site-nav .nav-list-link:focus-visible,#site-nav .nav-list-link.active{color:var(--nav-active-text,var(--accent));background:var(--accent-soft);background-image:none}
-#site-nav .nav-list-expander,#site-nav .nav-list-expander svg{color:var(--chrome-icon,var(--accent))}
+#site-nav .nav-list-expander{color:var(--chrome-icon,var(--accent))}
+#site-nav .nav-list-expander svg{color:inherit}
 #site-nav .nav-list-expander:hover,#site-nav .nav-list-expander:focus-visible{color:var(--accent);background:var(--accent-soft);background-image:none}
 #site-nav .nav-list-item.active>.nav-list-expander{color:var(--accent)}
 #site-nav .nav-list-link:focus-visible,#site-nav .nav-list-expander:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
