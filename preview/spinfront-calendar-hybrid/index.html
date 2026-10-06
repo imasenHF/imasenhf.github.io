@@ -110,7 +110,8 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
   background:linear-gradient(to top,var(--hy-bg) 0%,rgba(250,250,247,0) 100%);
 }
 .hy2-items{
-  height:100%;
+  position:absolute;
+  inset:0;
   min-height:0;
   overflow-y:auto;
   overflow-x:hidden;
@@ -121,6 +122,7 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
   scrollbar-width:none;
   -ms-overflow-style:none;
   -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
   padding:0 2px;
 }
 .hy2-items::-webkit-scrollbar{display:none}
@@ -264,14 +266,7 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
       currentList.map((x,i)=>itemHtml(x,i)).join('')+
       '<div class="hy2-end">END OF DAILY BRIEF</div>';
     itemsEl.scrollTop=0;
-    requestAnimationFrame(()=>{
-      const first=itemsEl.querySelector('.hy2-entry');
-      if(first){
-        const target=first.offsetTop-(itemsEl.clientHeight-first.offsetHeight)/2;
-        itemsEl.scrollTop=Math.max(0,target);
-      }
-      updateFocus();
-    });
+    requestAnimationFrame(updateFocus);
   }
 
   itemsEl.addEventListener('scroll',()=>{
