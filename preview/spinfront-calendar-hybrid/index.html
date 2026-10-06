@@ -147,6 +147,17 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
   font-size:10px;
   line-height:1.7;
 }
+.hy2-guide q{
+  margin-left:7px;
+  color:var(--ink);
+  font-family:Georgia,"Times New Roman",serif;
+}
+.hy2-guide em{
+  margin-left:4px;
+  color:var(--hy-muted);
+  font-size:9px;
+  font-style:normal;
+}
 .hy2-guide i{
   font-style:normal;
   color:var(--hy-accent);
@@ -262,7 +273,7 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
       return;
     }
     itemsEl.innerHTML=
-      '<div class="hy2-guide"><strong>Daily selection</strong><span>滚动浏览 '+currentList.length+' 条当日日报，中间条目会自动突出显示。<i>↓</i></span></div>'+
+      '<div class="hy2-guide"><strong>Daily selection</strong><span>滚动浏览 '+currentList.length+' 条当日日报　<q>The test of all knowledge is experiment.</q> <em>— Richard P. Feynman</em><i>↓</i></span></div>'+
       currentList.map((x,i)=>itemHtml(x,i)).join('')+
       '<div class="hy2-end">END OF DAILY BRIEF</div>';
     itemsEl.scrollTop=0;
