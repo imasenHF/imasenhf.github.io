@@ -1,0 +1,128 @@
+---
+layout: default
+title: SpinFront Calendar Preview
+summary: SpinFront 主站日历视图候选设计。
+---
+<section class="page-heading container sf-preview-heading">
+  <p class="eyebrow">Design preview</p>
+  <h1>SpinFront 日历视图</h1>
+  <p>仅用于选择主站展示样式。三个方案共用同一交互：左侧日历选择日报日期，右侧显示当期摘要，不显示技术评注。</p>
+</section>
+
+<section class="container sf-concept-page">
+  <div class="sf-concept-picker" role="group" aria-label="选择设计方案">
+    <button type="button" data-concept="a" aria-pressed="true"><strong>A</strong><span>Editorial</span><small>与主站排版最接近</small></button>
+    <button type="button" data-concept="b" aria-pressed="false"><strong>B</strong><span>Panel</span><small>轻面板与卡片</small></button>
+    <button type="button" data-concept="c" aria-pressed="false"><strong>C</strong><span>Journal</span><small>日期主导的杂志式版面</small></button>
+  </div>
+  <p id="sf-concept-note" class="sf-concept-note">A：弱化组件边框，以主站现有的细线、留白和文字层级组织日历与日报，适合直接放在首页精选内容之后。</p>
+
+  <div id="sf-calendar-preview" class="sf-calendar-preview concept-a">
+    <aside class="sf-calendar-pane" aria-label="SpinFront 日历">
+      <div class="sf-calendar-head">
+        <button id="sf-prev-month" type="button" aria-label="上个月">←</button>
+        <div><span id="sf-year"></span><strong id="sf-month"></strong></div>
+        <button id="sf-next-month" type="button" aria-label="下个月">→</button>
+      </div>
+      <div id="sf-calendar" class="sf-calendar-grid"></div>
+      <p class="sf-calendar-key"><i></i> 有日报记录</p>
+    </aside>
+
+    <section class="sf-report-pane" aria-live="polite">
+      <header class="sf-report-head">
+        <p class="sf-report-label">SpinFront · NMR / EPR Daily Brief</p>
+        <div class="sf-date-lockup"><span id="sf-day-number"></span><div><h2 id="sf-report-date"></h2><p id="sf-report-count"></p></div></div>
+      </header>
+      <div id="sf-report-items" class="sf-report-items"><p class="sf-loading">正在读取 SpinFront 归档…</p></div>
+    </section>
+  </div>
+</section>
+
+<style>
+.sf-preview-heading{padding-bottom:30px}.sf-preview-heading h1{margin-bottom:14px}.sf-preview-heading>p:last-child{max-width:780px;color:var(--muted)}
+.sf-concept-page{padding-bottom:90px}.sf-concept-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:14px}.sf-concept-picker button{display:grid;grid-template-columns:36px 1fr;grid-template-rows:auto auto;column-gap:12px;text-align:left;padding:16px 18px;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;cursor:pointer}.sf-concept-picker button strong{grid-row:1/3;font:28px/1 Georgia,serif;color:var(--gold)}.sf-concept-picker button span{font-size:14px}.sf-concept-picker button small{font-size:11px;color:var(--muted)}.sf-concept-picker button[aria-pressed=true]{border-color:var(--blue);background:#fff}.sf-concept-note{margin:0 0 24px;color:var(--muted);font-size:12px}
+.sf-calendar-preview{--sf-bg:#fff;--sf-panel:#fff;--sf-line:var(--line);--sf-accent:var(--blue);display:grid;grid-template-columns:280px minmax(0,1fr);gap:42px;border-top:1px solid var(--sf-line);border-bottom:1px solid var(--sf-line);padding:34px 0 38px;min-height:620px}.sf-calendar-pane{min-width:0}.sf-calendar-head{display:grid;grid-template-columns:36px 1fr 36px;align-items:center;margin-bottom:18px}.sf-calendar-head button{width:36px;height:36px;border:1px solid var(--sf-line);background:transparent;color:var(--ink);cursor:pointer}.sf-calendar-head>div{text-align:center}.sf-calendar-head span{display:block;font-size:10px;letter-spacing:1.4px;color:var(--muted)}.sf-calendar-head strong{display:block;font:23px/1.2 Georgia,serif;font-weight:400}.sf-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.sf-calendar-grid .week{font-size:10px;color:var(--muted);text-align:center;padding:5px 0 8px}.sf-calendar-grid .blank{height:36px}.sf-calendar-grid button{position:relative;height:38px;border:0;background:transparent;color:var(--ink);font:12px/1 var(--font);cursor:pointer}.sf-calendar-grid button:disabled{color:#b6bec1;cursor:default}.sf-calendar-grid button.has::after{content:"";position:absolute;left:50%;bottom:4px;width:3px;height:3px;margin-left:-1.5px;border-radius:50%;background:var(--gold)}.sf-calendar-grid button.selected{background:var(--ink);color:#fff}.sf-calendar-grid button.selected::after{background:var(--gold)}.sf-calendar-key{display:flex;align-items:center;gap:7px;margin:12px 0 0;font-size:10px;color:var(--muted)}.sf-calendar-key i{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.sf-report-pane{min-width:0}.sf-report-head{padding-bottom:20px;border-bottom:1px solid var(--sf-line)}.sf-report-label{font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}.sf-date-lockup{display:flex;align-items:center;gap:16px}.sf-date-lockup>span{display:none}.sf-report-head h2{font:34px/1.2 Georgia,serif;font-weight:400;margin:0}.sf-report-head p:last-child{font-size:12px;color:var(--muted);margin:5px 0 0}.sf-report-items{display:grid}.sf-report-row{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;padding:21px 0;border-bottom:1px solid var(--sf-line)}.sf-report-row:last-child{border-bottom:0}.sf-report-meta{font-size:10px;color:var(--muted);line-height:1.6}.sf-report-meta span{display:block;color:var(--blue);margin-bottom:6px}.sf-report-row h3{font-size:19px;margin:0 0 8px;line-height:1.5}.sf-report-row h3 a:hover{text-decoration:underline}.sf-report-row p{font-size:13px;color:var(--muted);line-height:1.9;margin:0}.sf-report-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.sf-report-tags span{font-size:10px;color:var(--blue)}.sf-empty,.sf-loading{padding:40px 0;color:var(--muted);font-size:13px}
+.sf-calendar-preview.concept-b{--sf-bg:#f7f8f6;--sf-panel:#fff;gap:28px;background:var(--sf-bg);padding:28px;border:1px solid var(--line);border-radius:18px}.concept-b .sf-calendar-pane{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}.concept-b .sf-report-pane{background:transparent}.concept-b .sf-report-head{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px}.concept-b .sf-report-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.concept-b .sf-report-row{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.concept-b .sf-report-meta{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px}.concept-b .sf-report-meta span{margin:0}.concept-b .sf-report-row h3{font-size:17px}.concept-b .sf-report-row p{font-size:12px}.concept-b .sf-report-tags{margin-top:12px}.concept-b .sf-report-tags span{background:#eef2f3;padding:3px 7px;border-radius:4px}
+.sf-calendar-preview.concept-c{grid-template-columns:250px minmax(0,1fr);gap:52px;border-top:2px solid var(--ink);border-bottom:0;padding-top:28px}.concept-c .sf-calendar-pane{padding-right:26px;border-right:1px solid var(--line)}.concept-c .sf-calendar-head strong{font-size:28px}.concept-c .sf-date-lockup>span{display:block;font:76px/.88 Georgia,serif;color:var(--gold);min-width:92px}.concept-c .sf-report-head h2{font-size:24px}.concept-c .sf-report-label{color:var(--gold)}.concept-c .sf-report-row{grid-template-columns:110px minmax(0,1fr);padding:24px 0}.concept-c .sf-report-meta{font-size:11px}.concept-c .sf-report-row h3{font:21px/1.5 Georgia,serif;font-weight:400}.concept-c .sf-report-row p{font-size:13px;max-width:760px}.concept-c .sf-report-tags span{color:var(--muted);letter-spacing:.3px}
+@media(max-width:850px){.sf-concept-picker{grid-template-columns:1fr}.sf-calendar-preview,.sf-calendar-preview.concept-c{grid-template-columns:240px minmax(0,1fr);gap:26px}.concept-b .sf-report-items{grid-template-columns:1fr}.concept-c .sf-calendar-pane{padding-right:18px}}
+@media(max-width:680px){.sf-calendar-preview,.sf-calendar-preview.concept-b,.sf-calendar-preview.concept-c{grid-template-columns:1fr;gap:28px;padding:24px 0;border-radius:0;border-left:0;border-right:0;background:transparent}.concept-b .sf-calendar-pane,.concept-b .sf-report-head{border-radius:0}.concept-c .sf-calendar-pane{padding-right:0;padding-bottom:24px;border-right:0;border-bottom:1px solid var(--line)}.sf-report-row,.concept-c .sf-report-row{grid-template-columns:1fr;gap:7px}.sf-report-meta{display:flex;gap:10px}.sf-report-meta span{margin:0}.sf-report-head h2{font-size:28px}.concept-c .sf-date-lockup>span{font-size:64px;min-width:76px}}
+</style>
+
+<script>
+(function(){
+  const root=document.getElementById('sf-calendar-preview');
+  const calendar=document.getElementById('sf-calendar');
+  const reportItems=document.getElementById('sf-report-items');
+  const yearEl=document.getElementById('sf-year');
+  const monthEl=document.getElementById('sf-month');
+  const dateEl=document.getElementById('sf-report-date');
+  const dayNumber=document.getElementById('sf-day-number');
+  const countEl=document.getElementById('sf-report-count');
+  const concepts={
+    a:'A：弱化组件边框，以主站现有的细线、留白和文字层级组织日历与日报，适合直接放在首页精选内容之后。',
+    b:'B：日历和日报使用浅色面板与轻卡片，模块边界更清楚，适合希望 SpinFront 在首页形成独立功能区的布局。',
+    c:'C：强调日期和阅读节奏，右侧以大号日期和杂志式条目组织内容，辨识度更高，视觉存在感也更强。'
+  };
+  let issues=[],itemsByDate=new Map(),dates=new Set(),selected='',month='';
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const chinaToday=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  function renderCalendar(){
+    const [y,m]=month.split('-').map(Number);
+    yearEl.textContent=y;
+    monthEl.textContent=String(m).padStart(2,'0')+' 月';
+    const offset=(new Date(y,m-1,1).getDay()+6)%7,last=new Date(y,m,0).getDate();
+    let html='一二三四五六日'.split('').map(x=>'<span class="week">'+x+'</span>').join('')+'<span class="blank"></span>'.repeat(offset);
+    for(let d=1;d<=last;d++){
+      const date=month+'-'+String(d).padStart(2,'0'),has=dates.has(date),picked=date===selected;
+      html+='<button type="button" class="'+(has?'has ':'')+(picked?'selected':'')+'" data-date="'+date+'" '+(has?'':'disabled ')+'aria-pressed="'+picked+'">'+d+'</button>';
+    }
+    calendar.innerHTML=html;
+    calendar.querySelectorAll('button[data-date]').forEach(btn=>btn.onclick=()=>{selected=btn.dataset.date;renderCalendar();renderReport()});
+  }
+  function renderReport(){
+    const list=itemsByDate.get(selected)||[];
+    dateEl.textContent=selected;
+    dayNumber.textContent=selected.slice(-2);
+    countEl.textContent=list.length?list.length+' 条日报内容':'当日暂无已发布日报';
+    if(!list.length){reportItems.innerHTML='<p class="sf-empty">该日期暂无日报记录。</p>';return}
+    reportItems.innerHTML=list.map((item,i)=>{
+      const directions=(item.direction_ids||[]).map(x=>x.toUpperCase());
+      const tags=[...directions,...(item.method_ids||[]).slice(0,2)].slice(0,3);
+      return '<article class="sf-report-row"><div class="sf-report-meta"><span>'+(i+1<10?'0':'')+(i+1)+'</span><small>'+esc(item.publication_date||'')+'</small></div><div><h3><a href="/spinfront/'+esc(selected)+'/#'+esc(item.item_id)+'">'+esc(item.title_cn)+'</a></h3><p>'+esc(item.summary_cn)+'</p><div class="sf-report-tags">'+tags.map(t=>'<span>'+esc(t.replaceAll('_',' '))+'</span>').join('')+'</div></div></article>';
+    }).join('');
+  }
+  function shiftMonth(delta){
+    const [y,m]=month.split('-').map(Number),d=new Date(y,m-1+delta,1);
+    month=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+    renderCalendar();
+  }
+  document.getElementById('sf-prev-month').onclick=()=>shiftMonth(-1);
+  document.getElementById('sf-next-month').onclick=()=>shiftMonth(1);
+  document.querySelectorAll('[data-concept]').forEach(btn=>btn.onclick=()=>{
+    const id=btn.dataset.concept;
+    root.className='sf-calendar-preview concept-'+id;
+    document.querySelectorAll('[data-concept]').forEach(x=>x.setAttribute('aria-pressed',String(x===btn)));
+    document.getElementById('sf-concept-note').textContent=concepts[id];
+  });
+  fetch('/spinfront/search-index.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('SpinFront index');return r.json()}).then(data=>{
+    issues=data.issues||[];
+    for(const item of data.items||[]){
+      if(!itemsByDate.has(item.report_date))itemsByDate.set(item.report_date,[]);
+      itemsByDate.get(item.report_date).push(item);
+    }
+    dates=new Set(issues.map(x=>x.report_date));
+    selected=chinaToday();
+    month=selected.slice(0,7);
+    renderCalendar();
+    renderReport();
+  }).catch(()=>{
+    const fallbackDate=chinaToday();
+    selected=fallbackDate;month=fallbackDate.slice(0,7);
+    dates=new Set();
+    renderCalendar();
+    reportItems.innerHTML='<p class="sf-empty">预览页暂时无法读取 SpinFront 归档数据，样式切换仍可使用。</p>';
+    dateEl.textContent=selected;dayNumber.textContent=selected.slice(-2);countEl.textContent='';
+  });
+})();
+</script>
