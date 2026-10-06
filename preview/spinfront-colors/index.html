@@ -1,0 +1,119 @@
+---
+layout: default
+title: SpinFront Color Preview
+summary: SpinFront 日报主页色彩与交互状态候选方案。
+---
+<section class="page-heading container sfp-heading">
+  <p class="eyebrow">Design preview</p>
+  <h1>SpinFront 日报主页色彩</h1>
+  <p>比较搜索按钮、日历选中态、方向筛选、标签与卡片的配色关系。此页仅展示候选样式，不修改正式 SpinFront 页面。</p>
+</section>
+
+<section class="container sfp-page">
+  <div class="sfp-schemes" role="group" aria-label="SpinFront 色彩方案">
+    <button type="button" data-theme="mist" aria-pressed="true">
+      <span class="sfp-swatch-row"><i style="--c:#365a6c"></i><i style="--c:#eaf0f2"></i><i style="--c:#b99045"></i></span>
+      <strong>A · Mist Blue</strong><small>柔和墨蓝，保留技术感</small>
+    </button>
+    <button type="button" data-theme="editorial" aria-pressed="false">
+      <span class="sfp-swatch-row"><i style="--c:#526b7c"></i><i style="--c:#edf2f5"></i><i style="--c:#c2a15b"></i></span>
+      <strong>B · Editorial Blue</strong><small>灰蓝偏杂志，阅读感更轻</small>
+    </button>
+    <button type="button" data-theme="sage" aria-pressed="false">
+      <span class="sfp-swatch-row"><i style="--c:#596b61"></i><i style="--c:#eef2ee"></i><i style="--c:#b58a42"></i></span>
+      <strong>C · Sage Brass</strong><small>鼠尾草与铜金，更像年鉴</small>
+    </button>
+    <button type="button" data-theme="paper" aria-pressed="false">
+      <span class="sfp-swatch-row"><i style="--c:#5b5651"></i><i style="--c:#f1eee9"></i><i style="--c:#b9854e"></i></span>
+      <strong>D · Warm Paper</strong><small>暖灰与黄铜，纸质刊物感更强</small>
+    </button>
+  </div>
+  <p id="sfp-theme-note" class="sfp-theme-note">A：搜索按钮保留实心主色；日期选中态改为金色浅底与描边；方向激活态使用浅蓝底与深色文字，避免所有交互都变成深色块。</p>
+
+  <div id="sfp-preview" class="sfp-preview theme-mist">
+    <header class="sfp-mast">
+      <div><span class="sfp-kicker">SPINFRONT ARCHIVE</span><h2>自旋前沿｜SpinFront</h2></div>
+      <div class="sfp-mast-meta"><strong id="sfp-total">48期 · 391条</strong><span>NMR / EPR Daily Brief</span></div>
+    </header>
+
+    <div class="sfp-search">
+      <input aria-label="检索示意" value="" placeholder="检索方法、样品、应用或 DOI…">
+      <button type="button">检索</button>
+    </div>
+
+    <nav class="sfp-topics" aria-label="常用主题示意">
+      <span>常用主题</span><button>DEER / PELDOR</button><button>固体 NMR</button><button>代谢组学</button><button>仪器与软件</button><button>采购</button>
+    </nav>
+
+    <div class="sfp-workspace">
+      <aside class="sfp-side">
+        <section class="sfp-panel">
+          <div class="sfp-panel-title"><strong>日期定位</strong><span id="sfp-selected-date"></span></div>
+          <div class="sfp-month-head"><button>‹</button><span>2026 · 10 月</span><button>›</button></div>
+          <div class="sfp-calendar" id="sfp-calendar"></div>
+          <p class="sfp-key"><i></i> 有日报记录</p>
+        </section>
+
+        <section class="sfp-panel">
+          <div class="sfp-panel-title"><strong>主题筛选</strong><span></span></div>
+          <h3>谱学方向</h3>
+          <div class="sfp-direction"><button class="active">全部</button><button>NMR</button><button>EPR</button></div>
+          <h3>应用领域</h3>
+          <div class="sfp-app-mode"><span>选择模式</span><span class="sfp-toggle"><i></i></span><small>多选</small></div>
+          <div class="sfp-app-grid"><button class="active">化学结构与反应</button><button>生命科学与药物</button><button>能源与电化学</button><button>材料与聚合物</button></div>
+        </section>
+      </aside>
+
+      <main class="sfp-feed">
+        <div class="sfp-feed-head"><div><h2 id="sfp-count">10 条匹配</h2><p id="sfp-context">当期记录</p></div><div class="sfp-view"><button class="active">卡片</button><button>列表</button></div></div>
+        <div class="sfp-chip-row"><span id="sfp-chip">2026-10-06 ×</span></div>
+        <div id="sfp-items" class="sfp-items"><p class="sfp-loading">正在读取当前 SpinFront 数据…</p></div>
+      </main>
+    </div>
+  </div>
+</section>
+
+<style>
+.sfp-heading{padding-bottom:30px}.sfp-heading h1{margin-bottom:14px}.sfp-heading>p:last-child{max-width:780px;color:var(--muted)}
+.sfp-page{padding-bottom:90px}.sfp-schemes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.sfp-schemes button{min-width:0;text-align:left;border:1px solid var(--line);background:transparent;padding:15px;color:var(--ink);font:inherit;cursor:pointer}.sfp-schemes button[aria-pressed=true]{border-color:var(--blue);background:#fff}.sfp-schemes strong,.sfp-schemes small{display:block}.sfp-schemes strong{font-size:13px;margin-top:8px}.sfp-schemes small{font-size:10px;color:var(--muted);margin-top:3px}.sfp-swatch-row{display:flex;gap:4px}.sfp-swatch-row i{display:block;width:24px;height:8px;background:var(--c)}.sfp-theme-note{font-size:12px;color:var(--muted);margin:14px 0 24px}
+.sfp-preview{--p:#365a6c;--p-dark:#2c4958;--soft:#eaf0f2;--soft-2:#f3f6f7;--gold:#b99045;--day-bg:#f8eedb;--day-ink:#654b1c;--day-border:#c39a4d;--active-bg:#eef4f6;--active-ink:#365a6c;--border:#d9e1e4;--paper:#fff;--back:#f6f7f5;background:var(--back);border:1px solid var(--border);padding:22px}
+.sfp-preview.theme-editorial{--p:#526b7c;--p-dark:#405866;--soft:#edf2f5;--soft-2:#f5f7f8;--gold:#c2a15b;--day-bg:#526b7c;--day-ink:#fff;--day-border:#526b7c;--active-bg:#e8eef2;--active-ink:#405866;--border:#dce3e7;--back:#f7f8f7}
+.sfp-preview.theme-sage{--p:#596b61;--p-dark:#45564d;--soft:#eef2ee;--soft-2:#f5f7f4;--gold:#b58a42;--day-bg:#f4ead8;--day-ink:#6b4d1d;--day-border:#b58a42;--active-bg:#e8eee9;--active-ink:#45564d;--border:#dde2dc;--back:#f7f7f3}
+.sfp-preview.theme-paper{--p:#5b5651;--p-dark:#47423e;--soft:#f1eee9;--soft-2:#f7f4ef;--gold:#b9854e;--day-bg:#b9854e;--day-ink:#fff;--day-border:#b9854e;--active-bg:#f2ebe2;--active-ink:#5b5651;--border:#e1dcd5;--back:#f8f6f1}
+.sfp-mast{display:flex;justify-content:space-between;align-items:flex-end;padding:4px 4px 18px;border-bottom:1px solid var(--border)}.sfp-kicker{font-size:9px;letter-spacing:1.7px;color:var(--p)}.sfp-mast h2{font:25px/1.3 Georgia,serif;font-weight:400;margin:4px 0 0}.sfp-mast-meta{text-align:right}.sfp-mast-meta strong,.sfp-mast-meta span{display:block}.sfp-mast-meta strong{font-size:11px}.sfp-mast-meta span{font-size:10px;color:var(--muted);margin-top:3px}
+.sfp-search{display:flex;margin:18px 0 8px;background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden}.sfp-search input{flex:1;border:0;background:transparent;padding:14px 16px;font:inherit;font-size:14px;min-width:0}.sfp-search button{border:0;background:var(--p);color:#fff;padding:0 28px;font:inherit;cursor:pointer;transition:.15s}.sfp-search button:hover{background:var(--p-dark)}
+.sfp-topics{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:12px 0 20px}.sfp-topics>span{font-size:10px;color:var(--muted);margin-right:4px}.sfp-topics button{border:1px solid var(--border);background:var(--paper);border-radius:18px;padding:6px 10px;color:var(--p);font:inherit;font-size:10px}
+.sfp-workspace{display:grid;grid-template-columns:270px minmax(0,1fr);gap:22px}.sfp-side{min-width:0}.sfp-panel{background:var(--paper);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;padding:15px}.sfp-panel-title{display:flex;justify-content:space-between;align-items:center;font-size:12px}.sfp-panel-title span{font-size:9px;color:var(--muted)}.sfp-month-head{display:grid;grid-template-columns:28px 1fr 28px;align-items:center;margin:14px 0 8px;text-align:center;font-size:12px}.sfp-month-head button{border:0;background:var(--soft);height:28px;border-radius:4px;color:var(--p)}.sfp-calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.sfp-calendar span,.sfp-calendar button{text-align:center;font-size:10px}.sfp-calendar .week{color:var(--muted);padding:5px 0}.sfp-calendar .blank{height:30px}.sfp-calendar button{position:relative;height:32px;border:1px solid transparent;border-radius:6px;background:transparent;color:var(--ink)}.sfp-calendar button.has::after{content:"";position:absolute;bottom:3px;left:50%;width:3px;height:3px;border-radius:50%;background:var(--gold);transform:translateX(-50%)}.sfp-calendar button.selected{background:var(--day-bg);border-color:var(--day-border);color:var(--day-ink);font-weight:700}.sfp-key{display:flex;align-items:center;gap:6px;font-size:9px;color:var(--muted);margin:8px 0 0}.sfp-key i{width:4px;height:4px;background:var(--gold);border-radius:50%}.sfp-panel h3{font-size:11px;margin:17px 0 8px}.sfp-direction{display:flex;background:var(--soft);border-radius:8px;padding:3px}.sfp-direction button{flex:1;border:1px solid transparent;background:transparent;border-radius:6px;min-height:32px;font:inherit;font-size:10px;color:var(--muted)}.sfp-direction button.active{background:var(--active-bg);border-color:color-mix(in srgb,var(--p) 28%,transparent);color:var(--active-ink);font-weight:600}.sfp-app-mode{display:flex;align-items:center;gap:7px;font-size:9px;color:var(--muted);margin-bottom:8px}.sfp-toggle{width:30px;height:17px;background:var(--soft);border-radius:10px;position:relative;margin-left:auto}.sfp-toggle i{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--p);left:3px;top:3px}.sfp-app-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}.sfp-app-grid button{border:1px solid var(--border);background:var(--paper);min-height:36px;border-radius:6px;text-align:left;padding:6px;font:inherit;font-size:9px;color:var(--muted)}.sfp-app-grid button.active{background:var(--active-bg);border-color:color-mix(in srgb,var(--p) 35%,var(--border));color:var(--active-ink)}
+.sfp-feed-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.sfp-feed-head h2{font-size:20px;margin:0}.sfp-feed-head p{font-size:10px;color:var(--muted);margin:2px 0 0}.sfp-view{display:flex;background:var(--soft);border-radius:8px;padding:3px}.sfp-view button{border:0;background:transparent;border-radius:6px;padding:5px 10px;font:inherit;font-size:9px;color:var(--muted)}.sfp-view button.active{background:var(--paper);color:var(--p)}.sfp-chip-row{height:28px}.sfp-chip-row span{display:inline-block;background:var(--soft-2);border:1px solid color-mix(in srgb,var(--gold) 40%,var(--border));color:var(--active-ink);border-radius:15px;padding:4px 8px;font-size:9px}.sfp-card{background:var(--paper);border:1px solid var(--border);border-radius:11px;padding:17px 18px;margin-bottom:10px}.sfp-card-meta{display:flex;gap:8px;font-size:9px;color:var(--muted)}.sfp-card-meta .status{color:var(--gold)}.sfp-card h3{font-size:16px;line-height:1.55;margin:7px 0}.sfp-card p{font-size:11px;line-height:1.8;color:var(--muted);margin:8px 0}.sfp-tags{display:flex;gap:5px;flex-wrap:wrap}.sfp-tags span{background:var(--soft);color:var(--p);font-size:8px;padding:3px 6px;border-radius:4px}.sfp-loading{font-size:12px;color:var(--muted);padding:30px 0}
+@media(max-width:900px){.sfp-schemes{grid-template-columns:repeat(2,1fr)}.sfp-workspace{grid-template-columns:240px minmax(0,1fr)}}@media(max-width:680px){.sfp-schemes{grid-template-columns:1fr}.sfp-preview{padding:14px}.sfp-mast{align-items:flex-start}.sfp-workspace{grid-template-columns:1fr}.sfp-side{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sfp-panel{margin:0}.sfp-items .sfp-card:nth-child(n+3){display:none}}@media(max-width:480px){.sfp-side{grid-template-columns:1fr}.sfp-mast{display:block}.sfp-mast-meta{text-align:left;margin-top:8px}}
+</style>
+
+<script>
+(function(){
+  const themes={
+    mist:'A：搜索按钮保留实心主色；日期选中态改为金色浅底与描边；方向激活态使用浅蓝底与深色文字，避免所有交互都变成深色块。',
+    editorial:'B：降低主色饱和度，选中日期保留实心灰蓝，方向筛选改用浅灰蓝激活态，整体更接近编辑排版。',
+    sage:'C：使用鼠尾草绿作为主控色，铜金负责日期与重点信息，视觉更柔和，也更接近年鉴和科学杂志。',
+    paper:'D：暖灰承担按钮和正文层级，黄铜作为日期强调，纸张感最强，工具页气质最弱。'
+  };
+  const preview=document.getElementById('sfp-preview');
+  document.querySelectorAll('[data-theme]').forEach(btn=>btn.onclick=()=>{
+    const t=btn.dataset.theme;
+    preview.className='sfp-preview theme-'+t;
+    document.querySelectorAll('[data-theme]').forEach(x=>x.setAttribute('aria-pressed',String(x===btn)));
+    document.getElementById('sfp-theme-note').textContent=themes[t];
+  });
+  const cal=document.getElementById('sfp-calendar');
+  const selected='2026-10-06',month='2026-10',daysWith=new Set(['2026-10-01','2026-10-02','2026-10-03','2026-10-04','2026-10-05','2026-10-06']);
+  let html='一二三四五六日'.split('').map(x=>'<span class="week">'+x+'</span>').join('');
+  const offset=(new Date(2026,9,1).getDay()+6)%7;html+='<span class="blank"></span>'.repeat(offset);
+  for(let d=1;d<=31;d++){const date=month+'-'+String(d).padStart(2,'0'),has=daysWith.has(date),pick=date===selected;html+='<button class="'+(has?'has ':'')+(pick?'selected':'')+'">'+d+'</button>'}
+  cal.innerHTML=html;document.getElementById('sfp-selected-date').textContent=selected;document.getElementById('sfp-chip').textContent=selected+' ×';
+  fetch('/spinfront/search-index.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject()).then(data=>{
+    document.getElementById('sfp-total').textContent=data.issues.length+'期 · '+data.items.length+'条';
+    const latest=data.issues.at(-1).report_date,list=data.items.filter(x=>x.report_date===latest).slice(0,3);
+    document.getElementById('sfp-selected-date').textContent=latest;document.getElementById('sfp-chip').textContent=latest+' ×';document.getElementById('sfp-count').textContent=(data.items.filter(x=>x.report_date===latest).length)+' 条匹配';document.getElementById('sfp-context').textContent='当期记录 · '+latest;
+    document.getElementById('sfp-items').innerHTML=list.map(x=>'<article class="sfp-card"><div class="sfp-card-meta"><span>'+x.report_date+'</span><span>论文</span><span class="status">'+(x.publication_status==='early_access'?'在线优先':'已发布')+'</span></div><h3>'+x.title_cn+'</h3><div class="sfp-tags">'+(x.direction_ids||[]).map(t=>'<span>'+t.toUpperCase()+'</span>').join('')+'</div><p>'+x.summary_cn+'</p></article>').join('');
+  }).catch(()=>{document.getElementById('sfp-items').innerHTML='<p class="sfp-loading">当前无法读取 SpinFront 数据，色彩方案仍可切换比较。</p>'});
+})();
+</script>
