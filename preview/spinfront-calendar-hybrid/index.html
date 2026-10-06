@@ -168,6 +168,13 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
   font:14px/1.55 Georgia,"Times New Roman",serif;
   letter-spacing:.06em;
 }
+.hy2-epigraph[data-lang="en"] q{text-transform:uppercase}
+.hy2-epigraph[data-lang^="zh"] q{
+  font-family:Georgia,"Noto Serif SC","Songti SC","STSong",serif;
+  font-size:15px;
+  letter-spacing:.04em;
+  text-transform:none;
+}
 .hy2-epigraph q::before{content:"“"}
 .hy2-epigraph q::after{content:"”"}
 .hy2-epigraph em{
@@ -178,6 +185,12 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
   font-style:normal;
   letter-spacing:.13em;
 }
+.hy2-epigraph[data-lang^="zh"] em{
+  font-size:9px;
+  letter-spacing:.08em;
+}
+.hy2-epigraph em a{color:inherit;text-decoration:none}
+.hy2-epigraph em a:hover{text-decoration:underline;text-underline-offset:2px}
 .hy2-scroll-cue{
   position:absolute;
   right:0;
@@ -261,6 +274,61 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
   }
 
   let currentList=[],focusIndex=0,scrollRaf=0;
+  let dailyEpigraph={
+    text:'The test of all knowledge is experiment.',
+    author:'Richard P. Feynman',
+    work:'The Feynman Lectures on Physics, Vol. I, Ch. 1',
+    language:'en',
+    source_url:'https://www.feynmanlectures.caltech.edu/I_01.html',
+    source_ref:'1–1 Introduction'
+  };
+
+  function epigraphInner(){
+    const lang=esc(dailyEpigraph.language||'en');
+    const text=esc(dailyEpigraph.text||'').replaceAll(' / ','<br>');
+    const meta=[dailyEpigraph.author,dailyEpigraph.work].filter(Boolean).map(esc).join(' · ');
+    const source=dailyEpigraph.source_url?'<a href="'+esc(dailyEpigraph.source_url)+'" target="_blank" rel="noopener noreferrer" title="'+esc(dailyEpigraph.source_ref||'原始出处')+'">'+meta+'</a>':meta;
+    return '<strong>Daily epigraph</strong><span class="hy2-epigraph" data-lang="'+lang+'"><q>'+text+'</q><em>'+source+'</em></span><i class="hy2-scroll-cue">↓</i>';
+  }
+
+  function resetGuideHeight(){
+    const guide=itemsEl.querySelector('.hy2-guide');
+    const first=itemsEl.querySelector('.hy2-entry');
+    if(guide&&first){
+      guide.style.height='auto';
+      const target=Math.max(118,(itemsEl.clientHeight-first.offsetHeight)/2);
+      guide.style.height=target+'px';
+    }
+  }
+
+  function renderEpigraph(){
+    const guide=itemsEl.querySelector('.hy2-guide');
+    if(!guide)return;
+    guide.innerHTML=epigraphInner();
+    requestAnimationFrame(resetGuideHeight);
+  }
+
+  function dayNumber(date){
+    const [y,m,d]=date.split('-').map(Number);
+    return Math.floor(Date.UTC(y,m-1,d)/86400000);
+  }
+
+  async function loadDailyEpigraph(){
+    try{
+      const r=await fetch('/assets/data/epigraphs.json',{cache:'force-cache'});
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      const lib=await r.json();
+      const entries=lib.entries||[];
+      if(!entries.length)return;
+      const epoch=lib.rotation?.epoch||'2026-10-07';
+      const delta=dayNumber(cnToday())-dayNumber(epoch);
+      const idx=((delta%entries.length)+entries.length)%entries.length;
+      dailyEpigraph=entries[idx];
+      renderEpigraph();
+    }catch(err){
+      console.warn('Daily epigraph library unavailable; using fallback.',err);
+    }
+  }
 
   function itemHtml(x,i){
     const tags=[...(x.direction_ids||[]),...(x.method_ids||[])].slice(0,3).map(id=>labels.get(id)||id.replaceAll('_',' '));
@@ -296,17 +364,12 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
       return;
     }
     itemsEl.innerHTML=
-      '<div class="hy2-guide"><strong>Daily selection</strong><span class="hy2-epigraph"><q>THE TEST OF ALL KNOWLEDGE IS EXPERIMENT.</q><em>RICHARD P. FEYNMAN</em></span><i class="hy2-scroll-cue">↓</i></div>'+
+      '<div class="hy2-guide">'+epigraphInner()+'</div>'+
       currentList.map((x,i)=>itemHtml(x,i)).join('')+
       '<div class="hy2-end">END OF DAILY BRIEF</div>';
     itemsEl.scrollTop=0;
     requestAnimationFrame(()=>{
-      const guide=itemsEl.querySelector('.hy2-guide');
-      const first=itemsEl.querySelector('.hy2-entry');
-      if(guide&&first){
-        const target=Math.max(118,(itemsEl.clientHeight-first.offsetHeight)/2);
-        guide.style.height=target+'px';
-      }
+      resetGuideHeight();
       updateFocus();
     });
   }
@@ -377,5 +440,6 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
     itemsEl.innerHTML='<p class="hy2-loading">预览数据初始化失败。</p>';
     console.error(err);
   }
+  loadDailyEpigraph();
 })();
 </script>
