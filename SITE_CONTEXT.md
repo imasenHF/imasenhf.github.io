@@ -154,3 +154,10 @@ Notes 采用 Just the Docs 原生响应式文档格式及主页蓝灰暖白主�
 原报告的 H2 章标题、H3 小节及 H4 子节保留原层级与编号；短标题用于页面 H1 和侧栏。科学内容组件保留着重框、警告、案例卡片、等宽序列块、SVG 时间轴、回波轮廓与图例。专用样式由 `assets/jtd/distance-content.css` 维护；生成时不得丢弃组件样式或删除编号。
 
 电子—电子距离报告目录以原文视觉结构为准：左侧四个部分为主目录，展开各章；摘要与报告范围、缩写与术语、参考文献为独立入口。右侧固定显示当前章全部编号小节及下级标题，随滚动标记当前位置。不可再用17章平铺或将章内小节放到左侧替代原有分组。H4正文标题18px，正文16px。
+
+
+## 2026-10-07 首页 SpinFront 日历组件
+
+首页 Hero 下方正式加入 SpinFront 日历组件。左侧按月显示已发布日报日期，点击日期后右侧切换到对应日报；默认选择 Asia/Shanghai 当日，若当日尚无日报则显示最新一期。右侧展示标题、摘要、发布日期及方向/方法标签，不显示 `meaning_cn` 技术点评。标题链接原始来源，“进入完整日报”链接对应日期的 SpinFront 页面。
+
+组件运行时读取 `/spinfront/search-index.json` 与 `/spinfront/taxonomy/taxonomy.json`，SpinFront 新日报发布后无需重新构建主站即可进入日历。Daily Epigraph 读取 `/assets/data/epigraphs.json`，按 Asia/Shanghai 日期稳定轮换，同一天刷新不更换。
