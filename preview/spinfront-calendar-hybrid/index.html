@@ -89,42 +89,49 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
   position:relative;
   overflow:hidden;
   overscroll-behavior:contain;
+  display:grid;
+  grid-template-rows:minmax(78px,.72fr) minmax(150px,1.35fr) minmax(78px,.72fr);
 }
-.hy2-track{
-  position:relative;
-  width:100%;
-  will-change:transform;
-  transition:transform .34s cubic-bezier(.22,.61,.36,1);
+.hy2-slot{
+  min-height:0;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
 }
-.hy2-track.no-animate{transition:none}
+.hy2-slot:first-child{border-top:1px solid transparent}
+.hy2-slot.is-empty{opacity:0;pointer-events:none}
 .hy2-entry{
+  width:100%;
   display:grid;
   grid-template-columns:48px minmax(0,1fr);
   gap:16px;
-  min-height:122px;
-  padding:16px 0;
-  border-top:1px solid transparent;
-  border-bottom:1px solid var(--line);
-  opacity:.34;
-  transform:scale(.972);
+  padding:13px 0;
+  opacity:.35;
+  transform:scale(.975);
   transform-origin:center;
-  transition:opacity .24s ease,transform .24s ease,border-color .24s ease;
+  transition:opacity .22s ease,transform .22s ease;
 }
-.hy2-entry.is-near{opacity:.58}
-.hy2-entry.is-focus{
-  opacity:1;
-  transform:scale(1);
-  border-top-color:var(--line);
-}
-.hy2-entry:last-child{border-bottom:1px solid var(--line)}
+.hy2-slot.is-near .hy2-entry{opacity:.55}
+.hy2-slot.is-focus .hy2-entry{opacity:1;transform:scale(1)}
 .hy2-index{font:18px/1 Georgia,"Times New Roman",serif;color:var(--hy-gold)}
 .hy2-index small{display:block;margin-top:7px;font-family:var(--font);font-size:9px;color:var(--muted)}
-.hy2-entry h3{margin:0 0 5px;font-size:15px;line-height:1.5;transition:font-size .22s ease}
-.hy2-entry.is-focus h3{font:21px/1.45 Georgia,"Times New Roman",serif;font-weight:400}
+.hy2-entry h3{margin:0 0 5px;font-size:14px;line-height:1.45}
+.hy2-slot.is-focus .hy2-entry h3{font:21px/1.42 Georgia,"Times New Roman",serif;font-weight:400}
 .hy2-entry h3 a{color:inherit;text-decoration:none}.hy2-entry h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em}
-.hy2-entry p{margin:0;color:var(--muted);font-size:10px;line-height:1.75;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.hy2-entry.is-focus p{-webkit-line-clamp:3}
+.hy2-entry p{margin:0;color:var(--muted);font-size:10px;line-height:1.7;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.hy2-slot.is-focus .hy2-entry p{-webkit-line-clamp:3}
 .hy2-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:7px}.hy2-tags span{font-size:9px;color:var(--hy-accent)}
+.hy2-position{
+  position:absolute;
+  right:0;
+  bottom:5px;
+  z-index:2;
+  color:var(--hy-muted);
+  font-size:9px;
+  letter-spacing:.8px;
+  pointer-events:none;
+}
 .hy2-loading{padding:30px 0;color:var(--muted);font-size:12px}
 
 .hy2-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}.hy2-notes div{border-top:1px solid var(--line);padding-top:11px}
@@ -157,54 +164,57 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
     document.getElementById('hy2-month-count').textContent=issues.filter(x=>x.report_date.startsWith(month)).length;
   }
 
-  function renderReport(){
-    const list=byDate.get(selected)||[];
-    document.getElementById('hy2-date').textContent=selected;
-    document.getElementById('hy2-big-day').textContent=selected.slice(-2);
-    document.getElementById('hy2-count').textContent=list.length+' 条日报内容';
-    document.getElementById('hy2-full').href='/spinfront/'+selected+'/';
-    if(!list.length){itemsEl.innerHTML='<p class="hy2-loading">该日期暂无已发布日报。</p>';return}
-    itemsEl.innerHTML='<div class="hy2-track">'+list.map((x,i)=>{
-      const tags=[...(x.direction_ids||[]),...(x.method_ids||[])].slice(0,3).map(id=>labels.get(id)||id.replaceAll('_',' '));
-      const source=x.url||('/spinfront/'+selected+'/#'+x.item_id);
-      return '<article class="hy2-entry" data-index="'+i+'"><div class="hy2-index">'+String(i+1).padStart(2,'0')+'<small>'+esc(x.publication_date||'')+'</small></div><div><h3><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title_cn)+'</a></h3><p>'+esc(x.summary_cn)+'</p><div class="hy2-tags">'+tags.map(t=>'<span>'+esc(t)+'</span>').join('')+'</div></div></article>';
-    }).join('')+'</div>';
-    setupScroller();
+  let currentList=[],focusIndex=0,wheelLock=false;
+
+  function itemHtml(x,i){
+    const tags=[...(x.direction_ids||[]),...(x.method_ids||[])].slice(0,3).map(id=>labels.get(id)||id.replaceAll('_',' '));
+    const source=x.url||('/spinfront/'+selected+'/#'+x.item_id);
+    return '<article class="hy2-entry"><div class="hy2-index">'+String(i+1).padStart(2,'0')+'<small>'+esc(x.publication_date||'')+'</small></div><div><h3><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title_cn)+'</a></h3><p>'+esc(x.summary_cn)+'</p><div class="hy2-tags">'+tags.map(t=>'<span>'+esc(t)+'</span>').join('')+'</div></div></article>';
   }
 
-  let wheelLock=false,focusIndex=0;
-  function track(){return itemsEl.querySelector('.hy2-track')}
-  function entries(){return [...itemsEl.querySelectorAll('.hy2-entry')]}
-  function focusEntry(index,animate=true){
-    const rows=entries(),rail=track();if(!rows.length||!rail)return;
-    focusIndex=Math.max(0,Math.min(rows.length-1,index));
-    rows.forEach((row,i)=>{
-      row.classList.toggle('is-focus',i===focusIndex);
-      row.classList.toggle('is-near',Math.abs(i-focusIndex)===1);
-    });
-    const row=rows[focusIndex];
-    const target=itemsEl.clientHeight/2-(row.offsetTop+row.offsetHeight/2);
-    rail.classList.toggle('no-animate',!animate);
-    rail.style.transform='translateY('+target+'px)';
-    if(!animate)requestAnimationFrame(()=>rail.classList.remove('no-animate'));
+  function renderFocusWindow(){
+    if(!currentList.length){itemsEl.innerHTML='<p class="hy2-loading">该日期暂无已发布日报。</p>';return}
+    const prev=focusIndex>0?itemHtml(currentList[focusIndex-1],focusIndex-1):'';
+    const curr=itemHtml(currentList[focusIndex],focusIndex);
+    const next=focusIndex<currentList.length-1?itemHtml(currentList[focusIndex+1],focusIndex+1):'';
+    itemsEl.innerHTML=
+      '<div class="hy2-slot is-near '+(prev?'':'is-empty')+'">'+prev+'</div>'+
+      '<div class="hy2-slot is-focus">'+curr+'</div>'+
+      '<div class="hy2-slot is-near '+(next?'':'is-empty')+'">'+next+'</div>'+
+      '<span class="hy2-position">'+String(focusIndex+1).padStart(2,'0')+' / '+String(currentList.length).padStart(2,'0')+'</span>';
   }
-  function setupScroller(){
-    const rows=entries();if(!rows.length)return;
+
+  function renderReport(){
+    currentList=byDate.get(selected)||[];
     focusIndex=0;
-    requestAnimationFrame(()=>focusEntry(0,false));
+    document.getElementById('hy2-date').textContent=selected;
+    document.getElementById('hy2-big-day').textContent=selected.slice(-2);
+    document.getElementById('hy2-count').textContent=currentList.length+' 条日报内容';
+    document.getElementById('hy2-full').href='/spinfront/'+selected+'/';
+    renderFocusWindow();
   }
+
   itemsEl.addEventListener('wheel',e=>{
-    const rows=entries();if(rows.length<2||Math.abs(e.deltaY)<4)return;
-    const dir=e.deltaY>0?1:-1,next=focusIndex+dir;
-    if(next<0||next>=rows.length)return;
+    if(currentList.length<2||Math.abs(e.deltaY)<4)return;
+    const next=focusIndex+(e.deltaY>0?1:-1);
+    if(next<0||next>=currentList.length)return;
     e.preventDefault();
     if(wheelLock)return;
     wheelLock=true;
-    focusEntry(next,true);
-    setTimeout(()=>{wheelLock=false},360);
+    focusIndex=next;
+    renderFocusWindow();
+    setTimeout(()=>{wheelLock=false},220);
   },{passive:false});
-  window.addEventListener('resize',()=>{
-    if(entries().length)requestAnimationFrame(()=>focusEntry(focusIndex,false));
+
+  itemsEl.tabIndex=0;
+  itemsEl.setAttribute('aria-label','SpinFront 当日日报条目，可用滚轮或上下方向键切换');
+  itemsEl.addEventListener('keydown',e=>{
+    if(!['ArrowUp','ArrowDown'].includes(e.key))return;
+    const next=focusIndex+(e.key==='ArrowDown'?1:-1);
+    if(next<0||next>=currentList.length)return;
+    e.preventDefault();
+    focusIndex=next;
+    renderFocusWindow();
   });
 
   function shift(delta){
