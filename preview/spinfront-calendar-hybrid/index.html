@@ -84,34 +84,33 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
 .hy2-full{position:absolute;right:0;bottom:18px;font-size:10px;color:var(--hy-accent)}.hy2-full span{margin-left:8px}
 
 .hy2-items{
-  --edge-pad:120px;
   flex:1;
   min-height:0;
-  overflow-y:auto;
-  overflow-x:hidden;
-  scroll-snap-type:y mandatory;
-  scroll-behavior:smooth;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
+  position:relative;
+  overflow:hidden;
   overscroll-behavior:contain;
-  padding-block:var(--edge-pad);
 }
-.hy2-items::-webkit-scrollbar{display:none}
+.hy2-track{
+  position:relative;
+  width:100%;
+  will-change:transform;
+  transition:transform .34s cubic-bezier(.22,.61,.36,1);
+}
+.hy2-track.no-animate{transition:none}
 .hy2-entry{
   display:grid;
   grid-template-columns:48px minmax(0,1fr);
   gap:16px;
-  min-height:118px;
+  min-height:122px;
   padding:16px 0;
   border-top:1px solid transparent;
   border-bottom:1px solid var(--line);
-  scroll-snap-align:center;
-  scroll-snap-stop:always;
-  opacity:.42;
-  transform:scale(.975);
+  opacity:.34;
+  transform:scale(.972);
   transform-origin:center;
-  transition:opacity .22s ease,transform .22s ease,border-color .22s ease;
+  transition:opacity .24s ease,transform .24s ease,border-color .24s ease;
 }
+.hy2-entry.is-near{opacity:.58}
 .hy2-entry.is-focus{
   opacity:1;
   transform:scale(1);
@@ -165,53 +164,47 @@ summary: SpinFront 主站日历组件 Editorial v2 预览。
     document.getElementById('hy2-count').textContent=list.length+' 条日报内容';
     document.getElementById('hy2-full').href='/spinfront/'+selected+'/';
     if(!list.length){itemsEl.innerHTML='<p class="hy2-loading">该日期暂无已发布日报。</p>';return}
-    itemsEl.innerHTML=list.map((x,i)=>{
+    itemsEl.innerHTML='<div class="hy2-track">'+list.map((x,i)=>{
       const tags=[...(x.direction_ids||[]),...(x.method_ids||[])].slice(0,3).map(id=>labels.get(id)||id.replaceAll('_',' '));
       const source=x.url||('/spinfront/'+selected+'/#'+x.item_id);
       return '<article class="hy2-entry" data-index="'+i+'"><div class="hy2-index">'+String(i+1).padStart(2,'0')+'<small>'+esc(x.publication_date||'')+'</small></div><div><h3><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title_cn)+'</a></h3><p>'+esc(x.summary_cn)+'</p><div class="hy2-tags">'+tags.map(t=>'<span>'+esc(t)+'</span>').join('')+'</div></div></article>';
-    }).join('');
+    }).join('')+'</div>';
     setupScroller();
   }
 
   let wheelLock=false,focusIndex=0;
+  function track(){return itemsEl.querySelector('.hy2-track')}
   function entries(){return [...itemsEl.querySelectorAll('.hy2-entry')]}
-  function centerTop(el){return el.offsetTop-(itemsEl.clientHeight-el.offsetHeight)/2}
   function focusEntry(index,animate=true){
-    const rows=entries();if(!rows.length)return;
+    const rows=entries(),rail=track();if(!rows.length||!rail)return;
     focusIndex=Math.max(0,Math.min(rows.length-1,index));
-    rows.forEach((row,i)=>row.classList.toggle('is-focus',i===focusIndex));
-    itemsEl.scrollTo({top:centerTop(rows[focusIndex]),behavior:animate?'smooth':'auto'});
-  }
-  function nearestIndex(){
-    const rows=entries();if(!rows.length)return 0;
-    const center=itemsEl.scrollTop+itemsEl.clientHeight/2;
-    let best=0,dist=Infinity;
-    rows.forEach((row,i)=>{const d=Math.abs(row.offsetTop+row.offsetHeight/2-center);if(d<dist){dist=d;best=i}});
-    return best;
+    rows.forEach((row,i)=>{
+      row.classList.toggle('is-focus',i===focusIndex);
+      row.classList.toggle('is-near',Math.abs(i-focusIndex)===1);
+    });
+    const row=rows[focusIndex];
+    const target=itemsEl.clientHeight/2-(row.offsetTop+row.offsetHeight/2);
+    rail.classList.toggle('no-animate',!animate);
+    rail.style.transform='translateY('+target+'px)';
+    if(!animate)requestAnimationFrame(()=>rail.classList.remove('no-animate'));
   }
   function setupScroller(){
     const rows=entries();if(!rows.length)return;
-    const edge=Math.max(72,(itemsEl.clientHeight-rows[0].offsetHeight)/2);
-    itemsEl.style.setProperty('--edge-pad',edge+'px');
     focusIndex=0;
     requestAnimationFrame(()=>focusEntry(0,false));
   }
   itemsEl.addEventListener('wheel',e=>{
-    if(entries().length<2||Math.abs(e.deltaY)<4)return;
+    const rows=entries();if(rows.length<2||Math.abs(e.deltaY)<4)return;
+    const dir=e.deltaY>0?1:-1,next=focusIndex+dir;
+    if(next<0||next>=rows.length)return;
     e.preventDefault();
     if(wheelLock)return;
     wheelLock=true;
-    const next=focusIndex+(e.deltaY>0?1:-1);
     focusEntry(next,true);
-    setTimeout(()=>{wheelLock=false},380);
+    setTimeout(()=>{wheelLock=false},360);
   },{passive:false});
-  let settleTimer;
-  itemsEl.addEventListener('scroll',()=>{
-    clearTimeout(settleTimer);
-    settleTimer=setTimeout(()=>{
-      const idx=nearestIndex();
-      if(idx!==focusIndex){focusIndex=idx;entries().forEach((row,i)=>row.classList.toggle('is-focus',i===focusIndex))}
-    },90);
+  window.addEventListener('resize',()=>{
+    if(entries().length)requestAnimationFrame(()=>focusEntry(focusIndex,false));
   });
 
   function shift(delta){
