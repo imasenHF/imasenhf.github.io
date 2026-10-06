@@ -158,6 +158,6 @@ Notes 采用 Just the Docs 原生响应式文档格式及主页蓝灰暖白主�
 
 ## 2026-10-07 首页 SpinFront 日历组件
 
-首页 Hero 下方正式加入 SpinFront 日历组件。左侧按月显示已发布日报日期，点击日期后右侧切换到对应日报；默认选择 Asia/Shanghai 当日，若当日尚无日报则显示最新一期。右侧展示标题、摘要、发布日期及方向/方法标签，不显示 `meaning_cn` 技术点评。标题链接原始来源，“进入完整日报”链接对应日期的 SpinFront 页面。
+首页 About plastocyanin 区块下方正式加入 SpinFront 日历组件。该位置使 Hero 与站点命名说明保持连续，SpinFront 作为首页后续内容模块出现。左侧按月显示已发布日报日期，点击日期后右侧切换到对应日报；默认选择 Asia/Shanghai 当日，若当日尚无日报则显示最新一期。右侧展示标题、摘要、发布日期及方向/方法标签，不显示 `meaning_cn` 技术点评。标题链接原始来源，“进入完整日报”链接对应日期的 SpinFront 页面。
 
 组件运行时读取 `/spinfront/search-index.json` 与 `/spinfront/taxonomy/taxonomy.json`，SpinFront 新日报发布后无需重新构建主站即可进入日历。Daily Epigraph 读取 `/assets/data/epigraphs.json`，按 Asia/Shanghai 日期稳定轮换，同一天刷新不更换。
