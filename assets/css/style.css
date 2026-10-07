@@ -251,3 +251,12 @@
 
 .site-footer .site-footer-brand{gap:3px;align-items:flex-start}
 .site-footer-brand>span:last-child{margin-top:6px;font-family:var(--font)}
+
+
+/* Typography roles: serif for brands/project names; sans-serif for editorial/content titles. */
+.project-main h3,
+.project-main h3 a{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  letter-spacing:-.15px;
+}
