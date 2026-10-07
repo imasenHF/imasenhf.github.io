@@ -205,3 +205,8 @@ SpinFront 日报主页页尾与日报内页统一为左右双栏：左侧显示 
 所有作为品牌显示的 `plastocyanin.` 统一采用 Georgia/serif，字母 `o` 与末尾圆点使用金色 `#b68c37`，其余字母保持深蓝灰。该规则适用于主站页头、栏目页头、主站页尾、SpinFront 日报主页页头/页尾及完整日报页头/页尾；hover、active、keyboard focus 时主体文字变蓝并显示细下划线，金色 `o` 与圆点保持金色。
 
 主站首页 Hero 的大号 `plastocyanin.` 改为主页链接；“About plastocyanin.”中的 plastocyanin 词组改为品牌格式并链接主页。此规则补充并覆盖此前只要求品牌末尾圆点为金色的旧描述。仓库格式备份位于 `docs/SITE_STYLE_GUIDE.md`，SpinFront 专属备份位于 `imasenHF/spinfront/docs/STYLE_GUIDE.md`。
+
+
+### 2026-10-07 SpinFront 日报元数据与分类标签
+
+完整日报条目将来源与 DOI 合并为同一条元数据：先显示原始来源及替代来源，有 DOI 时在其后显示完整 DOI 并链接 doi.org；无 DOI 时不显示 DOI。日报条目中的 taxonomy 分类标签改为可点击链接，进入 `/spinfront/` 对应筛选结果。可链接维度包括谱学方向、实验类型、方法、应用、仪器部件及信息类型；时间范围等非 taxonomy 字段保持普通文本。
