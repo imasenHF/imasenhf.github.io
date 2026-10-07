@@ -181,3 +181,8 @@ SpinFront 日报主页归档区改为单一页面纵向滚动：左侧 sidebar �
 主站与 SpinFront 统一可点击标题和品牌文字的交互：默认保持深蓝灰；hover、active 或键盘 focus 时主体文字转为蓝色并显示细下划线，金色圆点或子项目名称中的金色字母保持金色。该规则用于项目/笔记等已有标题链接、SpinFront 最新一期与归档结果标题，以及 plastocyanin、Notebook、Workshop、SpinFront 品牌链接。
 
 主站页尾加入 linked brand 层级：plastocyanin 返回主页；Notebook/Workshop 页面额外显示对应栏目链接。SpinFront 日报主页与日报内页页尾均显示 plastocyanin 与 SpinFront 两级品牌链接，分别返回主站和日报主页。仅对已有语义链接的标题应用交互，不为普通不可点击标题增加无意义的自链接。
+
+
+### 2026-10-07 首页字体角色收敛
+
+主页及栏目页字体角色收敛为两类：Georgia/serif 用于品牌与项目名称，sans-serif 用于正文、中文内容标题、分类标签和界面元素。主页精选项目中的 SpinPlot、SpinFront、NMR Experiment Library 等项目名统一使用 Georgia 系列；“精选项目”“笔记与调研”、笔记标题、SOFTWARE/DIGEST/REFERENCE 等分类与正文继续使用 sans-serif。SpinFront 日历组件保留自身 editorial 排版：日期/焦点标题可使用衬线，普通列表与摘要仍按组件现有规则显示，不再额外引入第三套字体体系。
