@@ -25,12 +25,12 @@
 - 默认：深蓝灰。
 - hover / active / keyboard focus：主体文字变为 `#355c7d`，显示细下划线。
 - 下划线偏移约 `.18em`，保持文字可读。
-- 品牌中的金色圆点或金色字母保持金色，不随主体变蓝。
+- 所有作为品牌显示的 `plastocyanin.` 中，字母 `o` 与末尾圆点统一使用金色；其他字母保持深蓝灰。品牌 hover / active / focus 时，金色 `o` 与圆点继续保持金色。
 - 不为普通不可点击标题增加无意义的自链接。
 - 键盘 focus 必须可见。
 
 适用范围包括：
-- plastocyanin.
+- plastocyanin.（品牌中的 `o` 与末尾圆点为金色）
 - Notebook / Workshop / SpinFront
 - 主站项目标题与笔记标题
 - SpinFront Latest Issue 标题与归档结果标题
@@ -41,12 +41,16 @@
 主站保留 Φ 风格个人图标及 favicon。主站资源位于 `assets/images/imasen_phi_logo/`。
 
 Notebook / Workshop 使用两行栏目品牌：
-- plastocyanin. 为第一行，末尾圆点金色。
+- plastocyanin. 为第一行，其中 `o` 与末尾圆点均为金色。
 - 第二行为栏目名；当前已确认金色字母分布沿用仓库现有实现。
 - 图标和 plastocyanin 返回主站；栏目名返回栏目首页。
 - 品牌文字使用 Georgia。
 
 SpinPlot 继续使用其独立的紧凑深色单行页头，不强制改成主站浅色栏目页头。
+主站首页品牌：
+- Hero 中的大号 `plastocyanin.` 作为主页链接，使用与其他品牌相同的 hover / active / focus 反馈。
+- `About plastocyanin.` 中的 plastocyanin 词组使用品牌格式：Georgia，金色 `o` 与金色圆点，并链接主页。
+
 
 ## 4. 主站页尾
 
