@@ -110,7 +110,7 @@
     document.getElementById('hy2-date').textContent=selected;
     document.getElementById('hy2-big-day').textContent=selected.slice(-2);
     document.getElementById('hy2-count').textContent=current.length+' 条日报内容';
-    document.getElementById('hy2-full').href='/spinfront/'+selected+'/';
+    document.getElementById('hy2-full').href='/spinfront/';
 
     if(!current.length){
       itemsEl.innerHTML='<p class="hy2-loading">该日期暂无已发布日报。</p>';
