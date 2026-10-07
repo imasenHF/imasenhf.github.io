@@ -377,3 +377,13 @@
   font-weight:400;
   letter-spacing:-.15px;
 }
+
+
+/* Footer geometry: match SpinFront daily issues while allowing each page its own container width. */
+.site-footer{
+  border-top:2px solid var(--ink);
+  padding:28px 40px 34px;
+}
+@media(max-width:620px){
+  .site-footer{padding:24px 20px 30px}
+}
