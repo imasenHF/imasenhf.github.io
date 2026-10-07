@@ -38,6 +38,8 @@
 
 ## 3. 主站页头与栏目品牌
 
+主站页头分割线不横跨浏览器整宽；线条放在实际 `.header-inner.container` 上，长度随主站内容容器宽度变化，与 SpinFront 主页的“内容宽度内分隔线”原则一致。
+
 主站保留 Φ 风格个人图标及 favicon。主站资源位于 `assets/images/imasen_phi_logo/`。
 
 Notebook / Workshop 使用两行栏目品牌：
