@@ -203,3 +203,48 @@
 @media(max-width:620px){.home-spinfront{padding-bottom:34px}}
 
 .hy2-kicker a{color:inherit;text-decoration:none}.hy2-kicker a:hover{text-decoration:underline;text-underline-offset:.18em}.hy2-gold-o{color:var(--hy-gold)}
+
+
+/* Shared editorial link feedback: titles and footer brands. */
+:is(h1,h2,h3) > a,
+.project-main h3 a,
+.note-row h3 a,
+.footer-parent-link,
+.footer-section-link,
+.wordmark{
+  color:var(--ink);
+  text-decoration:none;
+}
+:is(h1,h2,h3) > a:is(:hover,:active,:focus-visible),
+.project-main h3 a:is(:hover,:active,:focus-visible),
+.note-row h3 a:is(:hover,:active,:focus-visible),
+.footer-parent-link:is(:hover,:active,:focus-visible),
+.footer-section-link:is(:hover,:active,:focus-visible),
+.wordmark:is(:hover,:active,:focus-visible){
+  color:var(--blue);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:.18em;
+  text-decoration-skip-ink:auto;
+}
+.wordmark:is(:hover,:active,:focus-visible) .wordmark-dot,
+.footer-parent-link:is(:hover,:active,:focus-visible) .footer-brand-dot,
+.footer-section-link:is(:hover,:active,:focus-visible) .footer-brand-gold{
+  color:var(--gold);
+}
+.site-footer-brand{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  font-family:Georgia,"Times New Roman",serif;
+}
+.footer-parent-link{
+  font-size:16px;
+  letter-spacing:-.3px;
+  width:max-content;
+}
+.footer-section-link{
+  font-size:13px;
+  width:max-content;
+}
+.footer-brand-dot,.footer-brand-gold{color:var(--gold)}
