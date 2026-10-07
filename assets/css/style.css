@@ -340,3 +340,40 @@
 .site-footer-right>div{
   display:block;
 }
+
+
+/* plastocyanin brand: gold o + gold dot, shared link behavior. */
+.wordmark-o,
+.footer-brand-o,
+.brand-gold-o,
+.brand-gold-dot{
+  color:var(--gold);
+}
+.wordmark:is(:hover,:active,:focus-visible) .wordmark-o,
+.wordmark:is(:hover,:active,:focus-visible) .wordmark-dot,
+.footer-parent-link:is(:hover,:active,:focus-visible) .footer-brand-o,
+.footer-parent-link:is(:hover,:active,:focus-visible) .footer-brand-dot,
+.hero-brand-link:is(:hover,:active,:focus-visible) .brand-gold-o,
+.hero-brand-link:is(:hover,:active,:focus-visible) .brand-gold-dot,
+.inline-brand-link:is(:hover,:active,:focus-visible) .brand-gold-o,
+.inline-brand-link:is(:hover,:active,:focus-visible) .brand-gold-dot{
+  color:var(--gold);
+}
+.hero-brand-link,
+.inline-brand-link{
+  color:var(--ink);
+  text-decoration:none;
+}
+.hero-brand-link:is(:hover,:active,:focus-visible),
+.inline-brand-link:is(:hover,:active,:focus-visible){
+  color:var(--blue);
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:.18em;
+  text-decoration-skip-ink:auto;
+}
+.origin-copy .inline-brand-link{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  letter-spacing:-.15px;
+}
