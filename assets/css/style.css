@@ -23,7 +23,7 @@
 #projects{border-top:0}
 
 .hy2-heading{padding-bottom:30px}.hy2-heading h1{margin-bottom:14px}.hy2-heading>p:last-child{max-width:860px;color:var(--muted)}.hy2-page{padding-bottom:90px}
-.hy2-component{--hy-accent:#596b61;--hy-accent-dark:#304239;--hy-gold:#b58a42;--hy-soft:#eef2ee;--hy-bg:#fafaf7;--hy-muted:#7a8583;display:grid;grid-template-columns:44% minmax(0,56%);height:590px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);background:var(--hy-bg);overflow:hidden}
+.hy2-component{--hy-accent:#355c7d;--hy-accent-dark:#203139;--hy-gold:#b68c37;--hy-soft:#eef2ee;--hy-bg:#fafaf7;--hy-muted:#7a8583;display:grid;grid-template-columns:44% minmax(0,56%);height:590px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);background:var(--hy-bg);overflow:hidden}
 .hy2-calendar-pane{min-width:0;position:relative;padding:31px 38px 28px;border-right:1px solid var(--line);overflow:hidden}
 .hy2-month-head{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2;margin-bottom:22px}
 .hy2-month-title span{display:block;color:var(--hy-accent);font-size:9px;letter-spacing:1.9px;text-transform:uppercase}
@@ -167,20 +167,14 @@
   padding:18px 0;
   border-bottom:1px solid var(--line);
   scroll-snap-align:center;
-  opacity:.42;
-  transform:scale(.982);
-  transform-origin:center;
-  transition:opacity 180ms ease,transform 180ms ease,background-color 180ms ease;
-  will-change:transform;
+  opacity:.72;
+  transition:opacity 180ms ease,background-color 180ms ease;
   content-visibility:auto;
   contain-intrinsic-size:128px;
 }
-.hy2-entry.is-near{opacity:.66}
-.hy2-entry.is-focus{
-  opacity:1;
-  transform:scale(1);
-}
-.hy2-index{font:18px/1 Georgia,"Times New Roman",serif;color:var(--hy-gold)}
+.hy2-entry.is-near{opacity:.88}
+.hy2-entry.is-focus{opacity:1}
+.hy2-index{font:18px/1 Georgia,"Times New Roman",serif;color:var(--hy-gold)}.hy2-index::after{content:" /";color:#a8b1ae}
 .hy2-index small{display:block;margin-top:7px;font-family:var(--font);font-size:9px;color:var(--muted)}
 .hy2-entry h3{margin:0 0 5px;font-size:15px;line-height:1.5}
 .hy2-entry.is-focus h3{font:21px/1.42 Georgia,"Times New Roman",serif;font-weight:400}
@@ -207,3 +201,5 @@
 @media(max-width:680px){.hy2-component{height:auto;grid-template-columns:1fr;overflow:visible}.hy2-calendar-pane{border-right:0;border-bottom:1px solid var(--line)}.hy2-report-pane{height:560px;min-height:0}.hy2-notes{grid-template-columns:1fr}.hy2-guide{min-height:96px}.hy2-entry{min-height:118px}}
 
 @media(max-width:620px){.home-spinfront{padding-bottom:34px}}
+
+.hy2-kicker a{color:inherit;text-decoration:none}.hy2-kicker a:hover{text-decoration:underline;text-underline-offset:.18em}.hy2-gold-o{color:var(--hy-gold)}
