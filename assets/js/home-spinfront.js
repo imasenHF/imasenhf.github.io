@@ -86,8 +86,8 @@
 
   function itemHtml(x,i){
     const tags=[...(x.direction_ids||[]),...(x.method_ids||[])].slice(0,3).map(id=>labels.get(id)||id.replaceAll('_',' '));
-    const source=x.url||('/spinfront/'+selected+'/#'+x.item_id);
-    return '<article class="hy2-entry" data-index="'+i+'"><div class="hy2-index">'+String(i+1).padStart(2,'0')+'<small>'+esc(x.publication_date||'')+'</small></div><div><h3><a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">'+esc(x.title_cn)+'</a></h3><p>'+esc(x.summary_cn)+'</p><div class="hy2-tags">'+tags.map(t=>'<span>'+esc(t)+'</span>').join('')+'</div></div></article>';
+    const source='/spinfront/'+selected+'/#'+x.item_id;
+    return '<article class="hy2-entry" data-index="'+i+'"><div class="hy2-index">'+String(i+1).padStart(2,'0')+'<small>'+esc(x.publication_date||'')+'</small></div><div><h3><a href="'+esc(source)+'">'+esc(x.title_cn)+'</a></h3><p>'+esc(x.summary_cn)+'</p><div class="hy2-tags">'+tags.map(t=>'<span>'+esc(t)+'</span>').join('')+'</div></div></article>';
   }
 
   function updateFocus(){
