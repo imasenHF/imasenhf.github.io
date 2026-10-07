@@ -260,3 +260,59 @@
   font-weight:400;
   letter-spacing:-.15px;
 }
+
+
+/* Two-column editorial footer aligned with SpinFront daily issues. */
+.site-footer{
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:40px;
+  padding-top:28px;
+  padding-bottom:34px;
+}
+.site-footer .site-footer-brand{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:3px;
+  min-width:220px;
+}
+.site-footer-right{
+  margin-left:auto;
+  display:flex!important;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:7px!important;
+  text-align:right;
+  line-height:1.8;
+}
+.site-footer-right>div{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+.site-footer-links{
+  gap:18px!important;
+}
+.site-footer-right a{
+  color:inherit;
+}
+.site-footer-right a:is(:hover,:active,:focus-visible){
+  color:var(--blue);
+  text-decoration:underline;
+  text-underline-offset:.18em;
+}
+@media(max-width:620px){
+  .site-footer{
+    display:block;
+  }
+  .site-footer-right{
+    margin-top:18px;
+    align-items:flex-start;
+    text-align:left;
+  }
+  .site-footer-right>div{
+    justify-content:flex-start;
+    flex-wrap:wrap;
+  }
+}
