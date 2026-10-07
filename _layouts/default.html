@@ -4,7 +4,7 @@
 <meta name="description" content="{{ page.summary | default: site.description | default: 'hyphoon 的科研工具、谱学笔记与个人兴趣。' | escape }}">
 <meta name="theme-color" content="#f6f6f3"><link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" href="{{ '/assets/images/imasen_phi_logo/favicon.ico' | relative_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20261006-brand-feedback">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v=20261007-link-system">
 {% if page.report_css %}<link rel="stylesheet" href="{{ page.report_css | relative_url }}">{% endif %}
 {% if page.math %}<script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/section-brand.css' | relative_url }}?v=20261006-brand-feedback">
@@ -13,6 +13,6 @@
 <header class="site-header"><div class="container header-inner">{% if page.nav == 'notes' or page.nav == 'projects' %}{% include section-brand.html %}{% else %}<a class="wordmark" href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/imasen_phi_logo/imasen-phi-64.png' | relative_url }}" width="32" height="32" alt=""><span>plastocyanin<span class="wordmark-dot">.</span></span></a>{% endif %}
 <nav class="site-nav" aria-label="主导航"><a href="{{ '/' | relative_url }}" {% if page.nav == 'home' %}aria-current="page"{% endif %}>Home</a><a href="{{ '/projects/' | relative_url }}" {% if page.nav == 'projects' %}aria-current="page"{% endif %}>Workshop</a><a href="{{ '/notes/' | relative_url }}" {% if page.nav == 'notes' %}aria-current="page"{% endif %}>Notebook</a><a href="{{ '/about/' | relative_url }}" {% if page.nav == 'about' %}aria-current="page"{% endif %}>About / CV</a></nav></div></header>
 <main id="main-content">{{ content }}</main>
-<footer class="site-footer container"><span>© <span id="current-year">{{ site.time | date: '%Y' }}</span> hyphoon</span><div><a href="mailto:wuhaifeng@ustc.edu.cn">Email ↗</a><a href="https://github.com/imasenHF">GitHub ↗</a></div></footer>
+<footer class="site-footer container"><div class="site-footer-brand"><a class="footer-parent-link" href="{{ '/' | relative_url }}">plastocyanin<span class="footer-brand-dot">.</span></a>{% if page.nav == 'projects' %}<a class="footer-section-link" href="{{ '/projects/' | relative_url }}">W<span class="footer-brand-gold">o</span>rksh<span class="footer-brand-gold">o</span>p</a>{% elsif page.nav == 'notes' %}<a class="footer-section-link" href="{{ '/notes/' | relative_url }}">N<span class="footer-brand-gold">o</span>teb<span class="footer-brand-gold">oo</span>k</a>{% endif %}<span>© <span id="current-year">{{ site.time | date: '%Y' }}</span> hyphoon</span></div><div><a href="mailto:wuhaifeng@ustc.edu.cn">Email ↗</a><a href="https://github.com/imasenHF">GitHub ↗</a></div></footer>
 <script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
 </body></html>
