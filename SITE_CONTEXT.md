@@ -186,3 +186,8 @@ SpinFront 日报主页归档区改为单一页面纵向滚动：左侧 sidebar �
 ### 2026-10-07 首页字体角色收敛
 
 主页及栏目页字体角色收敛为两类：Georgia/serif 用于品牌与项目名称，sans-serif 用于正文、中文内容标题、分类标签和界面元素。主页精选项目中的 SpinPlot、SpinFront、NMR Experiment Library 等项目名统一使用 Georgia 系列；“精选项目”“笔记与调研”、笔记标题、SOFTWARE/DIGEST/REFERENCE 等分类与正文继续使用 sans-serif。SpinFront 日历组件保留自身 editorial 排版：日期/焦点标题可使用衬线，普通列表与摘要仍按组件现有规则显示，不再额外引入第三套字体体系。
+
+
+### 2026-10-07 全站页尾双栏统一
+
+使用默认布局的主站页面页尾统一改为与 SpinFront 日报相近的双栏结构：左栏显示 plastocyanin 品牌，Notebook/Workshop 页面附对应栏目品牌链接；右栏显示版权、公开联系邮箱及 Email/GitHub 入口并右对齐。移动端自动改为上下堆叠。品牌链接继续使用统一的蓝色 hover/focus + 细下划线反馈，金色圆点或栏目金色字母保持金色。Note 阅读器仍保留其侧栏版权结构，不额外插入页面页尾。
