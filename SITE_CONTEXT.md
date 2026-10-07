@@ -198,3 +198,10 @@ SpinFront 日报主页归档区改为单一页面纵向滚动：左侧 sidebar �
 SpinFront 日报主页页尾与日报内页统一为左右双栏：左侧显示 plastocyanin、SpinFront 与栏目说明，右侧显示“© 年份 wuhaifeng@ustc.edu.cn. All rights reserved.”及日报版权声明。
 
 主站默认布局页尾同步采用相同结构。左栏固定显示 plastocyanin，并按页面显示对应二级品牌与简短说明：Workshop / Projects / Tools，Notebook / Notes / Research，About / CV / Profile / CV；主页显示 hyphoon / Personal website。右栏统一使用公开邮箱版权格式，第二行声明按页面类型分别使用项目说明、笔记内容、个人资料或一般站点内容的版权表述。移动端继续改为上下排列。
+
+
+### 2026-10-07 plastocyanin 品牌字形统一
+
+所有作为品牌显示的 `plastocyanin.` 统一采用 Georgia/serif，字母 `o` 与末尾圆点使用金色 `#b68c37`，其余字母保持深蓝灰。该规则适用于主站页头、栏目页头、主站页尾、SpinFront 日报主页页头/页尾及完整日报页头/页尾；hover、active、keyboard focus 时主体文字变蓝并显示细下划线，金色 `o` 与圆点保持金色。
+
+主站首页 Hero 的大号 `plastocyanin.` 改为主页链接；“About plastocyanin.”中的 plastocyanin 词组改为品牌格式并链接主页。此规则补充并覆盖此前只要求品牌末尾圆点为金色的旧描述。仓库格式备份位于 `docs/SITE_STYLE_GUIDE.md`，SpinFront 专属备份位于 `imasenHF/spinfront/docs/STYLE_GUIDE.md`。
