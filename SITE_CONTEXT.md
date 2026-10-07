@@ -217,3 +217,8 @@ SpinFront 日报主页页尾与日报内页统一为左右双栏：左侧显示 
 主站共享页尾与 SpinFront 日报页尾统一分隔线和文字相对位置：分隔线使用 2px 深蓝灰；允许不同页面沿用各自天然容器宽度，但桌面端品牌与版权内容相对分隔线左右各内缩 40px，移动端内缩 20px。SpinFront 日报主页页尾采用相同内缩规则。
 
 SpinFront 日报主页此前标题 hover 仅出现下划线但未稳定变色，原因是主页样式使用了未定义的 `--blue` 变量。已在 `assets/home.css` 明确定义 `--blue:#355c7d`，并对顶部 `plastocyanin.` 与大号 `SpinFront` 增加显式 hover / active / focus 颜色规则；主体变蓝，品牌金色 o 与圆点保持金色。
+
+
+### 2026-10-07 主站页头分割线宽度
+
+主站页头底部分割线从全浏览器宽度改为实际内容容器宽度：`.site-header` 不再绘制 border，改由 `.header-inner.container` 绘制 1px 浅灰分割线。这样不同屏幕上分割线随主站内容宽度变化，与 SpinFront 主页按内容宽度收束的页头处理一致。
