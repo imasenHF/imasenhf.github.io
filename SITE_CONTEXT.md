@@ -158,6 +158,14 @@ Notes 采用 Just the Docs 原生响应式文档格式及主页蓝灰暖白主�
 
 ## 2026-10-07 首页 SpinFront 日历组件
 
-首页 About plastocyanin 区块下方正式加入 SpinFront 日历组件。该位置使 Hero 与站点命名说明保持连续，SpinFront 作为首页后续内容模块出现。左侧按月显示已发布日报日期，点击日期后右侧切换到对应日报；默认选择 Asia/Shanghai 当日，若当日尚无日报则显示最新一期。右侧展示标题、摘要、发布日期及方向/方法标签，不显示 `meaning_cn` 技术点评。标题链接原始来源，右上角“进入日报主页”固定链接至 `/spinfront/`，不随左侧选择日期变化。
+首页 About plastocyanin 区块下方保留 SpinFront 日历组件。左侧按月显示已发布日报日期，点击日期后右侧切换对应日报；默认选择 Asia/Shanghai 当日，若当日尚无日报则显示最新一期。右侧条目继续使用内部滚动浏览，保留 Daily Epigraph、滚动定位与当前条目聚焦，不取消滚动交互。
 
-组件运行时读取 `/spinfront/search-index.json` 与 `/spinfront/taxonomy/taxonomy.json`，SpinFront 新日报发布后无需重新构建主站即可进入日历。Daily Epigraph 读取 `/assets/data/epigraphs.json`，按 Asia/Shanghai 日期稳定轮换，同一天刷新不更换。
+组件视觉统一到主站及 SpinFront 杂志版的深蓝灰、金色与暖白体系，不再使用独立绿色强调色。滚动焦点仅调整透明度，不再缩放条目；普通、邻近、当前条目的透明度依次为 0.72、0.88、1。条目编号采用金色“01 /”形式。标题改为链接到对应完整日报条目，而不是直接跳原始来源；右上角“进入日报主页”固定链接至 `/spinfront/`。组件运行时继续读取 `/spinfront/search-index.json` 与 `/spinfront/taxonomy/taxonomy.json`，SpinFront 新日报发布后无需重新构建主站即可进入日历。Daily Epigraph 继续读取 `/assets/data/epigraphs.json` 并按 Asia/Shanghai 日期稳定轮换。
+
+## 2026-10-07 SpinFront 杂志化视觉体系
+
+SpinFront 正式采用 editorial magazine 视觉作为日报与归档主页的统一基准。正式入口保持 `/spinfront/`，独立源码仓库为 `imasenHF/spinfront`。
+
+完整日报使用杂志内页结构：顶部仅保留 `plastocyanin.` 与 Daily Archive；大号 `SpinFront` 为日报主页链接，其中字母 o 使用主站金色；右侧使用日期封面块。正文采用大号编号、衬线标题、细分隔线、技术评注金色左线及右侧分类标签。桌面端右侧显示分类标签，移动端改在标题下显示，避免重复。DOI 显示完整字符串并链接到 doi.org；来源及替代来源保留链接。检索说明默认折叠，页尾 SpinFront 返回日报主页，并提供相邻日报导航。
+
+`/spinfront/` 由数据库式首页调整为“Magazine Front Page + Archive”：首屏展示最新一期与前四条内容，搜索、日历、主题和高级筛选下移到 Explore the Archive。检索结果取消独立白色圆角卡片，采用与日报一致的编号、衬线标题、细分隔线和金色技术评注。日历仍保留原有日期定位功能，选中日期使用深蓝灰底、白字与金色标记；最近一期和全部日期为常用操作，日期范围与最近7天/本月收纳到 DATE RANGE 折叠区。
