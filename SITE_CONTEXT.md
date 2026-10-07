@@ -191,3 +191,10 @@ SpinFront 日报主页归档区改为单一页面纵向滚动：左侧 sidebar �
 ### 2026-10-07 全站页尾双栏统一
 
 使用默认布局的主站页面页尾统一改为与 SpinFront 日报相近的双栏结构：左栏显示 plastocyanin 品牌，Notebook/Workshop 页面附对应栏目品牌链接；右栏显示版权、公开联系邮箱及 Email/GitHub 入口并右对齐。移动端自动改为上下堆叠。品牌链接继续使用统一的蓝色 hover/focus + 细下划线反馈，金色圆点或栏目金色字母保持金色。Note 阅读器仍保留其侧栏版权结构，不额外插入页面页尾。
+
+
+### 2026-10-07 页尾内容平衡修订
+
+SpinFront 日报主页页尾与日报内页统一为左右双栏：左侧显示 plastocyanin、SpinFront 与栏目说明，右侧显示“© 年份 wuhaifeng@ustc.edu.cn. All rights reserved.”及日报版权声明。
+
+主站默认布局页尾同步采用相同结构。左栏固定显示 plastocyanin，并按页面显示对应二级品牌与简短说明：Workshop / Projects / Tools，Notebook / Notes / Research，About / CV / Profile / CV；主页显示 hyphoon / Personal website。右栏统一使用公开邮箱版权格式，第二行声明按页面类型分别使用项目说明、笔记内容、个人资料或一般站点内容的版权表述。移动端继续改为上下排列。
