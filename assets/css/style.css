@@ -248,3 +248,6 @@
   width:max-content;
 }
 .footer-brand-dot,.footer-brand-gold{color:var(--gold)}
+
+.site-footer .site-footer-brand{gap:3px;align-items:flex-start}
+.site-footer-brand>span:last-child{margin-top:6px;font-family:var(--font)}
