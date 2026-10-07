@@ -316,3 +316,27 @@
     flex-wrap:wrap;
   }
 }
+
+
+/* Final footer balance: mirror the SpinFront daily footer composition. */
+.site-footer .site-footer-brand{
+  gap:3px;
+}
+.footer-section-label{
+  font:400 14px/1.25 Georgia,"Times New Roman",serif;
+  color:var(--ink);
+}
+.site-footer-brand small{
+  margin-top:4px;
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:.5px;
+  font-family:var(--font);
+}
+.site-footer-right{
+  max-width:620px;
+  gap:4px!important;
+}
+.site-footer-right>div{
+  display:block;
+}
