@@ -18,7 +18,8 @@
 
 
 /* Homepage SpinFront calendar */
-.home-spinfront{padding-bottom:52px}
+.home-spinfront{padding-bottom:32px}
+.home-spinfront .hy2-component{border-bottom:0}
 
 .hy2-heading{padding-bottom:30px}.hy2-heading h1{margin-bottom:14px}.hy2-heading>p:last-child{max-width:860px;color:var(--muted)}.hy2-page{padding-bottom:90px}
 .hy2-component{--hy-accent:#596b61;--hy-accent-dark:#304239;--hy-gold:#b58a42;--hy-soft:#eef2ee;--hy-bg:#fafaf7;--hy-muted:#7a8583;display:grid;grid-template-columns:44% minmax(0,56%);height:590px;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);background:var(--hy-bg);overflow:hidden}
@@ -204,4 +205,4 @@
 @media(max-width:900px){.hy2-component{grid-template-columns:42% minmax(0,58%)}.hy2-calendar-pane{padding-left:24px;padding-right:24px}.hy2-report-pane{padding-left:26px;padding-right:26px}.hy2-calendar{column-gap:5px;row-gap:6px}}
 @media(max-width:680px){.hy2-component{height:auto;grid-template-columns:1fr;overflow:visible}.hy2-calendar-pane{border-right:0;border-bottom:1px solid var(--line)}.hy2-report-pane{height:560px;min-height:0}.hy2-notes{grid-template-columns:1fr}.hy2-guide{min-height:96px}.hy2-entry{min-height:118px}}
 
-@media(max-width:620px){.home-spinfront{padding-bottom:34px}}
+@media(max-width:620px){.home-spinfront{padding-bottom:24px}}
