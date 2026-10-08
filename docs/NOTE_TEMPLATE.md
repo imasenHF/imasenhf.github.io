@@ -53,7 +53,7 @@ ICO 返回 `/`；侧栏文档标题返回该文档首页；侧栏底部“返回
 
 ## 标准版权
 
-© 2026 Hyphoon wuhaifeng@ustc.edu.cn. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。
+© 2026 hyphoon wuhaifeng@ustc.edu.cn. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。
 
 邮箱使用 mailto 链接。版权位于每页底部，遵循已确认文本，不影响引用资料本身的权利归属。共享修改应统一更新生成器，避免逐页手工维护。
 
