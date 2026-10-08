@@ -11,9 +11,10 @@ hyphoon 的个人网站，收录科研工具、NMR/EPR 笔记与调研，并提�
 | Notebook | 谱学笔记与技术调研，支持分章阅读和文档内检索 | [/notes/](https://plastocyanin.org/notes/) |
 | SpinPlot | 浏览器端 CW EPR 数据处理与作图 | [/spinplot/](https://plastocyanin.org/spinplot/) |
 | SpinFront | NMR/EPR 日报、日期归档与标签检索 | [/spinfront/](https://plastocyanin.org/spinfront/) |
+| NMR Atlas | 交互式核素周期表、核种比较与化学位移参考 | [/nmr-atlas/](https://plastocyanin.org/nmr-atlas/) |
 | NMR Experiment Library | 按教材与章节组织的 NMR 实验参考资料 | [/nmrexp/](https://plastocyanin.org/nmrexp/) |
 
-独立项目分别维护于 [spinplot](https://github.com/imasenHF/spinplot)、[spinfront](https://github.com/imasenHF/spinfront) 和 [nmrexp](https://github.com/imasenHF/nmrexp)。本仓库维护主站和 Notebook。
+独立 Web 项目分别维护于 [spinplot](https://github.com/imasenHF/spinplot)、[spinfront](https://github.com/imasenHF/spinfront)、[nmr-atlas](https://github.com/imasenHF/nmr-atlas) 和 [nmrexp](https://github.com/imasenHF/nmrexp)。其余源码工具和全部项目入口见 [PROJECT_INDEX.md](PROJECT_INDEX.md)。本仓库维护主站和 Notebook。
 
 ## 本地预览
 
