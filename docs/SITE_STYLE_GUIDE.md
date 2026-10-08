@@ -38,7 +38,7 @@
 | 主站共享导航、品牌、首页、页尾 | 本文件 + `_layouts/default.html`、`assets/css/style.css`、`assets/css/section-brand.css` | 主站已实现样式为准；跨站视觉调整需检查各受影响项目 |
 | Notebook 分章文档、公式、主题、搜索 | [docs/NOTE_TEMPLATE.md](NOTE_TEMPLATE.md) + `assets/jtd/` | 采用 Just the Docs；不恢复纸张阅读器或任意比例缩放 |
 | SpinFront 日报主页、单期日报、归档、标签与钉钉消息 | [SpinFront docs/STYLE_GUIDE.md](https://github.com/imasenHF/spinfront/blob/main/docs/STYLE_GUIDE.md) | 独立使用 editorial magazine 版式；不恢复圆角卡片数据库式首页或独立滚动 sidebar |
-| SpinPlot 软件界面 | [SpinPlot README](https://github.com/imasenHF/spinplot/blob/main/README.md)、[架构](https://github.com/imasenHF/spinplot/blob/main/docs/ARCHITECTURE.md) 及实际应用文件 | 保留独立紧凑单行、深蓝渐变页头；不强制套用主站双行品牌 |
+| SpinPlot 软件界面 | [SpinPlot 专用风格](https://github.com/imasenHF/spinplot/blob/main/docs/STYLE_GUIDE.md)、[项目状态](https://github.com/imasenHF/spinplot/blob/main/PROJECT_CONTEXT.md) 及实际应用文件 | 保留独立紧凑单行、深蓝渐变页头；不强制套用主站双行品牌 |
 | NMR Atlas 周期表、配色与专用交互 | [NMR_ATLAS_CONTEXT.md](https://github.com/imasenHF/nmr-atlas/blob/main/NMR_ATLAS_CONTEXT.md) | 品牌链接沿用主站蓝灰/金色，周期表配色由独立工具自身管理 |
 | NMR Experiment Library 教材阅读器 | [nmrexp README](https://github.com/imasenHF/nmrexp/blob/main/README.md) 与阅读器样式 | 保持现有教材阅读功能；不将主站页面样式直接覆盖第三方资料页面 |
 
