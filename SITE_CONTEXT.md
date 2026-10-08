@@ -60,7 +60,7 @@ GitHub `main` 的最新文件是长期项目记录。ChatGPT 项目指令仅定�
 - 公开 CV：按 `CV_RECORDS.md` 的公开范围核实教育、研究、工作、成果及项目贡献后再编排；当前 About 页面不代替完整 CV。
 - SpinFront：每日任务按其仓库 `docs/DAILY_TASK_PROMPT.md` 执行；自动检索、JSON 提交、Pages 发布和钉钉通知分别核对。当前钉钉工作流由外部 Cloudflare Worker 调度并经 GitHub `workflow_dispatch` 触发；实际 Worker Cron、群收件及配置须单独确认。不得公开 Webhook/Secret。
 - SpinPlot：持续核对二维数据、坐标单位、作图/导出和项目保存兼容性；页面与构建成功不能代替数值检查。
-- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 为独立子仓库预览分支的构建快照（`50e3d38`），供交互检查；正式 `/spinplot/` 仍由原独立仓库发布。临时页面不属于正式导航，测试结束后需清理；后续预览版本不会自动同步此快照。
+- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 为独立子仓库预览分支的构建快照（`27c64bb`），供交互检查；正式 `/spinplot/` 仍由原独立仓库发布。临时页面不属于正式导航，测试结束后需清理；后续预览版本不会自动同步此快照。
 - NMR Atlas：持续核对核种参数、化学位移来源、筛选和移动端操作；具体当前约束以该仓库文档为准。
 - Notebook 和 Interests：依据实际完成的文章增加内容，保留参考资料来源及适用范围。
 - 维护工作：重要修改同步相关记录；Git 版本历史保存过往过程，本文件不再持续追加已经废止的草稿和决定。
