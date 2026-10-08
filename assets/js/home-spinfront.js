@@ -8,7 +8,7 @@
   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const cnToday=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 
-  let items=[],dates=new Set(),labels=new Map(),selected='',month='',scrollRaf=0;
+  let items=[],dates=new Set(),labels=new Map(),tagMeta=new Map(),selected='',month='',scrollRaf=0;
   let dailyEpigraph={
     text:'The test of all knowledge is experiment.',
     author:'Richard P. Feynman',
@@ -84,10 +84,20 @@
     document.getElementById('hy2-month-count').textContent=[...dates].filter(x=>x.startsWith(month)).length;
   }
 
+  function tagHref(id){
+    const t=tagMeta.get(id);
+    if(!t)return'/spinfront/';
+    const p=new URLSearchParams();
+    p.set('view','all');
+    p.set(t.dimension,id);
+    return '/spinfront/?'+p.toString()+'#explore';
+  }
+
   function itemHtml(x,i){
-    const tags=[...(x.direction_ids||[]),...(x.method_ids||[])].slice(0,3).map(id=>labels.get(id)||id.replaceAll('_',' '));
+    const tagIds=[...(x.direction_ids||[]),...(x.experiment_type_ids||[]),...(x.method_ids||[]),...(x.application_ids||[]),...(x.instrument_component_ids||[])].slice(0,3);
     const source='/spinfront/'+selected+'/#'+x.item_id;
-    return '<article class="hy2-entry" data-index="'+i+'"><div class="hy2-index">'+String(i+1).padStart(2,'0')+'<small>'+esc(x.publication_date||'')+'</small></div><div><h3><a href="'+esc(source)+'">'+esc(x.title_cn)+'</a></h3><p>'+esc(x.summary_cn)+'</p><div class="hy2-tags">'+tags.map(t=>'<span>'+esc(t)+'</span>').join('')+'</div></div></article>';
+    const tagHtml=tagIds.map(id=>'<a href="'+esc(tagHref(id))+'" title="检索：'+esc(labels.get(id)||id)+'">'+esc(labels.get(id)||id.replaceAll('_',' '))+'</a>').join('');
+    return '<article class="hy2-entry" data-index="'+i+'"><div class="hy2-index">'+String(i+1).padStart(2,'0')+'<small>'+esc(x.publication_date||'')+'</small></div><div><h3><a href="'+esc(source)+'">'+esc(x.title_cn)+'</a></h3><p>'+esc(x.summary_cn)+'</p><div class="hy2-tags">'+tagHtml+'</div></div></article>';
   }
 
   function updateFocus(){
@@ -165,6 +175,7 @@
       if(taxRes.ok){
         const tax=await taxRes.json();
         labels=new Map((tax.tags||[]).map(x=>[x.id,x.label_cn||x.label_en||x.id]));
+        tagMeta=new Map((tax.tags||[]).map(x=>[x.id,x]));
       }
 
       const ordered=[...dates].sort();
