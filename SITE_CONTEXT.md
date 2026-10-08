@@ -41,7 +41,7 @@ plastocyanin 用于记录个人项目、学习笔记、技术文章、经历和�
 
 跨站共用品牌、色彩、字体角色、链接反馈、主页及共享页头/页尾规则，以 [docs/SITE_STYLE_GUIDE.md](docs/SITE_STYLE_GUIDE.md) 为准。主站实际样式由现有 CSS 和模板确定。
 
-项目专属风格和功能规范保存在各自仓库：SpinFront 的 `docs/STYLE_GUIDE.md`、NMR Atlas 的 `NMR_ATLAS_CONTEXT.md`、SpinPlot 的现有应用页面及 `docs/ARCHITECTURE.md`；Notebook 依 `docs/NOTE_TEMPLATE.md`。共用规范只写一次，独立项目保留确有差异的实现。不因局部内容修改重新设计品牌或恢复废止布局。
+项目专属风格和功能规范保存在各自仓库：SpinFront 的 `docs/STYLE_GUIDE.md`、NMR Atlas 的 `NMR_ATLAS_CONTEXT.md`、SpinPlot 的 `PROJECT_CONTEXT.md`、`docs/STYLE_GUIDE.md` 与 `docs/ARCHITECTURE.md`；Notebook 依 `docs/NOTE_TEMPLATE.md`。共用规范只写一次，独立项目保留确有差异的实现。不因局部内容修改重新设计品牌或恢复废止布局。
 
 ## 5. 远程记录的职责
 
