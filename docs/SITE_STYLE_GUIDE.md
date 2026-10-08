@@ -19,6 +19,7 @@
 - 页头分隔线与 `.header-inner.container` 内容宽度一致，不贯穿整个浏览器窗口。
 - Notebook / Workshop 使用两行品牌：第一行为 `plastocyanin.`、第二行为栏目名，配合原有图标；图标和主品牌返回首页，栏目名进入各自列表页。Notebook 和 Workshop 已确认的金色字母分布沿用仓库现有 `assets/css/section-brand.css`。
 - 首页 Hero 的 `plastocyanin.` 是主站链接；About plastocyanin 一节内的同名词组也使用品牌规则并链接主页。
+- 首页导入语及 About 命名缘由已由用户定稿，以 `index.html` 当前文字为准。About 保留 Wikipedia 引文及两段中文正文，Plastocyanin 开头的内容单独成段，不增加第三段。一般文案整理不改写这些已确认文字，修改须有用户明确要求。
 - 首页科学示意图位于 `assets/images/plastocyanin/`，由 `scripts/build_plastocyanin_visual.py` 生成。当前选定 K 方案：EPR 示意谱金黄色 `#F0BE32`、内线宽 3.5、单侧白色描边 3、总外宽 9.5；谱线位于蛋白结构下半部前景，无坐标轴。示意图不用于定量分析。
 - 首页 SpinFront 日历为主站专用组件：左侧月历、右侧内部滚动日报条目；保留 Daily Epigraph、日期定位、焦点透明度约 0.72 / 0.88 / 1、金色编号及标题通向完整日报的链接。右上角进入 `/spinfront/`。当前显示的分类标签须可点击并进入相应 SpinFront 筛选；不取消组件内部滚动。此处的具体交互实现位于 `assets/js/home-spinfront.js` 与主站样式。
 
