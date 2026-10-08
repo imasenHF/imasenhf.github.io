@@ -20,7 +20,7 @@
 
 | 项目 | 用途 | 仓库及说明 | 公开形式与维护范围 |
 | --- | --- | --- | --- |
-| EasyCurling | XYZ 分子或晶体单元重复、刚性/渐进弯曲和模型构建 | [仓库与 README](https://github.com/imasenHF/easycurling) | Python 源码；Windows 发布包已有 [v1.1.0](https://github.com/imasenHF/easycurling/releases/tag/v1.1.0)；结构用于后续计算前需检查几何合理性 |
+| EasyCurling | XYZ 分子或晶体单元重复、刚性/渐进弯曲和模型构建 | [仓库与 README](https://github.com/imasenHF/easycurling) | Python 启动脚本与 Windows CPython 3.12 x64 编译扩展（核心可移植源码未在仓库公开）；Windows 发布包已有 [v1.1.0](https://github.com/imasenHF/easycurling/releases/tag/v1.1.0)；结构用于后续计算前需检查几何合理性 |
 | Mconvert | 通过 Multiwfn 进行结构/波函数文件转换，生成 Gaussian、ORCA 输入模板 | [仓库与 README](https://github.com/imasenHF/mconvert) | Bash 脚本；依赖本地 Multiwfn 及菜单接口；按兼容性需要维护 |
 | DNA Builder | 通过固定模板构建 ssDNA / dsDNA 的 XYZ 几何结构 | [仓库与 README](https://github.com/imasenHF/dna-builder) | Python / NumPy / SciPy 源码；几何拼接不包含结构优化；历史 2023 v1.0 逻辑保留 |
 | Computational Chemistry Tools | Gaussian、ORCA、CP2K、Multiwfn 工作流的批处理、提取、转换、输入和可视化脚本 | [仓库与 README](https://github.com/imasenHF/compchem-tools) · [脚本索引](https://github.com/imasenHF/compchem-tools/blob/main/docs/SCRIPT_INDEX.md) | 按用途分类的 Bash/Python 源码；各脚本依赖与参数单独确认 |
