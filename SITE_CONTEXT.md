@@ -222,3 +222,10 @@ SpinFront 日报主页此前标题 hover 仅出现下划线但未稳定变色，
 ### 2026-10-07 主站页头分割线宽度
 
 主站页头底部分割线从全浏览器宽度改为实际内容容器宽度：`.site-header` 不再绘制 border，改由 `.header-inner.container` 绘制 1px 浅灰分割线。这样不同屏幕上分割线随主站内容宽度变化，与 SpinFront 主页按内容宽度收束的页头处理一致。
+
+
+### 2026-10-08 NMR Atlas Workshop 关联
+
+NMR Atlas 作为独立 Web 工具，仓库为 `imasenHF/nmr-atlas`，正式入口使用 `/nmr-atlas/`。主站 Workshop 新增 `_projects/nmr-atlas.md`，归类为 reference / Reference Tool，点击后直接进入 NMR Atlas，不建立主站重复项目正文页。
+
+NMR Atlas 当前不设置为首页 featured 项目，仅出现在 Workshop 全部项目列表。其功能与视觉细节由独立仓库 `NMR_ATLAS_CONTEXT.md` 维护。
