@@ -81,6 +81,8 @@ Notebook 的 Just the Docs 阅读器仍使用其侧栏版权结构，不再额�
 
 ## 5. 主站首页 SpinFront 日历组件
 
+组件中每条日报显示的 taxonomy 标签必须链接到 SpinFront 归档对应筛选结果（`/spinfront/?view=all&<dimension>=<tag>#explore`）。当前组件为控制密度只展示有限数量标签，但凡实际显示的标签都必须可点击；不能退回纯文本 `span`。
+
 首页 SpinFront 组件保留内部滚动浏览，不取消滚动交互。
 
 当前规则：
