@@ -229,3 +229,8 @@ SpinFront 日报主页此前标题 hover 仅出现下划线但未稳定变色，
 NMR Atlas 作为独立 Web 工具，仓库为 `imasenHF/nmr-atlas`，正式入口使用 `/nmr-atlas/`。主站 Workshop 新增 `_projects/nmr-atlas.md`，归类为 reference / Reference Tool，点击后直接进入 NMR Atlas，不建立主站重复项目正文页。
 
 NMR Atlas 当前不设置为首页 featured 项目，仅出现在 Workshop 全部项目列表。其功能与视觉细节由独立仓库 `NMR_ATLAS_CONTEXT.md` 维护。
+
+
+### 2026-10-08 SpinFront 分类标签跨视图检索
+
+SpinFront 的 taxonomy 分类标签统一为“显示即能检索”。完整日报、SpinFront 日报主页检索结果及主站首页 SpinFront 日历组件中，只要某个标签实际显示，就必须可点击并进入 `/spinfront/` 对应筛选结果。链接格式使用 `?view=all&<dimension>=<tag>#explore`，维度来自 `taxonomy/taxonomy.json`，不按标签名称猜测。日报主页中的信息类型、方向、实验类型、方法、应用、仪器部件及“更多标签”均采用该链接；主站日历组件保持有限标签展示数量，但实际显示的标签全部可点击。时间范围、来源、发布日期等非 taxonomy 字段不作为分类链接。
