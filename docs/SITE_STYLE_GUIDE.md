@@ -1,200 +1,49 @@
 # SITE_STYLE_GUIDE
 
-更新日期：2026-10-07（Asia/Shanghai）
+更新日期：2026-10-08（Asia/Shanghai）
 
-用途：保存 plastocyanin 主站及 SpinFront 当前已确认的版式、品牌与交互规则，作为跨对话和后续维护的格式备份。实际实现仍以各仓库 main 分支中的模板与 CSS 为准；如本文件与最新代码冲突，先检查是否为未同步改动，再更新本文件。
+适用范围：plastocyanin 主站视觉规范及各独立 Web 项目共同采用的品牌规则。子项目特有的页面、控件、模板及钉钉通知版式保存在各自仓库；本文件不复制全部子项目样式。实际 CSS、HTML 与构建结果用于确认已实施状态。
 
-## 1. 共用视觉语言
+## 1. 共用品牌
 
-主色：
-- 深蓝灰：`#203139`
-- 链接 / 强调蓝：`#355c7d`
-- 金色：`#b68c37`
-- 暖白 / 米白背景：`#f6f6f3` 附近
-- 分隔线使用浅灰，不使用高对比粗边框作为常规内容分隔。
+- 正式品牌为 `plastocyanin.`；采用 Georgia / serif。
+- 深蓝灰 `#203139` 为默认主体文字；链接与交互蓝 `#355c7d`；品牌金色 `#b68c37`；背景使用接近 `#f6f6f3` 的暖白。页面具体色值以实际样式和图形资源为准。
+- 品牌文字中的字母 `o` 与末尾圆点均为金色，其余字母默认深蓝灰。
+- 既有语义链接在 hover、active、keyboard focus 时，主体文字显示蓝色并出现细下划线；品牌金色部分保留金色；键盘焦点可见。普通不可点击标题不额外制造自链接。
+- 统一字体角色：Georgia / serif 用于网站品牌、项目/栏目名称及 SpinFront 杂志标题和日期；sans-serif 用于正文、中文技术标题、分类标签、筛选与常规界面。不强制将所有中英混排文本设置为 Georgia。
+- Φ 风格个人图标使用已确认资源 `assets/images/imasen_phi_logo/`，包括金色 I、闭合蓝色倾斜轨道、金色圆点与 EPR 波形。不要重新设计或用相似临摹替换。
 
-字体只保留两类角色：
-- Georgia / serif：品牌、项目名、栏目名，以及 SpinFront 的杂志化标题与日期数字。
-- sans-serif：正文、中文内容标题、分类标签、筛选、导航和一般界面文字。
+## 2. 主站页头、栏目与首页
 
-主页精选项目中的 SpinPlot、SpinFront、NMR Experiment Library 使用 Georgia。中文笔记标题、“精选项目”“笔记与调研”、SOFTWARE / DIGEST / REFERENCE 等分类与正文保持 sans-serif。SpinFront 日历组件允许日期和焦点标题使用 serif，但不再引入第三套字体体系。
+- 主站导航：Home / Workshop / Notebook / About / CV；显示内容依据实际栏目。
+- 页头分隔线与 `.header-inner.container` 内容宽度一致，不贯穿整个浏览器窗口。
+- Notebook / Workshop 使用两行品牌：第一行为 `plastocyanin.`、第二行为栏目名，配合原有图标；图标和主品牌返回首页，栏目名进入各自列表页。Notebook 和 Workshop 已确认的金色字母分布沿用仓库现有 `assets/css/section-brand.css`。
+- 首页 Hero 的 `plastocyanin.` 是主站链接；About plastocyanin 一节内的同名词组也使用品牌规则并链接主页。
+- 首页科学示意图位于 `assets/images/plastocyanin/`，由 `scripts/build_plastocyanin_visual.py` 生成。当前选定 K 方案：EPR 示意谱金黄色 `#F0BE32`、内线宽 3.5、单侧白色描边 3、总外宽 9.5；谱线位于蛋白结构下半部前景，无坐标轴。示意图不用于定量分析。
+- 首页 SpinFront 日历为主站专用组件：左侧月历、右侧内部滚动日报条目；保留 Daily Epigraph、日期定位、焦点透明度约 0.72 / 0.88 / 1、金色编号及标题通向完整日报的链接。右上角进入 `/spinfront/`。当前显示的分类标签须可点击并进入相应 SpinFront 筛选；不取消组件内部滚动。此处的具体交互实现位于 `assets/js/home-spinfront.js` 与主站样式。
 
-## 2. 品牌与标题链接反馈
+## 3. 主站共享页尾
 
-所有已有语义链接的标题和品牌文字使用同一交互规则：
-- 默认：深蓝灰。
-- hover / active / keyboard focus：主体文字变为 `#355c7d`，显示细下划线。
-- 下划线偏移约 `.18em`，保持文字可读。
-- 所有作为品牌显示的 `plastocyanin.` 中，字母 `o` 与末尾圆点统一使用金色；其他字母保持深蓝灰。品牌 hover / active / focus 时，金色 `o` 与圆点继续保持金色。
-- 不为普通不可点击标题增加无意义的自链接。
-- 键盘 focus 必须可见。
+- 分隔线为 2px 深蓝灰。桌面端品牌与版权内容相对分隔线各内缩 40px，移动端 20px；不同页面可保留自身容器宽度。
+- 桌面端使用左右双栏、右侧右对齐；移动端上下堆叠、文字左对齐。
+- 左栏第一行固定为 `plastocyanin.`（返回首页），第二行按页面为 `Workshop`、`Notebook`、`About / CV` 或主页的 `hyphoon`；第三行描述分别为 `Projects / Tools`、`Notes / Research`、`Profile / CV` 或 `Personal website`。
+- 右栏第一行：`© YYYY wuhaifeng@ustc.edu.cn. All rights reserved.`；第二行按项目说明、笔记、个人资料或一般网页内容使用对应版权声明。
+- Notebook 的 Just the Docs 阅读页使用自身的版权区域，不重复加入主站双栏页尾。
 
-适用范围包括：
-- plastocyanin.（品牌中的 `o` 与末尾圆点为金色）
-- Notebook / Workshop / SpinFront
-- 主站项目标题与笔记标题
-- SpinFront Latest Issue 标题与归档结果标题
-- SpinFront 日报大标题和页尾品牌链接
+## 4. 各项目专用规范的归属
 
-## 3. 主站页头与栏目品牌
+| 范围 | 正式规范位置 | 适用边界 |
+| --- | --- | --- |
+| 主站共享导航、品牌、首页、页尾 | 本文件 + `_layouts/default.html`、`assets/css/style.css`、`assets/css/section-brand.css` | 主站已实现样式为准；跨站视觉调整需检查各受影响项目 |
+| Notebook 分章文档、公式、主题、搜索 | [docs/NOTE_TEMPLATE.md](NOTE_TEMPLATE.md) + `assets/jtd/` | 采用 Just the Docs；不恢复纸张阅读器或任意比例缩放 |
+| SpinFront 日报主页、单期日报、归档、标签与钉钉消息 | [SpinFront docs/STYLE_GUIDE.md](https://github.com/imasenHF/spinfront/blob/main/docs/STYLE_GUIDE.md) | 独立使用 editorial magazine 版式；不恢复圆角卡片数据库式首页或独立滚动 sidebar |
+| SpinPlot 软件界面 | [SpinPlot README](https://github.com/imasenHF/spinplot/blob/main/README.md)、[架构](https://github.com/imasenHF/spinplot/blob/main/docs/ARCHITECTURE.md) 及实际应用文件 | 保留独立紧凑单行、深蓝渐变页头；不强制套用主站双行品牌 |
+| NMR Atlas 周期表、配色与专用交互 | [NMR_ATLAS_CONTEXT.md](https://github.com/imasenHF/nmr-atlas/blob/main/NMR_ATLAS_CONTEXT.md) | 品牌链接沿用主站蓝灰/金色，周期表配色由独立工具自身管理 |
+| NMR Experiment Library 教材阅读器 | [nmrexp README](https://github.com/imasenHF/nmrexp/blob/main/README.md) 与阅读器样式 | 保持现有教材阅读功能；不将主站页面样式直接覆盖第三方资料页面 |
 
-主站页头分割线不横跨浏览器整宽；线条放在实际 `.header-inner.container` 上，长度随主站内容容器宽度变化，与 SpinFront 主页的“内容宽度内分隔线”原则一致。
+## 5. 维护和验收
 
-主站保留 Φ 风格个人图标及 favicon。主站资源位于 `assets/images/imasen_phi_logo/`。
-
-Notebook / Workshop 使用两行栏目品牌：
-- plastocyanin. 为第一行，其中 `o` 与末尾圆点均为金色。
-- 第二行为栏目名；当前已确认金色字母分布沿用仓库现有实现。
-- 图标和 plastocyanin 返回主站；栏目名返回栏目首页。
-- 品牌文字使用 Georgia。
-
-SpinPlot 继续使用其独立的紧凑深色单行页头，不强制改成主站浅色栏目页头。
-主站首页品牌：
-- Hero 中的大号 `plastocyanin.` 作为主页链接，使用与其他品牌相同的 hover / active / focus 反馈。
-- `About plastocyanin.` 中的 plastocyanin 词组使用品牌格式：Georgia，金色 `o` 与金色圆点，并链接主页。
-
-
-## 4. 主站页尾
-
-页尾几何统一采用 SpinFront 日报的关系：分隔线为 2px 深蓝灰，横跨当前页面 footer 容器；不同页面可保留各自天然内容宽度，但品牌与版权文字相对分隔线左右各内缩 40px。移动端内缩 20px。
-
-使用默认布局的页面统一采用与 SpinFront 日报相近的左右双栏结构。
-
-左栏：
-- 第一行始终为 `plastocyanin.`，链接主站。
-- Workshop 页面：显示 `Workshop` + `Projects / Tools`。
-- Notebook 页面：显示 `Notebook` + `Notes / Research`。
-- About / CV 页面：显示 `About / CV` + `Profile / CV`。
-- 主页面：显示 `hyphoon` + `Personal website`。
-
-右栏：
-- 第一行统一为：`© YYYY wuhaifeng@ustc.edu.cn. All rights reserved.`
-- 第二行按页面内容采用相应声明：
-  - Workshop：本站项目说明与文字内容版权归作者所有，未经许可不得复制、转载或用于商业用途。
-  - Notebook：本站笔记与文字内容版权归作者所有，未经许可不得复制、转载或用于商业用途。
-  - About / CV：本站个人资料与文字内容版权归作者所有，未经许可不得复制、转载或用于商业用途。
-  - 主页及一般页面：本站内容版权归作者所有，未经许可不得复制、转载或用于商业用途。
-
-桌面端左右平衡，右栏右对齐；移动端上下堆叠并左对齐。
-
-Notebook 的 Just the Docs 阅读器仍使用其侧栏版权结构，不再额外增加底部页尾。
-
-## 5. 主站首页 SpinFront 日历组件
-
-组件中每条日报显示的 taxonomy 标签必须链接到 SpinFront 归档对应筛选结果（`/spinfront/?view=all&<dimension>=<tag>#explore`）。当前组件为控制密度只展示有限数量标签，但凡实际显示的标签都必须可点击；不能退回纯文本 `span`。
-
-首页 SpinFront 组件保留内部滚动浏览，不取消滚动交互。
-
-当前规则：
-- 组件配色统一为深蓝灰 + 金色 + 暖白，不再使用独立绿色强调体系。
-- 左侧按月显示已有日报日期；默认选择 Asia/Shanghai 当日，当日无日报时选最新一期。
-- 右侧条目保留内部滚动、Daily Epigraph、滚动定位与焦点判断。
-- 普通 / 邻近 / 当前条目透明度约为 `0.72 / 0.88 / 1`。
-- 不再用 scale 缩放聚焦条目。
-- 编号采用金色 `01 /` 形式。
-- 条目标题链接到对应完整日报条目，而不是直接跳论文原始来源。
-- 右上角“进入日报主页”固定链接到 `/spinfront/`。
-
-## 6. SpinFront 日报主页
-
-正式入口：`/spinfront/`。
-
-整体定位为 `Magazine Front Page + Archive`，不是后台式数据库首页。
-
-首屏：
-- 顶部显示 plastocyanin.，不在页头额外加入 Φ 图标。
-- 大号 `SpinFront` 为日报主页链接；其中字母 o 使用金色。
-- 主标题链接反馈与日报内页一致。
-- 右侧为 Latest Issue 日期封面块。
-- 首屏下方展示最新一期前四条内容。
-
-归档区：
-- 搜索、日历、主题和高级筛选放在 `EXPLORE THE ARCHIVE` 下方。
-- 搜索结果使用 editorial rows，不恢复独立大圆角白卡。
-- 结果采用编号、衬线标题、细分隔线、摘要和金色左线技术评注。
-- 技术评注默认展开，仍可手动折叠。
-- 左侧筛选栏采用页面正常纵向滚动：不使用 sticky、不限制视口高度、不设独立 scrollbar。
-- 日历选中日期使用深蓝灰底、白字、金色标记。
-- 最近一期 / 全部日期为一级操作；起止日期、最近7天、本月放入 DATE RANGE。
-- “关于归档与数据”和“完整日报归档”位于筛选与结果区之后，保持全宽折叠结构。
-- 最后一条结果底部不再额外显示重复分割线。
-
-页尾：
-- 左栏：plastocyanin. / SpinFront / NMR / EPR Daily Brief。
-- 右栏：`© YYYY wuhaifeng@ustc.edu.cn. All rights reserved.`
-- 第二行：`本报告版权归作者所有，未经许可不得复制、转载或用于商业用途。`
-- 与日报内页保持相同左右双栏关系。
-
-## 7. SpinFront 完整日报
-
-采用已确认的 D 版 editorial magazine 结构。
-
-页头与封面：
-- 顶部只保留 `plastocyanin.` 和 `Daily archive →`。
-- `plastocyanin.` 链接主站。
-- 大号 `SpinFront` 链接日报主页，字母 o 保持金色。
-- 右侧使用深蓝灰日期封面块。
-- 首屏保留 NMR / EPR Daily Brief、条数、NMR/EPR 数量和时间范围。
-
-正文：
-- 每条使用大号金色编号、Georgia 标题、细分隔线。
-- 桌面端分类标签放右侧；移动端右栏隐藏后，在标题下显示标签。
-- 摘要为正文色 sans-serif。
-- 技术评注使用金色左线。
-- 来源与 DOI 合并为同一条元数据：来源及替代来源在前；有 DOI 时在其后追加 `DOI <完整 DOI>` 并链接 `https://doi.org/<doi>`；无 DOI 时完全隐藏 DOI，不显示空值或占位。
-- taxonomy 中的真实分类标签均可点击并跳回 `/spinfront/` 的对应筛选结果；谱学方向、实验类型、方法、应用、仪器部件和信息类型都属于可链接分类。时间范围等非 taxonomy 信息保持普通文本。
-- 检索范围与筛选说明默认折叠。
-- 最后一条正文底部不再额外显示重复分割线。
-- 正文后提供 Previous / Next Issue 相邻日报导航。
-
-页尾：
-- 左栏：plastocyanin. / SpinFront / NMR / EPR Daily Brief · YYYY-MM-DD。
-- 右栏：`© YYYY wuhaifeng@ustc.edu.cn. All rights reserved.`
-- 第二行：`本报告版权归作者所有，未经许可不得复制、转载或用于商业用途。`
-- plastocyanin. 返回主站，SpinFront 返回日报主页。
-
-## 8. 钉钉日报通知版式
-
-钉钉消息保持紧凑，不使用复杂卡片或多层链接。
-
-当前结构：
-```text
-SpinFront | YYYY-MM-DD
-> NMR / EPR Daily Brief
-本期收录 N 条 · NMR X / EPR Y
-内容预览
-1. ...
-2. ...
-3. ...
-阅读完整日报 →
-```
-
-主标题使用略大的 Markdown 标题级别；英文副标题使用引用模块。前三条标题不添加单独可点击链接，仅底部保留完整日报入口。
-
-## 9. 当前实现位置
-
-主站：
-- `_layouts/default.html`：共享页头和双栏页尾
-- `_includes/section-brand.html`：Notebook / Workshop 品牌
-- `assets/css/style.css`：主站视觉、字体角色、标题与页尾链接反馈、首页 SpinFront 组件
-- `assets/css/section-brand.css`：栏目品牌样式与交互
-- `assets/js/home-spinfront.js`：首页 SpinFront 日历与内部滚动
-- `index.html`：主站首页
-
-SpinFront：
-- `scripts/build.py`：日报结构、页尾、相邻日报导航、首页最新一期生成
-- `templates/home.html`：日报主页骨架
-- `templates/issue.html`：单期日报外壳
-- `assets/home.css`：日报主页 Magazine Front Page、归档、日历和页尾
-- `assets/home.js`：归档筛选、结果与技术评注默认状态
-- `assets/style.css`：完整日报 D 版样式
-
-## 10. 修改边界
-
-- 不因局部改动重新设计整套品牌体系。
-- 不恢复 SpinFront 旧蓝色渐变卡片首页。
-- 不恢复 SpinFront 归档 sidebar 的独立滚动。
-- 不取消主站首页 SpinFront 日历组件的内部滚动。
-- 不将所有中英混排标题改为 Georgia；中文内容标题仍以 sans-serif 为主。
-- 修改模板或共享 CSS 后检查桌面端与移动端。
-- 版式改动后同步本文件与 `SITE_CONTEXT.md`；SpinFront 专属规则同步其仓库 `docs/STYLE_GUIDE.md`。
+- 共用视觉决定修改本文件；SpinFront、NMR Atlas 等专属版式变化更新各自仓库的专用记录。项目之间有联动时核对所有实际受影响页面，但不机械复制同一段规范。
+- 对模板或 CSS 的变更，至少检查主站桌面/手机页头、页尾、链接、键盘焦点及受影响的首页组件；对外部项目进行对应页面检查。
+- 修改 Notebook 主题与排版，遵循 `docs/NOTE_TEMPLATE.md`，重建受影响的源文档并检查公式、目录和搜索。
+- 记录仅保留已确认且仍有效的设计规则；实验性草稿、弃用风格和设计过程由 Git 历史保留。

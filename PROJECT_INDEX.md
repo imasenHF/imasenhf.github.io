@@ -1,29 +1,34 @@
 # PROJECT_INDEX
 
-更新日期：2026-10-07（Asia/Shanghai）
+更新日期：2026-10-08（Asia/Shanghai）
 
-本文件记录当前项目用途、仓库、公开入口、状态和后续维护方式。网站实际实现仍以各仓库 main 分支为准。
+本文件是 plastocyanin 所有公开子项目的统一索引，负责用途、入口、仓库、发布形式、有效状态和进一步阅读位置。具体功能以独立仓库最新代码与 README 为准；构建成功与线上实际交互验收须区分。
 
-| 项目 | 用途 | 仓库 | 公开入口 | 当前状态 | 下一步 |
-| --- | --- | --- | --- | --- | --- |
-| plastocyanin 主站 | 个人项目、笔记、经历与兴趣的统一入口 | imasenHF/imasenhf.github.io | https://plastocyanin.org/ | Jekyll 主站；Workshop、Notebook、About / CV 已建立 | 随实际内容维护 |
-| SpinPlot | 浏览器端 CW EPR 数据处理与作图工具 | imasenHF/spinplot | https://plastocyanin.org/spinplot/ | 独立 Web 工具，主站提供入口 | 按仓库规划继续维护 |
-| SpinFront | NMR / EPR 信息整理与日报归档 | imasenHF/spinfront | https://plastocyanin.org/spinfront/ | 独立站点，持续更新 | 按日报规则维护 |
-| NMR Atlas | 交互式 NMR 核素周期表、核种比较、氘代溶剂残余峰与常见杂质跨溶剂参考 | imasenHF/nmr-atlas | https://plastocyanin.org/nmr-atlas/ | 独立静态 Web 工具；Workshop 提供入口 | 按 NMR_ATLAS_CONTEXT.md 继续维护 |
-| NMR Experiment Library | NMR 实验教材阅读与检索资料库 | imasenHF/nmrexp | https://plastocyanin.org/nmrexp/ | 独立参考资料库；不加入自有实验理解 | 保持现有资料范围 |
-| EasyCurling | 分子或晶体单元重复、弯曲建模 | imasenHF/easycurling | https://github.com/imasenHF/easycurling | 历史工具项目；Workshop 直接链接仓库，不建立独立项目页 | 仅在需要时维护 README、源码或 release |
-| Mconvert | 基于 Multiwfn 的结构/波函数文件转换与输入模板生成 | imasenHF/mconvert | https://github.com/imasenHF/mconvert | 历史工具项目；README 记录安装与用法 | 仅在需要时修正兼容性 |
-| DNA Builder | 基于固定模板生成 ssDNA / dsDNA XYZ 几何结构 | imasenHF/dna-builder | https://github.com/imasenHF/dna-builder | 历史工具项目；保留 2023 年 v1.0 几何逻辑并更新公开联系信息 | 仅在需要时维护说明或源码 |
-| Computational Chemistry Tools | Gaussian、ORCA、CP2K、Multiwfn 等工作流的小型 Bash/Python 工具集合 | imasenHF/compchem-tools | https://github.com/imasenHF/compchem-tools | 历史脚本集合；已按用途分类并补充脚本索引 | 仅在发现明确问题时修正 |
+## 1. 主站与独立 Web 项目
 
-## Workshop 入口规则
+| 项目 | 用途 | 仓库及详细记录 | 公开入口 | 发布形式与当前状态 |
+| --- | --- | --- | --- | --- |
+| plastocyanin | 个人网站、Workshop、Notebook、About / CV | [主站仓库](https://github.com/imasenHF/imasenhf.github.io) · [SITE_CONTEXT](SITE_CONTEXT.md) · [视觉规范](docs/SITE_STYLE_GUIDE.md) | <https://plastocyanin.org/> | Jekyll / GitHub Pages；2026-10-08 对应主站提交的发布流程成功 |
+| SpinFront | NMR/EPR 日报、检索、分类与日期归档 | [仓库](https://github.com/imasenHF/spinfront) · [README](https://github.com/imasenHF/spinfront/blob/main/README.md) · [日报任务](https://github.com/imasenHF/spinfront/blob/main/docs/DAILY_TASK_PROMPT.md) · [专用风格](https://github.com/imasenHF/spinfront/blob/main/docs/STYLE_GUIDE.md) | <https://plastocyanin.org/spinfront/> | Python 标准库构建静态站 / GitHub Actions Pages；2026-10-08 最近检查的构建发布成功；每日内容另行提交 |
+| SpinPlot | CW EPR 一维/二维谱处理、绘图与导出 | [仓库](https://github.com/imasenHF/spinplot) · [README](https://github.com/imasenHF/spinplot/blob/main/README.md) · [架构](https://github.com/imasenHF/spinplot/blob/main/docs/ARCHITECTURE.md) · [版本记录](https://github.com/imasenHF/spinplot/blob/main/CHANGELOG.md) | <https://plastocyanin.org/spinplot/> | Vite / TypeScript / GitHub Actions Pages；检查时应用版本 0.9.2，2026-10-08 发布成功；数值与兼容性仍需专项检查 |
+| NMR Atlas | NMR 周期表、核种比较、磁场/频率换算、溶剂及杂质参考 | [仓库](https://github.com/imasenHF/nmr-atlas) · [README](https://github.com/imasenHF/nmr-atlas/blob/main/README.md) · [当前约束](https://github.com/imasenHF/nmr-atlas/blob/main/NMR_ATLAS_CONTEXT.md) | <https://plastocyanin.org/nmr-atlas/> | 静态 JavaScript / GitHub Actions Pages；2026-10-08 最近检查的发布成功；Workshop 已列入 |
+| NMR Experiment Library | 三套 NMR 实验教材的双语阅读、跨教材检索及原页对照 | [仓库](https://github.com/imasenHF/nmrexp) · [README](https://github.com/imasenHF/nmrexp/blob/main/README.md) | <https://plastocyanin.org/nmrexp/> | 静态 HTML / GitHub Pages；2026-10-06 最近检查的发布成功；保持现有资料范围，不加入个人原创实验笔记 |
 
-SpinPlot、SpinFront、NMR Atlas 与 NMR Experiment Library 保留现有正式网页入口。
+## 2. 源码与程序包项目
 
-EasyCurling、Mconvert、DNA Builder 与 Computational Chemistry Tools 作为历史项目展示。Workshop 只保留项目名称、类型和简短摘要，点击后直接进入对应 GitHub 仓库首页，不建立 `/projects/<slug>/` 项目介绍页。仓库 README 负责说明安装、依赖、基本用法和限制。
+这些项目作为历史工具直接从 Workshop 链接 GitHub 首页，不新增主站 `/projects/<slug>/` 正文页，当前均不列入首页精选。
 
-上述四个历史项目当前均设置为 `featured: false`，不占用首页精选项目位置。
+| 项目 | 用途 | 仓库及说明 | 公开形式与维护范围 |
+| --- | --- | --- | --- |
+| EasyCurling | XYZ 分子或晶体单元重复、刚性/渐进弯曲和模型构建 | [仓库与 README](https://github.com/imasenHF/easycurling) | Python 源码；Windows 发布包已有 [v1.1.0](https://github.com/imasenHF/easycurling/releases/tag/v1.1.0)；结构用于后续计算前需检查几何合理性 |
+| Mconvert | 通过 Multiwfn 进行结构/波函数文件转换，生成 Gaussian、ORCA 输入模板 | [仓库与 README](https://github.com/imasenHF/mconvert) | Bash 脚本；依赖本地 Multiwfn 及菜单接口；按兼容性需要维护 |
+| DNA Builder | 通过固定模板构建 ssDNA / dsDNA 的 XYZ 几何结构 | [仓库与 README](https://github.com/imasenHF/dna-builder) | Python / NumPy / SciPy 源码；几何拼接不包含结构优化；历史 2023 v1.0 逻辑保留 |
+| Computational Chemistry Tools | Gaussian、ORCA、CP2K、Multiwfn 工作流的批处理、提取、转换、输入和可视化脚本 | [仓库与 README](https://github.com/imasenHF/compchem-tools) · [脚本索引](https://github.com/imasenHF/compchem-tools/blob/main/docs/SCRIPT_INDEX.md) | 按用途分类的 Bash/Python 源码；各脚本依赖与参数单独确认 |
 
-## 内容分区
+## 3. 项目分类与展示
 
-调研和学习记录进入 Notebook，不在 Workshop 重复建立项目。Interests 随实际公开内容增加。适合公开的个人贡献与项目成果另在 `CV_RECORDS.md` 维护。
+- Workshop 路径为 `/projects/`，使用 `_projects/*.md` 管理摘要、类型、展示顺序、`featured` 和正式链接；分类表为 `_data/project-types.yml`。
+- SpinPlot、SpinFront、NMR Atlas、NMR Experiment Library 保留各自独立网页。主站只负责入口与已明确的首页组件，不复制子项目完整说明。
+- EasyCurling、Mconvert、DNA Builder、Computational Chemistry Tools 点击后直接进入 GitHub 仓库；各 README 负责依赖、使用方法、限制与源码入口。
+- Notebook 技术调研按 `_note_sources/` 和 `docs/NOTE_TEMPLATE.md` 维护，不在 Workshop 重复建立项目条目。CV 仅从已确认的 `CV_RECORDS.md` 选择公开经历。
+- 本索引只记录重要项目发布状态，不随 SpinFront 每日增刊、依赖更新或普通脚本提交反复改变版本快照。项目入口、功能范围、维护仓库、发布方式或重要完成状态发生变化时更新。

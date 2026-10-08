@@ -20,6 +20,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - AGENTS.md
   - SITE_CONTEXT.md
   - PROJECT_INDEX.md
   - CV_RECORDS.md
