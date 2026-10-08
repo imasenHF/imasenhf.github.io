@@ -1,7 +1,7 @@
 # SITE_CONTEXT
 
 更新日期：2026-10-08（Asia/Shanghai）
-状态依据：主仓库 `main`（`3b2d33f`）及相关独立仓库的 README、当前项目记录和 GitHub Actions 检查。此日期代表一次核对，不意味着之后的状态自动同步。
+状态依据：主仓库 `main` 的实际代码与项目记录、子项目 README 和 GitHub Actions 核对。本文记录当前已确认决定；新的提交、部署与浏览器状态需分别检查。
 
 ## 1. 网站身份与定位
 
@@ -29,7 +29,7 @@ plastocyanin 用于记录个人项目、学习笔记、技术文章、经历和�
 
 ## 3. 技术、内容与部署
 
-- 主站使用 **Jekyll + GitHub Pages**。主要文件：`_config.yml`、`Gemfile`、`_layouts/default.html`、`index.html`、`assets/css/`、`assets/js/`。`main` 的 Pages 构建发布于 2026-10-08 对应 `3b2d33f` 的 [运行 37717865565](https://github.com/imasenHF/imasenhf.github.io/actions/runs/37717865565) 显示成功。
+- 主站使用 **Jekyll + GitHub Pages**。主要文件：`_config.yml`、`Gemfile`、`_layouts/default.html`、`index.html`、`assets/css/`、`assets/js/`。2026-10-08 对应 `5699b72` 的 [Pages 运行 37791293149](https://github.com/imasenHF/imasenhf.github.io/actions/runs/37791293149) 显示成功；其后的提交须核对各自构建与发布结果。
 - Workshop 项目元数据：`_projects/*.md`；分类：`_data/project-types.yml`；列表入口：`projects/index.html`。新增或调整展示项目时，同时核对这些文件与 `PROJECT_INDEX.md`。
 - Notebook 正文以 `_note_sources/<slug>.html` 为单一编辑来源；执行 `python scripts/build-note-docs.py <slug>` 生成 `_notes/` 与 `notes/<slug>/` 下的文档页面、目录及搜索数据。不得直接改生成页面。共享模板变更后重新生成受影响文档。写作和版式要求参见 [docs/NOTE_TEMPLATE.md](docs/NOTE_TEMPLATE.md)。
 - Note 页面采用 Just the Docs 分章布局，保留公式、相位表、SVG 时间轴、标题层级、中文检索及移动端导航。默认主题 mist；其他主题与具体实现以现有模板为准。正式三份笔记路径为 `/notes/w-band-epr/`、`/notes/x-band-epr-medical/`、`/notes/electron-electron-distance/`。
