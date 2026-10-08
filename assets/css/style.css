@@ -387,3 +387,16 @@
 @media(max-width:620px){
   .site-footer{padding:24px 20px 30px}
 }
+
+
+/* SpinFront calendar taxonomy labels link to the archive search. */
+.hy2-tags a{
+  font-size:9px;
+  color:var(--hy-accent);
+  text-decoration:none;
+}
+.hy2-tags a:is(:hover,:active,:focus-visible){
+  color:var(--blue);
+  text-decoration:underline;
+  text-underline-offset:.18em;
+}
