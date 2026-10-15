@@ -1,6 +1,6 @@
 # SITE_STYLE_GUIDE
 
-更新日期：2026-10-08（Asia/Shanghai）
+更新日期：2026-10-15（Asia/Shanghai）
 
 适用范围：plastocyanin 主站视觉规范及各独立 Web 项目共同采用的品牌规则。子项目特有的页面、控件、模板及钉钉通知版式保存在各自仓库；本文件不复制全部子项目样式。实际 CSS、HTML 与构建结果用于确认已实施状态。
 
@@ -21,7 +21,7 @@
 - 首页 Hero 的 `plastocyanin.` 是主站链接；About plastocyanin 标题及命名缘由正文中表示网站名称的 `plastocyanin.` 均使用品牌字标并链接主页；正文中的蛋白名称 Plastocyanin 保持普通文本。
 - 首页导入语及 About 命名缘由已由用户定稿，以 `index.html` 当前文字为准。About 保留 Wikipedia 引文及两段中文正文，Plastocyanin 开头的内容单独成段，不增加第三段。一般文案整理不改写这些已确认文字，修改须有用户明确要求。
 - 首页科学示意图位于 `assets/images/plastocyanin/`，由 `scripts/build_plastocyanin_visual.py` 生成。当前选定 K 方案：EPR 示意谱金黄色 `#F0BE32`、内线宽 3.5、单侧白色描边 3、总外宽 9.5；谱线位于蛋白结构下半部前景，无坐标轴。示意图不用于定量分析。
-- 首页 SpinFront 日历为主站专用组件：左侧月历、右侧内部滚动日报条目；保留 Daily Epigraph、日期定位、焦点透明度约 0.72 / 0.88 / 1、金色编号及标题通向完整日报的链接。右上角进入 `/spinfront/`。当前显示的分类标签须可点击并进入相应 SpinFront 筛选；不取消组件内部滚动。此处的具体交互实现位于 `assets/js/home-spinfront.js` 与主站样式。
+- 首页 SpinFront 日历为主站专用组件：左侧月历、右侧内部滚动日报条目；保留 Daily Epigraph、日期定位、焦点透明度约 0.72 / 0.88 / 1、金色编号及标题通向完整日报的链接。右上角进入 `/spinfront/`。Daily Epigraph 不再按访问当天变化，而是按当前选中的日报日期读取 SpinFront 的唯一正式数据源 `/spinfront/assets/data/epigraphs.json`；同一日期在日历与完整日报中必须显示同一条。当前显示的分类标签须可点击并进入相应 SpinFront 筛选；不取消组件内部滚动。此处的具体交互实现位于 `assets/js/home-spinfront.js` 与主站样式。
 
 ## 3. 主站共享页尾
 
