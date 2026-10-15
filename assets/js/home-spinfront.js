@@ -10,6 +10,7 @@
 
   let items=[],dates=new Set(),labels=new Map(),tagMeta=new Map(),selected='',month='',scrollRaf=0;
   let dailyEpigraph={
+    id:'EP-0001',
     text:'The test of all knowledge is experiment.',
     author:'Richard P. Feynman',
     work:'The Feynman Lectures on Physics, Vol. I, Ch. 1',
@@ -17,6 +18,7 @@
     source_url:'https://www.feynmanlectures.caltech.edu/I_01.html',
     source_ref:'1–1 Introduction'
   };
+  let epigraphLibrary=null;
 
   function dayNumber(date){
     const [y,m,d]=date.split('-').map(Number);
@@ -48,17 +50,26 @@
     requestAnimationFrame(resetGuideHeight);
   }
 
-  async function loadDailyEpigraph(){
+  function epigraphForDate(date){
+    if(!epigraphLibrary?.entries?.length)return null;
+    const rotation=epigraphLibrary.rotation||{};
+    const epoch=rotation.epoch||'2026-10-07';
+    const repeat=Number(rotation.repeat_days||epigraphLibrary.entries.length);
+    const seq=((dayNumber(date)-dayNumber(epoch))%repeat+repeat)%repeat+1;
+    const id='EP-'+String(seq).padStart(4,'0');
+    return epigraphLibrary.entries.find(e=>e.id===id)||null;
+  }
+
+  function setDailyEpigraph(date){
+    const entry=epigraphForDate(date);
+    if(entry)dailyEpigraph=entry;
+  }
+
+  async function loadEpigraphLibrary(){
     try{
-      const r=await fetch('/assets/data/epigraphs.json',{cache:'force-cache'});
+      const r=await fetch('/spinfront/assets/data/epigraphs.json',{cache:'force-cache'});
       if(!r.ok)throw new Error('HTTP '+r.status);
-      const lib=await r.json();
-      const entries=lib.entries||[];
-      if(!entries.length)return;
-      const epoch=lib.rotation?.epoch||'2026-10-07';
-      const delta=dayNumber(cnToday())-dayNumber(epoch);
-      dailyEpigraph=entries[((delta%entries.length)+entries.length)%entries.length];
-      renderEpigraph();
+      epigraphLibrary=await r.json();
     }catch(err){
       console.warn('Daily epigraph library unavailable; using fallback.',err);
     }
@@ -116,6 +127,7 @@
   }
 
   function renderReport(){
+    setDailyEpigraph(selected);
     const current=items.filter(x=>x.report_date===selected);
     document.getElementById('hy2-date').textContent=selected;
     document.getElementById('hy2-big-day').textContent=selected.slice(-2);
@@ -178,6 +190,7 @@
         tagMeta=new Map((tax.tags||[]).map(x=>[x.id,x]));
       }
 
+      await loadEpigraphLibrary();
       const ordered=[...dates].sort();
       if(!ordered.length)throw new Error('SpinFront archive is empty');
       const today=cnToday();
@@ -185,11 +198,9 @@
       month=selected.slice(0,7);
       renderCalendar();
       renderReport();
-      loadDailyEpigraph();
     }catch(err){
       itemsEl.innerHTML='<p class="hy2-loading">SpinFront 日历暂时无法读取。</p>';
       console.error(err);
-      loadDailyEpigraph();
     }
   }
 
