@@ -1,6 +1,6 @@
 # SITE_CONTEXT
 
-更新日期：2026-10-13（Asia/Shanghai）
+更新日期：2026-10-15（Asia/Shanghai）
 状态依据：主仓库 `main` 的实际代码与项目记录、子项目 README 和 GitHub Actions 核对。本文记录当前已确认决定；新的提交、部署与浏览器状态需分别检查。
 
 ## 1. 网站身份与定位
@@ -42,6 +42,8 @@ plastocyanin 用于记录个人项目、学习笔记、技术文章、经历和�
 跨站共用品牌、色彩、字体角色、链接反馈、主页及共享页头/页尾规则，以 [docs/SITE_STYLE_GUIDE.md](docs/SITE_STYLE_GUIDE.md) 为准。主站实际样式由现有 CSS 和模板确定。
 
 项目专属风格和功能规范保存在各自仓库：SpinFront 的 `docs/STYLE_GUIDE.md`、NMR Atlas 的 `NMR_ATLAS_CONTEXT.md`、SpinPlot 的 `PROJECT_CONTEXT.md`、`docs/STYLE_GUIDE.md` 与 `docs/ARCHITECTURE.md`；Notebook 依 `docs/NOTE_TEMPLATE.md`。共用规范只写一次，独立项目保留确有差异的实现。不因局部内容修改重新设计品牌或恢复废止布局。
+
+SpinFront 的 Daily Epigraph 已归入 SpinFront 项目本身：唯一正式数据源为 `imasenHF/spinfront/assets/data/epigraphs.json`。完整日报按日报日期稳定映射到固定 epigraph；主站首页 SpinFront 日历读取同一数据源并按当前选中的日报日期显示同一条，不再按访问当天变化。完整日报封面以左下原有空白区容纳 Epigraph，不恢复封面统计行，也不改变桌面端封面高度、日期栏高度或淡色 `SPIN` 水印位置。
 
 ## 5. 远程记录的职责
 
