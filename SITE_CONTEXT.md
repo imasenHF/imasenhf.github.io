@@ -1,6 +1,6 @@
 # SITE_CONTEXT
 
-更新日期：2026-10-15（Asia/Shanghai）
+更新日期：2026-10-18（Asia/Shanghai）
 状态依据：主仓库 `main` 的实际代码与项目记录、子项目 README 和 GitHub Actions 核对。本文记录当前已确认决定；新的提交、部署与浏览器状态需分别检查。
 
 ## 1. 网站身份与定位
@@ -20,12 +20,12 @@ plastocyanin 用于记录个人项目、学习笔记、技术文章、经历和�
 | 栏目 | 正式路径 | 当前内容与职责 |
 | --- | --- | --- |
 | Home | `/` | 个人介绍、plastocyanin 命名缘由与科学示意图、SpinFront 日历、精选项目和笔记 |
-| Workshop | `/projects/` | 展示独立工具、参考资料及信息整理项目；当前由 `_projects/` 管理八个项目入口 |
+| Workshop | `/projects/` | 展示独立工具、参考资料及信息整理项目；当前由 `_projects/` 管理九个项目入口 |
 | Notebook | `/notes/` | 技术调研和学习笔记；已公开 W 波段 EPR、X 波段医学 EPR、电子—电子距离测定三份分章文档 |
 | About / CV | `/about/` | 当前仅有公开身份与联系方式，完整公开 CV 尚未建立 |
 | Interests | 尚无正式栏目 | 待有可公开内容后再增加入口 |
 
-首页精选项目由项目元数据决定；Notebook 的学习和技术调研不在 Workshop 重复登记。Workshop 中四个 Web 项目链接到独立网页，四个历史软件项目直接链接 GitHub 仓库。详情及维护文档参见 [PROJECT_INDEX.md](PROJECT_INDEX.md)。
+首页精选项目由项目元数据决定；Notebook 的学习和技术调研不在 Workshop 重复登记。Workshop 中五个 Web 项目链接到独立网页，四个历史软件项目直接链接 GitHub 仓库。详情及维护文档参见 [PROJECT_INDEX.md](PROJECT_INDEX.md)。
 
 ## 3. 技术、内容与部署
 
@@ -33,7 +33,7 @@ plastocyanin 用于记录个人项目、学习笔记、技术文章、经历和�
 - Workshop 项目元数据：`_projects/*.md`；分类：`_data/project-types.yml`；列表入口：`projects/index.html`。新增或调整展示项目时，同时核对这些文件与 `PROJECT_INDEX.md`。
 - Notebook 正文以 `_note_sources/<slug>.html` 为单一编辑来源；执行 `python scripts/build-note-docs.py <slug>` 生成 `_notes/` 与 `notes/<slug>/` 下的文档页面、目录及搜索数据。不得直接改生成页面。共享模板变更后重新生成受影响文档。写作和版式要求参见 [docs/NOTE_TEMPLATE.md](docs/NOTE_TEMPLATE.md)。
 - Note 页面采用 Just the Docs 分章布局，保留公式、相位表、SVG 时间轴、标题层级、中文检索及移动端导航。默认主题 mist；其他主题与具体实现以现有模板为准。正式三份笔记路径为 `/notes/w-band-epr/`、`/notes/x-band-epr-medical/`、`/notes/electron-electron-distance/`。
-- 网站的正式 Web 项目入口为 `/spinfront/`、`/spinplot/`、`/nmr-atlas/` 与 `/nmrexp/`。对应仓库独立构建、发布，主站只维护入口或必要的首页嵌入组件。
+- 网站的正式 Web 项目入口为 `/spinfront/`、`/spinplot/`、`/nmr-atlas/`、`/nmrexp/` 与 `/countdown-studio/`。对应仓库独立构建、发布，主站只维护入口或必要的首页嵌入组件。
 - 旧 `/SpinFront/`、`/SpinPlot/`、`/NMR_EXP/` 等大小写路径保留兼容跳转；迁移应保留适用的查询参数、锚点和深层路径。静态跳转不等同于服务器 301。新网页路径使用小写，文件资产名遵循真实大小写。
 - 主站 `CNAME` 为 `plastocyanin.org`。独立子项目不新增相同 CNAME，以免争用域名。Cloudflare、Pages 设置以及线上 HTTP 访问应与构建结果分开核对；一次成功的 Actions 运行不等于所有浏览器功能已验收。
 
