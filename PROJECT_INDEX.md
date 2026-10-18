@@ -1,6 +1,6 @@
 # PROJECT_INDEX
 
-更新日期：2026-10-08（Asia/Shanghai）
+更新日期：2026-10-18（Asia/Shanghai）
 
 本文件是 plastocyanin 所有公开子项目的统一索引，负责用途、入口、仓库、发布形式、有效状态和进一步阅读位置。具体功能以独立仓库最新代码与 README 为准；构建成功与线上实际交互验收须区分。
 
@@ -13,6 +13,7 @@
 | SpinPlot | CW EPR 一维/二维谱处理、绘图与导出 | [仓库](https://github.com/imasenHF/spinplot) · [README](https://github.com/imasenHF/spinplot/blob/main/README.md) · [项目状态](https://github.com/imasenHF/spinplot/blob/main/PROJECT_CONTEXT.md) · [专用风格](https://github.com/imasenHF/spinplot/blob/main/docs/STYLE_GUIDE.md) · [架构](https://github.com/imasenHF/spinplot/blob/main/docs/ARCHITECTURE.md) · [二维说明](https://github.com/imasenHF/spinplot/blob/main/docs/TWO_DIMENSIONAL.md) · [版本记录](https://github.com/imasenHF/spinplot/blob/main/CHANGELOG.md) | <https://plastocyanin.org/spinplot/> | Vite / TypeScript / GitHub Actions Pages；检查时应用版本 0.9.2，2026-10-08 发布成功；数值与兼容性仍需专项检查 |
 | NMR Atlas | NMR 周期表、核种比较、磁场/频率换算、溶剂及杂质参考 | [仓库](https://github.com/imasenHF/nmr-atlas) · [README](https://github.com/imasenHF/nmr-atlas/blob/main/README.md) · [当前约束](https://github.com/imasenHF/nmr-atlas/blob/main/NMR_ATLAS_CONTEXT.md) | <https://plastocyanin.org/nmr-atlas/> | 静态 JavaScript / GitHub Actions Pages；2026-10-08 最近检查的发布成功；Workshop 已列入 |
 | NMR Experiment Library | 三套 NMR 实验教材的双语阅读、跨教材检索及原页对照 | [仓库](https://github.com/imasenHF/nmrexp) · [README](https://github.com/imasenHF/nmrexp/blob/main/README.md) | <https://plastocyanin.org/nmrexp/> | 静态 HTML / GitHub Pages；2026-10-06 最近检查的发布成功；保持现有资料范围，不加入个人原创实验笔记 |
+| Countdown Studio | PowerPoint 倒计时动画生成、内容边界裁剪、透明 GIF 与离线 MP4 导出 | [仓库](https://github.com/imasenHF/countdown-studio) · [README](https://github.com/imasenHF/countdown-studio/blob/main/README.md) · [项目状态](https://github.com/imasenHF/countdown-studio/blob/main/docs/PROJECT_CONTEXT.md) · [界面规范](https://github.com/imasenHF/countdown-studio/blob/main/docs/STYLE_GUIDE.md) | <https://plastocyanin.org/countdown-studio/> | 单文件 HTML / GitHub Actions Pages；自动裁剪透明留白；浏览器导出和 PowerPoint 播放兼容性仍待实测 |
 
 ## 2. 源码与程序包项目
 
@@ -28,7 +29,7 @@
 ## 3. 项目分类与展示
 
 - Workshop 路径为 `/projects/`，使用 `_projects/*.md` 管理摘要、类型、展示顺序、`featured` 和正式链接；分类表为 `_data/project-types.yml`。
-- SpinPlot、SpinFront、NMR Atlas、NMR Experiment Library 保留各自独立网页。主站只负责入口与已明确的首页组件，不复制子项目完整说明。
+- SpinPlot、SpinFront、NMR Atlas、NMR Experiment Library 与 Countdown Studio 保留各自独立网页。主站只负责入口与已明确的首页组件，不复制子项目完整说明。
 - EasyCurling、Mconvert、DNA Builder、Computational Chemistry Tools 点击后直接进入 GitHub 仓库；各 README 负责依赖、使用方法、限制与源码入口。
 - Notebook 技术调研按 `_note_sources/` 和 `docs/NOTE_TEMPLATE.md` 维护，不在 Workshop 重复建立项目条目。CV 仅从已确认的 `CV_RECORDS.md` 选择公开经历。
 - 本索引只记录重要项目发布状态，不随 SpinFront 每日增刊、依赖更新或普通脚本提交反复改变版本快照。项目入口、功能范围、维护仓库、发布方式或重要完成状态发生变化时更新。
