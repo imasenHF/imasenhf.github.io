@@ -62,7 +62,7 @@ GitHub `main` 的最新文件是长期项目记录。ChatGPT 项目指令仅定�
 - 公开 CV：按 `CV_RECORDS.md` 的公开范围核实教育、研究、工作、成果及项目贡献后再编排；当前 About 页面不代替完整 CV。
 - SpinFront：每日任务按其仓库 `docs/DAILY_TASK_PROMPT.md` 执行；自动检索、JSON 提交、Pages 发布和钉钉通知分别核对。当前钉钉工作流由外部 Cloudflare Worker 调度并经 GitHub `workflow_dispatch` 触发；实际 Worker Cron、群收件及配置须单独确认。不得公开 Webhook/Secret。
 - SpinPlot：持续核对二维数据、坐标单位、作图/导出和项目保存兼容性；页面与构建成功不能代替数值检查。
-- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 已于 2026-10-22 同步预览分支 `a47f9cc` 的构建，新增二维 colorbar 双击恢复自动 Z 范围，并保留热图主体双击恢复 X/Y 轴。SpinPlot 分支数值/二维回归、构建、Chromium 交互测试及迁移前输出对照通过（[运行 39684319918](https://github.com/imasenHF/spinplot/actions/runs/39684319918)）；主站 Pages 发布成功（[运行 39684696016](https://github.com/imasenHF/imasenhf.github.io/actions/runs/39684696016)），公开资源检查（[运行 39684871606](https://github.com/imasenHF/spinplot/actions/runs/39684871606)）和公开 Chromium 交互测试（[运行 39684871564](https://github.com/imasenHF/spinplot/actions/runs/39684871564)）均通过。正式 `/spinplot/` 未修改；临时页面不属于正式导航，后续预览构建不会自动同步此快照。
+- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 已更新为预览分支构建来源 `5237af0`，包含频率校正 Target 模式修复。新子图默认 Local mean；切换全局频率模式或目标值后，未显式设置局部覆盖的子图继承全局设置；CSV 等缺少源频率元数据的一维磁场曲线可在频率表填写源频率。分支数值/二维回归、构建、Chromium 浏览器回归及迁移前输出对照通过（[运行 39689863349](https://github.com/imasenHF/spinplot/actions/runs/39689863349)）。本次主站 Pages 部署及公开浏览器检查待验收。正式 `/spinplot/` 未修改；临时页面不属于正式导航，后续预览构建不会自动同步此快照。
 - NMR Atlas：持续核对核种参数、化学位移来源、筛选和移动端操作；具体当前约束以该仓库文档为准。
 - Notebook 和 Interests：依据实际完成的文章增加内容，保留参考资料来源及适用范围。
 - 维护工作：重要修改同步相关记录；Git 版本历史保存过往过程，本文件不再持续追加已经废止的草稿和决定。
