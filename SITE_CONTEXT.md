@@ -62,7 +62,7 @@ GitHub `main` 的最新文件是长期项目记录。ChatGPT 项目指令仅定�
 - 公开 CV：按 `CV_RECORDS.md` 的公开范围核实教育、研究、工作、成果及项目贡献后再编排；当前 About 页面不代替完整 CV。
 - SpinFront：每日任务按其仓库 `docs/DAILY_TASK_PROMPT.md` 执行；自动检索、JSON 提交、Pages 发布和钉钉通知分别核对。当前钉钉工作流由外部 Cloudflare Worker 调度并经 GitHub `workflow_dispatch` 触发；实际 Worker Cron、群收件及配置须单独确认。不得公开 Webhook/Secret。
 - SpinPlot：持续核对二维数据、坐标单位、作图/导出和项目保存兼容性；页面与构建成功不能代替数值检查。
-- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 当前快照更新至 SpinPlot 源码提交 `8c3b015`（功率轴修正的功能提交 `982c1f3`），静态预览构建提交 `8b08893`。二维导入默认 Heatmap；Variable scan 通过 Plot mode 显式新增独立子图，保留源图及 Y 投影；Overlap 为独立模式。功率轴只需零衰减参考功率 P₀，按 P(A)=P₀×10^(-A/10) 换算，旧项目参考功率/衰减组合会迁移为等效 P₀。功率逻辑的自动化测试与公开页面发布状态见 SpinPlot Actions；真实 CIQTEK 样本验收待重新取得 `exp(1).zip`。正式 `/spinplot/` 未修改，预览快照不会自动随源码分支同步。
+- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 当前快照更新至 SpinPlot 源码提交 `d523eca`，静态预览构建提交 `4e47b92`。二维导入默认 Heatmap；Variable scan 显式新增独立一维子图，统计方式和 X 坐标统计区间独立保存，创建时按坐标方向以源图右侧投影参数初始化，之后互不干扰，扫描视图隐藏 Top/Right projection 控件；Overlap 为独立模式。功率轴按零衰减参考功率 P₀ 换算，旧配置迁移有自动化测试。完整自动化回归 [39963386772](https://github.com/imasenHF/spinplot/actions/runs/39963386772) 已通过；真实 CIQTEK 样本验收仍待重新取得 `exp(1).zip`。正式 `/spinplot/` 未修改，预览快照不会自动随源码分支同步。
 - NMR Atlas：持续核对核种参数、化学位移来源、筛选和移动端操作；具体当前约束以该仓库文档为准。
 - Notebook 和 Interests：依据实际完成的文章增加内容，保留参考资料来源及适用范围。
 - 维护工作：重要修改同步相关记录；Git 版本历史保存过往过程，本文件不再持续追加已经废止的草稿和决定。
