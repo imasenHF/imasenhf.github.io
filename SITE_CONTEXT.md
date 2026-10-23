@@ -1,6 +1,6 @@
 # SITE_CONTEXT
 
-更新日期：2026-10-22（Asia/Shanghai）
+更新日期：2026-10-24（Asia/Shanghai）
 状态依据：主仓库 `main` 的实际代码与项目记录、子项目 README 和 GitHub Actions 核对。本文记录当前已确认决定；新的提交、部署与浏览器状态需分别检查。
 
 ## 1. 网站身份与定位
@@ -62,7 +62,7 @@ GitHub `main` 的最新文件是长期项目记录。ChatGPT 项目指令仅定�
 - 公开 CV：按 `CV_RECORDS.md` 的公开范围核实教育、研究、工作、成果及项目贡献后再编排；当前 About 页面不代替完整 CV。
 - SpinFront：每日任务按其仓库 `docs/DAILY_TASK_PROMPT.md` 执行；自动检索、JSON 提交、Pages 发布和钉钉通知分别核对。当前钉钉工作流由外部 Cloudflare Worker 调度并经 GitHub `workflow_dispatch` 触发；实际 Worker Cron、群收件及配置须单独确认。不得公开 Webhook/Secret。
 - SpinPlot：持续核对二维数据、坐标单位、作图/导出和项目保存兼容性；页面与构建成功不能代替数值检查。
-- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 当前快照更新至 SpinPlot 源码提交 `d523eca`，静态预览构建提交 `4e47b92`。二维导入默认 Heatmap；Variable scan 显式新增独立一维子图，统计方式和 X 坐标统计区间独立保存，创建时按坐标方向以源图右侧投影参数初始化，之后互不干扰，扫描视图隐藏 Top/Right projection 控件；Overlap 为独立模式。功率轴按零衰减参考功率 P₀ 换算，旧配置迁移有自动化测试。完整自动化回归 [39963386772](https://github.com/imasenHF/spinplot/actions/runs/39963386772) 已通过；真实 CIQTEK 样本验收仍待重新取得 `exp(1).zip`。正式 `/spinplot/` 未修改，预览快照不会自动随源码分支同步。
+- SpinPlot 模块化临时预览：`/previews/spinplot-modularization/` 当前快照采用源码提交 `7020fa8`、静态预览构建提交 `a8bcd3a`。Variable scan 是显式新增的独立一维子图，默认不显示标题，统计方式和计算区间独立保存；右侧投影标题超出绘图区时按变量名与 projection（统计方式）两行显示；连续色带配色仅有一条曲线时取色带起始颜色。扫描视图隐藏 Top/Right projection 控件；Overlap 为独立模式；功率轴按零衰减参考功率 P₀ 换算，旧配置迁移有自动化测试。自动化回归 [39989731761](https://github.com/imasenHF/spinplot/actions/runs/39989731761) 与临时预览 HTTP 检查 [39989731977](https://github.com/imasenHF/spinplot/actions/runs/39989731977) 已通过；真实 CIQTEK 样本验收仍待重新取得 `exp(1).zip`。正式 `/spinplot/` 未修改，预览快照不会自动随源码分支同步。
 - NMR Atlas：持续核对核种参数、化学位移来源、筛选和移动端操作；具体当前约束以该仓库文档为准。
 - Notebook 和 Interests：依据实际完成的文章增加内容，保留参考资料来源及适用范围。
 - 维护工作：重要修改同步相关记录；Git 版本历史保存过往过程，本文件不再持续追加已经废止的草稿和决定。
