@@ -62,7 +62,7 @@ GitHub `main` 的最新文件是长期项目记录。ChatGPT 项目指令仅定�
 - 公开 CV：按 `CV_RECORDS.md` 的公开范围核实教育、研究、工作、成果及项目贡献后再编排；当前 About 页面不代替完整 CV。
 - SpinFront：每日任务按其仓库 `docs/DAILY_TASK_PROMPT.md` 执行；自动检索、JSON 提交、Pages 发布和钉钉通知分别核对。当前钉钉工作流由外部 Cloudflare Worker 调度并经 GitHub `workflow_dispatch` 触发；实际 Worker Cron、群收件及配置须单独确认。不得公开 Webhook/Secret。
 - SpinPlot：持续核对二维数据、坐标单位、作图/导出和项目保存兼容性；页面与构建成功不能代替数值检查。
-- SpinPlot 模块化临时预览：源码分支 `preview/modularization-phase1-20261009` 的最新记录已加入 `Projection titles` 独立字号（默认 11 px，7–40 px），但最新主工作流 [`40016524070`](https://github.com/imasenHF/spinplot/actions/runs/40016524070) 在 Chromium 回归的 `Export projection CSV` 下载等待处超时，完整浏览器验收尚未通过；临时预览 HTTP 检查 [`40016524252`](https://github.com/imasenHF/spinplot/actions/runs/40016524252) 成功。当前主站静态预览仍为旧快照，不能视作包含该最新修改。正式 `/spinplot/` 未修改，Draft PR #1 未合并。后续先修复浏览器回归超时，再验证字号交互、保存/载入并更新临时预览。
+- SpinPlot 模块化临时预览：正式 `/spinplot/` 未修改；主站当前临时快照路径为 `/previews/spinplot-modularization/`，仍采用此前已通过浏览器验收的源码快照 `7020fa8`、静态构建提交 `a8bcd3a`，不会随源码预览分支自动同步。预览分支 `preview/modularization-phase1-20261009` 目前包含手动一维曲线转 Heatmap、显式新增独立 Variable scan、按曲线 ID 保存扫描变量、独立扫描统计参数、右侧投影标题换行、单曲线连续色带取起始颜色、Label mode / Legend position 对齐，以及 Typography → `Projection titles` 独立字号设置（默认 11 px，范围 7–40 px）。最新源码 HEAD `f1c182e` 的数据回归和生产构建结果正在 GitHub Actions 中核查；此前运行 `40016524070` 在 Chromium 回归的手动曲线 Heatmap 投影 CSV 下载步骤超时，完整浏览器验收未通过。该失败的根因仍待定位，静态预览 HTTP 检查 `40016524252` 通过但不能代替交互验收。此前已通过的运行 `39989731761`、`39989731977`、`39989492342` 仅代表当时的源码/预览快照；真实 CIQTEK 样本验收仍待重新取得 `exp(1).zip`。完成下载回归修复、字号实际交互验收后，再更新主站临时预览快照。正式 `main` 与 `/spinplot/` 保持不变，Draft PR #1 未合并。
 - NMR Atlas：持续核对核种参数、化学位移来源、筛选和移动端操作；具体当前约束以该仓库文档为准。
 - Notebook 和 Interests：依据实际完成的文章增加内容，保留参考资料来源及适用范围。
 - 维护工作：重要修改同步相关记录；Git 版本历史保存过往过程，本文件不再持续追加已经废止的草稿和决定。
