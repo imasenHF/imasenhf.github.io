@@ -1,6 +1,6 @@
 # SITE_CONTEXT
 
-更新日期：2026-10-24（Asia/Shanghai）
+更新日期：2026-10-28（Asia/Shanghai）
 状态依据：主仓库 `main` 的实际代码与项目记录、子项目 README 和 GitHub Actions 核对。本文记录当前已确认决定；新的提交、部署与浏览器状态需分别检查。
 
 ## 1. 网站身份与定位
