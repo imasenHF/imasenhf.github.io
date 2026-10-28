@@ -11,12 +11,12 @@ a{color:#355c7d}code{background:#f0f1ee;padding:.1em .3em}.note{padding:1em;back
 </head>
 <body>
 <h1>SpinPlot · 模块化临时预览</h1>
-<p class="note">此页面是独立预览快照，不是正式版本。应用源码提交为 <code>7020fa8</code>，静态预览构建提交为 <code>a8bcd3a</code>。二维导入默认使用 Heatmap；Variable scan 通过 Plot mode 显式新增独立一维扫描子图，保留源图及原有右侧投影。扫描子图默认不显示标题，统计方式与计算区间独立保存；右侧投影标题超出绘图区宽度时自动换为变量名和 projection（统计方式）两行。连续色带配色只有一条曲线时使用色带起始颜色。扫描视图不显示二维 Top/Right projection 控件。Overlap 模式将选定扫描轨迹绘制在共同 X 坐标轴上。功率轴只需输入 0 dB 参考功率 P₀，按 P(A)=P₀×10^(-A/10) 换算；旧项目的参考功率/衰减设置会自动迁移。</p>
+<p class="note">此页面是独立预览快照，不是正式版本。应用源码提交为 <code>129a15f</code>，静态预览构建提交为 <code>6dec0a5</code>。二维导入默认使用 Heatmap；Variable scan 通过 Plot mode 显式新增独立一维扫描子图，保留源图及原有右侧投影。扫描子图默认不显示标题，统计方式与计算区间独立保存；右侧投影标题超出绘图区宽度时自动换为变量名和 projection（统计方式）两行。连续色带配色只有一条曲线时使用色带起始颜色。扫描视图不显示二维 Top/Right projection 控件。Overlap 模式将选定扫描轨迹绘制在共同 X 坐标轴上。曲线样式使用单一下拉菜单，可选实线、虚线、点线、空心/实心符号及线符号组合；每个子图可单独设置线宽和符号大小，Variable scan 使用独立曲线样式。功率轴只需输入 0 dB 参考功率 P₀，按 P(A)=P₀×10^(-A/10) 换算；旧项目的参考功率/衰减设置会自动迁移。</p>
 <p><a href="./">打开 SpinPlot 模块化预览</a> · <a href="/spinplot/">打开正式 SpinPlot</a> · <a href="https://github.com/imasenHF/spinplot/pull/1">代码差异（Draft PR #1）</a></p>
 <h2>页面资源检查</h2>
 <p id="result">正在检查静态资源……</p>
 <script>
-Promise.all(['./index.html','./assets/index-6DWH43Vx.js','./assets/index-DBe1jDsW.css'].map(async u=>{try{const r=await fetch(u,{cache:'no-store'});return u+': '+(r.ok?'OK':'HTTP '+r.status)}catch(e){return u+': unavailable'}})).then(rs=>{const e=document.getElementById('result');e.replaceChildren();for(const s of rs){const p=document.createElement('p');p.textContent=s;p.className=s.endsWith('OK')?'ok':'bad';e.append(p)}});
+Promise.all(['./index.html','./assets/index-2psbyeIv.js','./assets/index-Bprxu72X.css'].map(async u=>{try{const r=await fetch(u,{cache:'no-store'});return u+': '+(r.ok?'OK':'HTTP '+r.status)}catch(e){return u+': unavailable'}})).then(rs=>{const e=document.getElementById('result');e.replaceChildren();for(const s of rs){const p=document.createElement('p');p.textContent=s;p.className=s.endsWith('OK')?'ok':'bad';e.append(p)}});
 </script>
 <h2>人工验收项</h2>
 <p>频率校正：菜单分别列出 Global mean 与 Local mean，默认 Local mean。二维默认行为：导入后仅显示 Heatmap，不自动增加 Variable scan 子图。扫描子图：在 Plot mode 中选择 Variable scan (new subplot)，确认新图初始位于源图右侧、源图仍保留原有 Y 投影，并可通过现有布局工具调整位置与尺寸。扫描设置只显示扫描轴、统计方式、统计区间及必要功率换算；不显示 Top/Right projection 控件。修改扫描统计方式和区间后保存项目，确认源图右侧投影的统计方式和计算区间不变。Overlap：确认多条扫描轨迹共享 X 轴，图例包含扫描变量和单位。功率换算：只需输入零衰减参考功率 P₀，按 P(A)=P₀×10^(-A/10) 转换为 mW；旧项目设置会自动迁移。色标：滚轮调整 Z 范围，双击色标恢复自动 Z；双击热图主体恢复 X/Y 轴范围。</p>
