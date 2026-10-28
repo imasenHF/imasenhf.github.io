@@ -16,7 +16,7 @@ a{color:#355c7d}code{background:#f0f1ee;padding:.1em .3em}.note{padding:1em;back
 <h2>页面资源检查</h2>
 <p id="result">正在检查静态资源……</p>
 <script>
-Promise.all(['./index.html','./assets/index-2psbyeIv.js','./assets/index-Bprxu72X.css'].map(async u=>{try{const r=await fetch(u,{cache:'no-store'});return u+': '+(r.ok?'OK':'HTTP '+r.status)}catch(e){return u+': unavailable'}})).then(rs=>{const e=document.getElementById('result');e.replaceChildren();for(const s of rs){const p=document.createElement('p');p.textContent=s;p.className=s.endsWith('OK')?'ok':'bad';e.append(p)}});
+Promise.all(['./index.html','./assets/index-2psbyeIv.js','./assets/index-Bo_pLkHH.css'].map(async u=>{try{const r=await fetch(u,{cache:'no-store'});return u+': '+(r.ok?'OK':'HTTP '+r.status)}catch(e){return u+': unavailable'}})).then(rs=>{const e=document.getElementById('result');e.replaceChildren();for(const s of rs){const p=document.createElement('p');p.textContent=s;p.className=s.endsWith('OK')?'ok':'bad';e.append(p)}});
 </script>
 <h2>人工验收项</h2>
 <p>频率校正：菜单分别列出 Global mean 与 Local mean，默认 Local mean。二维默认行为：导入后仅显示 Heatmap，不自动增加 Variable scan 子图。扫描子图：在 Plot mode 中选择 Variable scan (new subplot)，确认新图初始位于源图右侧、源图仍保留原有 Y 投影，并可通过现有布局工具调整位置与尺寸。扫描设置只显示扫描轴、统计方式、统计区间及必要功率换算；不显示 Top/Right projection 控件。修改扫描统计方式和区间后保存项目，确认源图右侧投影的统计方式和计算区间不变。Overlap：确认多条扫描轨迹共享 X 轴，图例包含扫描变量和单位。功率换算：只需输入零衰减参考功率 P₀，按 P(A)=P₀×10^(-A/10) 转换为 mW；旧项目设置会自动迁移。色标：滚轮调整 Z 范围，双击色标恢复自动 Z；双击热图主体恢复 X/Y 轴范围。</p>
