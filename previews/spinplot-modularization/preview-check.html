@@ -11,8 +11,8 @@ a{color:#355c7d}code{background:#f0f1ee;padding:.1em .3em}.note{padding:1em;back
 </head>
 <body>
 <h1>SpinPlot · 模块化临时预览</h1>
-<p class="note">此页面是独立预览快照，不是正式版本。当前快照为 SpinPlot 0.10.0 候选版。阶段 B 修正新增每子图 Empty projection space：无投影子图可选择保留共享空间、占用上投影空间、占用右投影空间或同时占用两者。当前子图显示的投影、色标、标题、g 轴和图例边距保持不变。正式入口 <code>/spinplot/</code> 暂为 0.9.2；候选版合并后再更新正式入口。</p>
-<p><a href="./">打开 SpinPlot 模块化预览</a> · <a href="/spinplot/">打开正式 SpinPlot</a> · <a href="https://github.com/imasenHF/spinplot/tree/preview/modularization-phase-b-empty-projection-20261030">0.10.0 候选源码分支</a></p>
+<p class="note">此页面是独立预览入口，当前快照与正式 SpinPlot 均为 0.10.0。阶段 B 的 Empty projection space 允许无投影子图选择保留共享空间、占用上投影空间、占用右投影空间或同时占用两者。当前子图显示的投影、色标、标题、g 轴和图例边距保持不变。正式入口：<code>/spinplot/</code>；版本记录：<a href="https://github.com/imasenHF/spinplot/releases/tag/v0.10.0">GitHub Release v0.10.0</a>。</p>
+<p><a href="./">打开 SpinPlot 模块化预览</a> · <a href="/spinplot/">打开正式 SpinPlot</a> · <a href="https://github.com/imasenHF/spinplot/tree/main">0.10.0 正式源码</a></p>
 <h2>页面资源检查</h2>
 <p id="result">正在检查静态资源……</p>
 <script>
@@ -20,6 +20,6 @@ Promise.all(['./index.html','./assets/index-ClCOx_7Q.js','./assets/index-BmVkwbd
 </script>
 <h2>人工验收项</h2>
 <p>人工验收：使用 2×2 混合布局，将带上投影的二维子图放在目标子图同行，将带右投影的二维子图放在目标子图同列；目标无投影子图分别选择 Keep reserved space、Occupy top area、Occupy right area、Occupy top + right，检查主绘图区是否只向对应方向扩展。检查投影显示控件仍可独立开关，当前子图显示的投影不被占用；色标、标题、g 轴和图例边距保持完整。再检查 1D、Heatmap、Variable scan 的控件可用性、项目保存/恢复，以及 SVG 导出几何与屏幕绘图一致。</p>
-<p>候选版完整数值/构建/Chromium/旧版对照、混合投影空间占位和 SVG 导出几何回归通过 <a href="https://github.com/imasenHF/spinplot/actions/runs/41005228958">Actions #41005228958</a>。本页面为独立预览快照；页面与静态资源正常不代表真实复杂 EPR 谱线的科学数值验证已经完成。</p>
+<p>0.10.0 完整数值/构建/Chromium/旧版对照、混合投影空间占位和 SVG 导出几何回归通过 <a href="https://github.com/imasenHF/spinplot/actions/runs/41005667591">Actions #41005667591</a>；公开预览 HTTP <a href="https://github.com/imasenHF/spinplot/actions/runs/41005667562">#41005667562</a>、公开 Chromium <a href="https://github.com/imasenHF/spinplot/actions/runs/41005667590">#41005667590</a>、正式 Pages <a href="https://github.com/imasenHF/spinplot/actions/runs/41005910687">#41005910687</a> 和 GitHub Release <a href="https://github.com/imasenHF/spinplot/releases/tag/v0.10.0">v0.10.0</a> 均完成。本页面为独立预览入口；真实复杂 EPR 谱线仍需独立科学验证。</p>
 </body>
 </html>
