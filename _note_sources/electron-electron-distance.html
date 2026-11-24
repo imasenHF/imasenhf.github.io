@@ -3638,7 +3638,7 @@ grid on
 </ol></section>
 <p class="back"><a href="#top">返回顶部</a></p>
 <footer class="footer"><p class="footer-title">电子顺磁共振电子—电子距离测定：原理、方法与数据解释</p><p class="footer-note">从偶极相互作用到结构约束：实验序列、模型假设与适用边界</p><p class="copyright">© 2026 wuhaifeng@ustc.edu.cn. All rights reserved. 本报告版权归作者所有，未经许可不得复制、转载或用于商业用途。</p></footer>
-</main></div><script>
+</main></div><script id="phase-cycle-tables">
 const ph={x:'x',y:'y',mx:'−x',my:'−y'};
 const W={p:'+',m:'−',pi:'+i',mi:'−i'};
 const real4=[W.p,W.m,W.p,W.m];
@@ -3664,13 +3664,13 @@ function expand(def){
 }
 function tableHTML(title,def){
  const rows=expand(def);
- let h=`<h4>${title} <span class="note">(${rows.length}步)</span></h4><div class="cycle-table"><table><thead><tr><th>步</th>`;
+ let h=`<h4>${title} <span class="note">(${rows.length}步)</span></h4><div class="cycle-table wrap"><table><thead><tr><th>步</th>`;
  def.cols.forEach(c=>h+=`<th>${c.label}</th>`);h+='<th>权重</th></tr></thead><tbody>';
  rows.forEach((r,i)=>{h+=`<tr><td>${i+1}</td>`;def.cols.forEach(c=>h+=`<td>${r.state[c.key]??'—'}</td>`);h+=`<td class="weights">${r.w}</td></tr>`;});
  return h+'</tbody></table></div>';
 }
 function directTable(title,cols,rows){
- let h=`<h4>${title} <span class="note">(${rows.length}步)</span></h4><div class="cycle-table"><table><thead><tr><th>步</th>`;
+ let h=`<h4>${title} <span class="note">(${rows.length}步)</span></h4><div class="cycle-table wrap"><table><thead><tr><th>步</th>`;
  cols.forEach(c=>h+=`<th>${c}</th>`);h+='<th>权重</th></tr></thead><tbody>';
  rows.forEach((r,i)=>{h+=`<tr><td>${i+1}</td>`;r.p.forEach(v=>h+=`<td>${v}</td>`);h+=`<td class="weights">${r.w}</td></tr>`;});
  return h+'</tbody></table></div>';

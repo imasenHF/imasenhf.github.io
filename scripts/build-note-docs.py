@@ -1,5 +1,7 @@
 """Generate published Just the Docs reports from canonical HTML sources."""
+from collections import Counter
 from pathlib import Path
+import subprocess
 import re,json,html,argparse
 R=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser();parser.add_argument('note',choices=['w-band-epr','x-band-epr-medical','electron-electron-distance']);NOTE=parser.parse_args().note
@@ -10,6 +12,39 @@ def clean(t):return re.sub(r'^(?:第\s*\d+\s*章\s*|\d+(?:\.\d+)*[.、．]?\s+)'
 def promote(t):
  t=re.sub(r'<h3([^>]*)>(.*?)</h3>',lambda m:'<h2'+m[1]+'>'+clean(m[2])+'</h2>',t,flags=re.S)
  return re.sub(r'<h4([^>]*)>(.*?)</h4>',lambda m:'<h3'+m[1]+'>'+clean(m[2])+'</h3>',t,flags=re.S)
+
+PHASE_TABLE_SLOT = re.compile(r'(<div class="inside" id="([^"]+)">)</div>')
+
+
+def render_phase_tables(source_html, main_html):
+    script = re.search(r'<script id="phase-cycle-tables">(.*?)</script>', source_html, re.S)
+    if script is None:
+        raise ValueError("The distance report is missing its phase-cycle table script")
+
+    # Run the report's existing renderer with a sink for each table's innerHTML.
+    node_code = """
+const fs = require('node:fs');
+const vm = require('node:vm');
+const slots = Object.create(null);
+const document = {
+  getElementById(id) {
+    return slots[id] ??= {};
+  },
+};
+vm.runInNewContext(fs.readFileSync(0, 'utf8'), { document });
+process.stdout.write(JSON.stringify(slots));
+"""
+    result = subprocess.run(
+        ["node", "-e", node_code], input=script[1],
+        encoding="utf-8", stdout=subprocess.PIPE, check=True,
+    )
+    tables = {name: slot.get("innerHTML") for name, slot in json.loads(result.stdout).items()}
+    placeholders = Counter(match[2] for match in PHASE_TABLE_SLOT.finditer(main_html))
+    if not tables or placeholders != Counter(tables.keys()) or not all(tables.values()):
+        raise ValueError("Phase-cycle table markup must match each report placeholder exactly once")
+    return tables
+
+
 pages=[];groups=[];aliases={}
 def add(slug,title,body,old='',parent=None,oldid=None):
  head='<h1'+(' id="'+html.escape(oldid,quote=True)+'"' if oldid else '')+'>'+html.escape(title)+'</h1>'
@@ -41,6 +76,7 @@ elif NOTE=='x-band-epr-medical':
 else:
  DOC_TITLE='电子—电子距离测定：原理、方法与数据解释';DOC_SHORT='电子—电子距离';SUBTITLE='连续波与脉冲偶极谱的实验设计、相位选择与距离反演'
  s=re.search(r'<main[^>]*>(.*?)</main>',s,re.S)[1];articles=list(re.finditer(r'<article\b[^>]*class="chapter"[^>]*>(.*?)</article>',s,re.S));assert len(articles)==17
+ phase_tables=render_phase_tables(source,s)
  intro=s[s.index('<section class="abstract"'):s.index('<section class="part-divider"')];add('index',DOC_TITLE,'<p class="fs-6 fw-300">'+SUBTITLE+'</p><p><span class="label">EPR</span><span class="label">距离测量</span></p>'+intro)
  titles=['偶极作用与距离核','距离分布与观测模型','相干路径与相位循环','自旋体系与样品','CW 短距离测定','四脉冲 DEER','多脉冲 DEER','双量子相干 DQC','SIFTER 与 SIDRE','RIDME','光诱导偶极谱','参数与实验优化','距离反演与不确定度','软件与方法选择','应用案例','伪影与诊断','方法进展']
  for i,a in enumerate(articles,1):
@@ -107,13 +143,16 @@ for page in pages:
  if slug!='index':crumbs+='<li class="breadcrumb-nav-list-item"><span>'+html.escape(title)+'</span></li>'
  if slug=='index':body+='<hr><h2>文档章节</h2><ul>'+''.join('<li><a href="'+BASE+g[0]+'.html">'+html.escape(g[1])+'</a></li>' for g in groups)+'</ul>'
  footer='''<hr><footer><p><a href="#top" id="back-to-top">Back to top</a></p><p class="text-small text-grey-dk-000">© 2026 Hyphoon <a href="mailto:wuhaifeng@ustc.edu.cn">wuhaifeng@ustc.edu.cn</a>. All rights reserved. 引用请注明作者与来源；转载、改编或商业使用请事先联系作者。</p><p class="text-small text-grey-dk-000">This site uses <a href="https://just-the-docs.com/">Just the Docs</a>, a documentation theme for Jekyll.</p></footer>'''
- pagehtml='''<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'''+html.escape(title)+''' · '+DOC_SHORT+'</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="'''+'''/assets/jtd/note-themes.css?v=4"><link rel="stylesheet" href="/assets/css/section-brand.css?v=20261005-brand"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="'''+'''/assets/jtd/zh-search.js"></script><script defer src="'''+BASE+'''just-the-docs.js"></script><script defer src="'''+'''/assets/jtd/note-theme.js?v=4"></script>'''+math+'''</head><body>'''+icons+'''<a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><div class="section-brand"><a class="section-brand-icon-link" href="/" aria-label="返回主页"><img class="section-brand-icon" src="/assets/images/imasen_phi_logo/imasen-phi-64.png" width="48" height="48" alt=""></a><div class="section-brand-text"><a class="section-brand-title" href="/">plastocyanin<span class="section-brand-dot">.</span></a><a class="section-brand-subtitle" href="/notes/" aria-label="返回 Notebook">N<span class="section-brand-gold">o</span>teb<span class="section-brand-gold">oo</span>k</a></div></div><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航">'''+nav+'''</nav><div class="site-footer"><a href="/notes/">返回 Notebook</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 '+DOC_SHORT+' 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 '+DOC_SHORT+' 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div>'''+settings+'''</div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list">'''+crumbs+'''</ol></nav><div class="main-content" id="main-content"><main>'''+body+footer+'''</main></div></div></div><div class="search-overlay"></div><script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});</script></body></html>'''
+ pagehtml='''<!doctype html><html lang="zh-CN" data-theme="mist"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'''+html.escape(title)+''' · '+DOC_SHORT+'</title><link rel="icon" href="/assets/images/imasen_phi_logo/favicon.ico"><link rel="stylesheet" href="/assets/jtd/just-the-docs-default.css"><link rel="stylesheet" href="'''+'''/assets/jtd/note-themes.css?v=4"><link rel="stylesheet" href="/assets/css/section-brand.css?v=20261006-brand-feedback"><script defer src="/assets/jtd/lunr.min.js"></script><script defer src="'''+'''/assets/jtd/zh-search.js"></script><script defer src="'''+BASE+'''just-the-docs.js"></script><script defer src="'''+'''/assets/jtd/note-theme.js?v=4"></script>'''+math+'''</head><body>'''+icons+'''<a class="skip-to-main" href="#main-content">跳至正文</a><div class="side-bar"><div class="site-header"><div class="section-brand"><a class="section-brand-icon-link" href="/" aria-label="返回主页"><img class="section-brand-icon" src="/assets/images/imasen_phi_logo/imasen-phi-64.png" width="48" height="48" alt=""></a><div class="section-brand-text"><a class="section-brand-title" href="/">plastocyanin<span class="section-brand-dot">.</span></a><a class="section-brand-subtitle" href="/notes/" aria-label="返回 Notebook">N<span class="section-brand-gold">o</span>teb<span class="section-brand-gold">oo</span>k</a></div></div><button id="menu-button" class="site-button btn-reset" aria-label="菜单" aria-expanded="false"><svg viewBox="0 0 24 24"><use href="#svg-menu"/></svg></button></div><nav id="site-nav" class="site-nav" aria-label="文档导航">'''+nav+'''</nav><div class="site-footer"><a href="/notes/">返回 Notebook</a></div></div><div class="main" id="top"><div id="main-header" class="main-header"><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="搜索 '+DOC_SHORT+' 文档" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">搜索 '+DOC_SHORT+' 文档</span><svg viewBox="0 0 24 24" class="search-icon"><use href="#svg-search"/></svg></label></div><div id="search-results" class="search-results"></div></div>'''+settings+'''</div><div class="main-content-wrap"><nav class="breadcrumb-nav" aria-label="Breadcrumb"><ol class="breadcrumb-nav-list">'''+crumbs+'''</ol></nav><div class="main-content" id="main-content"><main>'''+body+footer+'''</main></div></div></div><div class="search-overlay"></div><script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:true,securityLevel:'strict',theme:'default'});</script></body></html>'''
  pagehtml=pagehtml.replace("'+DOC_SHORT+'",DOC_SHORT)
  if NOTE=='electron-electron-distance':
   version=__import__('hashlib').sha256((R/'assets/jtd/distance-content.css').read_bytes()).hexdigest()[:10]
   pagehtml=pagehtml.replace('</head>','<link rel="stylesheet" href="/assets/jtd/distance-content.css?v='+version+'"><script defer src="/assets/jtd/distance-toc.js?v=1"></script></head>')
   pagehtml=pagehtml.replace('<body>','<body class="distance-doc">')
  pagehtml=pagehtml.replace('<main>'+body,'<main>'+rail+body).replace('<body>', '<body class="doc-with-right-toc">').replace('class="distance-doc"','class="distance-doc doc-with-right-toc"')
+ if NOTE=='electron-electron-distance':
+  # Insert the full tables after building the headings and page contents.
+  pagehtml=PHASE_TABLE_SLOT.sub(lambda m:m[1]+phase_tables[m[2]]+'</div>',pagehtml)
  if NOTE!='electron-electron-distance':pagehtml=pagehtml.replace('</head>','<script defer src="/assets/jtd/distance-toc.js?v=1"></script></head>')
  pagehtml=pagehtml.replace('</head>','<script defer src="/assets/jtd/note-anchors.js?v=1"></script></head>')
  import hashlib
@@ -135,4 +174,7 @@ for page in pages:
 js=(R/'assets/jtd/just-the-docs.js').read_text().replace("'/assets/js/search-data.json'",repr(BASE+'search-data.json'))
 js=js.replace("this.ref('id');","this.pipeline.remove(lunr.trimmer,lunr.stemmer);this.searchPipeline.remove(lunr.stemmer);this.ref('id');")
 (O/'just-the-docs.js').write_text(js)
-print(NOTE,len(pages),'pages',len(index),'sections',sum(p['body'].count('<table') for p in pages),'tables')
+table_count=sum(p['body'].count('<table') for p in pages)
+if NOTE=='electron-electron-distance':
+ table_count+=sum(markup.count('<table') for markup in phase_tables.values())
+print(NOTE,len(pages),'pages',len(index),'sections',table_count,'tables')
